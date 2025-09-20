@@ -1,0 +1,7510 @@
+[
+  {
+    "name": "Aarch64",
+    "icon": "/icons/aarch64/aarch64-line.svg"
+  },
+  {
+    "name": "Aarch64",
+    "icon": "/icons/aarch64/aarch64-original.svg"
+  },
+  {
+    "name": "Aarch64",
+    "icon": "/icons/aarch64/aarch64-plain.svg"
+  },
+  {
+    "name": "Adonisjs",
+    "icon": "/icons/adonisjs/adonisjs-original-wordmark.svg"
+  },
+  {
+    "name": "Adonisjs",
+    "icon": "/icons/adonisjs/adonisjs-original.svg"
+  },
+  {
+    "name": "Aerospike",
+    "icon": "/icons/aerospike/aerospike-original-wordmark.svg"
+  },
+  {
+    "name": "Aerospike",
+    "icon": "/icons/aerospike/aerospike-original.svg"
+  },
+  {
+    "name": "Aframe",
+    "icon": "/icons/aframe/aframe-original-wordmark.svg"
+  },
+  {
+    "name": "Aframe",
+    "icon": "/icons/aframe/aframe-original.svg"
+  },
+  {
+    "name": "Aframe",
+    "icon": "/icons/aframe/aframe-plain.svg"
+  },
+  {
+    "name": "Aftereffects",
+    "icon": "/icons/aftereffects/aftereffects-original.svg"
+  },
+  {
+    "name": "Aftereffects",
+    "icon": "/icons/aftereffects/aftereffects-plain.svg"
+  },
+  {
+    "name": "Akka",
+    "icon": "/icons/akka/akka-original-wordmark.svg"
+  },
+  {
+    "name": "Akka",
+    "icon": "/icons/akka/akka-original.svg"
+  },
+  {
+    "name": "Akka",
+    "icon": "/icons/akka/akka-plain-wordmark.svg"
+  },
+  {
+    "name": "Akka",
+    "icon": "/icons/akka/akka-plain.svg"
+  },
+  {
+    "name": "Algolia",
+    "icon": "/icons/algolia/algolia-original-wordmark.svg"
+  },
+  {
+    "name": "Algolia",
+    "icon": "/icons/algolia/algolia-original.svg"
+  },
+  {
+    "name": "Almalinux",
+    "icon": "/icons/almalinux/almalinux-original-wordmark.svg"
+  },
+  {
+    "name": "Almalinux",
+    "icon": "/icons/almalinux/almalinux-original.svg"
+  },
+  {
+    "name": "Almalinux",
+    "icon": "/icons/almalinux/almalinux-plain-wordmark.svg"
+  },
+  {
+    "name": "Almalinux",
+    "icon": "/icons/almalinux/almalinux-plain.svg"
+  },
+  {
+    "name": "Alpinejs",
+    "icon": "/icons/alpinejs/alpinejs-original-wordmark.svg"
+  },
+  {
+    "name": "Alpinejs",
+    "icon": "/icons/alpinejs/alpinejs-original.svg"
+  },
+  {
+    "name": "Amazonwebservices",
+    "icon": "/icons/amazonwebservices/amazonwebservices-line-wordmark.svg"
+  },
+  {
+    "name": "Amazonwebservices",
+    "icon": "/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+  },
+  {
+    "name": "Amazonwebservices",
+    "icon": "/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+  },
+  {
+    "name": "Anaconda",
+    "icon": "/icons/anaconda/anaconda-original-wordmark.svg"
+  },
+  {
+    "name": "Anaconda",
+    "icon": "/icons/anaconda/anaconda-original.svg"
+  },
+  {
+    "name": "Android",
+    "icon": "/icons/android/android-original-wordmark.svg"
+  },
+  {
+    "name": "Android",
+    "icon": "/icons/android/android-original.svg"
+  },
+  {
+    "name": "Android",
+    "icon": "/icons/android/android-plain-wordmark.svg"
+  },
+  {
+    "name": "Android",
+    "icon": "/icons/android/android-plain.svg"
+  },
+  {
+    "name": "Androidstudio",
+    "icon": "/icons/androidstudio/androidstudio-original-wordmark.svg"
+  },
+  {
+    "name": "Androidstudio",
+    "icon": "/icons/androidstudio/androidstudio-original.svg"
+  },
+  {
+    "name": "Androidstudio",
+    "icon": "/icons/androidstudio/androidstudio-plain-wordmark.svg"
+  },
+  {
+    "name": "Androidstudio",
+    "icon": "/icons/androidstudio/androidstudio-plain.svg"
+  },
+  {
+    "name": "Angular",
+    "icon": "/icons/angular/angular-original-wordmark.svg"
+  },
+  {
+    "name": "Angular",
+    "icon": "/icons/angular/angular-original.svg"
+  },
+  {
+    "name": "Angular",
+    "icon": "/icons/angular/angular-plain-wordmark.svg"
+  },
+  {
+    "name": "Angular",
+    "icon": "/icons/angular/angular-plain.svg"
+  },
+  {
+    "name": "Angularjs",
+    "icon": "/icons/angularjs/angularjs-original-wordmark.svg"
+  },
+  {
+    "name": "Angularjs",
+    "icon": "/icons/angularjs/angularjs-original.svg"
+  },
+  {
+    "name": "Angularjs",
+    "icon": "/icons/angularjs/angularjs-plain-wordmark.svg"
+  },
+  {
+    "name": "Angularjs",
+    "icon": "/icons/angularjs/angularjs-plain.svg"
+  },
+  {
+    "name": "Angularmaterial",
+    "icon": "/icons/angularmaterial/angularmaterial-original.svg"
+  },
+  {
+    "name": "Angularmaterial",
+    "icon": "/icons/angularmaterial/angularmaterial-plain.svg"
+  },
+  {
+    "name": "Ansible",
+    "icon": "/icons/ansible/ansible-original-wordmark.svg"
+  },
+  {
+    "name": "Ansible",
+    "icon": "/icons/ansible/ansible-original.svg"
+  },
+  {
+    "name": "Ansible",
+    "icon": "/icons/ansible/ansible-plain-wordmark.svg"
+  },
+  {
+    "name": "Ansible",
+    "icon": "/icons/ansible/ansible-plain.svg"
+  },
+  {
+    "name": "Ansys",
+    "icon": "/icons/ansys/ansys-original-wordmark.svg"
+  },
+  {
+    "name": "Ansys",
+    "icon": "/icons/ansys/ansys-original.svg"
+  },
+  {
+    "name": "Ansys",
+    "icon": "/icons/ansys/ansys-plain-wordmark.svg"
+  },
+  {
+    "name": "Ansys",
+    "icon": "/icons/ansys/ansys-plain.svg"
+  },
+  {
+    "name": "Antdesign",
+    "icon": "/icons/antdesign/antdesign-original-wordmark.svg"
+  },
+  {
+    "name": "Antdesign",
+    "icon": "/icons/antdesign/antdesign-original.svg"
+  },
+  {
+    "name": "Antdesign",
+    "icon": "/icons/antdesign/antdesign-plain-wordmark.svg"
+  },
+  {
+    "name": "Antdesign",
+    "icon": "/icons/antdesign/antdesign-plain.svg"
+  },
+  {
+    "name": "Apache",
+    "icon": "/icons/apache/apache-line-wordmark.svg"
+  },
+  {
+    "name": "Apache",
+    "icon": "/icons/apache/apache-line.svg"
+  },
+  {
+    "name": "Apache",
+    "icon": "/icons/apache/apache-original-wordmark.svg"
+  },
+  {
+    "name": "Apache",
+    "icon": "/icons/apache/apache-original.svg"
+  },
+  {
+    "name": "Apache",
+    "icon": "/icons/apache/apache-plain-wordmark.svg"
+  },
+  {
+    "name": "Apache",
+    "icon": "/icons/apache/apache-plain.svg"
+  },
+  {
+    "name": "Apacheairflow",
+    "icon": "/icons/apacheairflow/apacheairflow-original-wordmark.svg"
+  },
+  {
+    "name": "Apacheairflow",
+    "icon": "/icons/apacheairflow/apacheairflow-original.svg"
+  },
+  {
+    "name": "Apacheairflow",
+    "icon": "/icons/apacheairflow/apacheairflow-plain-wordmark.svg"
+  },
+  {
+    "name": "Apacheairflow",
+    "icon": "/icons/apacheairflow/apacheairflow-plain.svg"
+  },
+  {
+    "name": "Apachekafka",
+    "icon": "/icons/apachekafka/apachekafka-original-wordmark.svg"
+  },
+  {
+    "name": "Apachekafka",
+    "icon": "/icons/apachekafka/apachekafka-original.svg"
+  },
+  {
+    "name": "Apachespark",
+    "icon": "/icons/apachespark/apachespark-original-wordmark.svg"
+  },
+  {
+    "name": "Apachespark",
+    "icon": "/icons/apachespark/apachespark-original.svg"
+  },
+  {
+    "name": "Apachespark",
+    "icon": "/icons/apachespark/apachespark-plain-wordmark.svg"
+  },
+  {
+    "name": "Apex",
+    "icon": "/icons/apex/apex-original.svg"
+  },
+  {
+    "name": "Apl",
+    "icon": "/icons/apl/apl-original.svg"
+  },
+  {
+    "name": "Apl",
+    "icon": "/icons/apl/apl-plain.svg"
+  },
+  {
+    "name": "Apollographql",
+    "icon": "/icons/apollographql/apollographql-line-wordmark.svg"
+  },
+  {
+    "name": "Apollographql",
+    "icon": "/icons/apollographql/apollographql-line.svg"
+  },
+  {
+    "name": "Apollographql",
+    "icon": "/icons/apollographql/apollographql-original-wordmark.svg"
+  },
+  {
+    "name": "Apollographql",
+    "icon": "/icons/apollographql/apollographql-original.svg"
+  },
+  {
+    "name": "Appcelerator",
+    "icon": "/icons/appcelerator/appcelerator-original-wordmark.svg"
+  },
+  {
+    "name": "Appcelerator",
+    "icon": "/icons/appcelerator/appcelerator-original.svg"
+  },
+  {
+    "name": "Appcelerator",
+    "icon": "/icons/appcelerator/appcelerator-plain-wordmark.svg"
+  },
+  {
+    "name": "Apple",
+    "icon": "/icons/apple/apple-original.svg"
+  },
+  {
+    "name": "Appwrite",
+    "icon": "/icons/appwrite/appwrite-original-wordmark.svg"
+  },
+  {
+    "name": "Appwrite",
+    "icon": "/icons/appwrite/appwrite-original.svg"
+  },
+  {
+    "name": "Appwrite",
+    "icon": "/icons/appwrite/appwrite-plain-wordmark.svg"
+  },
+  {
+    "name": "Archlinux",
+    "icon": "/icons/archlinux/archlinux-original-wordmark.svg"
+  },
+  {
+    "name": "Archlinux",
+    "icon": "/icons/archlinux/archlinux-original.svg"
+  },
+  {
+    "name": "Archlinux",
+    "icon": "/icons/archlinux/archlinux-plain-wordmark.svg"
+  },
+  {
+    "name": "Archlinux",
+    "icon": "/icons/archlinux/archlinux-plain.svg"
+  },
+  {
+    "name": "Arduino",
+    "icon": "/icons/arduino/arduino-original-wordmark.svg"
+  },
+  {
+    "name": "Arduino",
+    "icon": "/icons/arduino/arduino-original.svg"
+  },
+  {
+    "name": "Arduino",
+    "icon": "/icons/arduino/arduino-plain-wordmark.svg"
+  },
+  {
+    "name": "Arduino",
+    "icon": "/icons/arduino/arduino-plain.svg"
+  },
+  {
+    "name": "Argocd",
+    "icon": "/icons/argocd/argocd-original-wordmark.svg"
+  },
+  {
+    "name": "Argocd",
+    "icon": "/icons/argocd/argocd-original.svg"
+  },
+  {
+    "name": "Argocd",
+    "icon": "/icons/argocd/argocd-plain-wordmark.svg"
+  },
+  {
+    "name": "Argocd",
+    "icon": "/icons/argocd/argocd-plain.svg"
+  },
+  {
+    "name": "Artixlinux",
+    "icon": "/icons/artixlinux/artixlinux-original-wordmark.svg"
+  },
+  {
+    "name": "Artixlinux",
+    "icon": "/icons/artixlinux/artixlinux-original.svg"
+  },
+  {
+    "name": "Artixlinux",
+    "icon": "/icons/artixlinux/artixlinux-plain-wordmark.svg"
+  },
+  {
+    "name": "Artixlinux",
+    "icon": "/icons/artixlinux/artixlinux-plain.svg"
+  },
+  {
+    "name": "Astro",
+    "icon": "/icons/astro/astro-original-wordmark.svg"
+  },
+  {
+    "name": "Astro",
+    "icon": "/icons/astro/astro-original.svg"
+  },
+  {
+    "name": "Astro",
+    "icon": "/icons/astro/astro-plain-wordmark.svg"
+  },
+  {
+    "name": "Astro",
+    "icon": "/icons/astro/astro-plain.svg"
+  },
+  {
+    "name": "Atom",
+    "icon": "/icons/atom/atom-original-wordmark.svg"
+  },
+  {
+    "name": "Atom",
+    "icon": "/icons/atom/atom-original.svg"
+  },
+  {
+    "name": "Awk",
+    "icon": "/icons/awk/awk-original-wordmark.svg"
+  },
+  {
+    "name": "Awk",
+    "icon": "/icons/awk/awk-original.svg"
+  },
+  {
+    "name": "Awk",
+    "icon": "/icons/awk/awk-plain-wordmark.svg"
+  },
+  {
+    "name": "Axios",
+    "icon": "/icons/axios/axios-plain-wordmark.svg"
+  },
+  {
+    "name": "Axios",
+    "icon": "/icons/axios/axios-plain.svg"
+  },
+  {
+    "name": "Azure",
+    "icon": "/icons/azure/azure-original-wordmark.svg"
+  },
+  {
+    "name": "Azure",
+    "icon": "/icons/azure/azure-original.svg"
+  },
+  {
+    "name": "Azure",
+    "icon": "/icons/azure/azure-plain-wordmark.svg"
+  },
+  {
+    "name": "Azure",
+    "icon": "/icons/azure/azure-plain.svg"
+  },
+  {
+    "name": "Azuredevops",
+    "icon": "/icons/azuredevops/azuredevops-original.svg"
+  },
+  {
+    "name": "Azuredevops",
+    "icon": "/icons/azuredevops/azuredevops-plain.svg"
+  },
+  {
+    "name": "Azuresqldatabase",
+    "icon": "/icons/azuresqldatabase/azuresqldatabase-original.svg"
+  },
+  {
+    "name": "Azuresqldatabase",
+    "icon": "/icons/azuresqldatabase/azuresqldatabase-plain.svg"
+  },
+  {
+    "name": "Babel",
+    "icon": "/icons/babel/babel-original.svg"
+  },
+  {
+    "name": "Babel",
+    "icon": "/icons/babel/babel-plain.svg"
+  },
+  {
+    "name": "Babylonjs",
+    "icon": "/icons/babylonjs/babylonjs-original-wordmark.svg"
+  },
+  {
+    "name": "Babylonjs",
+    "icon": "/icons/babylonjs/babylonjs-original.svg"
+  },
+  {
+    "name": "Babylonjs",
+    "icon": "/icons/babylonjs/babylonjs-plain-wordmark.svg"
+  },
+  {
+    "name": "Babylonjs",
+    "icon": "/icons/babylonjs/babylonjs-plain.svg"
+  },
+  {
+    "name": "Backbonejs",
+    "icon": "/icons/backbonejs/backbonejs-original-wordmark.svg"
+  },
+  {
+    "name": "Backbonejs",
+    "icon": "/icons/backbonejs/backbonejs-original.svg"
+  },
+  {
+    "name": "Backbonejs",
+    "icon": "/icons/backbonejs/backbonejs-plain-wordmark.svg"
+  },
+  {
+    "name": "Backbonejs",
+    "icon": "/icons/backbonejs/backbonejs-plain.svg"
+  },
+  {
+    "name": "Ballerina",
+    "icon": "/icons/ballerina/ballerina-line-wordmark.svg"
+  },
+  {
+    "name": "Ballerina",
+    "icon": "/icons/ballerina/ballerina-line.svg"
+  },
+  {
+    "name": "Ballerina",
+    "icon": "/icons/ballerina/ballerina-original-wordmark.svg"
+  },
+  {
+    "name": "Ballerina",
+    "icon": "/icons/ballerina/ballerina-original.svg"
+  },
+  {
+    "name": "Bamboo",
+    "icon": "/icons/bamboo/bamboo-original-wordmark.svg"
+  },
+  {
+    "name": "Bamboo",
+    "icon": "/icons/bamboo/bamboo-original.svg"
+  },
+  {
+    "name": "Bash",
+    "icon": "/icons/bash/bash-original.svg"
+  },
+  {
+    "name": "Bash",
+    "icon": "/icons/bash/bash-plain.svg"
+  },
+  {
+    "name": "Bazel",
+    "icon": "/icons/bazel/bazel-original-wordmark.svg"
+  },
+  {
+    "name": "Bazel",
+    "icon": "/icons/bazel/bazel-original.svg"
+  },
+  {
+    "name": "Bazel",
+    "icon": "/icons/bazel/bazel-plain-wordmark.svg"
+  },
+  {
+    "name": "Bazel",
+    "icon": "/icons/bazel/bazel-plain.svg"
+  },
+  {
+    "name": "Beats",
+    "icon": "/icons/beats/beats-original.svg"
+  },
+  {
+    "name": "Beats",
+    "icon": "/icons/beats/beats-plain.svg"
+  },
+  {
+    "name": "Behance",
+    "icon": "/icons/behance/behance-original-wordmark.svg"
+  },
+  {
+    "name": "Behance",
+    "icon": "/icons/behance/behance-original.svg"
+  },
+  {
+    "name": "Behance",
+    "icon": "/icons/behance/behance-plain-wordmark.svg"
+  },
+  {
+    "name": "Behance",
+    "icon": "/icons/behance/behance-plain.svg"
+  },
+  {
+    "name": "Bevyengine",
+    "icon": "/icons/bevyengine/bevyengine-line-wordmark.svg"
+  },
+  {
+    "name": "Bevyengine",
+    "icon": "/icons/bevyengine/bevyengine-line.svg"
+  },
+  {
+    "name": "Bevyengine",
+    "icon": "/icons/bevyengine/bevyengine-original-wordmark.svg"
+  },
+  {
+    "name": "Bevyengine",
+    "icon": "/icons/bevyengine/bevyengine-original.svg"
+  },
+  {
+    "name": "Bevyengine",
+    "icon": "/icons/bevyengine/bevyengine-plain-wordmark.svg"
+  },
+  {
+    "name": "Bevyengine",
+    "icon": "/icons/bevyengine/bevyengine-plain.svg"
+  },
+  {
+    "name": "Biome",
+    "icon": "/icons/biome/biome-line-wordmark.svg"
+  },
+  {
+    "name": "Biome",
+    "icon": "/icons/biome/biome-line.svg"
+  },
+  {
+    "name": "Biome",
+    "icon": "/icons/biome/biome-original-wordmark.svg"
+  },
+  {
+    "name": "Biome",
+    "icon": "/icons/biome/biome-original.svg"
+  },
+  {
+    "name": "Biome",
+    "icon": "/icons/biome/biome-plain-wordmark.svg"
+  },
+  {
+    "name": "Bitbucket",
+    "icon": "/icons/bitbucket/bitbucket-original-wordmark.svg"
+  },
+  {
+    "name": "Bitbucket",
+    "icon": "/icons/bitbucket/bitbucket-original.svg"
+  },
+  {
+    "name": "Blazor",
+    "icon": "/icons/blazor/blazor-line.svg"
+  },
+  {
+    "name": "Blazor",
+    "icon": "/icons/blazor/blazor-original.svg"
+  },
+  {
+    "name": "Blender",
+    "icon": "/icons/blender/blender-original-wordmark.svg"
+  },
+  {
+    "name": "Blender",
+    "icon": "/icons/blender/blender-original.svg"
+  },
+  {
+    "name": "Bootstrap",
+    "icon": "/icons/bootstrap/bootstrap-original-wordmark.svg"
+  },
+  {
+    "name": "Bootstrap",
+    "icon": "/icons/bootstrap/bootstrap-original.svg"
+  },
+  {
+    "name": "Bootstrap",
+    "icon": "/icons/bootstrap/bootstrap-plain-wordmark.svg"
+  },
+  {
+    "name": "Bootstrap",
+    "icon": "/icons/bootstrap/bootstrap-plain.svg"
+  },
+  {
+    "name": "Bower",
+    "icon": "/icons/bower/bower-line-wordmark.svg"
+  },
+  {
+    "name": "Bower",
+    "icon": "/icons/bower/bower-line.svg"
+  },
+  {
+    "name": "Bower",
+    "icon": "/icons/bower/bower-original-wordmark.svg"
+  },
+  {
+    "name": "Bower",
+    "icon": "/icons/bower/bower-original.svg"
+  },
+  {
+    "name": "Bower",
+    "icon": "/icons/bower/bower-plain-wordmark.svg"
+  },
+  {
+    "name": "Bower",
+    "icon": "/icons/bower/bower-plain.svg"
+  },
+  {
+    "name": "Browserstack",
+    "icon": "/icons/browserstack/browserstack-line-wordmark.svg"
+  },
+  {
+    "name": "Browserstack",
+    "icon": "/icons/browserstack/browserstack-line.svg"
+  },
+  {
+    "name": "Browserstack",
+    "icon": "/icons/browserstack/browserstack-original-wordmark.svg"
+  },
+  {
+    "name": "Browserstack",
+    "icon": "/icons/browserstack/browserstack-original.svg"
+  },
+  {
+    "name": "Browserstack",
+    "icon": "/icons/browserstack/browserstack-plain-wordmark.svg"
+  },
+  {
+    "name": "Browserstack",
+    "icon": "/icons/browserstack/browserstack-plain.svg"
+  },
+  {
+    "name": "Bulma",
+    "icon": "/icons/bulma/bulma-plain.svg"
+  },
+  {
+    "name": "Bun",
+    "icon": "/icons/bun/bun-line.svg"
+  },
+  {
+    "name": "Bun",
+    "icon": "/icons/bun/bun-original.svg"
+  },
+  {
+    "name": "Bun",
+    "icon": "/icons/bun/bun-plain.svg"
+  },
+  {
+    "name": "C",
+    "icon": "/icons/c/c-line.svg"
+  },
+  {
+    "name": "C",
+    "icon": "/icons/c/c-original.svg"
+  },
+  {
+    "name": "Cairo",
+    "icon": "/icons/cairo/cairo-original-wordmark.svg"
+  },
+  {
+    "name": "Cairo",
+    "icon": "/icons/cairo/cairo-original.svg"
+  },
+  {
+    "name": "Cairo",
+    "icon": "/icons/cairo/cairo-plain-wordmark.svg"
+  },
+  {
+    "name": "Cairo",
+    "icon": "/icons/cairo/cairo-plain.svg"
+  },
+  {
+    "name": "Cakephp",
+    "icon": "/icons/cakephp/cakephp-original-wordmark.svg"
+  },
+  {
+    "name": "Cakephp",
+    "icon": "/icons/cakephp/cakephp-original.svg"
+  },
+  {
+    "name": "Cakephp",
+    "icon": "/icons/cakephp/cakephp-plain-wordmark.svg"
+  },
+  {
+    "name": "Cakephp",
+    "icon": "/icons/cakephp/cakephp-plain.svg"
+  },
+  {
+    "name": "Canva",
+    "icon": "/icons/canva/canva-original.svg"
+  },
+  {
+    "name": "Capacitor",
+    "icon": "/icons/capacitor/capacitor-original-wordmark.svg"
+  },
+  {
+    "name": "Capacitor",
+    "icon": "/icons/capacitor/capacitor-original.svg"
+  },
+  {
+    "name": "Capacitor",
+    "icon": "/icons/capacitor/capacitor-plain-wordmark.svg"
+  },
+  {
+    "name": "Capacitor",
+    "icon": "/icons/capacitor/capacitor-plain.svg"
+  },
+  {
+    "name": "Carbon",
+    "icon": "/icons/carbon/carbon-original.svg"
+  },
+  {
+    "name": "Cassandra",
+    "icon": "/icons/cassandra/cassandra-original-wordmark.svg"
+  },
+  {
+    "name": "Cassandra",
+    "icon": "/icons/cassandra/cassandra-original.svg"
+  },
+  {
+    "name": "Cassandra",
+    "icon": "/icons/cassandra/cassandra-plain-wordmark.svg"
+  },
+  {
+    "name": "Cassandra",
+    "icon": "/icons/cassandra/cassandra-plain.svg"
+  },
+  {
+    "name": "Centos",
+    "icon": "/icons/centos/centos-original-wordmark.svg"
+  },
+  {
+    "name": "Centos",
+    "icon": "/icons/centos/centos-original.svg"
+  },
+  {
+    "name": "Centos",
+    "icon": "/icons/centos/centos-plain-wordmark.svg"
+  },
+  {
+    "name": "Centos",
+    "icon": "/icons/centos/centos-plain.svg"
+  },
+  {
+    "name": "Ceylon",
+    "icon": "/icons/ceylon/ceylon-original-wordmark.svg"
+  },
+  {
+    "name": "Ceylon",
+    "icon": "/icons/ceylon/ceylon-original.svg"
+  },
+  {
+    "name": "Ceylon",
+    "icon": "/icons/ceylon/ceylon-plain-wordmark.svg"
+  },
+  {
+    "name": "Ceylon",
+    "icon": "/icons/ceylon/ceylon-plain.svg"
+  },
+  {
+    "name": "Chakraui",
+    "icon": "/icons/chakraui/chakraui-original-wordmark.svg"
+  },
+  {
+    "name": "Chakraui",
+    "icon": "/icons/chakraui/chakraui-original.svg"
+  },
+  {
+    "name": "Chakraui",
+    "icon": "/icons/chakraui/chakraui-plain-wordmark.svg"
+  },
+  {
+    "name": "Chakraui",
+    "icon": "/icons/chakraui/chakraui-plain.svg"
+  },
+  {
+    "name": "Chartjs",
+    "icon": "/icons/chartjs/chartjs-original-wordmark.svg"
+  },
+  {
+    "name": "Chartjs",
+    "icon": "/icons/chartjs/chartjs-original.svg"
+  },
+  {
+    "name": "Chartjs",
+    "icon": "/icons/chartjs/chartjs-plain-wordmark.svg"
+  },
+  {
+    "name": "Chartjs",
+    "icon": "/icons/chartjs/chartjs-plain.svg"
+  },
+  {
+    "name": "Chrome",
+    "icon": "/icons/chrome/chrome-original-wordmark.svg"
+  },
+  {
+    "name": "Chrome",
+    "icon": "/icons/chrome/chrome-original.svg"
+  },
+  {
+    "name": "Chrome",
+    "icon": "/icons/chrome/chrome-plain-wordmark.svg"
+  },
+  {
+    "name": "Chrome",
+    "icon": "/icons/chrome/chrome-plain.svg"
+  },
+  {
+    "name": "Circleci",
+    "icon": "/icons/circleci/circleci-plain-wordmark.svg"
+  },
+  {
+    "name": "Circleci",
+    "icon": "/icons/circleci/circleci-plain.svg"
+  },
+  {
+    "name": "Clarity",
+    "icon": "/icons/clarity/clarity-original-wordmark.svg"
+  },
+  {
+    "name": "Clarity",
+    "icon": "/icons/clarity/clarity-original.svg"
+  },
+  {
+    "name": "Clarity",
+    "icon": "/icons/clarity/clarity-plain-wordmark.svg"
+  },
+  {
+    "name": "Clarity",
+    "icon": "/icons/clarity/clarity-plain.svg"
+  },
+  {
+    "name": "Clickhouse",
+    "icon": "/icons/clickhouse/clickhouse-original.svg"
+  },
+  {
+    "name": "Clickhouse",
+    "icon": "/icons/clickhouse/clickhouse-plain.svg"
+  },
+  {
+    "name": "Clion",
+    "icon": "/icons/clion/clion-original-wordmark.svg"
+  },
+  {
+    "name": "Clion",
+    "icon": "/icons/clion/clion-original.svg"
+  },
+  {
+    "name": "Clion",
+    "icon": "/icons/clion/clion-plain-wordmark.svg"
+  },
+  {
+    "name": "Clion",
+    "icon": "/icons/clion/clion-plain.svg"
+  },
+  {
+    "name": "Clojure",
+    "icon": "/icons/clojure/clojure-line.svg"
+  },
+  {
+    "name": "Clojure",
+    "icon": "/icons/clojure/clojure-original.svg"
+  },
+  {
+    "name": "Clojurescript",
+    "icon": "/icons/clojurescript/clojurescript-original.svg"
+  },
+  {
+    "name": "Clojurescript",
+    "icon": "/icons/clojurescript/clojurescript-plain.svg"
+  },
+  {
+    "name": "Cloudflare",
+    "icon": "/icons/cloudflare/cloudflare-original-wordmark.svg"
+  },
+  {
+    "name": "Cloudflare",
+    "icon": "/icons/cloudflare/cloudflare-original.svg"
+  },
+  {
+    "name": "Cloudflare",
+    "icon": "/icons/cloudflare/cloudflare-plain-wordmark.svg"
+  },
+  {
+    "name": "Cloudflare",
+    "icon": "/icons/cloudflare/cloudflare-plain.svg"
+  },
+  {
+    "name": "Cloudflareworkers",
+    "icon": "/icons/cloudflareworkers/cloudflareworkers-original-wordmark.svg"
+  },
+  {
+    "name": "Cloudflareworkers",
+    "icon": "/icons/cloudflareworkers/cloudflareworkers-original.svg"
+  },
+  {
+    "name": "Cloudflareworkers",
+    "icon": "/icons/cloudflareworkers/cloudflareworkers-plain-wordmark.svg"
+  },
+  {
+    "name": "Cloudflareworkers",
+    "icon": "/icons/cloudflareworkers/cloudflareworkers-plain.svg"
+  },
+  {
+    "name": "Cloudrun",
+    "icon": "/icons/cloudrun/cloudrun-line.svg"
+  },
+  {
+    "name": "Cloudrun",
+    "icon": "/icons/cloudrun/cloudrun-original.svg"
+  },
+  {
+    "name": "Cloudrun",
+    "icon": "/icons/cloudrun/cloudrun-plain.svg"
+  },
+  {
+    "name": "Cmake",
+    "icon": "/icons/cmake/cmake-original-wordmark.svg"
+  },
+  {
+    "name": "Cmake",
+    "icon": "/icons/cmake/cmake-original.svg"
+  },
+  {
+    "name": "Cmake",
+    "icon": "/icons/cmake/cmake-plain-wordmark.svg"
+  },
+  {
+    "name": "Cmake",
+    "icon": "/icons/cmake/cmake-plain.svg"
+  },
+  {
+    "name": "Cobol",
+    "icon": "/icons/cobol/cobol-original.svg"
+  },
+  {
+    "name": "Codeac",
+    "icon": "/icons/codeac/codeac-original.svg"
+  },
+  {
+    "name": "Codecov",
+    "icon": "/icons/codecov/codecov-plain.svg"
+  },
+  {
+    "name": "Codeigniter",
+    "icon": "/icons/codeigniter/codeigniter-plain-wordmark.svg"
+  },
+  {
+    "name": "Codeigniter",
+    "icon": "/icons/codeigniter/codeigniter-plain.svg"
+  },
+  {
+    "name": "Codepen",
+    "icon": "/icons/codepen/codepen-line-wordmark.svg"
+  },
+  {
+    "name": "Codepen",
+    "icon": "/icons/codepen/codepen-line.svg"
+  },
+  {
+    "name": "Codepen",
+    "icon": "/icons/codepen/codepen-original-wordmark.svg"
+  },
+  {
+    "name": "Codepen",
+    "icon": "/icons/codepen/codepen-original.svg"
+  },
+  {
+    "name": "Coffeescript",
+    "icon": "/icons/coffeescript/coffeescript-original-wordmark.svg"
+  },
+  {
+    "name": "Coffeescript",
+    "icon": "/icons/coffeescript/coffeescript-original.svg"
+  },
+  {
+    "name": "Composer",
+    "icon": "/icons/composer/composer-line-wordmark.svg"
+  },
+  {
+    "name": "Composer",
+    "icon": "/icons/composer/composer-line.svg"
+  },
+  {
+    "name": "Composer",
+    "icon": "/icons/composer/composer-original.svg"
+  },
+  {
+    "name": "Confluence",
+    "icon": "/icons/confluence/confluence-line-wordmark.svg"
+  },
+  {
+    "name": "Confluence",
+    "icon": "/icons/confluence/confluence-line.svg"
+  },
+  {
+    "name": "Confluence",
+    "icon": "/icons/confluence/confluence-original-wordmark.svg"
+  },
+  {
+    "name": "Confluence",
+    "icon": "/icons/confluence/confluence-original.svg"
+  },
+  {
+    "name": "Confluence",
+    "icon": "/icons/confluence/confluence-plain-wordmark.svg"
+  },
+  {
+    "name": "Confluence",
+    "icon": "/icons/confluence/confluence-plain.svg"
+  },
+  {
+    "name": "Consul",
+    "icon": "/icons/consul/consul-original-wordmark.svg"
+  },
+  {
+    "name": "Consul",
+    "icon": "/icons/consul/consul-original.svg"
+  },
+  {
+    "name": "Consul",
+    "icon": "/icons/consul/consul-plain-wordmark.svg"
+  },
+  {
+    "name": "Contao",
+    "icon": "/icons/contao/contao-original-wordmark.svg"
+  },
+  {
+    "name": "Contao",
+    "icon": "/icons/contao/contao-original.svg"
+  },
+  {
+    "name": "Corejs",
+    "icon": "/icons/corejs/corejs-original-wordmark.svg"
+  },
+  {
+    "name": "Corejs",
+    "icon": "/icons/corejs/corejs-original.svg"
+  },
+  {
+    "name": "Cosmosdb",
+    "icon": "/icons/cosmosdb/cosmosdb-original-wordmark.svg"
+  },
+  {
+    "name": "Cosmosdb",
+    "icon": "/icons/cosmosdb/cosmosdb-original.svg"
+  },
+  {
+    "name": "Cosmosdb",
+    "icon": "/icons/cosmosdb/cosmosdb-plain-wordmark.svg"
+  },
+  {
+    "name": "Cosmosdb",
+    "icon": "/icons/cosmosdb/cosmosdb-plain.svg"
+  },
+  {
+    "name": "Couchbase",
+    "icon": "/icons/couchbase/couchbase-original-wordmark.svg"
+  },
+  {
+    "name": "Couchbase",
+    "icon": "/icons/couchbase/couchbase-original.svg"
+  },
+  {
+    "name": "Couchbase",
+    "icon": "/icons/couchbase/couchbase-plain-wordmark.svg"
+  },
+  {
+    "name": "Couchdb",
+    "icon": "/icons/couchdb/couchdb-original-wordmark.svg"
+  },
+  {
+    "name": "Couchdb",
+    "icon": "/icons/couchdb/couchdb-original.svg"
+  },
+  {
+    "name": "Couchdb",
+    "icon": "/icons/couchdb/couchdb-plain-wordmark.svg"
+  },
+  {
+    "name": "Couchdb",
+    "icon": "/icons/couchdb/couchdb-plain.svg"
+  },
+  {
+    "name": "Cpanel",
+    "icon": "/icons/cpanel/cpanel-original-wordmark.svg"
+  },
+  {
+    "name": "Cpanel",
+    "icon": "/icons/cpanel/cpanel-original.svg"
+  },
+  {
+    "name": "Cplusplus",
+    "icon": "/icons/cplusplus/cplusplus-line.svg"
+  },
+  {
+    "name": "Cplusplus",
+    "icon": "/icons/cplusplus/cplusplus-original.svg"
+  },
+  {
+    "name": "Cplusplus",
+    "icon": "/icons/cplusplus/cplusplus-plain.svg"
+  },
+  {
+    "name": "Crystal",
+    "icon": "/icons/crystal/crystal-line-wordmark.svg"
+  },
+  {
+    "name": "Crystal",
+    "icon": "/icons/crystal/crystal-line.svg"
+  },
+  {
+    "name": "Crystal",
+    "icon": "/icons/crystal/crystal-original-wordmark.svg"
+  },
+  {
+    "name": "Crystal",
+    "icon": "/icons/crystal/crystal-original.svg"
+  },
+  {
+    "name": "Csharp",
+    "icon": "/icons/csharp/csharp-line.svg"
+  },
+  {
+    "name": "Csharp",
+    "icon": "/icons/csharp/csharp-original.svg"
+  },
+  {
+    "name": "Csharp",
+    "icon": "/icons/csharp/csharp-plain.svg"
+  },
+  {
+    "name": "Css3",
+    "icon": "/icons/css3/css3-original-wordmark.svg"
+  },
+  {
+    "name": "Css3",
+    "icon": "/icons/css3/css3-original.svg"
+  },
+  {
+    "name": "Css3",
+    "icon": "/icons/css3/css3-plain-wordmark.svg"
+  },
+  {
+    "name": "Css3",
+    "icon": "/icons/css3/css3-plain.svg"
+  },
+  {
+    "name": "Cucumber",
+    "icon": "/icons/cucumber/cucumber-plain-wordmark.svg"
+  },
+  {
+    "name": "Cucumber",
+    "icon": "/icons/cucumber/cucumber-plain.svg"
+  },
+  {
+    "name": "Cypressio",
+    "icon": "/icons/cypressio/cypressio-line-wordmark.svg"
+  },
+  {
+    "name": "Cypressio",
+    "icon": "/icons/cypressio/cypressio-line.svg"
+  },
+  {
+    "name": "Cypressio",
+    "icon": "/icons/cypressio/cypressio-original-wordmark.svg"
+  },
+  {
+    "name": "Cypressio",
+    "icon": "/icons/cypressio/cypressio-original.svg"
+  },
+  {
+    "name": "Cypressio",
+    "icon": "/icons/cypressio/cypressio-plain-wordmark.svg"
+  },
+  {
+    "name": "Cypressio",
+    "icon": "/icons/cypressio/cypressio-plain.svg"
+  },
+  {
+    "name": "D3js",
+    "icon": "/icons/d3js/d3js-original.svg"
+  },
+  {
+    "name": "D3js",
+    "icon": "/icons/d3js/d3js-plain.svg"
+  },
+  {
+    "name": "Dart",
+    "icon": "/icons/dart/dart-original-wordmark.svg"
+  },
+  {
+    "name": "Dart",
+    "icon": "/icons/dart/dart-original.svg"
+  },
+  {
+    "name": "Dart",
+    "icon": "/icons/dart/dart-plain-wordmark.svg"
+  },
+  {
+    "name": "Dart",
+    "icon": "/icons/dart/dart-plain.svg"
+  },
+  {
+    "name": "Datadog",
+    "icon": "/icons/datadog/datadog-original-wordmark.svg"
+  },
+  {
+    "name": "Datadog",
+    "icon": "/icons/datadog/datadog-original.svg"
+  },
+  {
+    "name": "Datagrip",
+    "icon": "/icons/datagrip/datagrip-original.svg"
+  },
+  {
+    "name": "Datagrip",
+    "icon": "/icons/datagrip/datagrip-plain-wordmark.svg"
+  },
+  {
+    "name": "Datagrip",
+    "icon": "/icons/datagrip/datagrip-plain.svg"
+  },
+  {
+    "name": "Dataspell",
+    "icon": "/icons/dataspell/dataspell-original-wordmark.svg"
+  },
+  {
+    "name": "Dataspell",
+    "icon": "/icons/dataspell/dataspell-original.svg"
+  },
+  {
+    "name": "Dataspell",
+    "icon": "/icons/dataspell/dataspell-plain-wordmark.svg"
+  },
+  {
+    "name": "Dataspell",
+    "icon": "/icons/dataspell/dataspell-plain.svg"
+  },
+  {
+    "name": "Datatables",
+    "icon": "/icons/datatables/datatables-original.svg"
+  },
+  {
+    "name": "Dbeaver",
+    "icon": "/icons/dbeaver/dbeaver-original.svg"
+  },
+  {
+    "name": "Dbeaver",
+    "icon": "/icons/dbeaver/dbeaver-plain.svg"
+  },
+  {
+    "name": "Debian",
+    "icon": "/icons/debian/debian-original-wordmark.svg"
+  },
+  {
+    "name": "Debian",
+    "icon": "/icons/debian/debian-original.svg"
+  },
+  {
+    "name": "Debian",
+    "icon": "/icons/debian/debian-plain-wordmark.svg"
+  },
+  {
+    "name": "Debian",
+    "icon": "/icons/debian/debian-plain.svg"
+  },
+  {
+    "name": "Delphi",
+    "icon": "/icons/delphi/delphi-original.svg"
+  },
+  {
+    "name": "Delphi",
+    "icon": "/icons/delphi/delphi-plain.svg"
+  },
+  {
+    "name": "Denojs",
+    "icon": "/icons/denojs/denojs-original-wordmark.svg"
+  },
+  {
+    "name": "Denojs",
+    "icon": "/icons/denojs/denojs-original.svg"
+  },
+  {
+    "name": "Detaspace",
+    "icon": "/icons/detaspace/detaspace-line-wordmark.svg"
+  },
+  {
+    "name": "Detaspace",
+    "icon": "/icons/detaspace/detaspace-line.svg"
+  },
+  {
+    "name": "Detaspace",
+    "icon": "/icons/detaspace/detaspace-original-wordmark.svg"
+  },
+  {
+    "name": "Detaspace",
+    "icon": "/icons/detaspace/detaspace-original.svg"
+  },
+  {
+    "name": "Devicon",
+    "icon": "/icons/devicon/devicon-line-wordmark.svg"
+  },
+  {
+    "name": "Devicon",
+    "icon": "/icons/devicon/devicon-line.svg"
+  },
+  {
+    "name": "Devicon",
+    "icon": "/icons/devicon/devicon-original-wordmark.svg"
+  },
+  {
+    "name": "Devicon",
+    "icon": "/icons/devicon/devicon-original.svg"
+  },
+  {
+    "name": "Devicon",
+    "icon": "/icons/devicon/devicon-plain-wordmark.svg"
+  },
+  {
+    "name": "Devicon",
+    "icon": "/icons/devicon/devicon-plain.svg"
+  },
+  {
+    "name": "Digitalocean",
+    "icon": "/icons/digitalocean/digitalocean-original-wordmark.svg"
+  },
+  {
+    "name": "Digitalocean",
+    "icon": "/icons/digitalocean/digitalocean-original.svg"
+  },
+  {
+    "name": "Discloud",
+    "icon": "/icons/discloud/discloud-original-wordmark.svg"
+  },
+  {
+    "name": "Discloud",
+    "icon": "/icons/discloud/discloud-original.svg"
+  },
+  {
+    "name": "Discloud",
+    "icon": "/icons/discloud/discloud-plain-wordmark.svg"
+  },
+  {
+    "name": "Discordjs",
+    "icon": "/icons/discordjs/discordjs-original-wordmark.svg"
+  },
+  {
+    "name": "Discordjs",
+    "icon": "/icons/discordjs/discordjs-original.svg"
+  },
+  {
+    "name": "Discordjs",
+    "icon": "/icons/discordjs/discordjs-plain-wordmark.svg"
+  },
+  {
+    "name": "Discordjs",
+    "icon": "/icons/discordjs/discordjs-plain.svg"
+  },
+  {
+    "name": "Django",
+    "icon": "/icons/django/django-plain-wordmark.svg"
+  },
+  {
+    "name": "Django",
+    "icon": "/icons/django/django-plain.svg"
+  },
+  {
+    "name": "Djangorest",
+    "icon": "/icons/djangorest/djangorest-line-wordmark.svg"
+  },
+  {
+    "name": "Djangorest",
+    "icon": "/icons/djangorest/djangorest-line.svg"
+  },
+  {
+    "name": "Djangorest",
+    "icon": "/icons/djangorest/djangorest-original-wordmark.svg"
+  },
+  {
+    "name": "Djangorest",
+    "icon": "/icons/djangorest/djangorest-original.svg"
+  },
+  {
+    "name": "Djangorest",
+    "icon": "/icons/djangorest/djangorest-plain-wordmark.svg"
+  },
+  {
+    "name": "Djangorest",
+    "icon": "/icons/djangorest/djangorest-plain.svg"
+  },
+  {
+    "name": "Docker",
+    "icon": "/icons/docker/docker-original-wordmark.svg"
+  },
+  {
+    "name": "Docker",
+    "icon": "/icons/docker/docker-original.svg"
+  },
+  {
+    "name": "Docker",
+    "icon": "/icons/docker/docker-plain-wordmark.svg"
+  },
+  {
+    "name": "Docker",
+    "icon": "/icons/docker/docker-plain.svg"
+  },
+  {
+    "name": "Doctrine",
+    "icon": "/icons/doctrine/doctrine-line-wordmark.svg"
+  },
+  {
+    "name": "Doctrine",
+    "icon": "/icons/doctrine/doctrine-line.svg"
+  },
+  {
+    "name": "Doctrine",
+    "icon": "/icons/doctrine/doctrine-original-wordmark.svg"
+  },
+  {
+    "name": "Doctrine",
+    "icon": "/icons/doctrine/doctrine-original.svg"
+  },
+  {
+    "name": "Doctrine",
+    "icon": "/icons/doctrine/doctrine-plain-wordmark.svg"
+  },
+  {
+    "name": "Doctrine",
+    "icon": "/icons/doctrine/doctrine-plain.svg"
+  },
+  {
+    "name": "Dot-net",
+    "icon": "/icons/dot-net/dot-net-original-wordmark.svg"
+  },
+  {
+    "name": "Dot-net",
+    "icon": "/icons/dot-net/dot-net-original.svg"
+  },
+  {
+    "name": "Dot-net",
+    "icon": "/icons/dot-net/dot-net-plain-wordmark.svg"
+  },
+  {
+    "name": "Dot-net",
+    "icon": "/icons/dot-net/dot-net-plain.svg"
+  },
+  {
+    "name": "Dotnetcore",
+    "icon": "/icons/dotnetcore/dotnetcore-original.svg"
+  },
+  {
+    "name": "Dotnetcore",
+    "icon": "/icons/dotnetcore/dotnetcore-plain.svg"
+  },
+  {
+    "name": "Dovecot",
+    "icon": "/icons/dovecot/dovecot-line.svg"
+  },
+  {
+    "name": "Dovecot",
+    "icon": "/icons/dovecot/dovecot-original.svg"
+  },
+  {
+    "name": "Dovecot",
+    "icon": "/icons/dovecot/dovecot-plain.svg"
+  },
+  {
+    "name": "Dreamweaver",
+    "icon": "/icons/dreamweaver/dreamweaver-line.svg"
+  },
+  {
+    "name": "Dreamweaver",
+    "icon": "/icons/dreamweaver/dreamweaver-original.svg"
+  },
+  {
+    "name": "Dreamweaver",
+    "icon": "/icons/dreamweaver/dreamweaver-plain.svg"
+  },
+  {
+    "name": "Dropwizard",
+    "icon": "/icons/dropwizard/dropwizard-original.svg"
+  },
+  {
+    "name": "Dropwizard",
+    "icon": "/icons/dropwizard/dropwizard-plain.svg"
+  },
+  {
+    "name": "Drupal",
+    "icon": "/icons/drupal/drupal-original-wordmark.svg"
+  },
+  {
+    "name": "Drupal",
+    "icon": "/icons/drupal/drupal-original.svg"
+  },
+  {
+    "name": "Drupal",
+    "icon": "/icons/drupal/drupal-plain-wordmark.svg"
+  },
+  {
+    "name": "Drupal",
+    "icon": "/icons/drupal/drupal-plain.svg"
+  },
+  {
+    "name": "Duckdb",
+    "icon": "/icons/duckdb/duckdb-original.svg"
+  },
+  {
+    "name": "Duckdb",
+    "icon": "/icons/duckdb/duckdb-plain.svg"
+  },
+  {
+    "name": "Dyalog",
+    "icon": "/icons/dyalog/dyalog-original.svg"
+  },
+  {
+    "name": "Dyalog",
+    "icon": "/icons/dyalog/dyalog-plain.svg"
+  },
+  {
+    "name": "Dynamodb",
+    "icon": "/icons/dynamodb/dynamodb-original.svg"
+  },
+  {
+    "name": "Dynamodb",
+    "icon": "/icons/dynamodb/dynamodb-plain.svg"
+  },
+  {
+    "name": "Dynatrace",
+    "icon": "/icons/dynatrace/dynatrace-line-wordmark.svg"
+  },
+  {
+    "name": "Dynatrace",
+    "icon": "/icons/dynatrace/dynatrace-line.svg"
+  },
+  {
+    "name": "Dynatrace",
+    "icon": "/icons/dynatrace/dynatrace-original-wordmark.svg"
+  },
+  {
+    "name": "Dynatrace",
+    "icon": "/icons/dynatrace/dynatrace-original.svg"
+  },
+  {
+    "name": "Dynatrace",
+    "icon": "/icons/dynatrace/dynatrace-plain-wordmark.svg"
+  },
+  {
+    "name": "Dynatrace",
+    "icon": "/icons/dynatrace/dynatrace-plain.svg"
+  },
+  {
+    "name": "Eclipse",
+    "icon": "/icons/eclipse/eclipse-original-wordmark.svg"
+  },
+  {
+    "name": "Eclipse",
+    "icon": "/icons/eclipse/eclipse-original.svg"
+  },
+  {
+    "name": "Eclipse",
+    "icon": "/icons/eclipse/eclipse-plain-wordmark.svg"
+  },
+  {
+    "name": "Eclipse",
+    "icon": "/icons/eclipse/eclipse-plain.svg"
+  },
+  {
+    "name": "Ecto",
+    "icon": "/icons/ecto/ecto-original-wordmark.svg"
+  },
+  {
+    "name": "Ecto",
+    "icon": "/icons/ecto/ecto-original.svg"
+  },
+  {
+    "name": "Ecto",
+    "icon": "/icons/ecto/ecto-plain-wordmark.svg"
+  },
+  {
+    "name": "Elasticsearch",
+    "icon": "/icons/elasticsearch/elasticsearch-original-wordmark.svg"
+  },
+  {
+    "name": "Elasticsearch",
+    "icon": "/icons/elasticsearch/elasticsearch-original.svg"
+  },
+  {
+    "name": "Elasticsearch",
+    "icon": "/icons/elasticsearch/elasticsearch-plain-wordmark.svg"
+  },
+  {
+    "name": "Elasticsearch",
+    "icon": "/icons/elasticsearch/elasticsearch-plain.svg"
+  },
+  {
+    "name": "Electron",
+    "icon": "/icons/electron/electron-original-wordmark.svg"
+  },
+  {
+    "name": "Electron",
+    "icon": "/icons/electron/electron-original.svg"
+  },
+  {
+    "name": "Eleventy",
+    "icon": "/icons/eleventy/eleventy-original.svg"
+  },
+  {
+    "name": "Eleventy",
+    "icon": "/icons/eleventy/eleventy-plain.svg"
+  },
+  {
+    "name": "Elixir",
+    "icon": "/icons/elixir/elixir-original-wordmark.svg"
+  },
+  {
+    "name": "Elixir",
+    "icon": "/icons/elixir/elixir-original.svg"
+  },
+  {
+    "name": "Elixir",
+    "icon": "/icons/elixir/elixir-plain-wordmark.svg"
+  },
+  {
+    "name": "Elixir",
+    "icon": "/icons/elixir/elixir-plain.svg"
+  },
+  {
+    "name": "Elm",
+    "icon": "/icons/elm/elm-original-wordmark.svg"
+  },
+  {
+    "name": "Elm",
+    "icon": "/icons/elm/elm-original.svg"
+  },
+  {
+    "name": "Elm",
+    "icon": "/icons/elm/elm-plain-wordmark.svg"
+  },
+  {
+    "name": "Elm",
+    "icon": "/icons/elm/elm-plain.svg"
+  },
+  {
+    "name": "Emacs",
+    "icon": "/icons/emacs/emacs-original.svg"
+  },
+  {
+    "name": "Embeddedc",
+    "icon": "/icons/embeddedc/embeddedc-original-wordmark.svg"
+  },
+  {
+    "name": "Embeddedc",
+    "icon": "/icons/embeddedc/embeddedc-original.svg"
+  },
+  {
+    "name": "Embeddedc",
+    "icon": "/icons/embeddedc/embeddedc-plain-wordmark.svg"
+  },
+  {
+    "name": "Embeddedc",
+    "icon": "/icons/embeddedc/embeddedc-plain.svg"
+  },
+  {
+    "name": "Ember",
+    "icon": "/icons/ember/ember-original-wordmark.svg"
+  },
+  {
+    "name": "Ember",
+    "icon": "/icons/ember/ember-original.svg"
+  },
+  {
+    "name": "Ember",
+    "icon": "/icons/ember/ember-plain.svg"
+  },
+  {
+    "name": "Entityframeworkcore",
+    "icon": "/icons/entityframeworkcore/entityframeworkcore-line.svg"
+  },
+  {
+    "name": "Entityframeworkcore",
+    "icon": "/icons/entityframeworkcore/entityframeworkcore-original.svg"
+  },
+  {
+    "name": "Entityframeworkcore",
+    "icon": "/icons/entityframeworkcore/entityframeworkcore-plain.svg"
+  },
+  {
+    "name": "Envoy",
+    "icon": "/icons/envoy/envoy-original-wordmark.svg"
+  },
+  {
+    "name": "Envoy",
+    "icon": "/icons/envoy/envoy-original.svg"
+  },
+  {
+    "name": "Envoy",
+    "icon": "/icons/envoy/envoy-plain-wordmark.svg"
+  },
+  {
+    "name": "Envoy",
+    "icon": "/icons/envoy/envoy-plain.svg"
+  },
+  {
+    "name": "Erlang",
+    "icon": "/icons/erlang/erlang-original-wordmark.svg"
+  },
+  {
+    "name": "Erlang",
+    "icon": "/icons/erlang/erlang-original.svg"
+  },
+  {
+    "name": "Erlang",
+    "icon": "/icons/erlang/erlang-plain-wordmark.svg"
+  },
+  {
+    "name": "Erlang",
+    "icon": "/icons/erlang/erlang-plain.svg"
+  },
+  {
+    "name": "Eslint",
+    "icon": "/icons/eslint/eslint-line-wordmark.svg"
+  },
+  {
+    "name": "Eslint",
+    "icon": "/icons/eslint/eslint-line.svg"
+  },
+  {
+    "name": "Eslint",
+    "icon": "/icons/eslint/eslint-original-wordmark.svg"
+  },
+  {
+    "name": "Eslint",
+    "icon": "/icons/eslint/eslint-original.svg"
+  },
+  {
+    "name": "Eslint",
+    "icon": "/icons/eslint/eslint-plain-wordmark.svg"
+  },
+  {
+    "name": "Eslint",
+    "icon": "/icons/eslint/eslint-plain.svg"
+  },
+  {
+    "name": "Expo",
+    "icon": "/icons/expo/expo-line-wordmark.svg"
+  },
+  {
+    "name": "Expo",
+    "icon": "/icons/expo/expo-line.svg"
+  },
+  {
+    "name": "Expo",
+    "icon": "/icons/expo/expo-original-wordmark.svg"
+  },
+  {
+    "name": "Expo",
+    "icon": "/icons/expo/expo-original.svg"
+  },
+  {
+    "name": "Express",
+    "icon": "/icons/express/express-original-wordmark.svg"
+  },
+  {
+    "name": "Express",
+    "icon": "/icons/express/express-original.svg"
+  },
+  {
+    "name": "Facebook",
+    "icon": "/icons/facebook/facebook-original.svg"
+  },
+  {
+    "name": "Facebook",
+    "icon": "/icons/facebook/facebook-plain.svg"
+  },
+  {
+    "name": "Fastapi",
+    "icon": "/icons/fastapi/fastapi-original-wordmark.svg"
+  },
+  {
+    "name": "Fastapi",
+    "icon": "/icons/fastapi/fastapi-original.svg"
+  },
+  {
+    "name": "Fastapi",
+    "icon": "/icons/fastapi/fastapi-plain-wordmark.svg"
+  },
+  {
+    "name": "Fastapi",
+    "icon": "/icons/fastapi/fastapi-plain.svg"
+  },
+  {
+    "name": "Fastify",
+    "icon": "/icons/fastify/fastify-original-wordmark.svg"
+  },
+  {
+    "name": "Fastify",
+    "icon": "/icons/fastify/fastify-original.svg"
+  },
+  {
+    "name": "Fastify",
+    "icon": "/icons/fastify/fastify-plain-wordmark.svg"
+  },
+  {
+    "name": "Fastify",
+    "icon": "/icons/fastify/fastify-plain.svg"
+  },
+  {
+    "name": "Faunadb",
+    "icon": "/icons/faunadb/faunadb-line-wordmark.svg"
+  },
+  {
+    "name": "Faunadb",
+    "icon": "/icons/faunadb/faunadb-line.svg"
+  },
+  {
+    "name": "Faunadb",
+    "icon": "/icons/faunadb/faunadb-original-wordmark.svg"
+  },
+  {
+    "name": "Faunadb",
+    "icon": "/icons/faunadb/faunadb-original.svg"
+  },
+  {
+    "name": "Feathersjs",
+    "icon": "/icons/feathersjs/feathersjs-original.svg"
+  },
+  {
+    "name": "Fedora",
+    "icon": "/icons/fedora/fedora-original.svg"
+  },
+  {
+    "name": "Fedora",
+    "icon": "/icons/fedora/fedora-plain.svg"
+  },
+  {
+    "name": "Fiber",
+    "icon": "/icons/fiber/fiber-line.svg"
+  },
+  {
+    "name": "Fiber",
+    "icon": "/icons/fiber/fiber-original.svg"
+  },
+  {
+    "name": "Fiber",
+    "icon": "/icons/fiber/fiber-plain.svg"
+  },
+  {
+    "name": "Figma",
+    "icon": "/icons/figma/figma-original.svg"
+  },
+  {
+    "name": "Figma",
+    "icon": "/icons/figma/figma-plain.svg"
+  },
+  {
+    "name": "Filamentphp",
+    "icon": "/icons/filamentphp/filamentphp-original.svg"
+  },
+  {
+    "name": "Filezilla",
+    "icon": "/icons/filezilla/filezilla-line-wordmark.svg"
+  },
+  {
+    "name": "Filezilla",
+    "icon": "/icons/filezilla/filezilla-line.svg"
+  },
+  {
+    "name": "Filezilla",
+    "icon": "/icons/filezilla/filezilla-original-wordmark.svg"
+  },
+  {
+    "name": "Filezilla",
+    "icon": "/icons/filezilla/filezilla-original.svg"
+  },
+  {
+    "name": "Filezilla",
+    "icon": "/icons/filezilla/filezilla-plain-wordmark.svg"
+  },
+  {
+    "name": "Filezilla",
+    "icon": "/icons/filezilla/filezilla-plain.svg"
+  },
+  {
+    "name": "Firebase",
+    "icon": "/icons/firebase/firebase-line-wordmark.svg"
+  },
+  {
+    "name": "Firebase",
+    "icon": "/icons/firebase/firebase-line.svg"
+  },
+  {
+    "name": "Firebase",
+    "icon": "/icons/firebase/firebase-original-wordmark.svg"
+  },
+  {
+    "name": "Firebase",
+    "icon": "/icons/firebase/firebase-original.svg"
+  },
+  {
+    "name": "Firebase",
+    "icon": "/icons/firebase/firebase-plain-wordmark.svg"
+  },
+  {
+    "name": "Firebase",
+    "icon": "/icons/firebase/firebase-plain.svg"
+  },
+  {
+    "name": "Firebird",
+    "icon": "/icons/firebird/firebird-original.svg"
+  },
+  {
+    "name": "Firebird",
+    "icon": "/icons/firebird/firebird-plain.svg"
+  },
+  {
+    "name": "Firefox",
+    "icon": "/icons/firefox/firefox-original-wordmark.svg"
+  },
+  {
+    "name": "Firefox",
+    "icon": "/icons/firefox/firefox-original.svg"
+  },
+  {
+    "name": "Firefox",
+    "icon": "/icons/firefox/firefox-plain-wordmark.svg"
+  },
+  {
+    "name": "Firefox",
+    "icon": "/icons/firefox/firefox-plain.svg"
+  },
+  {
+    "name": "Flask",
+    "icon": "/icons/flask/flask-original-wordmark.svg"
+  },
+  {
+    "name": "Flask",
+    "icon": "/icons/flask/flask-original.svg"
+  },
+  {
+    "name": "Flutter",
+    "icon": "/icons/flutter/flutter-original.svg"
+  },
+  {
+    "name": "Flutter",
+    "icon": "/icons/flutter/flutter-plain.svg"
+  },
+  {
+    "name": "Forgejo",
+    "icon": "/icons/forgejo/forgejo-line-wordmark.svg"
+  },
+  {
+    "name": "Forgejo",
+    "icon": "/icons/forgejo/forgejo-line.svg"
+  },
+  {
+    "name": "Forgejo",
+    "icon": "/icons/forgejo/forgejo-original-wordmark.svg"
+  },
+  {
+    "name": "Forgejo",
+    "icon": "/icons/forgejo/forgejo-original.svg"
+  },
+  {
+    "name": "Forgejo",
+    "icon": "/icons/forgejo/forgejo-plain-wordmark.svg"
+  },
+  {
+    "name": "Forgejo",
+    "icon": "/icons/forgejo/forgejo-plain.svg"
+  },
+  {
+    "name": "Fortran",
+    "icon": "/icons/fortran/fortran-original.svg"
+  },
+  {
+    "name": "Foundation",
+    "icon": "/icons/foundation/foundation-original-wordmark.svg"
+  },
+  {
+    "name": "Foundation",
+    "icon": "/icons/foundation/foundation-original.svg"
+  },
+  {
+    "name": "Foundation",
+    "icon": "/icons/foundation/foundation-plain-wordmark.svg"
+  },
+  {
+    "name": "Foundation",
+    "icon": "/icons/foundation/foundation-plain.svg"
+  },
+  {
+    "name": "Framermotion",
+    "icon": "/icons/framermotion/framermotion-original-wordmark.svg"
+  },
+  {
+    "name": "Framermotion",
+    "icon": "/icons/framermotion/framermotion-original.svg"
+  },
+  {
+    "name": "Framework7",
+    "icon": "/icons/framework7/framework7-original-wordmark.svg"
+  },
+  {
+    "name": "Framework7",
+    "icon": "/icons/framework7/framework7-original.svg"
+  },
+  {
+    "name": "Fsharp",
+    "icon": "/icons/fsharp/fsharp-original.svg"
+  },
+  {
+    "name": "Fsharp",
+    "icon": "/icons/fsharp/fsharp-plain.svg"
+  },
+  {
+    "name": "Fusion",
+    "icon": "/icons/fusion/fusion-original.svg"
+  },
+  {
+    "name": "Fusion",
+    "icon": "/icons/fusion/fusion-plain.svg"
+  },
+  {
+    "name": "Gardener",
+    "icon": "/icons/gardener/gardener-line.svg"
+  },
+  {
+    "name": "Gardener",
+    "icon": "/icons/gardener/gardener-original.svg"
+  },
+  {
+    "name": "Gardener",
+    "icon": "/icons/gardener/gardener-plain.svg"
+  },
+  {
+    "name": "Gatling",
+    "icon": "/icons/gatling/gatling-line-wordmark.svg"
+  },
+  {
+    "name": "Gatling",
+    "icon": "/icons/gatling/gatling-line.svg"
+  },
+  {
+    "name": "Gatling",
+    "icon": "/icons/gatling/gatling-original-wordmark.svg"
+  },
+  {
+    "name": "Gatling",
+    "icon": "/icons/gatling/gatling-original.svg"
+  },
+  {
+    "name": "Gatling",
+    "icon": "/icons/gatling/gatling-plain-wordmark.svg"
+  },
+  {
+    "name": "Gatsby",
+    "icon": "/icons/gatsby/gatsby-original-wordmark.svg"
+  },
+  {
+    "name": "Gatsby",
+    "icon": "/icons/gatsby/gatsby-original.svg"
+  },
+  {
+    "name": "Gatsby",
+    "icon": "/icons/gatsby/gatsby-plain-wordmark.svg"
+  },
+  {
+    "name": "Gazebo",
+    "icon": "/icons/gazebo/gazebo-original-wordmark.svg"
+  },
+  {
+    "name": "Gazebo",
+    "icon": "/icons/gazebo/gazebo-original.svg"
+  },
+  {
+    "name": "Gazebo",
+    "icon": "/icons/gazebo/gazebo-plain-wordmark.svg"
+  },
+  {
+    "name": "Gazebo",
+    "icon": "/icons/gazebo/gazebo-plain.svg"
+  },
+  {
+    "name": "Gcc",
+    "icon": "/icons/gcc/gcc-line.svg"
+  },
+  {
+    "name": "Gcc",
+    "icon": "/icons/gcc/gcc-original.svg"
+  },
+  {
+    "name": "Gcc",
+    "icon": "/icons/gcc/gcc-plain.svg"
+  },
+  {
+    "name": "Gentoo",
+    "icon": "/icons/gentoo/gentoo-line-wordmark.svg"
+  },
+  {
+    "name": "Gentoo",
+    "icon": "/icons/gentoo/gentoo-line.svg"
+  },
+  {
+    "name": "Gentoo",
+    "icon": "/icons/gentoo/gentoo-original-wordmark.svg"
+  },
+  {
+    "name": "Gentoo",
+    "icon": "/icons/gentoo/gentoo-original.svg"
+  },
+  {
+    "name": "Gentoo",
+    "icon": "/icons/gentoo/gentoo-plain-wordmark.svg"
+  },
+  {
+    "name": "Gentoo",
+    "icon": "/icons/gentoo/gentoo-plain.svg"
+  },
+  {
+    "name": "Ghost",
+    "icon": "/icons/ghost/ghost-original-wordmark.svg"
+  },
+  {
+    "name": "Ghost",
+    "icon": "/icons/ghost/ghost-original.svg"
+  },
+  {
+    "name": "Gimp",
+    "icon": "/icons/gimp/gimp-line-wordmark.svg"
+  },
+  {
+    "name": "Gimp",
+    "icon": "/icons/gimp/gimp-line.svg"
+  },
+  {
+    "name": "Gimp",
+    "icon": "/icons/gimp/gimp-original-wordmark.svg"
+  },
+  {
+    "name": "Gimp",
+    "icon": "/icons/gimp/gimp-original.svg"
+  },
+  {
+    "name": "Gimp",
+    "icon": "/icons/gimp/gimp-plain-wordmark.svg"
+  },
+  {
+    "name": "Gimp",
+    "icon": "/icons/gimp/gimp-plain.svg"
+  },
+  {
+    "name": "Git",
+    "icon": "/icons/git/git-original-wordmark.svg"
+  },
+  {
+    "name": "Git",
+    "icon": "/icons/git/git-original.svg"
+  },
+  {
+    "name": "Git",
+    "icon": "/icons/git/git-plain-wordmark.svg"
+  },
+  {
+    "name": "Git",
+    "icon": "/icons/git/git-plain.svg"
+  },
+  {
+    "name": "Gitbook",
+    "icon": "/icons/gitbook/gitbook-line-wordmark.svg"
+  },
+  {
+    "name": "Gitbook",
+    "icon": "/icons/gitbook/gitbook-line.svg"
+  },
+  {
+    "name": "Gitbook",
+    "icon": "/icons/gitbook/gitbook-original-wordmark.svg"
+  },
+  {
+    "name": "Gitbook",
+    "icon": "/icons/gitbook/gitbook-original.svg"
+  },
+  {
+    "name": "Github",
+    "icon": "/icons/github/github-original-wordmark.svg"
+  },
+  {
+    "name": "Github",
+    "icon": "/icons/github/github-original.svg"
+  },
+  {
+    "name": "Githubactions",
+    "icon": "/icons/githubactions/githubactions-original-wordmark.svg"
+  },
+  {
+    "name": "Githubactions",
+    "icon": "/icons/githubactions/githubactions-original.svg"
+  },
+  {
+    "name": "Githubactions",
+    "icon": "/icons/githubactions/githubactions-plain-wordmark.svg"
+  },
+  {
+    "name": "Githubactions",
+    "icon": "/icons/githubactions/githubactions-plain.svg"
+  },
+  {
+    "name": "Githubcodespaces",
+    "icon": "/icons/githubcodespaces/githubcodespaces-original.svg"
+  },
+  {
+    "name": "Githubcodespaces",
+    "icon": "/icons/githubcodespaces/githubcodespaces-plain.svg"
+  },
+  {
+    "name": "Gitkraken",
+    "icon": "/icons/gitkraken/gitkraken-original-wordmark.svg"
+  },
+  {
+    "name": "Gitkraken",
+    "icon": "/icons/gitkraken/gitkraken-original.svg"
+  },
+  {
+    "name": "Gitkraken",
+    "icon": "/icons/gitkraken/gitkraken-plain-wordmark.svg"
+  },
+  {
+    "name": "Gitlab",
+    "icon": "/icons/gitlab/gitlab-original-wordmark.svg"
+  },
+  {
+    "name": "Gitlab",
+    "icon": "/icons/gitlab/gitlab-original.svg"
+  },
+  {
+    "name": "Gitlab",
+    "icon": "/icons/gitlab/gitlab-plain-wordmark.svg"
+  },
+  {
+    "name": "Gitlab",
+    "icon": "/icons/gitlab/gitlab-plain.svg"
+  },
+  {
+    "name": "Gitpod",
+    "icon": "/icons/gitpod/gitpod-original-wordmark.svg"
+  },
+  {
+    "name": "Gitpod",
+    "icon": "/icons/gitpod/gitpod-original.svg"
+  },
+  {
+    "name": "Gitpod",
+    "icon": "/icons/gitpod/gitpod-plain-wordmark.svg"
+  },
+  {
+    "name": "Gitpod",
+    "icon": "/icons/gitpod/gitpod-plain.svg"
+  },
+  {
+    "name": "Gitter",
+    "icon": "/icons/gitter/gitter-plain-wordmark.svg"
+  },
+  {
+    "name": "Gitter",
+    "icon": "/icons/gitter/gitter-plain.svg"
+  },
+  {
+    "name": "Gleam",
+    "icon": "/icons/gleam/gleam-original.svg"
+  },
+  {
+    "name": "Gleam",
+    "icon": "/icons/gleam/gleam-plain.svg"
+  },
+  {
+    "name": "Glitch",
+    "icon": "/icons/glitch/glitch-original.svg"
+  },
+  {
+    "name": "Glitch",
+    "icon": "/icons/glitch/glitch-plain.svg"
+  },
+  {
+    "name": "Go",
+    "icon": "/icons/go/go-line.svg"
+  },
+  {
+    "name": "Go",
+    "icon": "/icons/go/go-original-wordmark.svg"
+  },
+  {
+    "name": "Go",
+    "icon": "/icons/go/go-original.svg"
+  },
+  {
+    "name": "Go",
+    "icon": "/icons/go/go-plain.svg"
+  },
+  {
+    "name": "Godot",
+    "icon": "/icons/godot/godot-original-wordmark.svg"
+  },
+  {
+    "name": "Godot",
+    "icon": "/icons/godot/godot-original.svg"
+  },
+  {
+    "name": "Godot",
+    "icon": "/icons/godot/godot-plain-wordmark.svg"
+  },
+  {
+    "name": "Godot",
+    "icon": "/icons/godot/godot-plain.svg"
+  },
+  {
+    "name": "Goland",
+    "icon": "/icons/goland/goland-original.svg"
+  },
+  {
+    "name": "Goland",
+    "icon": "/icons/goland/goland-plain-wordmark.svg"
+  },
+  {
+    "name": "Goland",
+    "icon": "/icons/goland/goland-plain.svg"
+  },
+  {
+    "name": "Google",
+    "icon": "/icons/google/google-original-wordmark.svg"
+  },
+  {
+    "name": "Google",
+    "icon": "/icons/google/google-original.svg"
+  },
+  {
+    "name": "Google",
+    "icon": "/icons/google/google-plain-wordmark.svg"
+  },
+  {
+    "name": "Google",
+    "icon": "/icons/google/google-plain.svg"
+  },
+  {
+    "name": "Googlecloud",
+    "icon": "/icons/googlecloud/googlecloud-original-wordmark.svg"
+  },
+  {
+    "name": "Googlecloud",
+    "icon": "/icons/googlecloud/googlecloud-original.svg"
+  },
+  {
+    "name": "Googlecloud",
+    "icon": "/icons/googlecloud/googlecloud-plain-wordmark.svg"
+  },
+  {
+    "name": "Googlecloud",
+    "icon": "/icons/googlecloud/googlecloud-plain.svg"
+  },
+  {
+    "name": "Googlecolab",
+    "icon": "/icons/googlecolab/googlecolab-original.svg"
+  },
+  {
+    "name": "Googlecolab",
+    "icon": "/icons/googlecolab/googlecolab-plain.svg"
+  },
+  {
+    "name": "Gradle",
+    "icon": "/icons/gradle/gradle-original-wordmark.svg"
+  },
+  {
+    "name": "Gradle",
+    "icon": "/icons/gradle/gradle-original.svg"
+  },
+  {
+    "name": "Grafana",
+    "icon": "/icons/grafana/grafana-line-wordmark.svg"
+  },
+  {
+    "name": "Grafana",
+    "icon": "/icons/grafana/grafana-line.svg"
+  },
+  {
+    "name": "Grafana",
+    "icon": "/icons/grafana/grafana-original-wordmark.svg"
+  },
+  {
+    "name": "Grafana",
+    "icon": "/icons/grafana/grafana-original.svg"
+  },
+  {
+    "name": "Grafana",
+    "icon": "/icons/grafana/grafana-plain-wordmark.svg"
+  },
+  {
+    "name": "Grafana",
+    "icon": "/icons/grafana/grafana-plain.svg"
+  },
+  {
+    "name": "Grails",
+    "icon": "/icons/grails/grails-original.svg"
+  },
+  {
+    "name": "Grails",
+    "icon": "/icons/grails/grails-plain.svg"
+  },
+  {
+    "name": "Graphql",
+    "icon": "/icons/graphql/graphql-plain-wordmark.svg"
+  },
+  {
+    "name": "Graphql",
+    "icon": "/icons/graphql/graphql-plain.svg"
+  },
+  {
+    "name": "Groovy",
+    "icon": "/icons/groovy/groovy-original.svg"
+  },
+  {
+    "name": "Groovy",
+    "icon": "/icons/groovy/groovy-plain.svg"
+  },
+  {
+    "name": "Grpc",
+    "icon": "/icons/grpc/grpc-original.svg"
+  },
+  {
+    "name": "Grpc",
+    "icon": "/icons/grpc/grpc-plain.svg"
+  },
+  {
+    "name": "Grunt",
+    "icon": "/icons/grunt/grunt-line-wordmark.svg"
+  },
+  {
+    "name": "Grunt",
+    "icon": "/icons/grunt/grunt-line.svg"
+  },
+  {
+    "name": "Grunt",
+    "icon": "/icons/grunt/grunt-original-wordmark.svg"
+  },
+  {
+    "name": "Grunt",
+    "icon": "/icons/grunt/grunt-original.svg"
+  },
+  {
+    "name": "Grunt",
+    "icon": "/icons/grunt/grunt-plain-wordmark.svg"
+  },
+  {
+    "name": "Grunt",
+    "icon": "/icons/grunt/grunt-plain.svg"
+  },
+  {
+    "name": "Gulp",
+    "icon": "/icons/gulp/gulp-plain.svg"
+  },
+  {
+    "name": "Hadoop",
+    "icon": "/icons/hadoop/hadoop-original-wordmark.svg"
+  },
+  {
+    "name": "Hadoop",
+    "icon": "/icons/hadoop/hadoop-original.svg"
+  },
+  {
+    "name": "Hadoop",
+    "icon": "/icons/hadoop/hadoop-plain-wordmark.svg"
+  },
+  {
+    "name": "Hadoop",
+    "icon": "/icons/hadoop/hadoop-plain.svg"
+  },
+  {
+    "name": "Handlebars",
+    "icon": "/icons/handlebars/handlebars-line-wordmark.svg"
+  },
+  {
+    "name": "Handlebars",
+    "icon": "/icons/handlebars/handlebars-line.svg"
+  },
+  {
+    "name": "Handlebars",
+    "icon": "/icons/handlebars/handlebars-original-wordmark.svg"
+  },
+  {
+    "name": "Handlebars",
+    "icon": "/icons/handlebars/handlebars-original.svg"
+  },
+  {
+    "name": "Harbor",
+    "icon": "/icons/harbor/harbor-line-wordmark.svg"
+  },
+  {
+    "name": "Harbor",
+    "icon": "/icons/harbor/harbor-line.svg"
+  },
+  {
+    "name": "Harbor",
+    "icon": "/icons/harbor/harbor-original-wordmark.svg"
+  },
+  {
+    "name": "Harbor",
+    "icon": "/icons/harbor/harbor-original.svg"
+  },
+  {
+    "name": "Harbor",
+    "icon": "/icons/harbor/harbor-plain-wordmark.svg"
+  },
+  {
+    "name": "Harbor",
+    "icon": "/icons/harbor/harbor-plain.svg"
+  },
+  {
+    "name": "Hardhat",
+    "icon": "/icons/hardhat/hardhat-original-wordmark.svg"
+  },
+  {
+    "name": "Hardhat",
+    "icon": "/icons/hardhat/hardhat-original.svg"
+  },
+  {
+    "name": "Hardhat",
+    "icon": "/icons/hardhat/hardhat-plain-wordmark.svg"
+  },
+  {
+    "name": "Hardhat",
+    "icon": "/icons/hardhat/hardhat-plain.svg"
+  },
+  {
+    "name": "Harvester",
+    "icon": "/icons/harvester/harvester-original-wordmark.svg"
+  },
+  {
+    "name": "Harvester",
+    "icon": "/icons/harvester/harvester-original.svg"
+  },
+  {
+    "name": "Harvester",
+    "icon": "/icons/harvester/harvester-plain-wordmark.svg"
+  },
+  {
+    "name": "Haskell",
+    "icon": "/icons/haskell/haskell-original-wordmark.svg"
+  },
+  {
+    "name": "Haskell",
+    "icon": "/icons/haskell/haskell-original.svg"
+  },
+  {
+    "name": "Haskell",
+    "icon": "/icons/haskell/haskell-plain-wordmark.svg"
+  },
+  {
+    "name": "Haskell",
+    "icon": "/icons/haskell/haskell-plain.svg"
+  },
+  {
+    "name": "Haxe",
+    "icon": "/icons/haxe/haxe-original.svg"
+  },
+  {
+    "name": "Haxe",
+    "icon": "/icons/haxe/haxe-plain.svg"
+  },
+  {
+    "name": "Helm",
+    "icon": "/icons/helm/helm-line.svg"
+  },
+  {
+    "name": "Helm",
+    "icon": "/icons/helm/helm-original.svg"
+  },
+  {
+    "name": "Heroku",
+    "icon": "/icons/heroku/heroku-original-wordmark.svg"
+  },
+  {
+    "name": "Heroku",
+    "icon": "/icons/heroku/heroku-original.svg"
+  },
+  {
+    "name": "Heroku",
+    "icon": "/icons/heroku/heroku-plain-wordmark.svg"
+  },
+  {
+    "name": "Heroku",
+    "icon": "/icons/heroku/heroku-plain.svg"
+  },
+  {
+    "name": "Hibernate",
+    "icon": "/icons/hibernate/hibernate-original-wordmark.svg"
+  },
+  {
+    "name": "Hibernate",
+    "icon": "/icons/hibernate/hibernate-original.svg"
+  },
+  {
+    "name": "Hibernate",
+    "icon": "/icons/hibernate/hibernate-plain-wordmark.svg"
+  },
+  {
+    "name": "Hibernate",
+    "icon": "/icons/hibernate/hibernate-plain.svg"
+  },
+  {
+    "name": "Homebrew",
+    "icon": "/icons/homebrew/homebrew-line-wordmark.svg"
+  },
+  {
+    "name": "Homebrew",
+    "icon": "/icons/homebrew/homebrew-line.svg"
+  },
+  {
+    "name": "Homebrew",
+    "icon": "/icons/homebrew/homebrew-original-wordmark.svg"
+  },
+  {
+    "name": "Homebrew",
+    "icon": "/icons/homebrew/homebrew-original.svg"
+  },
+  {
+    "name": "Homebrew",
+    "icon": "/icons/homebrew/homebrew-plain-wordmark.svg"
+  },
+  {
+    "name": "Homebrew",
+    "icon": "/icons/homebrew/homebrew-plain.svg"
+  },
+  {
+    "name": "Hoppscotch",
+    "icon": "/icons/hoppscotch/hoppscotch-original.svg"
+  },
+  {
+    "name": "Hoppscotch",
+    "icon": "/icons/hoppscotch/hoppscotch-plain.svg"
+  },
+  {
+    "name": "Html5",
+    "icon": "/icons/html5/html5-original-wordmark.svg"
+  },
+  {
+    "name": "Html5",
+    "icon": "/icons/html5/html5-original.svg"
+  },
+  {
+    "name": "Html5",
+    "icon": "/icons/html5/html5-plain-wordmark.svg"
+  },
+  {
+    "name": "Html5",
+    "icon": "/icons/html5/html5-plain.svg"
+  },
+  {
+    "name": "Htmx",
+    "icon": "/icons/htmx/htmx-line-wordmark.svg"
+  },
+  {
+    "name": "Htmx",
+    "icon": "/icons/htmx/htmx-line.svg"
+  },
+  {
+    "name": "Htmx",
+    "icon": "/icons/htmx/htmx-original-wordmark.svg"
+  },
+  {
+    "name": "Htmx",
+    "icon": "/icons/htmx/htmx-original.svg"
+  },
+  {
+    "name": "Htmx",
+    "icon": "/icons/htmx/htmx-plain-wordmark.svg"
+  },
+  {
+    "name": "Htmx",
+    "icon": "/icons/htmx/htmx-plain.svg"
+  },
+  {
+    "name": "Hugo",
+    "icon": "/icons/hugo/hugo-original-wordmark.svg"
+  },
+  {
+    "name": "Hugo",
+    "icon": "/icons/hugo/hugo-original.svg"
+  },
+  {
+    "name": "Hugo",
+    "icon": "/icons/hugo/hugo-plain-wordmark.svg"
+  },
+  {
+    "name": "Hugo",
+    "icon": "/icons/hugo/hugo-plain.svg"
+  },
+  {
+    "name": "Hyperv",
+    "icon": "/icons/hyperv/hyperv-original-wordmark.svg"
+  },
+  {
+    "name": "Hyperv",
+    "icon": "/icons/hyperv/hyperv-original.svg"
+  },
+  {
+    "name": "Hyperv",
+    "icon": "/icons/hyperv/hyperv-plain.svg"
+  },
+  {
+    "name": "Ie10",
+    "icon": "/icons/ie10/ie10-original.svg"
+  },
+  {
+    "name": "Ifttt",
+    "icon": "/icons/ifttt/ifttt-original.svg"
+  },
+  {
+    "name": "Illustrator",
+    "icon": "/icons/illustrator/illustrator-line.svg"
+  },
+  {
+    "name": "Illustrator",
+    "icon": "/icons/illustrator/illustrator-original.svg"
+  },
+  {
+    "name": "Illustrator",
+    "icon": "/icons/illustrator/illustrator-plain.svg"
+  },
+  {
+    "name": "Inertiajs",
+    "icon": "/icons/inertiajs/inertiajs-original-wordmark.svg"
+  },
+  {
+    "name": "Inertiajs",
+    "icon": "/icons/inertiajs/inertiajs-original.svg"
+  },
+  {
+    "name": "Inertiajs",
+    "icon": "/icons/inertiajs/inertiajs-plain-wordmark.svg"
+  },
+  {
+    "name": "Inertiajs",
+    "icon": "/icons/inertiajs/inertiajs-plain.svg"
+  },
+  {
+    "name": "Influxdb",
+    "icon": "/icons/influxdb/influxdb-original-wordmark.svg"
+  },
+  {
+    "name": "Influxdb",
+    "icon": "/icons/influxdb/influxdb-original.svg"
+  },
+  {
+    "name": "Inkscape",
+    "icon": "/icons/inkscape/inkscape-original-wordmark.svg"
+  },
+  {
+    "name": "Inkscape",
+    "icon": "/icons/inkscape/inkscape-original.svg"
+  },
+  {
+    "name": "Inkscape",
+    "icon": "/icons/inkscape/inkscape-plain-wordmark.svg"
+  },
+  {
+    "name": "Inkscape",
+    "icon": "/icons/inkscape/inkscape-plain.svg"
+  },
+  {
+    "name": "Insomnia",
+    "icon": "/icons/insomnia/insomnia-original-wordmark.svg"
+  },
+  {
+    "name": "Insomnia",
+    "icon": "/icons/insomnia/insomnia-original.svg"
+  },
+  {
+    "name": "Insomnia",
+    "icon": "/icons/insomnia/insomnia-plain-wordmark.svg"
+  },
+  {
+    "name": "Insomnia",
+    "icon": "/icons/insomnia/insomnia-plain.svg"
+  },
+  {
+    "name": "Intellij",
+    "icon": "/icons/intellij/intellij-original.svg"
+  },
+  {
+    "name": "Intellij",
+    "icon": "/icons/intellij/intellij-plain-wordmark.svg"
+  },
+  {
+    "name": "Intellij",
+    "icon": "/icons/intellij/intellij-plain.svg"
+  },
+  {
+    "name": "Ionic",
+    "icon": "/icons/ionic/ionic-original-wordmark.svg"
+  },
+  {
+    "name": "Ionic",
+    "icon": "/icons/ionic/ionic-original.svg"
+  },
+  {
+    "name": "Jaegertracing",
+    "icon": "/icons/jaegertracing/jaegertracing-original-wordmark.svg"
+  },
+  {
+    "name": "Jaegertracing",
+    "icon": "/icons/jaegertracing/jaegertracing-original.svg"
+  },
+  {
+    "name": "Jaegertracing",
+    "icon": "/icons/jaegertracing/jaegertracing-plain-wordmark.svg"
+  },
+  {
+    "name": "Jaegertracing",
+    "icon": "/icons/jaegertracing/jaegertracing-plain.svg"
+  },
+  {
+    "name": "Jamstack",
+    "icon": "/icons/jamstack/jamstack-original-wordmark.svg"
+  },
+  {
+    "name": "Jamstack",
+    "icon": "/icons/jamstack/jamstack-original.svg"
+  },
+  {
+    "name": "Jamstack",
+    "icon": "/icons/jamstack/jamstack-plain-wordmark.svg"
+  },
+  {
+    "name": "Jasmine",
+    "icon": "/icons/jasmine/jasmine-original-wordmark.svg"
+  },
+  {
+    "name": "Jasmine",
+    "icon": "/icons/jasmine/jasmine-original.svg"
+  },
+  {
+    "name": "Java",
+    "icon": "/icons/java/java-original-wordmark.svg"
+  },
+  {
+    "name": "Java",
+    "icon": "/icons/java/java-original.svg"
+  },
+  {
+    "name": "Java",
+    "icon": "/icons/java/java-plain-wordmark.svg"
+  },
+  {
+    "name": "Java",
+    "icon": "/icons/java/java-plain.svg"
+  },
+  {
+    "name": "Javascript",
+    "icon": "/icons/javascript/javascript-original.svg"
+  },
+  {
+    "name": "Javascript",
+    "icon": "/icons/javascript/javascript-plain.svg"
+  },
+  {
+    "name": "Jeet",
+    "icon": "/icons/jeet/jeet-original-wordmark.svg"
+  },
+  {
+    "name": "Jeet",
+    "icon": "/icons/jeet/jeet-original.svg"
+  },
+  {
+    "name": "Jeet",
+    "icon": "/icons/jeet/jeet-plain-wordmark.svg"
+  },
+  {
+    "name": "Jeet",
+    "icon": "/icons/jeet/jeet-plain.svg"
+  },
+  {
+    "name": "Jekyll",
+    "icon": "/icons/jekyll/jekyll-original-wordmark.svg"
+  },
+  {
+    "name": "Jekyll",
+    "icon": "/icons/jekyll/jekyll-original.svg"
+  },
+  {
+    "name": "Jekyll",
+    "icon": "/icons/jekyll/jekyll-plain-wordmark.svg"
+  },
+  {
+    "name": "Jekyll",
+    "icon": "/icons/jekyll/jekyll-plain.svg"
+  },
+  {
+    "name": "Jenkins",
+    "icon": "/icons/jenkins/jenkins-line.svg"
+  },
+  {
+    "name": "Jenkins",
+    "icon": "/icons/jenkins/jenkins-original.svg"
+  },
+  {
+    "name": "Jenkins",
+    "icon": "/icons/jenkins/jenkins-plain.svg"
+  },
+  {
+    "name": "Jest",
+    "icon": "/icons/jest/jest-plain.svg"
+  },
+  {
+    "name": "Jetbrains",
+    "icon": "/icons/jetbrains/jetbrains-original.svg"
+  },
+  {
+    "name": "Jetbrains",
+    "icon": "/icons/jetbrains/jetbrains-plain.svg"
+  },
+  {
+    "name": "Jetpackcompose",
+    "icon": "/icons/jetpackcompose/jetpackcompose-line-wordmark.svg"
+  },
+  {
+    "name": "Jetpackcompose",
+    "icon": "/icons/jetpackcompose/jetpackcompose-line.svg"
+  },
+  {
+    "name": "Jetpackcompose",
+    "icon": "/icons/jetpackcompose/jetpackcompose-original-wordmark.svg"
+  },
+  {
+    "name": "Jetpackcompose",
+    "icon": "/icons/jetpackcompose/jetpackcompose-original.svg"
+  },
+  {
+    "name": "Jetpackcompose",
+    "icon": "/icons/jetpackcompose/jetpackcompose-plain-wordmark.svg"
+  },
+  {
+    "name": "Jetpackcompose",
+    "icon": "/icons/jetpackcompose/jetpackcompose-plain.svg"
+  },
+  {
+    "name": "Jhipster",
+    "icon": "/icons/jhipster/jhipster-original-wordmark.svg"
+  },
+  {
+    "name": "Jhipster",
+    "icon": "/icons/jhipster/jhipster-original.svg"
+  },
+  {
+    "name": "Jhipster",
+    "icon": "/icons/jhipster/jhipster-plain-wordmark.svg"
+  },
+  {
+    "name": "Jhipster",
+    "icon": "/icons/jhipster/jhipster-plain.svg"
+  },
+  {
+    "name": "Jira",
+    "icon": "/icons/jira/jira-original-wordmark.svg"
+  },
+  {
+    "name": "Jira",
+    "icon": "/icons/jira/jira-original.svg"
+  },
+  {
+    "name": "Jira",
+    "icon": "/icons/jira/jira-plain-wordmark.svg"
+  },
+  {
+    "name": "Jira",
+    "icon": "/icons/jira/jira-plain.svg"
+  },
+  {
+    "name": "Jiraalign",
+    "icon": "/icons/jiraalign/jiraalign-original-wordmark.svg"
+  },
+  {
+    "name": "Jiraalign",
+    "icon": "/icons/jiraalign/jiraalign-original.svg"
+  },
+  {
+    "name": "Jiraalign",
+    "icon": "/icons/jiraalign/jiraalign-plain-wordmark.svg"
+  },
+  {
+    "name": "Jiraalign",
+    "icon": "/icons/jiraalign/jiraalign-plain.svg"
+  },
+  {
+    "name": "Jquery",
+    "icon": "/icons/jquery/jquery-original-wordmark.svg"
+  },
+  {
+    "name": "Jquery",
+    "icon": "/icons/jquery/jquery-original.svg"
+  },
+  {
+    "name": "Jquery",
+    "icon": "/icons/jquery/jquery-plain-wordmark.svg"
+  },
+  {
+    "name": "Jquery",
+    "icon": "/icons/jquery/jquery-plain.svg"
+  },
+  {
+    "name": "Json",
+    "icon": "/icons/json/json-original.svg"
+  },
+  {
+    "name": "Json",
+    "icon": "/icons/json/json-plain.svg"
+  },
+  {
+    "name": "Jule",
+    "icon": "/icons/jule/jule-original-wordmark.svg"
+  },
+  {
+    "name": "Jule",
+    "icon": "/icons/jule/jule-original.svg"
+  },
+  {
+    "name": "Julia",
+    "icon": "/icons/julia/julia-original-wordmark.svg"
+  },
+  {
+    "name": "Julia",
+    "icon": "/icons/julia/julia-original.svg"
+  },
+  {
+    "name": "Julia",
+    "icon": "/icons/julia/julia-plain-wordmark.svg"
+  },
+  {
+    "name": "Julia",
+    "icon": "/icons/julia/julia-plain.svg"
+  },
+  {
+    "name": "Junit",
+    "icon": "/icons/junit/junit-line-wordmark.svg"
+  },
+  {
+    "name": "Junit",
+    "icon": "/icons/junit/junit-line.svg"
+  },
+  {
+    "name": "Junit",
+    "icon": "/icons/junit/junit-original-wordmark.svg"
+  },
+  {
+    "name": "Junit",
+    "icon": "/icons/junit/junit-original.svg"
+  },
+  {
+    "name": "Junit",
+    "icon": "/icons/junit/junit-plain-wordmark.svg"
+  },
+  {
+    "name": "Junit",
+    "icon": "/icons/junit/junit-plain.svg"
+  },
+  {
+    "name": "Jupyter",
+    "icon": "/icons/jupyter/jupyter-original-wordmark.svg"
+  },
+  {
+    "name": "Jupyter",
+    "icon": "/icons/jupyter/jupyter-original.svg"
+  },
+  {
+    "name": "Jupyter",
+    "icon": "/icons/jupyter/jupyter-plain-wordmark.svg"
+  },
+  {
+    "name": "Jupyter",
+    "icon": "/icons/jupyter/jupyter-plain.svg"
+  },
+  {
+    "name": "K3os",
+    "icon": "/icons/k3os/k3os-line-wordmark.svg"
+  },
+  {
+    "name": "K3os",
+    "icon": "/icons/k3os/k3os-line.svg"
+  },
+  {
+    "name": "K3os",
+    "icon": "/icons/k3os/k3os-original-wordmark.svg"
+  },
+  {
+    "name": "K3os",
+    "icon": "/icons/k3os/k3os-original.svg"
+  },
+  {
+    "name": "K3os",
+    "icon": "/icons/k3os/k3os-plain-wordmark.svg"
+  },
+  {
+    "name": "K3s",
+    "icon": "/icons/k3s/k3s-original-wordmark.svg"
+  },
+  {
+    "name": "K3s",
+    "icon": "/icons/k3s/k3s-original.svg"
+  },
+  {
+    "name": "K3s",
+    "icon": "/icons/k3s/k3s-plain-wordmark.svg"
+  },
+  {
+    "name": "K6",
+    "icon": "/icons/k6/k6-original.svg"
+  },
+  {
+    "name": "Kaggle",
+    "icon": "/icons/kaggle/kaggle-original-wordmark.svg"
+  },
+  {
+    "name": "Kaggle",
+    "icon": "/icons/kaggle/kaggle-original.svg"
+  },
+  {
+    "name": "Kaldi",
+    "icon": "/icons/kaldi/kaldi-line-wordmark.svg"
+  },
+  {
+    "name": "Kaldi",
+    "icon": "/icons/kaldi/kaldi-line.svg"
+  },
+  {
+    "name": "Kaldi",
+    "icon": "/icons/kaldi/kaldi-original-wordmark.svg"
+  },
+  {
+    "name": "Kaldi",
+    "icon": "/icons/kaldi/kaldi-original.svg"
+  },
+  {
+    "name": "Kaldi",
+    "icon": "/icons/kaldi/kaldi-plain-wordmark.svg"
+  },
+  {
+    "name": "Kaldi",
+    "icon": "/icons/kaldi/kaldi-plain.svg"
+  },
+  {
+    "name": "Kalilinux",
+    "icon": "/icons/kalilinux/kalilinux-line-wordmark.svg"
+  },
+  {
+    "name": "Kalilinux",
+    "icon": "/icons/kalilinux/kalilinux-line.svg"
+  },
+  {
+    "name": "Kalilinux",
+    "icon": "/icons/kalilinux/kalilinux-original-wordmark.svg"
+  },
+  {
+    "name": "Kalilinux",
+    "icon": "/icons/kalilinux/kalilinux-original.svg"
+  },
+  {
+    "name": "Kalilinux",
+    "icon": "/icons/kalilinux/kalilinux-plain-wordmark.svg"
+  },
+  {
+    "name": "Karatelabs",
+    "icon": "/icons/karatelabs/karatelabs-original-wordmark.svg"
+  },
+  {
+    "name": "Karatelabs",
+    "icon": "/icons/karatelabs/karatelabs-original.svg"
+  },
+  {
+    "name": "Karatelabs",
+    "icon": "/icons/karatelabs/karatelabs-plain-wordmark.svg"
+  },
+  {
+    "name": "Karatelabs",
+    "icon": "/icons/karatelabs/karatelabs-plain.svg"
+  },
+  {
+    "name": "Karma",
+    "icon": "/icons/karma/karma-original.svg"
+  },
+  {
+    "name": "Karma",
+    "icon": "/icons/karma/karma-plain.svg"
+  },
+  {
+    "name": "Kdeneon",
+    "icon": "/icons/kdeneon/kdeneon-original.svg"
+  },
+  {
+    "name": "Kdeneon",
+    "icon": "/icons/kdeneon/kdeneon-plain.svg"
+  },
+  {
+    "name": "Keras",
+    "icon": "/icons/keras/keras-line-wordmark.svg"
+  },
+  {
+    "name": "Keras",
+    "icon": "/icons/keras/keras-line.svg"
+  },
+  {
+    "name": "Keras",
+    "icon": "/icons/keras/keras-original-wordmark.svg"
+  },
+  {
+    "name": "Keras",
+    "icon": "/icons/keras/keras-original.svg"
+  },
+  {
+    "name": "Keras",
+    "icon": "/icons/keras/keras-plain-wordmark.svg"
+  },
+  {
+    "name": "Keras",
+    "icon": "/icons/keras/keras-plain.svg"
+  },
+  {
+    "name": "Kibana",
+    "icon": "/icons/kibana/kibana-original-wordmark.svg"
+  },
+  {
+    "name": "Kibana",
+    "icon": "/icons/kibana/kibana-original.svg"
+  },
+  {
+    "name": "Kibana",
+    "icon": "/icons/kibana/kibana-plain-wordmark.svg"
+  },
+  {
+    "name": "Kibana",
+    "icon": "/icons/kibana/kibana-plain.svg"
+  },
+  {
+    "name": "Knexjs",
+    "icon": "/icons/knexjs/knexjs-original-wordmark.svg"
+  },
+  {
+    "name": "Knexjs",
+    "icon": "/icons/knexjs/knexjs-original.svg"
+  },
+  {
+    "name": "Knexjs",
+    "icon": "/icons/knexjs/knexjs-plain-wordmark.svg"
+  },
+  {
+    "name": "Knockout",
+    "icon": "/icons/knockout/knockout-plain-wordmark.svg"
+  },
+  {
+    "name": "Kotlin",
+    "icon": "/icons/kotlin/kotlin-original-wordmark.svg"
+  },
+  {
+    "name": "Kotlin",
+    "icon": "/icons/kotlin/kotlin-original.svg"
+  },
+  {
+    "name": "Kotlin",
+    "icon": "/icons/kotlin/kotlin-plain-wordmark.svg"
+  },
+  {
+    "name": "Kotlin",
+    "icon": "/icons/kotlin/kotlin-plain.svg"
+  },
+  {
+    "name": "Krakenjs",
+    "icon": "/icons/krakenjs/krakenjs-original-wordmark.svg"
+  },
+  {
+    "name": "Krakenjs",
+    "icon": "/icons/krakenjs/krakenjs-original.svg"
+  },
+  {
+    "name": "Krakenjs",
+    "icon": "/icons/krakenjs/krakenjs-plain-wordmark.svg"
+  },
+  {
+    "name": "Krakenjs",
+    "icon": "/icons/krakenjs/krakenjs-plain.svg"
+  },
+  {
+    "name": "Ktor",
+    "icon": "/icons/ktor/ktor-original-wordmark.svg"
+  },
+  {
+    "name": "Ktor",
+    "icon": "/icons/ktor/ktor-original.svg"
+  },
+  {
+    "name": "Ktor",
+    "icon": "/icons/ktor/ktor-plain-wordmark.svg"
+  },
+  {
+    "name": "Ktor",
+    "icon": "/icons/ktor/ktor-plain.svg"
+  },
+  {
+    "name": "Kubeflow",
+    "icon": "/icons/kubeflow/kubeflow-line-wordmark.svg"
+  },
+  {
+    "name": "Kubeflow",
+    "icon": "/icons/kubeflow/kubeflow-line.svg"
+  },
+  {
+    "name": "Kubeflow",
+    "icon": "/icons/kubeflow/kubeflow-original-wordmark.svg"
+  },
+  {
+    "name": "Kubeflow",
+    "icon": "/icons/kubeflow/kubeflow-original.svg"
+  },
+  {
+    "name": "Kubeflow",
+    "icon": "/icons/kubeflow/kubeflow-plain-wordmark.svg"
+  },
+  {
+    "name": "Kubeflow",
+    "icon": "/icons/kubeflow/kubeflow-plain.svg"
+  },
+  {
+    "name": "Kubernetes",
+    "icon": "/icons/kubernetes/kubernetes-line-wordmark.svg"
+  },
+  {
+    "name": "Kubernetes",
+    "icon": "/icons/kubernetes/kubernetes-line.svg"
+  },
+  {
+    "name": "Kubernetes",
+    "icon": "/icons/kubernetes/kubernetes-original-wordmark.svg"
+  },
+  {
+    "name": "Kubernetes",
+    "icon": "/icons/kubernetes/kubernetes-original.svg"
+  },
+  {
+    "name": "Kubernetes",
+    "icon": "/icons/kubernetes/kubernetes-plain-wordmark.svg"
+  },
+  {
+    "name": "Kubernetes",
+    "icon": "/icons/kubernetes/kubernetes-plain.svg"
+  },
+  {
+    "name": "Labview",
+    "icon": "/icons/labview/labview-original-wordmark.svg"
+  },
+  {
+    "name": "Labview",
+    "icon": "/icons/labview/labview-original.svg"
+  },
+  {
+    "name": "Labview",
+    "icon": "/icons/labview/labview-plain-wordmark.svg"
+  },
+  {
+    "name": "Labview",
+    "icon": "/icons/labview/labview-plain.svg"
+  },
+  {
+    "name": "Laminas",
+    "icon": "/icons/laminas/laminas-line-wordmark.svg"
+  },
+  {
+    "name": "Laminas",
+    "icon": "/icons/laminas/laminas-line.svg"
+  },
+  {
+    "name": "Laminas",
+    "icon": "/icons/laminas/laminas-original-wordmark.svg"
+  },
+  {
+    "name": "Laminas",
+    "icon": "/icons/laminas/laminas-original.svg"
+  },
+  {
+    "name": "Laravel",
+    "icon": "/icons/laravel/laravel-line-wordmark.svg"
+  },
+  {
+    "name": "Laravel",
+    "icon": "/icons/laravel/laravel-line.svg"
+  },
+  {
+    "name": "Laravel",
+    "icon": "/icons/laravel/laravel-original-wordmark.svg"
+  },
+  {
+    "name": "Laravel",
+    "icon": "/icons/laravel/laravel-original.svg"
+  },
+  {
+    "name": "Laraveljetstream",
+    "icon": "/icons/laraveljetstream/laraveljetstream-original-wordmark.svg"
+  },
+  {
+    "name": "Laraveljetstream",
+    "icon": "/icons/laraveljetstream/laraveljetstream-original.svg"
+  },
+  {
+    "name": "Laraveljetstream",
+    "icon": "/icons/laraveljetstream/laraveljetstream-plain-wordmark.svg"
+  },
+  {
+    "name": "Latex",
+    "icon": "/icons/latex/latex-original.svg"
+  },
+  {
+    "name": "Leetcode",
+    "icon": "/icons/leetcode/leetcode-line-wordmark.svg"
+  },
+  {
+    "name": "Leetcode",
+    "icon": "/icons/leetcode/leetcode-line.svg"
+  },
+  {
+    "name": "Leetcode",
+    "icon": "/icons/leetcode/leetcode-original-wordmark.svg"
+  },
+  {
+    "name": "Leetcode",
+    "icon": "/icons/leetcode/leetcode-original.svg"
+  },
+  {
+    "name": "Leetcode",
+    "icon": "/icons/leetcode/leetcode-plain-wordmark.svg"
+  },
+  {
+    "name": "Leetcode",
+    "icon": "/icons/leetcode/leetcode-plain.svg"
+  },
+  {
+    "name": "Less",
+    "icon": "/icons/less/less-plain-wordmark.svg"
+  },
+  {
+    "name": "Libgdx",
+    "icon": "/icons/libgdx/libgdx-line.svg"
+  },
+  {
+    "name": "Libgdx",
+    "icon": "/icons/libgdx/libgdx-original.svg"
+  },
+  {
+    "name": "Libgdx",
+    "icon": "/icons/libgdx/libgdx-plain.svg"
+  },
+  {
+    "name": "Linkedin",
+    "icon": "/icons/linkedin/linkedin-original-wordmark.svg"
+  },
+  {
+    "name": "Linkedin",
+    "icon": "/icons/linkedin/linkedin-original.svg"
+  },
+  {
+    "name": "Linkedin",
+    "icon": "/icons/linkedin/linkedin-plain-wordmark.svg"
+  },
+  {
+    "name": "Linkedin",
+    "icon": "/icons/linkedin/linkedin-plain.svg"
+  },
+  {
+    "name": "Linux",
+    "icon": "/icons/linux/linux-original.svg"
+  },
+  {
+    "name": "Linux",
+    "icon": "/icons/linux/linux-plain.svg"
+  },
+  {
+    "name": "Linuxmint",
+    "icon": "/icons/linuxmint/linuxmint-original-wordmark.svg"
+  },
+  {
+    "name": "Linuxmint",
+    "icon": "/icons/linuxmint/linuxmint-original.svg"
+  },
+  {
+    "name": "Linuxmint",
+    "icon": "/icons/linuxmint/linuxmint-plain-wordmark.svg"
+  },
+  {
+    "name": "Linuxmint",
+    "icon": "/icons/linuxmint/linuxmint-plain.svg"
+  },
+  {
+    "name": "Liquibase",
+    "icon": "/icons/liquibase/liquibase-original-wordmark.svg"
+  },
+  {
+    "name": "Liquibase",
+    "icon": "/icons/liquibase/liquibase-original.svg"
+  },
+  {
+    "name": "Livewire",
+    "icon": "/icons/livewire/livewire-original-wordmark.svg"
+  },
+  {
+    "name": "Livewire",
+    "icon": "/icons/livewire/livewire-original.svg"
+  },
+  {
+    "name": "Livewire",
+    "icon": "/icons/livewire/livewire-plain-wordmark.svg"
+  },
+  {
+    "name": "Livewire",
+    "icon": "/icons/livewire/livewire-plain.svg"
+  },
+  {
+    "name": "Llvm",
+    "icon": "/icons/llvm/llvm-line.svg"
+  },
+  {
+    "name": "Llvm",
+    "icon": "/icons/llvm/llvm-original.svg"
+  },
+  {
+    "name": "Llvm",
+    "icon": "/icons/llvm/llvm-plain.svg"
+  },
+  {
+    "name": "Lodash",
+    "icon": "/icons/lodash/lodash-original.svg"
+  },
+  {
+    "name": "Lodash",
+    "icon": "/icons/lodash/lodash-plain.svg"
+  },
+  {
+    "name": "Logstash",
+    "icon": "/icons/logstash/logstash-original-wordmark.svg"
+  },
+  {
+    "name": "Logstash",
+    "icon": "/icons/logstash/logstash-original.svg"
+  },
+  {
+    "name": "Logstash",
+    "icon": "/icons/logstash/logstash-plain-wordmark.svg"
+  },
+  {
+    "name": "Logstash",
+    "icon": "/icons/logstash/logstash-plain.svg"
+  },
+  {
+    "name": "Love2d",
+    "icon": "/icons/love2d/love2d-line.svg"
+  },
+  {
+    "name": "Love2d",
+    "icon": "/icons/love2d/love2d-original.svg"
+  },
+  {
+    "name": "Love2d",
+    "icon": "/icons/love2d/love2d-plain.svg"
+  },
+  {
+    "name": "Lua",
+    "icon": "/icons/lua/lua-line.svg"
+  },
+  {
+    "name": "Lua",
+    "icon": "/icons/lua/lua-original.svg"
+  },
+  {
+    "name": "Lua",
+    "icon": "/icons/lua/lua-plain.svg"
+  },
+  {
+    "name": "Lumen",
+    "icon": "/icons/lumen/lumen-original.svg"
+  },
+  {
+    "name": "Magento",
+    "icon": "/icons/magento/magento-line-wordmark.svg"
+  },
+  {
+    "name": "Magento",
+    "icon": "/icons/magento/magento-line.svg"
+  },
+  {
+    "name": "Magento",
+    "icon": "/icons/magento/magento-original-wordmark.svg"
+  },
+  {
+    "name": "Magento",
+    "icon": "/icons/magento/magento-original.svg"
+  },
+  {
+    "name": "Magento",
+    "icon": "/icons/magento/magento-plain-wordmark.svg"
+  },
+  {
+    "name": "Mapbox",
+    "icon": "/icons/mapbox/mapbox-original.svg"
+  },
+  {
+    "name": "Mariadb",
+    "icon": "/icons/mariadb/mariadb-original-wordmark.svg"
+  },
+  {
+    "name": "Mariadb",
+    "icon": "/icons/mariadb/mariadb-original.svg"
+  },
+  {
+    "name": "Markdown",
+    "icon": "/icons/markdown/markdown-original.svg"
+  },
+  {
+    "name": "Materializecss",
+    "icon": "/icons/materializecss/materializecss-original.svg"
+  },
+  {
+    "name": "Materializecss",
+    "icon": "/icons/materializecss/materializecss-plain.svg"
+  },
+  {
+    "name": "Materialui",
+    "icon": "/icons/materialui/materialui-original.svg"
+  },
+  {
+    "name": "Materialui",
+    "icon": "/icons/materialui/materialui-plain.svg"
+  },
+  {
+    "name": "Matlab",
+    "icon": "/icons/matlab/matlab-line.svg"
+  },
+  {
+    "name": "Matlab",
+    "icon": "/icons/matlab/matlab-original.svg"
+  },
+  {
+    "name": "Matlab",
+    "icon": "/icons/matlab/matlab-plain.svg"
+  },
+  {
+    "name": "Matplotlib",
+    "icon": "/icons/matplotlib/matplotlib-original-wordmark.svg"
+  },
+  {
+    "name": "Matplotlib",
+    "icon": "/icons/matplotlib/matplotlib-original.svg"
+  },
+  {
+    "name": "Matplotlib",
+    "icon": "/icons/matplotlib/matplotlib-plain-wordmark.svg"
+  },
+  {
+    "name": "Matplotlib",
+    "icon": "/icons/matplotlib/matplotlib-plain.svg"
+  },
+  {
+    "name": "Mattermost",
+    "icon": "/icons/mattermost/mattermost-original-wordmark.svg"
+  },
+  {
+    "name": "Mattermost",
+    "icon": "/icons/mattermost/mattermost-original.svg"
+  },
+  {
+    "name": "Maven",
+    "icon": "/icons/maven/maven-original-wordmark.svg"
+  },
+  {
+    "name": "Maven",
+    "icon": "/icons/maven/maven-original.svg"
+  },
+  {
+    "name": "Maven",
+    "icon": "/icons/maven/maven-plain-wordmark.svg"
+  },
+  {
+    "name": "Maven",
+    "icon": "/icons/maven/maven-plain.svg"
+  },
+  {
+    "name": "Maya",
+    "icon": "/icons/maya/maya-original-wordmark.svg"
+  },
+  {
+    "name": "Maya",
+    "icon": "/icons/maya/maya-original.svg"
+  },
+  {
+    "name": "Maya",
+    "icon": "/icons/maya/maya-plain-wordmark.svg"
+  },
+  {
+    "name": "Maya",
+    "icon": "/icons/maya/maya-plain.svg"
+  },
+  {
+    "name": "Memcached",
+    "icon": "/icons/memcached/memcached-line-wordmark.svg"
+  },
+  {
+    "name": "Memcached",
+    "icon": "/icons/memcached/memcached-line.svg"
+  },
+  {
+    "name": "Memcached",
+    "icon": "/icons/memcached/memcached-original-wordmark.svg"
+  },
+  {
+    "name": "Memcached",
+    "icon": "/icons/memcached/memcached-original.svg"
+  },
+  {
+    "name": "Memcached",
+    "icon": "/icons/memcached/memcached-plain-wordmark.svg"
+  },
+  {
+    "name": "Memcached",
+    "icon": "/icons/memcached/memcached-plain.svg"
+  },
+  {
+    "name": "Mercurial",
+    "icon": "/icons/mercurial/mercurial-original-wordmark.svg"
+  },
+  {
+    "name": "Mercurial",
+    "icon": "/icons/mercurial/mercurial-original.svg"
+  },
+  {
+    "name": "Mercurial",
+    "icon": "/icons/mercurial/mercurial-plain-wordmark.svg"
+  },
+  {
+    "name": "Mercurial",
+    "icon": "/icons/mercurial/mercurial-plain.svg"
+  },
+  {
+    "name": "Meteor",
+    "icon": "/icons/meteor/meteor-original-wordmark.svg"
+  },
+  {
+    "name": "Meteor",
+    "icon": "/icons/meteor/meteor-original.svg"
+  },
+  {
+    "name": "Meteor",
+    "icon": "/icons/meteor/meteor-plain-wordmark.svg"
+  },
+  {
+    "name": "Meteor",
+    "icon": "/icons/meteor/meteor-plain.svg"
+  },
+  {
+    "name": "Microsoftsqlserver",
+    "icon": "/icons/microsoftsqlserver/microsoftsqlserver-line-wordmark.svg"
+  },
+  {
+    "name": "Microsoftsqlserver",
+    "icon": "/icons/microsoftsqlserver/microsoftsqlserver-line.svg"
+  },
+  {
+    "name": "Microsoftsqlserver",
+    "icon": "/icons/microsoftsqlserver/microsoftsqlserver-original-wordmark.svg"
+  },
+  {
+    "name": "Microsoftsqlserver",
+    "icon": "/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
+  },
+  {
+    "name": "Microsoftsqlserver",
+    "icon": "/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg"
+  },
+  {
+    "name": "Microsoftsqlserver",
+    "icon": "/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+  },
+  {
+    "name": "Minitab",
+    "icon": "/icons/minitab/minitab-original.svg"
+  },
+  {
+    "name": "Minitab",
+    "icon": "/icons/minitab/minitab-plain.svg"
+  },
+  {
+    "name": "Mithril",
+    "icon": "/icons/mithril/mithril-line.svg"
+  },
+  {
+    "name": "Mithril",
+    "icon": "/icons/mithril/mithril-original.svg"
+  },
+  {
+    "name": "Mobx",
+    "icon": "/icons/mobx/mobx-original.svg"
+  },
+  {
+    "name": "Mobx",
+    "icon": "/icons/mobx/mobx-plain.svg"
+  },
+  {
+    "name": "Mocha",
+    "icon": "/icons/mocha/mocha-original.svg"
+  },
+  {
+    "name": "Mocha",
+    "icon": "/icons/mocha/mocha-plain.svg"
+  },
+  {
+    "name": "Modx",
+    "icon": "/icons/modx/modx-original-wordmark.svg"
+  },
+  {
+    "name": "Modx",
+    "icon": "/icons/modx/modx-original.svg"
+  },
+  {
+    "name": "Modx",
+    "icon": "/icons/modx/modx-plain-wordmark.svg"
+  },
+  {
+    "name": "Modx",
+    "icon": "/icons/modx/modx-plain.svg"
+  },
+  {
+    "name": "Moleculer",
+    "icon": "/icons/moleculer/moleculer-original-wordmark.svg"
+  },
+  {
+    "name": "Moleculer",
+    "icon": "/icons/moleculer/moleculer-original.svg"
+  },
+  {
+    "name": "Mongodb",
+    "icon": "/icons/mongodb/mongodb-original-wordmark.svg"
+  },
+  {
+    "name": "Mongodb",
+    "icon": "/icons/mongodb/mongodb-original.svg"
+  },
+  {
+    "name": "Mongodb",
+    "icon": "/icons/mongodb/mongodb-plain-wordmark.svg"
+  },
+  {
+    "name": "Mongodb",
+    "icon": "/icons/mongodb/mongodb-plain.svg"
+  },
+  {
+    "name": "Mongoose",
+    "icon": "/icons/mongoose/mongoose-original-wordmark.svg"
+  },
+  {
+    "name": "Mongoose",
+    "icon": "/icons/mongoose/mongoose-original.svg"
+  },
+  {
+    "name": "Monogame",
+    "icon": "/icons/monogame/monogame-line-wordmark.svg"
+  },
+  {
+    "name": "Monogame",
+    "icon": "/icons/monogame/monogame-line.svg"
+  },
+  {
+    "name": "Monogame",
+    "icon": "/icons/monogame/monogame-original-wordmark.svg"
+  },
+  {
+    "name": "Monogame",
+    "icon": "/icons/monogame/monogame-original.svg"
+  },
+  {
+    "name": "Monogame",
+    "icon": "/icons/monogame/monogame-plain-wordmark.svg"
+  },
+  {
+    "name": "Moodle",
+    "icon": "/icons/moodle/moodle-original-wordmark.svg"
+  },
+  {
+    "name": "Moodle",
+    "icon": "/icons/moodle/moodle-original.svg"
+  },
+  {
+    "name": "Moodle",
+    "icon": "/icons/moodle/moodle-plain-wordmark.svg"
+  },
+  {
+    "name": "Moodle",
+    "icon": "/icons/moodle/moodle-plain.svg"
+  },
+  {
+    "name": "Msdos",
+    "icon": "/icons/msdos/msdos-line.svg"
+  },
+  {
+    "name": "Msdos",
+    "icon": "/icons/msdos/msdos-original.svg"
+  },
+  {
+    "name": "Msdos",
+    "icon": "/icons/msdos/msdos-plain.svg"
+  },
+  {
+    "name": "Mysql",
+    "icon": "/icons/mysql/mysql-original-wordmark.svg"
+  },
+  {
+    "name": "Mysql",
+    "icon": "/icons/mysql/mysql-original.svg"
+  },
+  {
+    "name": "Mysql",
+    "icon": "/icons/mysql/mysql-plain-wordmark.svg"
+  },
+  {
+    "name": "Nano",
+    "icon": "/icons/nano/nano-original-wordmark.svg"
+  },
+  {
+    "name": "Nano",
+    "icon": "/icons/nano/nano-original.svg"
+  },
+  {
+    "name": "Nano",
+    "icon": "/icons/nano/nano-plain-wordmark.svg"
+  },
+  {
+    "name": "Nano",
+    "icon": "/icons/nano/nano-plain.svg"
+  },
+  {
+    "name": "Nats",
+    "icon": "/icons/nats/nats-original.svg"
+  },
+  {
+    "name": "Nats",
+    "icon": "/icons/nats/nats-plain.svg"
+  },
+  {
+    "name": "Neo4j",
+    "icon": "/icons/neo4j/neo4j-original-wordmark.svg"
+  },
+  {
+    "name": "Neo4j",
+    "icon": "/icons/neo4j/neo4j-original.svg"
+  },
+  {
+    "name": "Neo4j",
+    "icon": "/icons/neo4j/neo4j-plain-wordmark.svg"
+  },
+  {
+    "name": "Neo4j",
+    "icon": "/icons/neo4j/neo4j-plain.svg"
+  },
+  {
+    "name": "Neovim",
+    "icon": "/icons/neovim/neovim-line-wordmark.svg"
+  },
+  {
+    "name": "Neovim",
+    "icon": "/icons/neovim/neovim-line.svg"
+  },
+  {
+    "name": "Neovim",
+    "icon": "/icons/neovim/neovim-original-wordmark.svg"
+  },
+  {
+    "name": "Neovim",
+    "icon": "/icons/neovim/neovim-original.svg"
+  },
+  {
+    "name": "Neovim",
+    "icon": "/icons/neovim/neovim-plain-wordmark.svg"
+  },
+  {
+    "name": "Neovim",
+    "icon": "/icons/neovim/neovim-plain.svg"
+  },
+  {
+    "name": "Nestjs",
+    "icon": "/icons/nestjs/nestjs-line-wordmark.svg"
+  },
+  {
+    "name": "Nestjs",
+    "icon": "/icons/nestjs/nestjs-line.svg"
+  },
+  {
+    "name": "Nestjs",
+    "icon": "/icons/nestjs/nestjs-original-wordmark.svg"
+  },
+  {
+    "name": "Nestjs",
+    "icon": "/icons/nestjs/nestjs-original.svg"
+  },
+  {
+    "name": "Netbeans",
+    "icon": "/icons/netbeans/netbeans-original-wordmark.svg"
+  },
+  {
+    "name": "Netbeans",
+    "icon": "/icons/netbeans/netbeans-original.svg"
+  },
+  {
+    "name": "Netbeans",
+    "icon": "/icons/netbeans/netbeans-plain-wordmark.svg"
+  },
+  {
+    "name": "Netbeans",
+    "icon": "/icons/netbeans/netbeans-plain.svg"
+  },
+  {
+    "name": "Netbox",
+    "icon": "/icons/netbox/netbox-line-wordmark.svg"
+  },
+  {
+    "name": "Netbox",
+    "icon": "/icons/netbox/netbox-line.svg"
+  },
+  {
+    "name": "Netbox",
+    "icon": "/icons/netbox/netbox-original-wordmark.svg"
+  },
+  {
+    "name": "Netbox",
+    "icon": "/icons/netbox/netbox-original.svg"
+  },
+  {
+    "name": "Netbox",
+    "icon": "/icons/netbox/netbox-plain-wordmark.svg"
+  },
+  {
+    "name": "Netbox",
+    "icon": "/icons/netbox/netbox-plain.svg"
+  },
+  {
+    "name": "Netlify",
+    "icon": "/icons/netlify/netlify-original-wordmark.svg"
+  },
+  {
+    "name": "Netlify",
+    "icon": "/icons/netlify/netlify-original.svg"
+  },
+  {
+    "name": "Netlify",
+    "icon": "/icons/netlify/netlify-plain-wordmark.svg"
+  },
+  {
+    "name": "Netlify",
+    "icon": "/icons/netlify/netlify-plain.svg"
+  },
+  {
+    "name": "Networkx",
+    "icon": "/icons/networkx/networkx-line-wordmark.svg"
+  },
+  {
+    "name": "Networkx",
+    "icon": "/icons/networkx/networkx-line.svg"
+  },
+  {
+    "name": "Networkx",
+    "icon": "/icons/networkx/networkx-original-wordmark.svg"
+  },
+  {
+    "name": "Networkx",
+    "icon": "/icons/networkx/networkx-original.svg"
+  },
+  {
+    "name": "Networkx",
+    "icon": "/icons/networkx/networkx-plain-wordmark.svg"
+  },
+  {
+    "name": "Networkx",
+    "icon": "/icons/networkx/networkx-plain.svg"
+  },
+  {
+    "name": "Newrelic",
+    "icon": "/icons/newrelic/newrelic-line.svg"
+  },
+  {
+    "name": "Newrelic",
+    "icon": "/icons/newrelic/newrelic-original.svg"
+  },
+  {
+    "name": "Newrelic",
+    "icon": "/icons/newrelic/newrelic-plain.svg"
+  },
+  {
+    "name": "Nextjs",
+    "icon": "/icons/nextjs/nextjs-line-wordmark.svg"
+  },
+  {
+    "name": "Nextjs",
+    "icon": "/icons/nextjs/nextjs-line.svg"
+  },
+  {
+    "name": "Nextjs",
+    "icon": "/icons/nextjs/nextjs-original-wordmark.svg"
+  },
+  {
+    "name": "Nextjs",
+    "icon": "/icons/nextjs/nextjs-original.svg"
+  },
+  {
+    "name": "Nextjs",
+    "icon": "/icons/nextjs/nextjs-plain.svg"
+  },
+  {
+    "name": "Nginx",
+    "icon": "/icons/nginx/nginx-original.svg"
+  },
+  {
+    "name": "Ngrok",
+    "icon": "/icons/ngrok/ngrok-line.svg"
+  },
+  {
+    "name": "Ngrok",
+    "icon": "/icons/ngrok/ngrok-original.svg"
+  },
+  {
+    "name": "Ngrx",
+    "icon": "/icons/ngrx/ngrx-original.svg"
+  },
+  {
+    "name": "Ngrx",
+    "icon": "/icons/ngrx/ngrx-plain.svg"
+  },
+  {
+    "name": "Nhibernate",
+    "icon": "/icons/nhibernate/nhibernate-line-wordmark.svg"
+  },
+  {
+    "name": "Nhibernate",
+    "icon": "/icons/nhibernate/nhibernate-line.svg"
+  },
+  {
+    "name": "Nhibernate",
+    "icon": "/icons/nhibernate/nhibernate-original-wordmark.svg"
+  },
+  {
+    "name": "Nhibernate",
+    "icon": "/icons/nhibernate/nhibernate-original.svg"
+  },
+  {
+    "name": "Nhibernate",
+    "icon": "/icons/nhibernate/nhibernate-plain-wordmark.svg"
+  },
+  {
+    "name": "Nhibernate",
+    "icon": "/icons/nhibernate/nhibernate-plain.svg"
+  },
+  {
+    "name": "Nim",
+    "icon": "/icons/nim/nim-line-wordmark.svg"
+  },
+  {
+    "name": "Nim",
+    "icon": "/icons/nim/nim-line.svg"
+  },
+  {
+    "name": "Nim",
+    "icon": "/icons/nim/nim-original-wordmark.svg"
+  },
+  {
+    "name": "Nim",
+    "icon": "/icons/nim/nim-original.svg"
+  },
+  {
+    "name": "Nim",
+    "icon": "/icons/nim/nim-plain-wordmark.svg"
+  },
+  {
+    "name": "Nim",
+    "icon": "/icons/nim/nim-plain.svg"
+  },
+  {
+    "name": "Nimble",
+    "icon": "/icons/nimble/nimble-original.svg"
+  },
+  {
+    "name": "Nimble",
+    "icon": "/icons/nimble/nimble-plain.svg"
+  },
+  {
+    "name": "Nixos",
+    "icon": "/icons/nixos/nixos-original-wordmark.svg"
+  },
+  {
+    "name": "Nixos",
+    "icon": "/icons/nixos/nixos-original.svg"
+  },
+  {
+    "name": "Nixos",
+    "icon": "/icons/nixos/nixos-plain-wordmark.svg"
+  },
+  {
+    "name": "Nixos",
+    "icon": "/icons/nixos/nixos-plain.svg"
+  },
+  {
+    "name": "Nodejs",
+    "icon": "/icons/nodejs/nodejs-line-wordmark.svg"
+  },
+  {
+    "name": "Nodejs",
+    "icon": "/icons/nodejs/nodejs-line.svg"
+  },
+  {
+    "name": "Nodejs",
+    "icon": "/icons/nodejs/nodejs-original-wordmark.svg"
+  },
+  {
+    "name": "Nodejs",
+    "icon": "/icons/nodejs/nodejs-original.svg"
+  },
+  {
+    "name": "Nodejs",
+    "icon": "/icons/nodejs/nodejs-plain-wordmark.svg"
+  },
+  {
+    "name": "Nodejs",
+    "icon": "/icons/nodejs/nodejs-plain.svg"
+  },
+  {
+    "name": "Nodemon",
+    "icon": "/icons/nodemon/nodemon-line.svg"
+  },
+  {
+    "name": "Nodemon",
+    "icon": "/icons/nodemon/nodemon-original.svg"
+  },
+  {
+    "name": "Nodemon",
+    "icon": "/icons/nodemon/nodemon-plain.svg"
+  },
+  {
+    "name": "Nodered",
+    "icon": "/icons/nodered/nodered-line.svg"
+  },
+  {
+    "name": "Nodered",
+    "icon": "/icons/nodered/nodered-original.svg"
+  },
+  {
+    "name": "Nodered",
+    "icon": "/icons/nodered/nodered-plain.svg"
+  },
+  {
+    "name": "Nodewebkit",
+    "icon": "/icons/nodewebkit/nodewebkit-line-wordmark.svg"
+  },
+  {
+    "name": "Nodewebkit",
+    "icon": "/icons/nodewebkit/nodewebkit-line.svg"
+  },
+  {
+    "name": "Nodewebkit",
+    "icon": "/icons/nodewebkit/nodewebkit-original-wordmark.svg"
+  },
+  {
+    "name": "Nodewebkit",
+    "icon": "/icons/nodewebkit/nodewebkit-original.svg"
+  },
+  {
+    "name": "Nodewebkit",
+    "icon": "/icons/nodewebkit/nodewebkit-plain-wordmark.svg"
+  },
+  {
+    "name": "Nodewebkit",
+    "icon": "/icons/nodewebkit/nodewebkit-plain.svg"
+  },
+  {
+    "name": "Nomad",
+    "icon": "/icons/nomad/nomad-original-wordmark.svg"
+  },
+  {
+    "name": "Nomad",
+    "icon": "/icons/nomad/nomad-original.svg"
+  },
+  {
+    "name": "Nomad",
+    "icon": "/icons/nomad/nomad-plain-wordmark.svg"
+  },
+  {
+    "name": "Norg",
+    "icon": "/icons/norg/norg-original.svg"
+  },
+  {
+    "name": "Norg",
+    "icon": "/icons/norg/norg-plain.svg"
+  },
+  {
+    "name": "Notion",
+    "icon": "/icons/notion/notion-line.svg"
+  },
+  {
+    "name": "Notion",
+    "icon": "/icons/notion/notion-original.svg"
+  },
+  {
+    "name": "Notion",
+    "icon": "/icons/notion/notion-plain.svg"
+  },
+  {
+    "name": "Npm",
+    "icon": "/icons/npm/npm-original-wordmark.svg"
+  },
+  {
+    "name": "Npm",
+    "icon": "/icons/npm/npm-original.svg"
+  },
+  {
+    "name": "Npm",
+    "icon": "/icons/npm/npm-plain.svg"
+  },
+  {
+    "name": "Npss",
+    "icon": "/icons/npss/npss-original.svg"
+  },
+  {
+    "name": "Npss",
+    "icon": "/icons/npss/npss-plain.svg"
+  },
+  {
+    "name": "Nuget",
+    "icon": "/icons/nuget/nuget-original-wordmark.svg"
+  },
+  {
+    "name": "Nuget",
+    "icon": "/icons/nuget/nuget-original.svg"
+  },
+  {
+    "name": "Numpy",
+    "icon": "/icons/numpy/numpy-line-wordmark.svg"
+  },
+  {
+    "name": "Numpy",
+    "icon": "/icons/numpy/numpy-line.svg"
+  },
+  {
+    "name": "Numpy",
+    "icon": "/icons/numpy/numpy-original-wordmark.svg"
+  },
+  {
+    "name": "Numpy",
+    "icon": "/icons/numpy/numpy-original.svg"
+  },
+  {
+    "name": "Numpy",
+    "icon": "/icons/numpy/numpy-plain-wordmark.svg"
+  },
+  {
+    "name": "Numpy",
+    "icon": "/icons/numpy/numpy-plain.svg"
+  },
+  {
+    "name": "Nuxt",
+    "icon": "/icons/nuxt/nuxt-original-wordmark.svg"
+  },
+  {
+    "name": "Nuxt",
+    "icon": "/icons/nuxt/nuxt-original.svg"
+  },
+  {
+    "name": "Nuxt",
+    "icon": "/icons/nuxt/nuxt-plain-wordmark.svg"
+  },
+  {
+    "name": "Nuxtjs",
+    "icon": "/icons/nuxtjs/nuxtjs-original-wordmark.svg"
+  },
+  {
+    "name": "Nuxtjs",
+    "icon": "/icons/nuxtjs/nuxtjs-original.svg"
+  },
+  {
+    "name": "Nuxtjs",
+    "icon": "/icons/nuxtjs/nuxtjs-plain-wordmark.svg"
+  },
+  {
+    "name": "Nuxtjs",
+    "icon": "/icons/nuxtjs/nuxtjs-plain.svg"
+  },
+  {
+    "name": "Oauth",
+    "icon": "/icons/oauth/oauth-original.svg"
+  },
+  {
+    "name": "Oauth",
+    "icon": "/icons/oauth/oauth-plain.svg"
+  },
+  {
+    "name": "Objectivec",
+    "icon": "/icons/objectivec/objectivec-plain.svg"
+  },
+  {
+    "name": "Ocaml",
+    "icon": "/icons/ocaml/ocaml-original-wordmark.svg"
+  },
+  {
+    "name": "Ocaml",
+    "icon": "/icons/ocaml/ocaml-original.svg"
+  },
+  {
+    "name": "Ocaml",
+    "icon": "/icons/ocaml/ocaml-plain-wordmark.svg"
+  },
+  {
+    "name": "Ocaml",
+    "icon": "/icons/ocaml/ocaml-plain.svg"
+  },
+  {
+    "name": "Ohmyzsh",
+    "icon": "/icons/ohmyzsh/ohmyzsh-original.svg"
+  },
+  {
+    "name": "Ohmyzsh",
+    "icon": "/icons/ohmyzsh/ohmyzsh-plain.svg"
+  },
+  {
+    "name": "Okta",
+    "icon": "/icons/okta/okta-original-wordmark.svg"
+  },
+  {
+    "name": "Okta",
+    "icon": "/icons/okta/okta-original.svg"
+  },
+  {
+    "name": "Okta",
+    "icon": "/icons/okta/okta-plain-wordmark.svg"
+  },
+  {
+    "name": "Okta",
+    "icon": "/icons/okta/okta-plain.svg"
+  },
+  {
+    "name": "Openal",
+    "icon": "/icons/openal/openal-original.svg"
+  },
+  {
+    "name": "Openal",
+    "icon": "/icons/openal/openal-plain.svg"
+  },
+  {
+    "name": "Openapi",
+    "icon": "/icons/openapi/openapi-line-wordmark.svg"
+  },
+  {
+    "name": "Openapi",
+    "icon": "/icons/openapi/openapi-line.svg"
+  },
+  {
+    "name": "Openapi",
+    "icon": "/icons/openapi/openapi-original-wordmark.svg"
+  },
+  {
+    "name": "Openapi",
+    "icon": "/icons/openapi/openapi-original.svg"
+  },
+  {
+    "name": "Openapi",
+    "icon": "/icons/openapi/openapi-plain-wordmark.svg"
+  },
+  {
+    "name": "Openapi",
+    "icon": "/icons/openapi/openapi-plain.svg"
+  },
+  {
+    "name": "Opencl",
+    "icon": "/icons/opencl/opencl-line.svg"
+  },
+  {
+    "name": "Opencl",
+    "icon": "/icons/opencl/opencl-original.svg"
+  },
+  {
+    "name": "Opencl",
+    "icon": "/icons/opencl/opencl-plain.svg"
+  },
+  {
+    "name": "Opencv",
+    "icon": "/icons/opencv/opencv-original-wordmark.svg"
+  },
+  {
+    "name": "Opencv",
+    "icon": "/icons/opencv/opencv-original.svg"
+  },
+  {
+    "name": "Opencv",
+    "icon": "/icons/opencv/opencv-plain-wordmark.svg"
+  },
+  {
+    "name": "Opencv",
+    "icon": "/icons/opencv/opencv-plain.svg"
+  },
+  {
+    "name": "Opengl",
+    "icon": "/icons/opengl/opengl-original.svg"
+  },
+  {
+    "name": "Opengl",
+    "icon": "/icons/opengl/opengl-plain.svg"
+  },
+  {
+    "name": "Openstack",
+    "icon": "/icons/openstack/openstack-original-wordmark.svg"
+  },
+  {
+    "name": "Openstack",
+    "icon": "/icons/openstack/openstack-original.svg"
+  },
+  {
+    "name": "Openstack",
+    "icon": "/icons/openstack/openstack-plain-wordmark.svg"
+  },
+  {
+    "name": "Opensuse",
+    "icon": "/icons/opensuse/opensuse-original-wordmark.svg"
+  },
+  {
+    "name": "Opensuse",
+    "icon": "/icons/opensuse/opensuse-original.svg"
+  },
+  {
+    "name": "Opentelemetry",
+    "icon": "/icons/opentelemetry/opentelemetry-original-wordmark.svg"
+  },
+  {
+    "name": "Opentelemetry",
+    "icon": "/icons/opentelemetry/opentelemetry-original.svg"
+  },
+  {
+    "name": "Opentelemetry",
+    "icon": "/icons/opentelemetry/opentelemetry-plain-wordmark.svg"
+  },
+  {
+    "name": "Opentelemetry",
+    "icon": "/icons/opentelemetry/opentelemetry-plain.svg"
+  },
+  {
+    "name": "Opera",
+    "icon": "/icons/opera/opera-original-wordmark.svg"
+  },
+  {
+    "name": "Opera",
+    "icon": "/icons/opera/opera-original.svg"
+  },
+  {
+    "name": "Opera",
+    "icon": "/icons/opera/opera-plain-wordmark.svg"
+  },
+  {
+    "name": "Opera",
+    "icon": "/icons/opera/opera-plain.svg"
+  },
+  {
+    "name": "Oracle",
+    "icon": "/icons/oracle/oracle-original.svg"
+  },
+  {
+    "name": "Ory",
+    "icon": "/icons/ory/ory-original-wordmark.svg"
+  },
+  {
+    "name": "Ory",
+    "icon": "/icons/ory/ory-original.svg"
+  },
+  {
+    "name": "P5js",
+    "icon": "/icons/p5js/p5js-original.svg"
+  },
+  {
+    "name": "Packer",
+    "icon": "/icons/packer/packer-line-wordmark.svg"
+  },
+  {
+    "name": "Packer",
+    "icon": "/icons/packer/packer-line.svg"
+  },
+  {
+    "name": "Packer",
+    "icon": "/icons/packer/packer-original-wordmark.svg"
+  },
+  {
+    "name": "Packer",
+    "icon": "/icons/packer/packer-original.svg"
+  },
+  {
+    "name": "Packer",
+    "icon": "/icons/packer/packer-plain-wordmark.svg"
+  },
+  {
+    "name": "Packer",
+    "icon": "/icons/packer/packer-plain.svg"
+  },
+  {
+    "name": "Pandas",
+    "icon": "/icons/pandas/pandas-line-wordmark.svg"
+  },
+  {
+    "name": "Pandas",
+    "icon": "/icons/pandas/pandas-line.svg"
+  },
+  {
+    "name": "Pandas",
+    "icon": "/icons/pandas/pandas-original-wordmark.svg"
+  },
+  {
+    "name": "Pandas",
+    "icon": "/icons/pandas/pandas-original.svg"
+  },
+  {
+    "name": "Pandas",
+    "icon": "/icons/pandas/pandas-plain-wordmark.svg"
+  },
+  {
+    "name": "Pandas",
+    "icon": "/icons/pandas/pandas-plain.svg"
+  },
+  {
+    "name": "Passport",
+    "icon": "/icons/passport/passport-original-wordmark.svg"
+  },
+  {
+    "name": "Passport",
+    "icon": "/icons/passport/passport-original.svg"
+  },
+  {
+    "name": "Passport",
+    "icon": "/icons/passport/passport-plain.svg"
+  },
+  {
+    "name": "Perl",
+    "icon": "/icons/perl/perl-original.svg"
+  },
+  {
+    "name": "Perl",
+    "icon": "/icons/perl/perl-plain.svg"
+  },
+  {
+    "name": "Pfsense",
+    "icon": "/icons/pfsense/pfsense-original-wordmark.svg"
+  },
+  {
+    "name": "Pfsense",
+    "icon": "/icons/pfsense/pfsense-original.svg"
+  },
+  {
+    "name": "Phalcon",
+    "icon": "/icons/phalcon/phalcon-original.svg"
+  },
+  {
+    "name": "Phalcon",
+    "icon": "/icons/phalcon/phalcon-plain.svg"
+  },
+  {
+    "name": "Phoenix",
+    "icon": "/icons/phoenix/phoenix-original-wordmark.svg"
+  },
+  {
+    "name": "Phoenix",
+    "icon": "/icons/phoenix/phoenix-original.svg"
+  },
+  {
+    "name": "Phoenix",
+    "icon": "/icons/phoenix/phoenix-plain-wordmark.svg"
+  },
+  {
+    "name": "Photonengine",
+    "icon": "/icons/photonengine/photonengine-original.svg"
+  },
+  {
+    "name": "Photonengine",
+    "icon": "/icons/photonengine/photonengine-plain.svg"
+  },
+  {
+    "name": "Photoshop",
+    "icon": "/icons/photoshop/photoshop-line.svg"
+  },
+  {
+    "name": "Photoshop",
+    "icon": "/icons/photoshop/photoshop-original.svg"
+  },
+  {
+    "name": "Photoshop",
+    "icon": "/icons/photoshop/photoshop-plain.svg"
+  },
+  {
+    "name": "Php",
+    "icon": "/icons/php/php-original.svg"
+  },
+  {
+    "name": "Php",
+    "icon": "/icons/php/php-plain.svg"
+  },
+  {
+    "name": "Phpstorm",
+    "icon": "/icons/phpstorm/phpstorm-original.svg"
+  },
+  {
+    "name": "Phpstorm",
+    "icon": "/icons/phpstorm/phpstorm-plain-wordmark.svg"
+  },
+  {
+    "name": "Phpstorm",
+    "icon": "/icons/phpstorm/phpstorm-plain.svg"
+  },
+  {
+    "name": "Pixijs",
+    "icon": "/icons/pixijs/pixijs-original-wordmark.svg"
+  },
+  {
+    "name": "Pixijs",
+    "icon": "/icons/pixijs/pixijs-original.svg"
+  },
+  {
+    "name": "Pixijs",
+    "icon": "/icons/pixijs/pixijs-plain-wordmark.svg"
+  },
+  {
+    "name": "Pixijs",
+    "icon": "/icons/pixijs/pixijs-plain.svg"
+  },
+  {
+    "name": "Playwright",
+    "icon": "/icons/playwright/playwright-original.svg"
+  },
+  {
+    "name": "Playwright",
+    "icon": "/icons/playwright/playwright-plain.svg"
+  },
+  {
+    "name": "Plotly",
+    "icon": "/icons/plotly/plotly-original-wordmark.svg"
+  },
+  {
+    "name": "Plotly",
+    "icon": "/icons/plotly/plotly-original.svg"
+  },
+  {
+    "name": "Plotly",
+    "icon": "/icons/plotly/plotly-plain-wordmark.svg"
+  },
+  {
+    "name": "Plotly",
+    "icon": "/icons/plotly/plotly-plain.svg"
+  },
+  {
+    "name": "Pm2",
+    "icon": "/icons/pm2/pm2-line-wordmark.svg"
+  },
+  {
+    "name": "Pm2",
+    "icon": "/icons/pm2/pm2-line.svg"
+  },
+  {
+    "name": "Pm2",
+    "icon": "/icons/pm2/pm2-original-wordmark.svg"
+  },
+  {
+    "name": "Pm2",
+    "icon": "/icons/pm2/pm2-original.svg"
+  },
+  {
+    "name": "Pm2",
+    "icon": "/icons/pm2/pm2-plain-wordmark.svg"
+  },
+  {
+    "name": "Pm2",
+    "icon": "/icons/pm2/pm2-plain.svg"
+  },
+  {
+    "name": "Pnpm",
+    "icon": "/icons/pnpm/pnpm-original-wordmark.svg"
+  },
+  {
+    "name": "Pnpm",
+    "icon": "/icons/pnpm/pnpm-original.svg"
+  },
+  {
+    "name": "Pnpm",
+    "icon": "/icons/pnpm/pnpm-plain-wordmark.svg"
+  },
+  {
+    "name": "Pnpm",
+    "icon": "/icons/pnpm/pnpm-plain.svg"
+  },
+  {
+    "name": "Podman",
+    "icon": "/icons/podman/podman-original-wordmark.svg"
+  },
+  {
+    "name": "Podman",
+    "icon": "/icons/podman/podman-original.svg"
+  },
+  {
+    "name": "Podman",
+    "icon": "/icons/podman/podman-plain-wordmark.svg"
+  },
+  {
+    "name": "Podman",
+    "icon": "/icons/podman/podman-plain.svg"
+  },
+  {
+    "name": "Poetry",
+    "icon": "/icons/poetry/poetry-original.svg"
+  },
+  {
+    "name": "Poetry",
+    "icon": "/icons/poetry/poetry-plain.svg"
+  },
+  {
+    "name": "Polygon",
+    "icon": "/icons/polygon/polygon-original-wordmark.svg"
+  },
+  {
+    "name": "Polygon",
+    "icon": "/icons/polygon/polygon-original.svg"
+  },
+  {
+    "name": "Polygon",
+    "icon": "/icons/polygon/polygon-plain-wordmark.svg"
+  },
+  {
+    "name": "Polygon",
+    "icon": "/icons/polygon/polygon-plain.svg"
+  },
+  {
+    "name": "Portainer",
+    "icon": "/icons/portainer/portainer-original-wordmark.svg"
+  },
+  {
+    "name": "Portainer",
+    "icon": "/icons/portainer/portainer-original.svg"
+  },
+  {
+    "name": "Postcss",
+    "icon": "/icons/postcss/postcss-original-wordmark.svg"
+  },
+  {
+    "name": "Postcss",
+    "icon": "/icons/postcss/postcss-original.svg"
+  },
+  {
+    "name": "Postcss",
+    "icon": "/icons/postcss/postcss-plain-wordmark.svg"
+  },
+  {
+    "name": "Postgresql",
+    "icon": "/icons/postgresql/postgresql-original-wordmark.svg"
+  },
+  {
+    "name": "Postgresql",
+    "icon": "/icons/postgresql/postgresql-original.svg"
+  },
+  {
+    "name": "Postgresql",
+    "icon": "/icons/postgresql/postgresql-plain-wordmark.svg"
+  },
+  {
+    "name": "Postgresql",
+    "icon": "/icons/postgresql/postgresql-plain.svg"
+  },
+  {
+    "name": "Postman",
+    "icon": "/icons/postman/postman-original-wordmark.svg"
+  },
+  {
+    "name": "Postman",
+    "icon": "/icons/postman/postman-original.svg"
+  },
+  {
+    "name": "Postman",
+    "icon": "/icons/postman/postman-plain-wordmark.svg"
+  },
+  {
+    "name": "Postman",
+    "icon": "/icons/postman/postman-plain.svg"
+  },
+  {
+    "name": "Powershell",
+    "icon": "/icons/powershell/powershell-original.svg"
+  },
+  {
+    "name": "Powershell",
+    "icon": "/icons/powershell/powershell-plain.svg"
+  },
+  {
+    "name": "Premierepro",
+    "icon": "/icons/premierepro/premierepro-original.svg"
+  },
+  {
+    "name": "Premierepro",
+    "icon": "/icons/premierepro/premierepro-plain.svg"
+  },
+  {
+    "name": "Primeng",
+    "icon": "/icons/primeng/primeng-original.svg"
+  },
+  {
+    "name": "Primeng",
+    "icon": "/icons/primeng/primeng-plain.svg"
+  },
+  {
+    "name": "Prisma",
+    "icon": "/icons/prisma/prisma-original-wordmark.svg"
+  },
+  {
+    "name": "Prisma",
+    "icon": "/icons/prisma/prisma-original.svg"
+  },
+  {
+    "name": "Processing",
+    "icon": "/icons/processing/processing-line.svg"
+  },
+  {
+    "name": "Processing",
+    "icon": "/icons/processing/processing-original.svg"
+  },
+  {
+    "name": "Processing",
+    "icon": "/icons/processing/processing-plain.svg"
+  },
+  {
+    "name": "Processwire",
+    "icon": "/icons/processwire/processwire-original-wordmark.svg"
+  },
+  {
+    "name": "Processwire",
+    "icon": "/icons/processwire/processwire-original.svg"
+  },
+  {
+    "name": "Processwire",
+    "icon": "/icons/processwire/processwire-plain-wordmark.svg"
+  },
+  {
+    "name": "Prolog",
+    "icon": "/icons/prolog/prolog-original-wordmark.svg"
+  },
+  {
+    "name": "Prolog",
+    "icon": "/icons/prolog/prolog-original.svg"
+  },
+  {
+    "name": "Prolog",
+    "icon": "/icons/prolog/prolog-plain-wordmark.svg"
+  },
+  {
+    "name": "Prolog",
+    "icon": "/icons/prolog/prolog-plain.svg"
+  },
+  {
+    "name": "Prometheus",
+    "icon": "/icons/prometheus/prometheus-line-wordmark.svg"
+  },
+  {
+    "name": "Prometheus",
+    "icon": "/icons/prometheus/prometheus-line.svg"
+  },
+  {
+    "name": "Prometheus",
+    "icon": "/icons/prometheus/prometheus-original-wordmark.svg"
+  },
+  {
+    "name": "Prometheus",
+    "icon": "/icons/prometheus/prometheus-original.svg"
+  },
+  {
+    "name": "Prometheus",
+    "icon": "/icons/prometheus/prometheus-plain-wordmark.svg"
+  },
+  {
+    "name": "Protractor",
+    "icon": "/icons/protractor/protractor-line-wordmark.svg"
+  },
+  {
+    "name": "Protractor",
+    "icon": "/icons/protractor/protractor-line.svg"
+  },
+  {
+    "name": "Protractor",
+    "icon": "/icons/protractor/protractor-original-wordmark.svg"
+  },
+  {
+    "name": "Protractor",
+    "icon": "/icons/protractor/protractor-original.svg"
+  },
+  {
+    "name": "Protractor",
+    "icon": "/icons/protractor/protractor-plain-wordmark.svg"
+  },
+  {
+    "name": "Protractor",
+    "icon": "/icons/protractor/protractor-plain.svg"
+  },
+  {
+    "name": "Proxmox",
+    "icon": "/icons/proxmox/proxmox-original-wordmark.svg"
+  },
+  {
+    "name": "Proxmox",
+    "icon": "/icons/proxmox/proxmox-original.svg"
+  },
+  {
+    "name": "Proxmox",
+    "icon": "/icons/proxmox/proxmox-plain-wordmark.svg"
+  },
+  {
+    "name": "Proxmox",
+    "icon": "/icons/proxmox/proxmox-plain.svg"
+  },
+  {
+    "name": "Pug",
+    "icon": "/icons/pug/pug-line.svg"
+  },
+  {
+    "name": "Pug",
+    "icon": "/icons/pug/pug-original.svg"
+  },
+  {
+    "name": "Pug",
+    "icon": "/icons/pug/pug-plain.svg"
+  },
+  {
+    "name": "Pulsar",
+    "icon": "/icons/pulsar/pulsar-original-wordmark.svg"
+  },
+  {
+    "name": "Pulsar",
+    "icon": "/icons/pulsar/pulsar-original.svg"
+  },
+  {
+    "name": "Pulumi",
+    "icon": "/icons/pulumi/pulumi-original-wordmark.svg"
+  },
+  {
+    "name": "Pulumi",
+    "icon": "/icons/pulumi/pulumi-original.svg"
+  },
+  {
+    "name": "Pulumi",
+    "icon": "/icons/pulumi/pulumi-plain-wordmark.svg"
+  },
+  {
+    "name": "Pulumi",
+    "icon": "/icons/pulumi/pulumi-plain.svg"
+  },
+  {
+    "name": "Puppeteer",
+    "icon": "/icons/puppeteer/puppeteer-original.svg"
+  },
+  {
+    "name": "Puppeteer",
+    "icon": "/icons/puppeteer/puppeteer-plain.svg"
+  },
+  {
+    "name": "Purescript",
+    "icon": "/icons/purescript/purescript-original-wordmark.svg"
+  },
+  {
+    "name": "Purescript",
+    "icon": "/icons/purescript/purescript-original.svg"
+  },
+  {
+    "name": "Putty",
+    "icon": "/icons/putty/putty-original.svg"
+  },
+  {
+    "name": "Putty",
+    "icon": "/icons/putty/putty-plain.svg"
+  },
+  {
+    "name": "Pycharm",
+    "icon": "/icons/pycharm/pycharm-original-wordmark.svg"
+  },
+  {
+    "name": "Pycharm",
+    "icon": "/icons/pycharm/pycharm-original.svg"
+  },
+  {
+    "name": "Pycharm",
+    "icon": "/icons/pycharm/pycharm-plain-wordmark.svg"
+  },
+  {
+    "name": "Pycharm",
+    "icon": "/icons/pycharm/pycharm-plain.svg"
+  },
+  {
+    "name": "Pypi",
+    "icon": "/icons/pypi/pypi-original-wordmark.svg"
+  },
+  {
+    "name": "Pypi",
+    "icon": "/icons/pypi/pypi-original.svg"
+  },
+  {
+    "name": "Pypi",
+    "icon": "/icons/pypi/pypi-plain-wordmark.svg"
+  },
+  {
+    "name": "Pypi",
+    "icon": "/icons/pypi/pypi-plain.svg"
+  },
+  {
+    "name": "Pyscript",
+    "icon": "/icons/pyscript/pyscript-original-wordmark.svg"
+  },
+  {
+    "name": "Pyscript",
+    "icon": "/icons/pyscript/pyscript-plain-wordmark.svg"
+  },
+  {
+    "name": "Pytest",
+    "icon": "/icons/pytest/pytest-original-wordmark.svg"
+  },
+  {
+    "name": "Pytest",
+    "icon": "/icons/pytest/pytest-original.svg"
+  },
+  {
+    "name": "Pytest",
+    "icon": "/icons/pytest/pytest-plain-wordmark.svg"
+  },
+  {
+    "name": "Pytest",
+    "icon": "/icons/pytest/pytest-plain.svg"
+  },
+  {
+    "name": "Python",
+    "icon": "/icons/python/python-original-wordmark.svg"
+  },
+  {
+    "name": "Python",
+    "icon": "/icons/python/python-original.svg"
+  },
+  {
+    "name": "Python",
+    "icon": "/icons/python/python-plain-wordmark.svg"
+  },
+  {
+    "name": "Python",
+    "icon": "/icons/python/python-plain.svg"
+  },
+  {
+    "name": "Pytorch",
+    "icon": "/icons/pytorch/pytorch-original-wordmark.svg"
+  },
+  {
+    "name": "Pytorch",
+    "icon": "/icons/pytorch/pytorch-original.svg"
+  },
+  {
+    "name": "Pytorch",
+    "icon": "/icons/pytorch/pytorch-plain-wordmark.svg"
+  },
+  {
+    "name": "Qodana",
+    "icon": "/icons/qodana/qodana-original.svg"
+  },
+  {
+    "name": "Qodana",
+    "icon": "/icons/qodana/qodana-plain-wordmark.svg"
+  },
+  {
+    "name": "Qodana",
+    "icon": "/icons/qodana/qodana-plain.svg"
+  },
+  {
+    "name": "Qt",
+    "icon": "/icons/qt/qt-original.svg"
+  },
+  {
+    "name": "Qtest",
+    "icon": "/icons/qtest/qtest-original-wordmark.svg"
+  },
+  {
+    "name": "Qtest",
+    "icon": "/icons/qtest/qtest-original.svg"
+  },
+  {
+    "name": "Quarkus",
+    "icon": "/icons/quarkus/quarkus-original-wordmark.svg"
+  },
+  {
+    "name": "Quarkus",
+    "icon": "/icons/quarkus/quarkus-original.svg"
+  },
+  {
+    "name": "Quarkus",
+    "icon": "/icons/quarkus/quarkus-plain-wordmark.svg"
+  },
+  {
+    "name": "Quarkus",
+    "icon": "/icons/quarkus/quarkus-plain.svg"
+  },
+  {
+    "name": "Quasar",
+    "icon": "/icons/quasar/quasar-original-wordmark.svg"
+  },
+  {
+    "name": "Quasar",
+    "icon": "/icons/quasar/quasar-original.svg"
+  },
+  {
+    "name": "Quasar",
+    "icon": "/icons/quasar/quasar-plain-wordmark.svg"
+  },
+  {
+    "name": "Quasar",
+    "icon": "/icons/quasar/quasar-plain.svg"
+  },
+  {
+    "name": "Qwik",
+    "icon": "/icons/qwik/qwik-original-wordmark.svg"
+  },
+  {
+    "name": "Qwik",
+    "icon": "/icons/qwik/qwik-original.svg"
+  },
+  {
+    "name": "Qwik",
+    "icon": "/icons/qwik/qwik-plain-wordmark.svg"
+  },
+  {
+    "name": "Qwik",
+    "icon": "/icons/qwik/qwik-plain.svg"
+  },
+  {
+    "name": "R",
+    "icon": "/icons/r/r-line.svg"
+  },
+  {
+    "name": "R",
+    "icon": "/icons/r/r-original.svg"
+  },
+  {
+    "name": "R",
+    "icon": "/icons/r/r-plain.svg"
+  },
+  {
+    "name": "Rabbitmq",
+    "icon": "/icons/rabbitmq/rabbitmq-original-wordmark.svg"
+  },
+  {
+    "name": "Rabbitmq",
+    "icon": "/icons/rabbitmq/rabbitmq-original.svg"
+  },
+  {
+    "name": "Rabbitmq",
+    "icon": "/icons/rabbitmq/rabbitmq-plain-wordmark.svg"
+  },
+  {
+    "name": "Racket",
+    "icon": "/icons/racket/racket-line.svg"
+  },
+  {
+    "name": "Racket",
+    "icon": "/icons/racket/racket-original.svg"
+  },
+  {
+    "name": "Racket",
+    "icon": "/icons/racket/racket-plain.svg"
+  },
+  {
+    "name": "Radstudio",
+    "icon": "/icons/radstudio/radstudio-original.svg"
+  },
+  {
+    "name": "Radstudio",
+    "icon": "/icons/radstudio/radstudio-plain.svg"
+  },
+  {
+    "name": "Rails",
+    "icon": "/icons/rails/rails-original-wordmark.svg"
+  },
+  {
+    "name": "Rails",
+    "icon": "/icons/rails/rails-plain-wordmark.svg"
+  },
+  {
+    "name": "Rails",
+    "icon": "/icons/rails/rails-plain.svg"
+  },
+  {
+    "name": "Railway",
+    "icon": "/icons/railway/railway-line-wordmark.svg"
+  },
+  {
+    "name": "Railway",
+    "icon": "/icons/railway/railway-line.svg"
+  },
+  {
+    "name": "Railway",
+    "icon": "/icons/railway/railway-original-wordmark.svg"
+  },
+  {
+    "name": "Railway",
+    "icon": "/icons/railway/railway-original.svg"
+  },
+  {
+    "name": "Rancher",
+    "icon": "/icons/rancher/rancher-line-wordmark.svg"
+  },
+  {
+    "name": "Rancher",
+    "icon": "/icons/rancher/rancher-line.svg"
+  },
+  {
+    "name": "Rancher",
+    "icon": "/icons/rancher/rancher-original-wordmark.svg"
+  },
+  {
+    "name": "Rancher",
+    "icon": "/icons/rancher/rancher-original.svg"
+  },
+  {
+    "name": "Rancher",
+    "icon": "/icons/rancher/rancher-plain-wordmark.svg"
+  },
+  {
+    "name": "Raspberrypi",
+    "icon": "/icons/raspberrypi/raspberrypi-line-wordmark.svg"
+  },
+  {
+    "name": "Raspberrypi",
+    "icon": "/icons/raspberrypi/raspberrypi-line.svg"
+  },
+  {
+    "name": "Raspberrypi",
+    "icon": "/icons/raspberrypi/raspberrypi-original-wordmark.svg"
+  },
+  {
+    "name": "Raspberrypi",
+    "icon": "/icons/raspberrypi/raspberrypi-original.svg"
+  },
+  {
+    "name": "Raspberrypi",
+    "icon": "/icons/raspberrypi/raspberrypi-plain-wordmark.svg"
+  },
+  {
+    "name": "Raspberrypi",
+    "icon": "/icons/raspberrypi/raspberrypi-plain.svg"
+  },
+  {
+    "name": "Reach",
+    "icon": "/icons/reach/reach-original.svg"
+  },
+  {
+    "name": "Reach",
+    "icon": "/icons/reach/reach-plain.svg"
+  },
+  {
+    "name": "React",
+    "icon": "/icons/react/react-original-wordmark.svg"
+  },
+  {
+    "name": "React",
+    "icon": "/icons/react/react-original.svg"
+  },
+  {
+    "name": "Reactbootstrap",
+    "icon": "/icons/reactbootstrap/reactbootstrap-original.svg"
+  },
+  {
+    "name": "Reactnative",
+    "icon": "/icons/reactnative/reactnative-original-wordmark.svg"
+  },
+  {
+    "name": "Reactnative",
+    "icon": "/icons/reactnative/reactnative-original.svg"
+  },
+  {
+    "name": "Reactnavigation",
+    "icon": "/icons/reactnavigation/reactnavigation-original.svg"
+  },
+  {
+    "name": "Reactrouter",
+    "icon": "/icons/reactrouter/reactrouter-original-wordmark.svg"
+  },
+  {
+    "name": "Reactrouter",
+    "icon": "/icons/reactrouter/reactrouter-original.svg"
+  },
+  {
+    "name": "Reactrouter",
+    "icon": "/icons/reactrouter/reactrouter-plain-wordmark.svg"
+  },
+  {
+    "name": "Reactrouter",
+    "icon": "/icons/reactrouter/reactrouter-plain.svg"
+  },
+  {
+    "name": "Readthedocs",
+    "icon": "/icons/readthedocs/readthedocs-line.svg"
+  },
+  {
+    "name": "Readthedocs",
+    "icon": "/icons/readthedocs/readthedocs-original-wordmark.svg"
+  },
+  {
+    "name": "Readthedocs",
+    "icon": "/icons/readthedocs/readthedocs-original.svg"
+  },
+  {
+    "name": "Realm",
+    "icon": "/icons/realm/realm-original-wordmark.svg"
+  },
+  {
+    "name": "Realm",
+    "icon": "/icons/realm/realm-original.svg"
+  },
+  {
+    "name": "Realm",
+    "icon": "/icons/realm/realm-plain-wordmark.svg"
+  },
+  {
+    "name": "Realm",
+    "icon": "/icons/realm/realm-plain.svg"
+  },
+  {
+    "name": "Rect",
+    "icon": "/icons/rect/rect-original.svg"
+  },
+  {
+    "name": "Rect",
+    "icon": "/icons/rect/rect-plain.svg"
+  },
+  {
+    "name": "Redhat",
+    "icon": "/icons/redhat/redhat-original-wordmark.svg"
+  },
+  {
+    "name": "Redhat",
+    "icon": "/icons/redhat/redhat-original.svg"
+  },
+  {
+    "name": "Redhat",
+    "icon": "/icons/redhat/redhat-plain-wordmark.svg"
+  },
+  {
+    "name": "Redhat",
+    "icon": "/icons/redhat/redhat-plain.svg"
+  },
+  {
+    "name": "Redis",
+    "icon": "/icons/redis/redis-original-wordmark.svg"
+  },
+  {
+    "name": "Redis",
+    "icon": "/icons/redis/redis-original.svg"
+  },
+  {
+    "name": "Redis",
+    "icon": "/icons/redis/redis-plain-wordmark.svg"
+  },
+  {
+    "name": "Redis",
+    "icon": "/icons/redis/redis-plain.svg"
+  },
+  {
+    "name": "Redux",
+    "icon": "/icons/redux/redux-original.svg"
+  },
+  {
+    "name": "Reflex",
+    "icon": "/icons/reflex/reflex-original-wordmark.svg"
+  },
+  {
+    "name": "Reflex",
+    "icon": "/icons/reflex/reflex-original.svg"
+  },
+  {
+    "name": "Reflex",
+    "icon": "/icons/reflex/reflex-plain-wordmark.svg"
+  },
+  {
+    "name": "Reflex",
+    "icon": "/icons/reflex/reflex-plain.svg"
+  },
+  {
+    "name": "Remix",
+    "icon": "/icons/remix/remix-line-wordmark.svg"
+  },
+  {
+    "name": "Remix",
+    "icon": "/icons/remix/remix-line.svg"
+  },
+  {
+    "name": "Remix",
+    "icon": "/icons/remix/remix-original-wordmark.svg"
+  },
+  {
+    "name": "Remix",
+    "icon": "/icons/remix/remix-original.svg"
+  },
+  {
+    "name": "Renpy",
+    "icon": "/icons/renpy/renpy-original.svg"
+  },
+  {
+    "name": "Renpy",
+    "icon": "/icons/renpy/renpy-plain.svg"
+  },
+  {
+    "name": "Replit",
+    "icon": "/icons/replit/replit-original-wordmark.svg"
+  },
+  {
+    "name": "Replit",
+    "icon": "/icons/replit/replit-original.svg"
+  },
+  {
+    "name": "Replit",
+    "icon": "/icons/replit/replit-plain-wordmark.svg"
+  },
+  {
+    "name": "Rexx",
+    "icon": "/icons/rexx/rexx-original-wordmark.svg"
+  },
+  {
+    "name": "Rexx",
+    "icon": "/icons/rexx/rexx-original.svg"
+  },
+  {
+    "name": "Rexx",
+    "icon": "/icons/rexx/rexx-plain-wordmark.svg"
+  },
+  {
+    "name": "Rexx",
+    "icon": "/icons/rexx/rexx-plain.svg"
+  },
+  {
+    "name": "Rider",
+    "icon": "/icons/rider/rider-original-wordmark.svg"
+  },
+  {
+    "name": "Rider",
+    "icon": "/icons/rider/rider-original.svg"
+  },
+  {
+    "name": "Rider",
+    "icon": "/icons/rider/rider-plain-wordmark.svg"
+  },
+  {
+    "name": "Rider",
+    "icon": "/icons/rider/rider-plain.svg"
+  },
+  {
+    "name": "Rocksdb",
+    "icon": "/icons/rocksdb/rocksdb-line.svg"
+  },
+  {
+    "name": "Rocksdb",
+    "icon": "/icons/rocksdb/rocksdb-original.svg"
+  },
+  {
+    "name": "Rocksdb",
+    "icon": "/icons/rocksdb/rocksdb-plain.svg"
+  },
+  {
+    "name": "Rockylinux",
+    "icon": "/icons/rockylinux/rockylinux-original-wordmark.svg"
+  },
+  {
+    "name": "Rockylinux",
+    "icon": "/icons/rockylinux/rockylinux-original.svg"
+  },
+  {
+    "name": "Rockylinux",
+    "icon": "/icons/rockylinux/rockylinux-plain-wordmark.svg"
+  },
+  {
+    "name": "Rollup",
+    "icon": "/icons/rollup/rollup-line-wordmark.svg"
+  },
+  {
+    "name": "Rollup",
+    "icon": "/icons/rollup/rollup-line.svg"
+  },
+  {
+    "name": "Rollup",
+    "icon": "/icons/rollup/rollup-original-wordmark.svg"
+  },
+  {
+    "name": "Rollup",
+    "icon": "/icons/rollup/rollup-original.svg"
+  },
+  {
+    "name": "Rollup",
+    "icon": "/icons/rollup/rollup-plain-wordmark.svg"
+  },
+  {
+    "name": "Rollup",
+    "icon": "/icons/rollup/rollup-plain.svg"
+  },
+  {
+    "name": "Ros",
+    "icon": "/icons/ros/ros-original-wordmark.svg"
+  },
+  {
+    "name": "Ros",
+    "icon": "/icons/ros/ros-original.svg"
+  },
+  {
+    "name": "Rspec",
+    "icon": "/icons/rspec/rspec-line-wordmark.svg"
+  },
+  {
+    "name": "Rspec",
+    "icon": "/icons/rspec/rspec-line.svg"
+  },
+  {
+    "name": "Rspec",
+    "icon": "/icons/rspec/rspec-original-wordmark.svg"
+  },
+  {
+    "name": "Rspec",
+    "icon": "/icons/rspec/rspec-original.svg"
+  },
+  {
+    "name": "Rspec",
+    "icon": "/icons/rspec/rspec-plain-wordmark.svg"
+  },
+  {
+    "name": "Rspec",
+    "icon": "/icons/rspec/rspec-plain.svg"
+  },
+  {
+    "name": "Rstudio",
+    "icon": "/icons/rstudio/rstudio-original.svg"
+  },
+  {
+    "name": "Rstudio",
+    "icon": "/icons/rstudio/rstudio-plain.svg"
+  },
+  {
+    "name": "Ruby",
+    "icon": "/icons/ruby/ruby-original-wordmark.svg"
+  },
+  {
+    "name": "Ruby",
+    "icon": "/icons/ruby/ruby-original.svg"
+  },
+  {
+    "name": "Ruby",
+    "icon": "/icons/ruby/ruby-plain-wordmark.svg"
+  },
+  {
+    "name": "Ruby",
+    "icon": "/icons/ruby/ruby-plain.svg"
+  },
+  {
+    "name": "Rubymine",
+    "icon": "/icons/rubymine/rubymine-original-wordmark.svg"
+  },
+  {
+    "name": "Rubymine",
+    "icon": "/icons/rubymine/rubymine-original.svg"
+  },
+  {
+    "name": "Rubymine",
+    "icon": "/icons/rubymine/rubymine-plain-wordmark.svg"
+  },
+  {
+    "name": "Rubymine",
+    "icon": "/icons/rubymine/rubymine-plain.svg"
+  },
+  {
+    "name": "Rust",
+    "icon": "/icons/rust/rust-line.svg"
+  },
+  {
+    "name": "Rust",
+    "icon": "/icons/rust/rust-original.svg"
+  },
+  {
+    "name": "Rxjs",
+    "icon": "/icons/rxjs/rxjs-original.svg"
+  },
+  {
+    "name": "Rxjs",
+    "icon": "/icons/rxjs/rxjs-plain.svg"
+  },
+  {
+    "name": "Safari",
+    "icon": "/icons/safari/safari-line-wordmark.svg"
+  },
+  {
+    "name": "Safari",
+    "icon": "/icons/safari/safari-line.svg"
+  },
+  {
+    "name": "Safari",
+    "icon": "/icons/safari/safari-original-wordmark.svg"
+  },
+  {
+    "name": "Safari",
+    "icon": "/icons/safari/safari-original.svg"
+  },
+  {
+    "name": "Safari",
+    "icon": "/icons/safari/safari-plain-wordmark.svg"
+  },
+  {
+    "name": "Safari",
+    "icon": "/icons/safari/safari-plain.svg"
+  },
+  {
+    "name": "Salesforce",
+    "icon": "/icons/salesforce/salesforce-original.svg"
+  },
+  {
+    "name": "Salesforce",
+    "icon": "/icons/salesforce/salesforce-plain.svg"
+  },
+  {
+    "name": "Sanity",
+    "icon": "/icons/sanity/sanity-original.svg"
+  },
+  {
+    "name": "Sanity",
+    "icon": "/icons/sanity/sanity-plain.svg"
+  },
+  {
+    "name": "Sass",
+    "icon": "/icons/sass/sass-original.svg"
+  },
+  {
+    "name": "Scala",
+    "icon": "/icons/scala/scala-original-wordmark.svg"
+  },
+  {
+    "name": "Scala",
+    "icon": "/icons/scala/scala-original.svg"
+  },
+  {
+    "name": "Scala",
+    "icon": "/icons/scala/scala-plain-wordmark.svg"
+  },
+  {
+    "name": "Scala",
+    "icon": "/icons/scala/scala-plain.svg"
+  },
+  {
+    "name": "Scalingo",
+    "icon": "/icons/scalingo/scalingo-line-wordmark.svg"
+  },
+  {
+    "name": "Scalingo",
+    "icon": "/icons/scalingo/scalingo-line.svg"
+  },
+  {
+    "name": "Scalingo",
+    "icon": "/icons/scalingo/scalingo-original-wordmark.svg"
+  },
+  {
+    "name": "Scalingo",
+    "icon": "/icons/scalingo/scalingo-original.svg"
+  },
+  {
+    "name": "Scalingo",
+    "icon": "/icons/scalingo/scalingo-plain-wordmark.svg"
+  },
+  {
+    "name": "Scalingo",
+    "icon": "/icons/scalingo/scalingo-plain.svg"
+  },
+  {
+    "name": "Scikitlearn",
+    "icon": "/icons/scikitlearn/scikitlearn-line.svg"
+  },
+  {
+    "name": "Scikitlearn",
+    "icon": "/icons/scikitlearn/scikitlearn-original.svg"
+  },
+  {
+    "name": "Scikitlearn",
+    "icon": "/icons/scikitlearn/scikitlearn-plain.svg"
+  },
+  {
+    "name": "Sdl",
+    "icon": "/icons/sdl/sdl-original.svg"
+  },
+  {
+    "name": "Sdl",
+    "icon": "/icons/sdl/sdl-plain.svg"
+  },
+  {
+    "name": "Selenium",
+    "icon": "/icons/selenium/selenium-original.svg"
+  },
+  {
+    "name": "Sema",
+    "icon": "/icons/sema/sema-original-wordmark.svg"
+  },
+  {
+    "name": "Sema",
+    "icon": "/icons/sema/sema-original.svg"
+  },
+  {
+    "name": "Sentry",
+    "icon": "/icons/sentry/sentry-original-wordmark.svg"
+  },
+  {
+    "name": "Sentry",
+    "icon": "/icons/sentry/sentry-original.svg"
+  },
+  {
+    "name": "Sequelize",
+    "icon": "/icons/sequelize/sequelize-original-wordmark.svg"
+  },
+  {
+    "name": "Sequelize",
+    "icon": "/icons/sequelize/sequelize-original.svg"
+  },
+  {
+    "name": "Sequelize",
+    "icon": "/icons/sequelize/sequelize-plain-wordmark.svg"
+  },
+  {
+    "name": "Sequelize",
+    "icon": "/icons/sequelize/sequelize-plain.svg"
+  },
+  {
+    "name": "Shopware",
+    "icon": "/icons/shopware/shopware-original-wordmark.svg"
+  },
+  {
+    "name": "Shopware",
+    "icon": "/icons/shopware/shopware-original.svg"
+  },
+  {
+    "name": "Shotgrid",
+    "icon": "/icons/shotgrid/shotgrid-original-wordmark.svg"
+  },
+  {
+    "name": "Shotgrid",
+    "icon": "/icons/shotgrid/shotgrid-original.svg"
+  },
+  {
+    "name": "Shotgrid",
+    "icon": "/icons/shotgrid/shotgrid-plain.svg"
+  },
+  {
+    "name": "Sketch",
+    "icon": "/icons/sketch/sketch-line-wordmark.svg"
+  },
+  {
+    "name": "Sketch",
+    "icon": "/icons/sketch/sketch-line.svg"
+  },
+  {
+    "name": "Sketch",
+    "icon": "/icons/sketch/sketch-original-wordmark.svg"
+  },
+  {
+    "name": "Sketch",
+    "icon": "/icons/sketch/sketch-original.svg"
+  },
+  {
+    "name": "Sketch",
+    "icon": "/icons/sketch/sketch-plain-wordmark.svg"
+  },
+  {
+    "name": "Sketch",
+    "icon": "/icons/sketch/sketch-plain.svg"
+  },
+  {
+    "name": "Slack",
+    "icon": "/icons/slack/slack-original-wordmark.svg"
+  },
+  {
+    "name": "Slack",
+    "icon": "/icons/slack/slack-original.svg"
+  },
+  {
+    "name": "Slack",
+    "icon": "/icons/slack/slack-plain-wordmark.svg"
+  },
+  {
+    "name": "Slack",
+    "icon": "/icons/slack/slack-plain.svg"
+  },
+  {
+    "name": "Socketio",
+    "icon": "/icons/socketio/socketio-original-wordmark.svg"
+  },
+  {
+    "name": "Socketio",
+    "icon": "/icons/socketio/socketio-original.svg"
+  },
+  {
+    "name": "Solidity",
+    "icon": "/icons/solidity/solidity-original.svg"
+  },
+  {
+    "name": "Solidity",
+    "icon": "/icons/solidity/solidity-plain.svg"
+  },
+  {
+    "name": "Solidjs",
+    "icon": "/icons/solidjs/solidjs-original-wordmark.svg"
+  },
+  {
+    "name": "Solidjs",
+    "icon": "/icons/solidjs/solidjs-original.svg"
+  },
+  {
+    "name": "Solidjs",
+    "icon": "/icons/solidjs/solidjs-plain-wordmark.svg"
+  },
+  {
+    "name": "Solidjs",
+    "icon": "/icons/solidjs/solidjs-plain.svg"
+  },
+  {
+    "name": "Sonarqube",
+    "icon": "/icons/sonarqube/sonarqube-line-wordmark.svg"
+  },
+  {
+    "name": "Sonarqube",
+    "icon": "/icons/sonarqube/sonarqube-line.svg"
+  },
+  {
+    "name": "Sonarqube",
+    "icon": "/icons/sonarqube/sonarqube-original-wordmark.svg"
+  },
+  {
+    "name": "Sonarqube",
+    "icon": "/icons/sonarqube/sonarqube-original.svg"
+  },
+  {
+    "name": "Sonarqube",
+    "icon": "/icons/sonarqube/sonarqube-plain-wordmark.svg"
+  },
+  {
+    "name": "Sourceengine",
+    "icon": "/icons/sourceengine/sourceengine-original-wordmark.svg"
+  },
+  {
+    "name": "Sourceengine",
+    "icon": "/icons/sourceengine/sourceengine-original.svg"
+  },
+  {
+    "name": "Sourceengine",
+    "icon": "/icons/sourceengine/sourceengine-plain-wordmark.svg"
+  },
+  {
+    "name": "Sourceengine",
+    "icon": "/icons/sourceengine/sourceengine-plain.svg"
+  },
+  {
+    "name": "Sourcetree",
+    "icon": "/icons/sourcetree/sourcetree-original-wordmark.svg"
+  },
+  {
+    "name": "Sourcetree",
+    "icon": "/icons/sourcetree/sourcetree-original.svg"
+  },
+  {
+    "name": "Spack",
+    "icon": "/icons/spack/spack-original.svg"
+  },
+  {
+    "name": "Spack",
+    "icon": "/icons/spack/spack-plain.svg"
+  },
+  {
+    "name": "Spicedb",
+    "icon": "/icons/spicedb/spicedb-line.svg"
+  },
+  {
+    "name": "Spicedb",
+    "icon": "/icons/spicedb/spicedb-original.svg"
+  },
+  {
+    "name": "Spicedb",
+    "icon": "/icons/spicedb/spicedb-plain.svg"
+  },
+  {
+    "name": "Splunk",
+    "icon": "/icons/splunk/splunk-original-wordmark.svg"
+  },
+  {
+    "name": "Spring",
+    "icon": "/icons/spring/spring-original-wordmark.svg"
+  },
+  {
+    "name": "Spring",
+    "icon": "/icons/spring/spring-original.svg"
+  },
+  {
+    "name": "Spss",
+    "icon": "/icons/spss/spss-original.svg"
+  },
+  {
+    "name": "Spss",
+    "icon": "/icons/spss/spss-plain.svg"
+  },
+  {
+    "name": "Spyder",
+    "icon": "/icons/spyder/spyder-original-wordmark.svg"
+  },
+  {
+    "name": "Spyder",
+    "icon": "/icons/spyder/spyder-original.svg"
+  },
+  {
+    "name": "Spyder",
+    "icon": "/icons/spyder/spyder-plain-wordmark.svg"
+  },
+  {
+    "name": "Spyder",
+    "icon": "/icons/spyder/spyder-plain.svg"
+  },
+  {
+    "name": "Sqlalchemy",
+    "icon": "/icons/sqlalchemy/sqlalchemy-original-wordmark.svg"
+  },
+  {
+    "name": "Sqlalchemy",
+    "icon": "/icons/sqlalchemy/sqlalchemy-original.svg"
+  },
+  {
+    "name": "Sqlalchemy",
+    "icon": "/icons/sqlalchemy/sqlalchemy-plain-wordmark.svg"
+  },
+  {
+    "name": "Sqlalchemy",
+    "icon": "/icons/sqlalchemy/sqlalchemy-plain.svg"
+  },
+  {
+    "name": "Sqldeveloper",
+    "icon": "/icons/sqldeveloper/sqldeveloper-original.svg"
+  },
+  {
+    "name": "Sqldeveloper",
+    "icon": "/icons/sqldeveloper/sqldeveloper-plain.svg"
+  },
+  {
+    "name": "Sqlite",
+    "icon": "/icons/sqlite/sqlite-original-wordmark.svg"
+  },
+  {
+    "name": "Sqlite",
+    "icon": "/icons/sqlite/sqlite-original.svg"
+  },
+  {
+    "name": "Sqlite",
+    "icon": "/icons/sqlite/sqlite-plain-wordmark.svg"
+  },
+  {
+    "name": "Sqlite",
+    "icon": "/icons/sqlite/sqlite-plain.svg"
+  },
+  {
+    "name": "Ssh",
+    "icon": "/icons/ssh/ssh-original-wordmark.svg"
+  },
+  {
+    "name": "Ssh",
+    "icon": "/icons/ssh/ssh-original.svg"
+  },
+  {
+    "name": "Stackblitz",
+    "icon": "/icons/stackblitz/stackblitz-line-wordmark.svg"
+  },
+  {
+    "name": "Stackblitz",
+    "icon": "/icons/stackblitz/stackblitz-line.svg"
+  },
+  {
+    "name": "Stackblitz",
+    "icon": "/icons/stackblitz/stackblitz-original-wordmark.svg"
+  },
+  {
+    "name": "Stackblitz",
+    "icon": "/icons/stackblitz/stackblitz-original.svg"
+  },
+  {
+    "name": "Stackblitz",
+    "icon": "/icons/stackblitz/stackblitz-plain-wordmark.svg"
+  },
+  {
+    "name": "Stackoverflow",
+    "icon": "/icons/stackoverflow/stackoverflow-line-wordmark.svg"
+  },
+  {
+    "name": "Stackoverflow",
+    "icon": "/icons/stackoverflow/stackoverflow-line.svg"
+  },
+  {
+    "name": "Stackoverflow",
+    "icon": "/icons/stackoverflow/stackoverflow-original-wordmark.svg"
+  },
+  {
+    "name": "Stackoverflow",
+    "icon": "/icons/stackoverflow/stackoverflow-original.svg"
+  },
+  {
+    "name": "Stackoverflow",
+    "icon": "/icons/stackoverflow/stackoverflow-plain-wordmark.svg"
+  },
+  {
+    "name": "Stackoverflow",
+    "icon": "/icons/stackoverflow/stackoverflow-plain.svg"
+  },
+  {
+    "name": "Stata",
+    "icon": "/icons/stata/stata-original-wordmark.svg"
+  },
+  {
+    "name": "Stenciljs",
+    "icon": "/icons/stenciljs/stenciljs-original-wordmark.svg"
+  },
+  {
+    "name": "Stenciljs",
+    "icon": "/icons/stenciljs/stenciljs-original.svg"
+  },
+  {
+    "name": "Stenciljs",
+    "icon": "/icons/stenciljs/stenciljs-plain-wordmark.svg"
+  },
+  {
+    "name": "Stenciljs",
+    "icon": "/icons/stenciljs/stenciljs-plain.svg"
+  },
+  {
+    "name": "Storybook",
+    "icon": "/icons/storybook/storybook-original-wordmark.svg"
+  },
+  {
+    "name": "Storybook",
+    "icon": "/icons/storybook/storybook-original.svg"
+  },
+  {
+    "name": "Storybook",
+    "icon": "/icons/storybook/storybook-plain-wordmark.svg"
+  },
+  {
+    "name": "Storybook",
+    "icon": "/icons/storybook/storybook-plain.svg"
+  },
+  {
+    "name": "Streamlit",
+    "icon": "/icons/streamlit/streamlit-original-wordmark.svg"
+  },
+  {
+    "name": "Streamlit",
+    "icon": "/icons/streamlit/streamlit-original.svg"
+  },
+  {
+    "name": "Streamlit",
+    "icon": "/icons/streamlit/streamlit-plain-wordmark.svg"
+  },
+  {
+    "name": "Streamlit",
+    "icon": "/icons/streamlit/streamlit-plain.svg"
+  },
+  {
+    "name": "Styledcomponents",
+    "icon": "/icons/styledcomponents/styledcomponents-original-wordmark.svg"
+  },
+  {
+    "name": "Styledcomponents",
+    "icon": "/icons/styledcomponents/styledcomponents-original.svg"
+  },
+  {
+    "name": "Styledcomponents",
+    "icon": "/icons/styledcomponents/styledcomponents-plain-wordmark.svg"
+  },
+  {
+    "name": "Styledcomponents",
+    "icon": "/icons/styledcomponents/styledcomponents-plain.svg"
+  },
+  {
+    "name": "Stylus",
+    "icon": "/icons/stylus/stylus-original.svg"
+  },
+  {
+    "name": "Subversion",
+    "icon": "/icons/subversion/subversion-original-wordmark.svg"
+  },
+  {
+    "name": "Subversion",
+    "icon": "/icons/subversion/subversion-original.svg"
+  },
+  {
+    "name": "Subversion",
+    "icon": "/icons/subversion/subversion-plain-wordmark.svg"
+  },
+  {
+    "name": "Sulu",
+    "icon": "/icons/sulu/sulu-line-wordmark.svg"
+  },
+  {
+    "name": "Sulu",
+    "icon": "/icons/sulu/sulu-line.svg"
+  },
+  {
+    "name": "Sulu",
+    "icon": "/icons/sulu/sulu-original-wordmark.svg"
+  },
+  {
+    "name": "Sulu",
+    "icon": "/icons/sulu/sulu-original.svg"
+  },
+  {
+    "name": "Supabase",
+    "icon": "/icons/supabase/supabase-original-wordmark.svg"
+  },
+  {
+    "name": "Supabase",
+    "icon": "/icons/supabase/supabase-original.svg"
+  },
+  {
+    "name": "Supabase",
+    "icon": "/icons/supabase/supabase-plain-wordmark.svg"
+  },
+  {
+    "name": "Supabase",
+    "icon": "/icons/supabase/supabase-plain.svg"
+  },
+  {
+    "name": "Surrealdb",
+    "icon": "/icons/surrealdb/surrealdb-original-wordmark.svg"
+  },
+  {
+    "name": "Surrealdb",
+    "icon": "/icons/surrealdb/surrealdb-original.svg"
+  },
+  {
+    "name": "Surrealdb",
+    "icon": "/icons/surrealdb/surrealdb-plain-wordmark.svg"
+  },
+  {
+    "name": "Surrealdb",
+    "icon": "/icons/surrealdb/surrealdb-plain.svg"
+  },
+  {
+    "name": "Svelte",
+    "icon": "/icons/svelte/svelte-original-wordmark.svg"
+  },
+  {
+    "name": "Svelte",
+    "icon": "/icons/svelte/svelte-original.svg"
+  },
+  {
+    "name": "Svelte",
+    "icon": "/icons/svelte/svelte-plain-wordmark.svg"
+  },
+  {
+    "name": "Svelte",
+    "icon": "/icons/svelte/svelte-plain.svg"
+  },
+  {
+    "name": "Svgo",
+    "icon": "/icons/svgo/svgo-line-wordmark.svg"
+  },
+  {
+    "name": "Svgo",
+    "icon": "/icons/svgo/svgo-line.svg"
+  },
+  {
+    "name": "Svgo",
+    "icon": "/icons/svgo/svgo-original-wordmark.svg"
+  },
+  {
+    "name": "Svgo",
+    "icon": "/icons/svgo/svgo-original.svg"
+  },
+  {
+    "name": "Svgo",
+    "icon": "/icons/svgo/svgo-plain-wordmark.svg"
+  },
+  {
+    "name": "Svgo",
+    "icon": "/icons/svgo/svgo-plain.svg"
+  },
+  {
+    "name": "Swagger",
+    "icon": "/icons/swagger/swagger-original-wordmark.svg"
+  },
+  {
+    "name": "Swagger",
+    "icon": "/icons/swagger/swagger-original.svg"
+  },
+  {
+    "name": "Swagger",
+    "icon": "/icons/swagger/swagger-plain-wordmark.svg"
+  },
+  {
+    "name": "Swagger",
+    "icon": "/icons/swagger/swagger-plain.svg"
+  },
+  {
+    "name": "Swift",
+    "icon": "/icons/swift/swift-original-wordmark.svg"
+  },
+  {
+    "name": "Swift",
+    "icon": "/icons/swift/swift-original.svg"
+  },
+  {
+    "name": "Swift",
+    "icon": "/icons/swift/swift-plain-wordmark.svg"
+  },
+  {
+    "name": "Swift",
+    "icon": "/icons/swift/swift-plain.svg"
+  },
+  {
+    "name": "Swiper",
+    "icon": "/icons/swiper/swiper-original.svg"
+  },
+  {
+    "name": "Symfony",
+    "icon": "/icons/symfony/symfony-original-wordmark.svg"
+  },
+  {
+    "name": "Symfony",
+    "icon": "/icons/symfony/symfony-original.svg"
+  },
+  {
+    "name": "Tailwindcss",
+    "icon": "/icons/tailwindcss/tailwindcss-original-wordmark.svg"
+  },
+  {
+    "name": "Tailwindcss",
+    "icon": "/icons/tailwindcss/tailwindcss-original.svg"
+  },
+  {
+    "name": "Tailwindcss",
+    "icon": "/icons/tailwindcss/tailwindcss-plain-wordmark.svg"
+  },
+  {
+    "name": "Talos",
+    "icon": "/icons/talos/talos-original.svg"
+  },
+  {
+    "name": "Talos",
+    "icon": "/icons/talos/talos-plain.svg"
+  },
+  {
+    "name": "Tauri",
+    "icon": "/icons/tauri/tauri-original-wordmark.svg"
+  },
+  {
+    "name": "Tauri",
+    "icon": "/icons/tauri/tauri-original.svg"
+  },
+  {
+    "name": "Tauri",
+    "icon": "/icons/tauri/tauri-plain-wordmark.svg"
+  },
+  {
+    "name": "Tauri",
+    "icon": "/icons/tauri/tauri-plain.svg"
+  },
+  {
+    "name": "Teleport",
+    "icon": "/icons/teleport/teleport-line-wordmark.svg"
+  },
+  {
+    "name": "Teleport",
+    "icon": "/icons/teleport/teleport-line.svg"
+  },
+  {
+    "name": "Teleport",
+    "icon": "/icons/teleport/teleport-original-wordmark.svg"
+  },
+  {
+    "name": "Teleport",
+    "icon": "/icons/teleport/teleport-original.svg"
+  },
+  {
+    "name": "Tensorflow",
+    "icon": "/icons/tensorflow/tensorflow-line-wordmark.svg"
+  },
+  {
+    "name": "Tensorflow",
+    "icon": "/icons/tensorflow/tensorflow-line.svg"
+  },
+  {
+    "name": "Tensorflow",
+    "icon": "/icons/tensorflow/tensorflow-original-wordmark.svg"
+  },
+  {
+    "name": "Tensorflow",
+    "icon": "/icons/tensorflow/tensorflow-original.svg"
+  },
+  {
+    "name": "Terraform",
+    "icon": "/icons/terraform/terraform-original-wordmark.svg"
+  },
+  {
+    "name": "Terraform",
+    "icon": "/icons/terraform/terraform-original.svg"
+  },
+  {
+    "name": "Terraform",
+    "icon": "/icons/terraform/terraform-plain-wordmark.svg"
+  },
+  {
+    "name": "Terraform",
+    "icon": "/icons/terraform/terraform-plain.svg"
+  },
+  {
+    "name": "Terramate",
+    "icon": "/icons/terramate/terramate-original-wordmark.svg"
+  },
+  {
+    "name": "Terramate",
+    "icon": "/icons/terramate/terramate-original.svg"
+  },
+  {
+    "name": "Tex",
+    "icon": "/icons/tex/tex-original.svg"
+  },
+  {
+    "name": "Thealgorithms",
+    "icon": "/icons/thealgorithms/thealgorithms-original-wordmark.svg"
+  },
+  {
+    "name": "Thealgorithms",
+    "icon": "/icons/thealgorithms/thealgorithms-original.svg"
+  },
+  {
+    "name": "Thealgorithms",
+    "icon": "/icons/thealgorithms/thealgorithms-plain-wordmark.svg"
+  },
+  {
+    "name": "Thealgorithms",
+    "icon": "/icons/thealgorithms/thealgorithms-plain.svg"
+  },
+  {
+    "name": "Threedsmax",
+    "icon": "/icons/threedsmax/threedsmax-original.svg"
+  },
+  {
+    "name": "Threedsmax",
+    "icon": "/icons/threedsmax/threedsmax-plain.svg"
+  },
+  {
+    "name": "Threejs",
+    "icon": "/icons/threejs/threejs-original-wordmark.svg"
+  },
+  {
+    "name": "Threejs",
+    "icon": "/icons/threejs/threejs-original.svg"
+  },
+  {
+    "name": "Thymeleaf",
+    "icon": "/icons/thymeleaf/thymeleaf-original-wordmark.svg"
+  },
+  {
+    "name": "Thymeleaf",
+    "icon": "/icons/thymeleaf/thymeleaf-original.svg"
+  },
+  {
+    "name": "Thymeleaf",
+    "icon": "/icons/thymeleaf/thymeleaf-plain-wordmark.svg"
+  },
+  {
+    "name": "Thymeleaf",
+    "icon": "/icons/thymeleaf/thymeleaf-plain.svg"
+  },
+  {
+    "name": "Titaniumsdk",
+    "icon": "/icons/titaniumsdk/titaniumsdk-original.svg"
+  },
+  {
+    "name": "Tmux",
+    "icon": "/icons/tmux/tmux-original-wordmark.svg"
+  },
+  {
+    "name": "Tmux",
+    "icon": "/icons/tmux/tmux-original.svg"
+  },
+  {
+    "name": "Tmux",
+    "icon": "/icons/tmux/tmux-plain-wordmark.svg"
+  },
+  {
+    "name": "Tmux",
+    "icon": "/icons/tmux/tmux-plain.svg"
+  },
+  {
+    "name": "Tomcat",
+    "icon": "/icons/tomcat/tomcat-line-wordmark.svg"
+  },
+  {
+    "name": "Tomcat",
+    "icon": "/icons/tomcat/tomcat-line.svg"
+  },
+  {
+    "name": "Tomcat",
+    "icon": "/icons/tomcat/tomcat-original-wordmark.svg"
+  },
+  {
+    "name": "Tomcat",
+    "icon": "/icons/tomcat/tomcat-original.svg"
+  },
+  {
+    "name": "Tortoisegit",
+    "icon": "/icons/tortoisegit/tortoisegit-line.svg"
+  },
+  {
+    "name": "Tortoisegit",
+    "icon": "/icons/tortoisegit/tortoisegit-original.svg"
+  },
+  {
+    "name": "Tortoisegit",
+    "icon": "/icons/tortoisegit/tortoisegit-plain.svg"
+  },
+  {
+    "name": "Towergit",
+    "icon": "/icons/towergit/towergit-original-wordmark.svg"
+  },
+  {
+    "name": "Towergit",
+    "icon": "/icons/towergit/towergit-original.svg"
+  },
+  {
+    "name": "Towergit",
+    "icon": "/icons/towergit/towergit-plain-wordmark.svg"
+  },
+  {
+    "name": "Towergit",
+    "icon": "/icons/towergit/towergit-plain.svg"
+  },
+  {
+    "name": "Traefikmesh",
+    "icon": "/icons/traefikmesh/traefikmesh-line-wordmark.svg"
+  },
+  {
+    "name": "Traefikmesh",
+    "icon": "/icons/traefikmesh/traefikmesh-line.svg"
+  },
+  {
+    "name": "Traefikmesh",
+    "icon": "/icons/traefikmesh/traefikmesh-original-wordmark.svg"
+  },
+  {
+    "name": "Traefikmesh",
+    "icon": "/icons/traefikmesh/traefikmesh-original.svg"
+  },
+  {
+    "name": "Traefikmesh",
+    "icon": "/icons/traefikmesh/traefikmesh-plain-wordmark.svg"
+  },
+  {
+    "name": "Traefikproxy",
+    "icon": "/icons/traefikproxy/traefikproxy-line-wordmark.svg"
+  },
+  {
+    "name": "Traefikproxy",
+    "icon": "/icons/traefikproxy/traefikproxy-line.svg"
+  },
+  {
+    "name": "Traefikproxy",
+    "icon": "/icons/traefikproxy/traefikproxy-original-wordmark.svg"
+  },
+  {
+    "name": "Traefikproxy",
+    "icon": "/icons/traefikproxy/traefikproxy-original.svg"
+  },
+  {
+    "name": "Traefikproxy",
+    "icon": "/icons/traefikproxy/traefikproxy-plain-wordmark.svg"
+  },
+  {
+    "name": "Travis",
+    "icon": "/icons/travis/travis-line-wordmark.svg"
+  },
+  {
+    "name": "Travis",
+    "icon": "/icons/travis/travis-line.svg"
+  },
+  {
+    "name": "Travis",
+    "icon": "/icons/travis/travis-original-wordmark.svg"
+  },
+  {
+    "name": "Travis",
+    "icon": "/icons/travis/travis-original.svg"
+  },
+  {
+    "name": "Travis",
+    "icon": "/icons/travis/travis-plain-wordmark.svg"
+  },
+  {
+    "name": "Travis",
+    "icon": "/icons/travis/travis-plain.svg"
+  },
+  {
+    "name": "Trello",
+    "icon": "/icons/trello/trello-line-wordmark.svg"
+  },
+  {
+    "name": "Trello",
+    "icon": "/icons/trello/trello-line.svg"
+  },
+  {
+    "name": "Trello",
+    "icon": "/icons/trello/trello-original-wordmark.svg"
+  },
+  {
+    "name": "Trello",
+    "icon": "/icons/trello/trello-original.svg"
+  },
+  {
+    "name": "Trello",
+    "icon": "/icons/trello/trello-plain-wordmark.svg"
+  },
+  {
+    "name": "Trello",
+    "icon": "/icons/trello/trello-plain.svg"
+  },
+  {
+    "name": "Trpc",
+    "icon": "/icons/trpc/trpc-original-wordmark.svg"
+  },
+  {
+    "name": "Trpc",
+    "icon": "/icons/trpc/trpc-original.svg"
+  },
+  {
+    "name": "Trpc",
+    "icon": "/icons/trpc/trpc-plain-wordmark.svg"
+  },
+  {
+    "name": "Trpc",
+    "icon": "/icons/trpc/trpc-plain.svg"
+  },
+  {
+    "name": "Turbo",
+    "icon": "/icons/turbo/turbo-original-wordmark.svg"
+  },
+  {
+    "name": "Turbo",
+    "icon": "/icons/turbo/turbo-original.svg"
+  },
+  {
+    "name": "Turbo",
+    "icon": "/icons/turbo/turbo-plain-wordmark.svg"
+  },
+  {
+    "name": "Twilio",
+    "icon": "/icons/twilio/twilio-original-wordmark.svg"
+  },
+  {
+    "name": "Twilio",
+    "icon": "/icons/twilio/twilio-original.svg"
+  },
+  {
+    "name": "Twitter",
+    "icon": "/icons/twitter/twitter-original.svg"
+  },
+  {
+    "name": "Typescript",
+    "icon": "/icons/typescript/typescript-original.svg"
+  },
+  {
+    "name": "Typescript",
+    "icon": "/icons/typescript/typescript-plain.svg"
+  },
+  {
+    "name": "Typo3",
+    "icon": "/icons/typo3/typo3-line-wordmark.svg"
+  },
+  {
+    "name": "Typo3",
+    "icon": "/icons/typo3/typo3-line.svg"
+  },
+  {
+    "name": "Typo3",
+    "icon": "/icons/typo3/typo3-original-wordmark.svg"
+  },
+  {
+    "name": "Typo3",
+    "icon": "/icons/typo3/typo3-original.svg"
+  },
+  {
+    "name": "Typo3",
+    "icon": "/icons/typo3/typo3-plain-wordmark.svg"
+  },
+  {
+    "name": "Ubuntu",
+    "icon": "/icons/ubuntu/ubuntu-original-wordmark.svg"
+  },
+  {
+    "name": "Ubuntu",
+    "icon": "/icons/ubuntu/ubuntu-original.svg"
+  },
+  {
+    "name": "Ubuntu",
+    "icon": "/icons/ubuntu/ubuntu-plain-wordmark.svg"
+  },
+  {
+    "name": "Ubuntu",
+    "icon": "/icons/ubuntu/ubuntu-plain.svg"
+  },
+  {
+    "name": "Unifiedmodelinglanguage",
+    "icon": "/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-original-wordmark.svg"
+  },
+  {
+    "name": "Unifiedmodelinglanguage",
+    "icon": "/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-original.svg"
+  },
+  {
+    "name": "Unifiedmodelinglanguage",
+    "icon": "/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-plain-wordmark.svg"
+  },
+  {
+    "name": "Unifiedmodelinglanguage",
+    "icon": "/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-plain.svg"
+  },
+  {
+    "name": "Unity",
+    "icon": "/icons/unity/unity-line-wordmark.svg"
+  },
+  {
+    "name": "Unity",
+    "icon": "/icons/unity/unity-line.svg"
+  },
+  {
+    "name": "Unity",
+    "icon": "/icons/unity/unity-original-wordmark.svg"
+  },
+  {
+    "name": "Unity",
+    "icon": "/icons/unity/unity-original.svg"
+  },
+  {
+    "name": "Unity",
+    "icon": "/icons/unity/unity-plain-wordmark.svg"
+  },
+  {
+    "name": "Unity",
+    "icon": "/icons/unity/unity-plain.svg"
+  },
+  {
+    "name": "Unix",
+    "icon": "/icons/unix/unix-original.svg"
+  },
+  {
+    "name": "Unrealengine",
+    "icon": "/icons/unrealengine/unrealengine-original-wordmark.svg"
+  },
+  {
+    "name": "Unrealengine",
+    "icon": "/icons/unrealengine/unrealengine-original.svg"
+  },
+  {
+    "name": "Uwsgi",
+    "icon": "/icons/uwsgi/uwsgi-original.svg"
+  },
+  {
+    "name": "Uwsgi",
+    "icon": "/icons/uwsgi/uwsgi-plain.svg"
+  },
+  {
+    "name": "V8",
+    "icon": "/icons/v8/v8-original.svg"
+  },
+  {
+    "name": "V8",
+    "icon": "/icons/v8/v8-plain.svg"
+  },
+  {
+    "name": "Vaadin",
+    "icon": "/icons/vaadin/vaadin-original-wordmark.svg"
+  },
+  {
+    "name": "Vaadin",
+    "icon": "/icons/vaadin/vaadin-original.svg"
+  },
+  {
+    "name": "Vagrant",
+    "icon": "/icons/vagrant/vagrant-original-wordmark.svg"
+  },
+  {
+    "name": "Vagrant",
+    "icon": "/icons/vagrant/vagrant-original.svg"
+  },
+  {
+    "name": "Vagrant",
+    "icon": "/icons/vagrant/vagrant-plain-wordmark.svg"
+  },
+  {
+    "name": "Vagrant",
+    "icon": "/icons/vagrant/vagrant-plain.svg"
+  },
+  {
+    "name": "Vala",
+    "icon": "/icons/vala/vala-original-wordmark.svg"
+  },
+  {
+    "name": "Vala",
+    "icon": "/icons/vala/vala-original.svg"
+  },
+  {
+    "name": "Vala",
+    "icon": "/icons/vala/vala-plain-wordmark.svg"
+  },
+  {
+    "name": "Vala",
+    "icon": "/icons/vala/vala-plain.svg"
+  },
+  {
+    "name": "Vault",
+    "icon": "/icons/vault/vault-original-wordmark.svg"
+  },
+  {
+    "name": "Vault",
+    "icon": "/icons/vault/vault-original.svg"
+  },
+  {
+    "name": "Vault",
+    "icon": "/icons/vault/vault-plain-wordmark.svg"
+  },
+  {
+    "name": "Veevalidate",
+    "icon": "/icons/veevalidate/veevalidate-line.svg"
+  },
+  {
+    "name": "Veevalidate",
+    "icon": "/icons/veevalidate/veevalidate-original.svg"
+  },
+  {
+    "name": "Vercel",
+    "icon": "/icons/vercel/vercel-line-wordmark.svg"
+  },
+  {
+    "name": "Vercel",
+    "icon": "/icons/vercel/vercel-line.svg"
+  },
+  {
+    "name": "Vercel",
+    "icon": "/icons/vercel/vercel-original-wordmark.svg"
+  },
+  {
+    "name": "Vercel",
+    "icon": "/icons/vercel/vercel-original.svg"
+  },
+  {
+    "name": "Vertx",
+    "icon": "/icons/vertx/vertx-line-wordmark.svg"
+  },
+  {
+    "name": "Vertx",
+    "icon": "/icons/vertx/vertx-line.svg"
+  },
+  {
+    "name": "Vertx",
+    "icon": "/icons/vertx/vertx-original-wordmark.svg"
+  },
+  {
+    "name": "Vertx",
+    "icon": "/icons/vertx/vertx-original.svg"
+  },
+  {
+    "name": "Vertx",
+    "icon": "/icons/vertx/vertx-plain-wordmark.svg"
+  },
+  {
+    "name": "Vertx",
+    "icon": "/icons/vertx/vertx-plain.svg"
+  },
+  {
+    "name": "Vim",
+    "icon": "/icons/vim/vim-original.svg"
+  },
+  {
+    "name": "Vim",
+    "icon": "/icons/vim/vim-plain.svg"
+  },
+  {
+    "name": "Visualbasic",
+    "icon": "/icons/visualbasic/visualbasic-line.svg"
+  },
+  {
+    "name": "Visualbasic",
+    "icon": "/icons/visualbasic/visualbasic-original.svg"
+  },
+  {
+    "name": "Visualbasic",
+    "icon": "/icons/visualbasic/visualbasic-plain.svg"
+  },
+  {
+    "name": "Visualstudio",
+    "icon": "/icons/visualstudio/visualstudio-line-wordmark.svg"
+  },
+  {
+    "name": "Visualstudio",
+    "icon": "/icons/visualstudio/visualstudio-line.svg"
+  },
+  {
+    "name": "Visualstudio",
+    "icon": "/icons/visualstudio/visualstudio-original-wordmark.svg"
+  },
+  {
+    "name": "Visualstudio",
+    "icon": "/icons/visualstudio/visualstudio-original.svg"
+  },
+  {
+    "name": "Visualstudio",
+    "icon": "/icons/visualstudio/visualstudio-plain-wordmark.svg"
+  },
+  {
+    "name": "Visualstudio",
+    "icon": "/icons/visualstudio/visualstudio-plain.svg"
+  },
+  {
+    "name": "Vite",
+    "icon": "/icons/vite/vite-original-wordmark.svg"
+  },
+  {
+    "name": "Vite",
+    "icon": "/icons/vite/vite-original.svg"
+  },
+  {
+    "name": "Vitejs",
+    "icon": "/icons/vitejs/vitejs-original.svg"
+  },
+  {
+    "name": "Vitejs",
+    "icon": "/icons/vitejs/vitejs-plain.svg"
+  },
+  {
+    "name": "Vitess",
+    "icon": "/icons/vitess/vitess-original-wordmark.svg"
+  },
+  {
+    "name": "Vitess",
+    "icon": "/icons/vitess/vitess-original.svg"
+  },
+  {
+    "name": "Vitess",
+    "icon": "/icons/vitess/vitess-plain-wordmark.svg"
+  },
+  {
+    "name": "Vitess",
+    "icon": "/icons/vitess/vitess-plain.svg"
+  },
+  {
+    "name": "Vitest",
+    "icon": "/icons/vitest/vitest-original.svg"
+  },
+  {
+    "name": "Vitest",
+    "icon": "/icons/vitest/vitest-plain.svg"
+  },
+  {
+    "name": "Vscode",
+    "icon": "/icons/vscode/vscode-original-wordmark.svg"
+  },
+  {
+    "name": "Vscode",
+    "icon": "/icons/vscode/vscode-original.svg"
+  },
+  {
+    "name": "Vscode",
+    "icon": "/icons/vscode/vscode-plain-wordmark.svg"
+  },
+  {
+    "name": "Vscode",
+    "icon": "/icons/vscode/vscode-plain.svg"
+  },
+  {
+    "name": "Vscodium",
+    "icon": "/icons/vscodium/vscodium-original.svg"
+  },
+  {
+    "name": "Vscodium",
+    "icon": "/icons/vscodium/vscodium-plain.svg"
+  },
+  {
+    "name": "Vsphere",
+    "icon": "/icons/vsphere/vsphere-line-wordmark.svg"
+  },
+  {
+    "name": "Vsphere",
+    "icon": "/icons/vsphere/vsphere-line.svg"
+  },
+  {
+    "name": "Vsphere",
+    "icon": "/icons/vsphere/vsphere-original-wordmark.svg"
+  },
+  {
+    "name": "Vsphere",
+    "icon": "/icons/vsphere/vsphere-original.svg"
+  },
+  {
+    "name": "Vsphere",
+    "icon": "/icons/vsphere/vsphere-plain-wordmark.svg"
+  },
+  {
+    "name": "Vsphere",
+    "icon": "/icons/vsphere/vsphere-plain.svg"
+  },
+  {
+    "name": "Vuejs",
+    "icon": "/icons/vuejs/vuejs-line-wordmark.svg"
+  },
+  {
+    "name": "Vuejs",
+    "icon": "/icons/vuejs/vuejs-line.svg"
+  },
+  {
+    "name": "Vuejs",
+    "icon": "/icons/vuejs/vuejs-original-wordmark.svg"
+  },
+  {
+    "name": "Vuejs",
+    "icon": "/icons/vuejs/vuejs-original.svg"
+  },
+  {
+    "name": "Vuejs",
+    "icon": "/icons/vuejs/vuejs-plain-wordmark.svg"
+  },
+  {
+    "name": "Vuejs",
+    "icon": "/icons/vuejs/vuejs-plain.svg"
+  },
+  {
+    "name": "Vuestorefront",
+    "icon": "/icons/vuestorefront/vuestorefront-original.svg"
+  },
+  {
+    "name": "Vuestorefront",
+    "icon": "/icons/vuestorefront/vuestorefront-plain.svg"
+  },
+  {
+    "name": "Vuetify",
+    "icon": "/icons/vuetify/vuetify-line.svg"
+  },
+  {
+    "name": "Vuetify",
+    "icon": "/icons/vuetify/vuetify-original.svg"
+  },
+  {
+    "name": "Vuetify",
+    "icon": "/icons/vuetify/vuetify-plain.svg"
+  },
+  {
+    "name": "Vulkan",
+    "icon": "/icons/vulkan/vulkan-line.svg"
+  },
+  {
+    "name": "Vulkan",
+    "icon": "/icons/vulkan/vulkan-original.svg"
+  },
+  {
+    "name": "Vyper",
+    "icon": "/icons/vyper/vyper-original-wordmark.svg"
+  },
+  {
+    "name": "Vyper",
+    "icon": "/icons/vyper/vyper-original.svg"
+  },
+  {
+    "name": "Waku",
+    "icon": "/icons/waku/waku-line.svg"
+  },
+  {
+    "name": "Waku",
+    "icon": "/icons/waku/waku-original.svg"
+  },
+  {
+    "name": "Waku",
+    "icon": "/icons/waku/waku-plain.svg"
+  },
+  {
+    "name": "Wasm",
+    "icon": "/icons/wasm/wasm-original-wordmark.svg"
+  },
+  {
+    "name": "Wasm",
+    "icon": "/icons/wasm/wasm-original.svg"
+  },
+  {
+    "name": "Wasm",
+    "icon": "/icons/wasm/wasm-plain-wordmark.svg"
+  },
+  {
+    "name": "Web3js",
+    "icon": "/icons/web3js/web3js-original.svg"
+  },
+  {
+    "name": "Web3js",
+    "icon": "/icons/web3js/web3js-plain.svg"
+  },
+  {
+    "name": "Webflow",
+    "icon": "/icons/webflow/webflow-original.svg"
+  },
+  {
+    "name": "Webgpu",
+    "icon": "/icons/webgpu/webgpu-line-wordmark.svg"
+  },
+  {
+    "name": "Webgpu",
+    "icon": "/icons/webgpu/webgpu-line.svg"
+  },
+  {
+    "name": "Webgpu",
+    "icon": "/icons/webgpu/webgpu-original-wordmark.svg"
+  },
+  {
+    "name": "Webgpu",
+    "icon": "/icons/webgpu/webgpu-original.svg"
+  },
+  {
+    "name": "Webgpu",
+    "icon": "/icons/webgpu/webgpu-plain-wordmark.svg"
+  },
+  {
+    "name": "Webgpu",
+    "icon": "/icons/webgpu/webgpu-plain.svg"
+  },
+  {
+    "name": "Weblate",
+    "icon": "/icons/weblate/weblate-original-wordmark.svg"
+  },
+  {
+    "name": "Weblate",
+    "icon": "/icons/weblate/weblate-original.svg"
+  },
+  {
+    "name": "Weblate",
+    "icon": "/icons/weblate/weblate-plain-wordmark.svg"
+  },
+  {
+    "name": "Weblate",
+    "icon": "/icons/weblate/weblate-plain.svg"
+  },
+  {
+    "name": "Webpack",
+    "icon": "/icons/webpack/webpack-original-wordmark.svg"
+  },
+  {
+    "name": "Webpack",
+    "icon": "/icons/webpack/webpack-original.svg"
+  },
+  {
+    "name": "Webpack",
+    "icon": "/icons/webpack/webpack-plain-wordmark.svg"
+  },
+  {
+    "name": "Webpack",
+    "icon": "/icons/webpack/webpack-plain.svg"
+  },
+  {
+    "name": "Webstorm",
+    "icon": "/icons/webstorm/webstorm-original-wordmark.svg"
+  },
+  {
+    "name": "Webstorm",
+    "icon": "/icons/webstorm/webstorm-original.svg"
+  },
+  {
+    "name": "Webstorm",
+    "icon": "/icons/webstorm/webstorm-plain-wordmark.svg"
+  },
+  {
+    "name": "Webstorm",
+    "icon": "/icons/webstorm/webstorm-plain.svg"
+  },
+  {
+    "name": "Windows11",
+    "icon": "/icons/windows11/windows11-original-wordmark.svg"
+  },
+  {
+    "name": "Windows11",
+    "icon": "/icons/windows11/windows11-original.svg"
+  },
+  {
+    "name": "Windows8",
+    "icon": "/icons/windows8/windows8-original-wordmark.svg"
+  },
+  {
+    "name": "Windows8",
+    "icon": "/icons/windows8/windows8-original.svg"
+  },
+  {
+    "name": "Wolfram",
+    "icon": "/icons/wolfram/wolfram-original-wordmark.svg"
+  },
+  {
+    "name": "Wolfram",
+    "icon": "/icons/wolfram/wolfram-original.svg"
+  },
+  {
+    "name": "Wolfram",
+    "icon": "/icons/wolfram/wolfram-plain-wordmark.svg"
+  },
+  {
+    "name": "Wolfram",
+    "icon": "/icons/wolfram/wolfram-plain.svg"
+  },
+  {
+    "name": "Woocommerce",
+    "icon": "/icons/woocommerce/woocommerce-original-wordmark.svg"
+  },
+  {
+    "name": "Woocommerce",
+    "icon": "/icons/woocommerce/woocommerce-original.svg"
+  },
+  {
+    "name": "Woocommerce",
+    "icon": "/icons/woocommerce/woocommerce-plain-wordmark.svg"
+  },
+  {
+    "name": "Woocommerce",
+    "icon": "/icons/woocommerce/woocommerce-plain.svg"
+  },
+  {
+    "name": "Wordpress",
+    "icon": "/icons/wordpress/wordpress-original.svg"
+  },
+  {
+    "name": "Wordpress",
+    "icon": "/icons/wordpress/wordpress-plain-wordmark.svg"
+  },
+  {
+    "name": "Wordpress",
+    "icon": "/icons/wordpress/wordpress-plain.svg"
+  },
+  {
+    "name": "Xamarin",
+    "icon": "/icons/xamarin/xamarin-original-wordmark.svg"
+  },
+  {
+    "name": "Xamarin",
+    "icon": "/icons/xamarin/xamarin-original.svg"
+  },
+  {
+    "name": "Xcode",
+    "icon": "/icons/xcode/xcode-original.svg"
+  },
+  {
+    "name": "Xcode",
+    "icon": "/icons/xcode/xcode-plain.svg"
+  },
+  {
+    "name": "Xd",
+    "icon": "/icons/xd/xd-line.svg"
+  },
+  {
+    "name": "Xd",
+    "icon": "/icons/xd/xd-original.svg"
+  },
+  {
+    "name": "Xd",
+    "icon": "/icons/xd/xd-plain.svg"
+  },
+  {
+    "name": "Xml",
+    "icon": "/icons/xml/xml-line.svg"
+  },
+  {
+    "name": "Xml",
+    "icon": "/icons/xml/xml-original.svg"
+  },
+  {
+    "name": "Xml",
+    "icon": "/icons/xml/xml-plain.svg"
+  },
+  {
+    "name": "Yaml",
+    "icon": "/icons/yaml/yaml-original.svg"
+  },
+  {
+    "name": "Yaml",
+    "icon": "/icons/yaml/yaml-plain.svg"
+  },
+  {
+    "name": "Yarn",
+    "icon": "/icons/yarn/yarn-line-wordmark.svg"
+  },
+  {
+    "name": "Yarn",
+    "icon": "/icons/yarn/yarn-line.svg"
+  },
+  {
+    "name": "Yarn",
+    "icon": "/icons/yarn/yarn-original-wordmark.svg"
+  },
+  {
+    "name": "Yarn",
+    "icon": "/icons/yarn/yarn-original.svg"
+  },
+  {
+    "name": "Yii",
+    "icon": "/icons/yii/yii-original-wordmark.svg"
+  },
+  {
+    "name": "Yii",
+    "icon": "/icons/yii/yii-original.svg"
+  },
+  {
+    "name": "Yii",
+    "icon": "/icons/yii/yii-plain-wordmark.svg"
+  },
+  {
+    "name": "Yii",
+    "icon": "/icons/yii/yii-plain.svg"
+  },
+  {
+    "name": "Yugabytedb",
+    "icon": "/icons/yugabytedb/yugabytedb-original-wordmark.svg"
+  },
+  {
+    "name": "Yugabytedb",
+    "icon": "/icons/yugabytedb/yugabytedb-original.svg"
+  },
+  {
+    "name": "Yugabytedb",
+    "icon": "/icons/yugabytedb/yugabytedb-plain-wordmark.svg"
+  },
+  {
+    "name": "Yugabytedb",
+    "icon": "/icons/yugabytedb/yugabytedb-plain.svg"
+  },
+  {
+    "name": "Yunohost",
+    "icon": "/icons/yunohost/yunohost-original.svg"
+  },
+  {
+    "name": "Yunohost",
+    "icon": "/icons/yunohost/yunohost-plain.svg"
+  },
+  {
+    "name": "Zend",
+    "icon": "/icons/zend/zend-line-wordmark.svg"
+  },
+  {
+    "name": "Zend",
+    "icon": "/icons/zend/zend-line.svg"
+  },
+  {
+    "name": "Zend",
+    "icon": "/icons/zend/zend-original-wordmark.svg"
+  },
+  {
+    "name": "Zend",
+    "icon": "/icons/zend/zend-original.svg"
+  },
+  {
+    "name": "Zig",
+    "icon": "/icons/zig/zig-original-wordmark.svg"
+  },
+  {
+    "name": "Zig",
+    "icon": "/icons/zig/zig-original.svg"
+  },
+  {
+    "name": "Zig",
+    "icon": "/icons/zig/zig-plain-wordmark.svg"
+  },
+  {
+    "name": "Zsh",
+    "icon": "/icons/zsh/zsh-line-wordmark.svg"
+  },
+  {
+    "name": "Zsh",
+    "icon": "/icons/zsh/zsh-line.svg"
+  },
+  {
+    "name": "Zsh",
+    "icon": "/icons/zsh/zsh-original-wordmark.svg"
+  },
+  {
+    "name": "Zsh",
+    "icon": "/icons/zsh/zsh-original.svg"
+  },
+  {
+    "name": "Zsh",
+    "icon": "/icons/zsh/zsh-plain-wordmark.svg"
+  },
+  {
+    "name": "Zsh",
+    "icon": "/icons/zsh/zsh-plain.svg"
+  },
+  {
+    "name": "Zustand",
+    "icon": "/icons/zustand/zustand-original.svg"
+  },
+  {
+    "name": "Zustand",
+    "icon": "/icons/zustand/zustand-plain.svg"
+  }
+]

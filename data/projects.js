@@ -1,35 +1,33 @@
 // data/projects.js
-const projects = [
+export default [
   {
     title: "MediLab",
     subtitle: "Healthcare • Geo • Realtime",
-    description:
-      "Find and reserve medicines across pharmacies with QR verification, geolocation, and admin dashboards.",
+    description: "Find and reserve medicines across pharmacies with QR verification, geolocation, and admin dashboards.",
     stack: ["Next.js", "Firebase", "Tailwind", "Maps"],
-    href: "#",
-    repo: "#",
+    href: "https://medilab.vercel.app",
+    repo: "https://github.com/digisalesmann/medilab",
     image: "/images/test.png",
+    category: "Web",
   },
   {
     title: "MonadGuard",
     subtitle: "Sybil Checker & Allocation Simulator",
-    description:
-      "Sybil analysis and allocation simulations for the Monad ecosystem with crisp charts and reports.",
+    description: "Sybil analysis and allocation simulations for the Monad ecosystem with crisp charts and reports.",
     stack: ["React", "Node", "Charts"],
-    href: "#",
-    repo: "#",
+    href: "https://monadguard.vercel.app",
+    repo: "https://github.com/digisalesmann/monadguard",
     image: "/images/monad.png",
+    category: "Web3",
   },
   {
-    title: "Cashier Management System",
-    subtitle: "Retail • Ops",
-    description:
-      "POS flows, cashier sessions, audit trails, and role-based dashboards — optimized for speed and reliability.",
+    title: "Actora Labs",
+    subtitle: "Web3 Growth Engine",
+    description: "Whether you're an early-stage builder or an ecosystem leader, Actora gives you full-stack tools to launch, grow, and thrive in Web3.",
     stack: ["Next.js", "Postgres", "Prisma", "Shadcn/ui"],
-    href: "#",
-    repo: "#",
-    image: "/images/cashier.png",
+    href: "https://actoralabs.vercel.app",
+    repo: "https://github.com/digisalesmann/actoralabs",
+    image: "/images/actora.png",
+    category: "Web",
   },
 ];
-
-export default projects;

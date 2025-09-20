@@ -13,8 +13,8 @@ html, body {
   font-family: system-ui, sans-serif;
 }
 body {
-  @apply bg-gradient-to-br from-gray-50 via-white to-purple-50 
-         dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 
+  @apply bg-gradient-to-br from-rose-50 via-fuchsia-50 to-indigo-50 
+         dark:from-gray-950 dark:via-gray-900 dark:to-gray-950
          text-gray-900 dark:text-gray-100;
 }
 
@@ -44,4 +44,12 @@ body {
 }
 @layer base {
   * { -webkit-tap-highlight-color: transparent; }
+}
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
