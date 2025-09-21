@@ -267,9 +267,9 @@ export default function ProjectsPage() {
                 )}
               </div>
               <div className="flex gap-2 mt-4 flex-wrap">
-                <Badge>Users: {featured.metrics?.users || "—"}</Badge>
-                <Badge>Latency: {featured.metrics?.latency || "—"}</Badge>
-                <Badge>Improvement: {featured.metrics?.reduction || "—"}</Badge>
+                <Badge>Users: {featured.metrics?.users || "Coming Soon"}</Badge>
+                <Badge>Latency: {featured.metrics?.latency || "Coming Soon"}</Badge>
+                <Badge>Improvement: {featured.metrics?.reduction || "Coming Soon"}</Badge>
               </div>
             </div>
           </div>
