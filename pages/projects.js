@@ -1,385 +1,479 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import {
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  Radar,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
 
-import projects from "@/data/projects";
-import logos from "@/data/logos.json"; // ✅ external JSON with name + icon
-
-const testimonials = [
-  {
-    name: "DeFi Hunter",
-    role: "Admin, CryptoClan",
-    text:
-      "Victor produced a highly original and technically rigorous final-year project. Deep understanding of system design and deployment.",
-  },
-  {
-    name: "Jennifer Andrew",
-    role: "Content Writer, TechBlog",
-    text:
-      "Working with my man was seamless. His skills across full-stack and AI/ML made our project a success.",
-  },
-];
-
-// ---------------- Small blocks ----------------
-function Badge({ children }) {
+/* ---------------------------
+   Utility: load actual logo
+---------------------------- */
+function StackLogo({ name, size = 36 }) {
+  const src = `/icons/${name.toLowerCase().replace(/\s+/g, "")}/${name
+    .toLowerCase()
+    .replace(/\s+/g, "")}-original.svg`;
   return (
-    <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-      {children}
-    </span>
+    <img
+      src={src}
+      alt={name}
+      className="object-contain"
+      style={{ width: size, height: size }}
+      onError={(e) => ((e.target.style.display = "none"))}
+    />
   );
 }
 
 function IconRow({ stack = [] }) {
   return (
-    <div className="flex gap-2 items-center flex-wrap">
-      {stack.map((s) => {
-        const logoObj = logos.find(
-          (l) => l.name.toLowerCase() === s.toLowerCase()
-        );
-        return (
-          <img
-            key={s}
-            src={
-              logoObj
-                ? logoObj.icon
-                : `/icons/${s.toLowerCase()}/${s.toLowerCase()}-original.svg`
-            }
-            alt={s}
-            className="h-6 w-6"
-            onError={(e) => ((e.target).style.display = "none")}
-          />
-        );
-      })}
+    <div className="flex flex-wrap gap-2 items-center">
+      {stack.map((s) => (
+        <StackLogo key={s} name={s} size={28} />
+      ))}
     </div>
   );
 }
 
-function ImpactCounters({ projects }) {
-  const totalProjects = projects.length;
-  const uniqueTechs = Array.from(new Set(projects.flatMap((p) => p.stack))).length;
-  const users = projects.reduce((acc, p) => acc + (p.metrics?.users || 0), 0);
+/* ---------------------------
+   Rolling Orbit (Earth-like globe)
+---------------------------- */
+function TechOrbit({ items }) {
+  const containerRef = useRef(null);
+  const pointerRef = useRef({ x: 0, y: 0 });
+  const [hovering, setHovering] = useState(false);
 
-  const stats = [
-    { label: "Projects", value: totalProjects },
-    { label: "Technologies", value: uniqueTechs },
-    { label: "Users Impacted", value: users },
-  ];
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const nodes = Array.from(el.querySelectorAll(".orbit-item"));
+    let raf = 0;
+    let t = 0;
+
+    function update() {
+      t += 0.008;
+      const rect = el.getBoundingClientRect();
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const pointerX = pointerRef.current.x;
+      const pointerY = pointerRef.current.y;
+      nodes.forEach((node, i) => {
+        const idx = i + 1;
+        const radius = Math.max(
+          60,
+          Math.min(cx, cy) * (0.35 + (idx % 6) * 0.05)
+        );
+        const angle =
+          t * (1 + (i % 3) * 0.06) + (i * Math.PI * 2) / nodes.length;
+        const px = (pointerX - cx) / cx;
+        const py = (pointerY - cy) / cy;
+        const angleOffset = hovering ? px * 0.7 + py * 0.2 : 0;
+        const x =
+          Math.cos(angle + angleOffset) * radius +
+          cx -
+          node.offsetWidth / 2;
+        const y =
+          Math.sin(angle + angleOffset) * radius +
+          cy -
+          node.offsetHeight / 2;
+        node.style.transform = `translate3d(${x.toFixed(
+          2
+        )}px, ${y.toFixed(2)}px, 0)`;
+      });
+      raf = requestAnimationFrame(update);
+    }
+
+    raf = requestAnimationFrame(update);
+
+    const handleMove = (ev) => {
+      const r = el.getBoundingClientRect();
+      pointerRef.current.x = ev.clientX - r.left;
+      pointerRef.current.y = ev.clientY - r.top;
+    };
+
+    el.addEventListener("pointermove", handleMove);
+    el.addEventListener("pointerenter", () => setHovering(true));
+    el.addEventListener("pointerleave", () => setHovering(false));
+
+    return () => {
+      cancelAnimationFrame(raf);
+      el.removeEventListener("pointermove", handleMove);
+    };
+  }, [hovering]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-center mt-10">
-      {stats.map((s) => (
-        <div
-          key={s.label}
-          className="p-6 rounded-2xl bg-white/80 dark:bg-gray-900/60 border border-black/10 dark:border-white/10 shadow"
+    <div
+      ref={containerRef}
+      className="relative w-full max-w-xl h-80 md:h-96 mx-auto rounded-full"
+      aria-hidden="true"
+      style={{ perspective: 800 }}
+    >
+      {/* Earth core */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "circOut" }}
+          className="w-28 h-28 md:w-36 md:h-36 rounded-full bg-gradient-to-tr from-indigo-600 to-purple-600 shadow-2xl flex items-center justify-center text-white font-bold"
         >
-          <div className="text-2xl font-extrabold">{s.value}</div>
-          <div className="text-sm muted">{s.label}</div>
+          Victor
+        </motion.div>
+      </div>
+
+      {/* orbit items */}
+      {items.map((name, i) => (
+        <div
+          key={name + i}
+          className="orbit-item absolute w-14 h-14 md:w-16 md:h-16 rounded-full bg-white shadow-md flex items-center justify-center"
+          style={{ transform: "translate3d(-9999px,-9999px,0)" }}
+        >
+          <StackLogo name={name} size={48} />
         </div>
       ))}
     </div>
   );
 }
 
-function ProjectCard({ title, description, image, stack, href, repo }) {
+/* ---------------------------
+   Sample Data
+---------------------------- */
+const sampleProjects = [
+  {
+    title: "MonadGuard",
+    subtitle: "Sybil Checker & Allocation Simulator",
+    description:
+      "Sybil analysis and allocation simulations for the Monad ecosystem with crisp charts and reports.",
+    stack: ["React", "Node.js", "Charts"],
+    href: "https://monadguard.vercel.app",
+    repo: "https://github.com/digisalesmann/monadguard",
+    image: "/images/monad.png",
+    category: "Web3",
+    metrics: { users: 5000, reports: 120 },
+  },
+  {
+    title: "MediLab",
+    subtitle: "Healthcare • Geo • Realtime",
+    description:
+      "Find and reserve medicines across pharmacies with QR verification, geolocation, and admin dashboards.",
+    stack: ["Next.js", "Firebase", "TailwindCSS", "Maps"],
+    href: "https://medilab.vercel.app",
+    repo: "https://github.com/digisalesmann/medilab",
+    image: "/images/testt.png",
+    category: "Web",
+    featured: true,
+    metrics: { users: 15200, latency: "120ms" },
+  },
+  {
+    title: "Actora Labs",
+    subtitle: "Web3 Growth Engine",
+    description:
+      "Whether you're an early-stage builder or an ecosystem leader, Actora gives you full-stack tools to launch, grow, and thrive in Web3.",
+    stack: ["Next.js", "Postgres", "Prisma", "Shadcn/ui"],
+    href: "https://actoralabs.vercel.app",
+    repo: "https://github.com/digisalesmann/actoralabs",
+    image: "/images/actora.png",
+    category: "Web",
+    metrics: { projects: 80, partners: 12 },
+  },
+  {
+    title: "GeoSearch Pharmacy",
+    description:
+      "Geo-aware pharmacy discovery with reservation flow and QR pickup.",
+    stack: ["Next.js", "TailwindCSS", "Mapbox"],
+    image: "/images/geo.png",
+    href: "#",
+    repo: "#",
+    metrics: { users: 9200 },
+  },
+  {
+    title: "Realtime Dashboard",
+    description:
+      "Live analytics with alerts and notifications for admins.",
+    stack: ["React", "Socket.IO", "D3.js"],
+    image: "/images/dash.webp",
+    href: "#",
+    repo: "#",
+    metrics: { users: 7100 },
+  },
+  {
+    title: "Secure API Gateway",
+    description:
+      "Role-based auth, rate limiting and audit logging.",
+    stack: ["Node.js", "Express", "Redis"],
+    image: "/images/secure.png",
+    href: "#",
+    repo: "#",
+    metrics: { users: 4300 },
+  },
+];
+
+const processSteps = [
+  { title: "Discover", text: "Understand objectives, stakeholders and constraints." },
+  { title: "Plan", text: "Define scope, metrics and milestones." },
+  { title: "Design", text: "High-fidelity UX, accessible components, brand polish." },
+  { title: "Build", text: "Iterative development with tests and CI/CD." },
+  { title: "Launch", text: "Deploy, observe, iterate and optimize." },
+];
+
+const testimonials = [
+  { name: "Jennifer Andrew", text: "This platform transformed healthcare access in my region." },
+  { name: "iData Inc.", text: "We gained observability and cut operational costs." },
+  { name: "PharmaHub", text: "Reservation + QR reduced wait times by 60%." },
+];
+
+const awards = [
+  { name: "Top Health Tech 2024", detail: "Regional recognition for healthcare innovation" },
+  { name: "Best UX Award", detail: "Accessible and usable design for patients" },
+];
+
+const techStack = [
+  "React",
+  "Firebase",
+  "TailwindCSS",
+  "GitHub",
+  "Python",
+  "PostgreSQL",
+  "Docker",
+  "Kubernetes",
+  "HTML5",
+];
+
+/* ---------------------------
+   Projects Section
+---------------------------- */
+function ProjectsSection({ projects }) {
+  const featured = projects.find((p) => p.featured) || projects[0];
   return (
-    <div className="rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-white/90 dark:bg-gray-900/50 shadow hover:shadow-xl transition">
-      <img src={image} alt={title} className="w-full h-44 object-cover" />
-      <div className="p-6 space-y-4">
-        <h4 className="text-lg font-semibold">{title}</h4>
-        <p className="muted text-sm">{description}</p>
-        <IconRow stack={stack} />
-        <div className="flex gap-2 mt-4 flex-wrap">
-          {href && (
-            <a href={href} target="_blank" rel="noreferrer" className="btn-primary">
-              Demo
-            </a>
-          )}
-          {repo && (
-            <a href={repo} target="_blank" rel="noreferrer" className="btn-outline">
-              Code
-            </a>
-          )}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* Featured */}
+      <section className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="rounded-2xl overflow-hidden shadow-xl">
+          <img src={featured.image} alt={featured.title} className="w-full h-64 object-cover" />
         </div>
+        <div className="space-y-4 flex flex-col justify-center">
+          <h3 className="text-3xl font-bold">{featured.title}</h3>
+          <p className="text-slate-600 dark:text-slate-400">{featured.description}</p>
+          <IconRow stack={featured.stack} />
+          <div className="mt-4 flex gap-3">
+            <a href={featured.href} className="btn-primary">View Live</a>
+            <a href={featured.repo} className="btn-outline">Repo</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Grid */}
+      <section className="grid md:grid-cols-3 gap-6">
+        {projects.map((p) => (
+          <motion.article
+            key={p.title}
+            whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(15,23,42,0.12)" }}
+            className="bg-white dark:bg-gray-900 rounded-2xl p-4 shadow"
+          >
+            <img src={p.image} alt={p.title} className="w-full h-40 object-cover rounded" />
+            <h4 className="mt-4 font-semibold">{p.title}</h4>
+            <p className="text-sm mt-2 text-slate-600 dark:text-slate-400">{p.description}</p>
+            <div className="mt-3 flex gap-2 items-center">
+              <IconRow stack={p.stack} />
+              <div className="ml-auto flex gap-2">
+                <a href={p.href} className="text-indigo-600 text-sm font-medium">Live</a>
+                <a href={p.repo} className="text-slate-400 text-sm">Code</a>
+              </div>
+            </div>
+          </motion.article>
+        ))}
+      </section>
+    </div>
+  );
+}
+
+/* ---------------------------
+   Process Timeline
+---------------------------- */
+function ProcessTimeline({ steps }) {
+  return (
+    <div className="max-w-4xl mx-auto relative">
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-300 to-transparent opacity-30" />
+      <div className="space-y-12">
+        {steps.map((s, i) => (
+          <motion.div
+            key={s.title}
+            initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.06 }}
+            className="relative p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-md md:max-w-2xl"
+            style={{ marginLeft: i % 2 === 0 ? 0 : "auto" }}
+          >
+            <div className="absolute -left-6 top-6 w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-blue-400 text-white flex items-center justify-center font-bold">
+              {i + 1}
+            </div>
+            <h4 className="text-lg font-semibold">{s.title}</h4>
+            <p className="mt-2 text-slate-600 dark:text-slate-400">{s.text}</p>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
 }
 
-function TechRadar({ projects }) {
-  const techCounts = useMemo(() => {
-    const counts = {};
-    projects.forEach((p) =>
-      p.stack.forEach((s) => (counts[s] = (counts[s] || 0) + 1))
-    );
-    return Object.keys(counts).map((k) => ({ tech: k, projects: counts[k] }));
-  }, [projects]);
+/* ---------------------------
+   Testimonials
+---------------------------- */
+function Testimonials({ items }) {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => (i + 1) % items.length), 4500);
+    return () => clearInterval(id);
+  }, [items.length]);
 
   return (
-    <div className="rounded-2xl p-6 border border-black/10 dark:border-white/10 bg-white/90 dark:bg-gray-900/50 shadow h-full">
-      <ResponsiveContainer width="100%" height={320}>
-        <RadarChart cx="50%" cy="50%" outerRadius="75%" data={techCounts}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="tech" />
-          <PolarRadiusAxis />
-          <Radar
-            name="Projects"
-            dataKey="projects"
-            stroke="#8b5cf6"
-            fill="#8b5cf6"
-            fillOpacity={0.6}
-          />
-          <Tooltip />
-        </RadarChart>
-      </ResponsiveContainer>
+    <div className="max-w-3xl mx-auto">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={items[index].name}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.5 }}
+          className="p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg"
+        >
+          <blockquote className="text-lg text-slate-700 dark:text-slate-300 italic">
+            “{items[index].text}”
+          </blockquote>
+          <div className="mt-4 text-sm font-semibold text-slate-900 dark:text-white">
+            {items[index].name}
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
 
-// ---------------- Main Page ----------------
-export default function ProjectsPage() {
-  const [active, setActive] = useState("All");
-  const [query, setQuery] = useState("");
-
-  const categories = ["All", "Web", "Web3", "AI/ML", "Research", "Tools"];
-  const filtered =
-    active === "All" ? projects : projects.filter((p) => p.category === active);
-  const searched = filtered.filter(
-    (p) =>
-      p.title.toLowerCase().includes(query.toLowerCase()) ||
-      p.stack.some((s) => s.toLowerCase().includes(query.toLowerCase()))
-  );
-  const featured = projects.find((p) => p.featured) || projects[0];
-
-  // ✅ Randomized snowfall configs (only generated once)
-  const snowflakes = useMemo(
-    () =>
-      Array.from({ length: 40 }).map((_, i) => {
-        const logo = logos[i % logos.length];
-        return {
-          ...logo,
-          left: Math.random() * 100, // random %
-          duration: 6 + Math.random() * 6, // 6–12s
-          delay: Math.random() * 10, // stagger
-          size: ["w-4 h-4 sm:w-6 sm:h-6", "w-5 h-5 sm:w-7 sm:h-7", "w-6 h-6 sm:w-8 sm:h-8"][
-            Math.floor(Math.random() * 3)
-          ],
-        };
-      }),
-    []
-  );
-
+/* ---------------------------
+   Awards
+---------------------------- */
+function Awards() {
   return (
-    <div className="space-y-20 sm:space-y-24">
-      {/* HERO with random stack snowfall */}
-      <section className="relative text-center py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto overflow-hidden w-full">
-        <div className="absolute inset-0 -z-10 pointer-events-none [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
-          {snowflakes.map((flake, i) => (
-            <motion.img
-              key={i}
-              src={flake.icon}
-              alt={flake.name}
-              loading="lazy"
-              className={`absolute opacity-40 ${flake.size}`}
-              style={{ left: `${flake.left}%` }}
-              initial={{ y: "-10%" }}
-              animate={{ y: "110%" }}
-              transition={{
-                duration: flake.duration,
-                repeat: Infinity,
-                ease: "linear",
-                delay: flake.delay,
-              }}
-            />
-          ))}
-        </div>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      <div className="grid md:grid-cols-2 gap-6">
+        {awards.map((a) => (
+          <div key={a.name} className="p-6 bg-white dark:bg-gray-900 rounded-2xl shadow">
+            <div className="font-semibold">{a.name}</div>
+            <div className="text-sm mt-2 text-slate-600 dark:text-slate-400">{a.detail}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold">
-          💻 Projects & Case Studies
-        </h1>
-        <p className="muted mt-4 sm:mt-6 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed text-base sm:text-lg">
-          Explore apps, protocols, AI models, and tools I’ve engineered.
-          Every project is a journey from challenge to solution.
+/* ---------------------------
+   CTA
+---------------------------- */
+function CTA() {
+  return (
+    <section className="relative px-6 py-20 overflow-hidden">
+      <div className="absolute inset-0 -skew-y-6 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-10 pointer-events-none" />
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-bold"
+        >
+          Ready to Build Something Impactful?
+        </motion.h2>
+        <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          I collaborate on meaningful products — from research to production.
         </p>
-        <ImpactCounters projects={projects} />
-      </section>
+        <motion.div whileHover={{ scale: 1.03 }} className="mt-8 inline-flex gap-4">
+          <a href="mailto:you@domain.com" className="btn-primary px-6 py-3 rounded-full">
+            Contact Me
+          </a>
+          <a href="/resume.pdf" className="btn-outline px-6 py-3 rounded-full">
+            Download CV
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
-      {/* SEARCH + FILTERS */}
-      <section className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="🔍 Search projects or tech..."
-            className="w-full md:w-1/2 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/50"
-          />
-          <div className="flex gap-2 sm:gap-4 flex-wrap justify-center md:justify-start">
-            {categories.map((c) => (
-              <button
-                key={c}
-                onClick={() => setActive(c)}
-                className={`px-3 sm:px-4 py-2 rounded-lg text-sm ${
-                  active === c
-                    ? "bg-brand text-white"
-                    : "bg-transparent text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-800"
-                }`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
+/* ---------------------------
+   Main Page
+---------------------------- */
+export default function ProjectsPage() {
+  return (
+    <div>
+      {/* Hero */}
+      <header className="max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-6xl font-extrabold leading-tight"
+        >
+          <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            Projects
+          </span>{" "}
+          & Case Studies
+        </motion.h1>
+        <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          Explore apps, Web3 tools, AI models, and experiments I’ve built. Discover demos, code,
+          and insights.
+        </p>
+
+        {/* Rolling orbit */}
+        <div className="mt-12">
+          <TechOrbit items={techStack} />
+        </div>
+      </header>
+
+      {/* Projects */}
+      <main id="projects" className="pb-12">
+        <ProjectsSection projects={sampleProjects} />
+      </main>
+
+      {/* Process */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Our Process</h2>
+          <ProcessTimeline steps={processSteps} />
         </div>
       </section>
 
-      {/* FEATURED */}
-      <section className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 shadow-xl bg-white/90 dark:bg-gray-900/60">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <img
-              src={featured.image}
-              alt={featured.title}
-              className="w-full h-56 sm:h-64 object-cover"
-            />
-            <div className="p-6 sm:p-8 space-y-4">
-              <h3 className="text-xl sm:text-2xl font-bold">{featured.title}</h3>
-              <p className="muted text-sm sm:text-base">{featured.description}</p>
-              <IconRow stack={featured.stack} />
-              <div className="flex gap-3 mt-4 flex-wrap">
-                {featured.href && (
-                  <a href={featured.href} className="btn-primary">
-                    Live Demo
-                  </a>
-                )}
-                {featured.repo && (
-                  <a href={featured.repo} className="btn-outline">
-                    Code
-                  </a>
-                )}
-              </div>
-              <div className="flex gap-2 mt-4 flex-wrap">
-                <Badge>Users: {featured.metrics?.users || "Coming Soon"}</Badge>
-                <Badge>Latency: {featured.metrics?.latency || "Coming Soon"}</Badge>
-                <Badge>Improvement: {featured.metrics?.reduction || "Coming Soon"}</Badge>
-              </div>
-            </div>
-          </div>
+      {/* Testimonials */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">What people say</h2>
+          <Testimonials items={testimonials} />
         </div>
       </section>
 
-      {/* PROJECTS GRID */}
-      <section className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8">
-          All Projects
-        </h2>
-        <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence>
-            {searched.length ? (
-              searched.map((p) => (
-                <motion.div
-                  key={p.title}
-                  layout
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                >
-                  <ProjectCard {...p} />
-                </motion.div>
-              ))
-            ) : (
-              <div className="col-span-full text-center muted">
-                No results — try another filter
-              </div>
-            )}
-          </AnimatePresence>
-        </div>
-      </section>
-
-      {/* CASE STUDIES */}
-      <section className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-2">📖 Case Studies</h2>
-        <p className="muted mb-4 sm:mb-6">Deep technical dives</p>
-        <div className="space-y-6">
-          {projects.slice(0, 2).map((p) => (
-            <div
-              key={p.title}
-              className="p-4 sm:p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-white/90 dark:bg-gray-900/50 shadow hover:shadow-lg transition"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                <div>
-                  <h3 className="font-semibold">{p.title}</h3>
-                  <p className="muted mt-2 text-sm sm:text-base">
-                    {p.description}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-brand">Problem</h4>
-                  <p className="muted text-sm mt-1">
-                    Short summary of the technical challenge.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-brand">Impact</h4>
-                  <p className="muted text-sm mt-1">
-                    Numbers, latency reduction, adoption, etc.
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* RADAR + TESTIMONIALS */}
-      <section className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="md:col-span-2">
-            <TechRadar projects={projects} />
-          </div>
-          <div className="rounded-2xl p-4 sm:p-6 border border-black/10 dark:border-white/10 bg-white/90 dark:bg-gray-900/50 shadow space-y-4">
-            <h4 className="font-semibold">Testimonials</h4>
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="p-3 rounded-lg bg-gray-50 dark:bg-gray-800"
-              >
-                <div className="font-medium">{t.name}</div>
-                <div className="text-sm muted">{t.role}</div>
-                <div className="mt-2 text-sm">{t.text}</div>
-              </div>
-            ))}
-          </div>
+      {/* Awards */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h3 className="text-2xl font-semibold mb-4 text-center">Awards & Recognition</h3>
+          <Awards />
         </div>
       </section>
 
       {/* CTA */}
-      <section className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="rounded-2xl p-6 sm:p-10 text-center border border-black/10 dark:border-white/10 bg-white/90 dark:bg-gray-900/50 shadow">
-          <h3 className="text-lg sm:text-xl font-semibold">
-            Let’s build something together
-          </h3>
-          <p className="muted mt-2 text-sm sm:text-base">
-            Open to freelance, collaboration, and exciting fulltime roles.
-          </p>
-          <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a href="mailto:you@domain.com" className="btn-primary">
-              Contact
-            </a>
-            <a href="/resume.pdf" className="btn-outline">
-              Resume
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTA />
+
+      {/* Local button styles */}
+      <style jsx global>{`
+        .btn-primary {
+          background: linear-gradient(90deg, #6366f1, #ec4899);
+          color: white;
+          font-weight: 600;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          box-shadow: 0 8px 24px rgba(99, 102, 241, 0.18);
+        }
+        .btn-outline {
+          background: white;
+          border: 1px solid rgba(15, 23, 42, 0.06);
+          color: #0f172a;
+        }
+      `}</style>
     </div>
   );
 }
