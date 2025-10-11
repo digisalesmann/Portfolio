@@ -350,7 +350,7 @@ export default function AboutPage() {
                     {/* Removed ** for emphasis */}
                     <div className="text-center max-w-4xl mx-auto space-y-4 text-lg muted">
                         <p>
-                            I believe in **delivering measurable business impact** through elegant, scalable software. Code quality is non-negotiable, and every architectural decision must be made with future growth and maintenance in mind.
+                            I believe in delivering measurable business impact through elegant, scalable software. Code quality is non-negotiable, and every architectural decision must be made with future growth and maintenance in mind.
                         </p>
                         <p className='font-semibold italic text-fuchsia-600 dark:text-rose-400'>
                             "Simplicity is the ultimate sophistication."
@@ -434,10 +434,10 @@ export default function AboutPage() {
                         <i className="fas fa-trophy text-5xl text-white mb-6"></i>
                         <h3 className="text-3xl font-extrabold mb-4">Case Study Highlight: E-Commerce Platform</h3>
                         <p className="text-lg opacity-90 mb-6">
-                            Designed and deployed a serverless, highly-available e-commerce platform capable of handling **50,000 requests per minute**. Reduced latency by **40%** by optimizing GraphQL query resolution and moving image assets to a global CDN.
+                            Designed and deployed a serverless, highly-available e-commerce platform capable of handling 50,000 requests per minute. Reduced latency by 40% by optimizing GraphQL query resolution and moving image assets to a global CDN.
                         </p>
                         {/* Inverting button colors for high contrast against the dark background */}
-                        <a href="/portfolio" className="btn-primary !bg-white !text-indigo-700 hover:!bg-gray-100 border-none">
+                        <a href="/projects" className="btn-primary !bg-white !text-indigo-700 hover:!bg-gray-100 border-none">
                             <i className="fas fa-eye mr-2"></i> View Full Portfolio
                         </a>
                     </div>
@@ -453,7 +453,7 @@ export default function AboutPage() {
                         "Victor didn't just meet the requirements; he elevated the entire product vision. His focus on performance and architectural integrity saved us months of future tech debt."
                     </blockquote>
                     <div className="font-semibold text-lg text-fuchsia-600 dark:text-rose-400">
-                        — CEO, Global E-Commerce Startup
+                        → CEO, Global E-Commerce Startup
                     </div>
                     <p className="text-sm muted mt-1">
                         (Project delivery, Q2 2024)
@@ -514,7 +514,7 @@ export default function AboutPage() {
                         Let's Build Your Scalable Future.
                     </h2>
                     <p className="text-xl mb-12 opacity-90 max-w-4xl mx-auto font-light">
-                        Stop managing complexity—start leading innovation. Schedule a call to turn your ambitious product vision into a scalable, high-performance reality.
+                        Stop managing complexity, start leading innovation. Schedule a call to turn your ambitious product vision into a scalable, high-performance reality.
                     </p>
                     {/* Primary Button remains inverted for high contrast */}
                     <a 

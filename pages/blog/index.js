@@ -181,7 +181,7 @@ export default function PremiumArticlePage() {
           Ready to Build the Future?
         </h2>
         <p className="mb-8 mx-auto text-lg text-gray-700 dark:text-gray-300">
-          Need a premium **AI solution**, a highly responsive **full-stack application**, or a complete **design system** that scales? Let's collaborate and bring your vision to life.
+          Need a premium AI solution, a highly responsive full-stack application, or a complete design system that scales? Let's collaborate and bring your vision to life.
         </p>
         <Link
           href="/contact"
@@ -285,12 +285,12 @@ export default function PremiumArticlePage() {
             <section id="core" className="py-12">
               <h2 className="text-3xl font-extrabold mb-6">{sectionsData[1].title}</h2>
               <p>
-                At its heart, **AI thrives on data**. The more diverse and high-quality data it processes, the more accurate and useful it becomes. This shift from simple rule-based systems to complex pattern recognition is the defining feature of the modern AI revolution.
+                At its heart, AI thrives on data. The more diverse and high-quality data it processes, the more accurate and useful it becomes. This shift from simple rule-based systems to complex pattern recognition is the defining feature of the modern AI revolution.
               </p>
               
               <div className="my-8 p-6 bg-indigo-50 dark:bg-gray-800 rounded-xl border-l-4 border-indigo-500 shadow-inner">
                 <p className="text-lg italic font-medium text-indigo-800 dark:text-indigo-300">
-                  “AI is not about replacing humans — it’s about **augmenting human potential** and automating the mundane to free up creativity.”
+                  “AI is not about replacing humans, it’s about augmenting human potential and automating the mundane to free up creativity.”
                 </p>
               </div>
 
