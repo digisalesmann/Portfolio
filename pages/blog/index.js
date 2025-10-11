@@ -229,7 +229,7 @@ export default function PremiumArticlePage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="lg:hidden fixed top-0 left-0 right-0 z-30 bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm p-3 border-b border-gray-200 dark:border-gray-800"
+                className="lg:hidden fixed top-0 left-0 right-0 z-30 bg-white dark:bg-gray-950 p-3 border-b border-gray-200 dark:border-gray-800"
               >
                 <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
                   {sectionsData.find(s => s.id === activeSection)?.label}

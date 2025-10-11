@@ -60,7 +60,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 border-b transition-all duration-500 ${
+      className={`fixed top-0 inset-x-0 z-40 border-b transition-all duration-500 ${
         scrolled || open
           ? "bg-white/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 backdrop-blur-xl shadow-md h-16"
           : "bg-white/20 dark:bg-gray-900/20 border-transparent backdrop-blur-sm h-20"
