@@ -22,6 +22,7 @@ import {
   Menu,
   X,
   ArrowRight,
+  Send, // New icon for the footer
 } from "lucide-react";
 import Link from "next/link";
 
@@ -31,8 +32,8 @@ import Link from "next/link";
 const IconBadge = ({ Icon, className = "" }) => (
   <div
     className={`w-10 h-10 rounded-full flex items-center justify-center 
-                bg-gradient-to-br from-indigo-500 to-purple-600 
-                text-white shadow-lg shadow-indigo-500/40 ${className}`}
+              bg-gradient-to-br from-indigo-500 to-purple-600 
+              text-white shadow-lg shadow-indigo-500/40 ${className}`}
   >
     <Icon className="w-5 h-5" />
   </div>
@@ -46,9 +47,9 @@ const ArticleCard = ({ article, index }) => (
     transition={{ duration: 0.6, delay: index * 0.15 }}
     viewport={{ once: true, amount: 0.4 }}
     className="relative border border-gray-200/50 dark:border-gray-700/50 
-               rounded-2xl overflow-hidden shadow-xl 
-               hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 
-               bg-white dark:bg-gray-800 cursor-pointer group"
+              rounded-2xl overflow-hidden shadow-xl 
+              hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 
+              bg-white dark:bg-gray-800 cursor-pointer group"
   >
     <div className="h-44 overflow-hidden">
       <img
@@ -118,7 +119,8 @@ export default function PremiumArticlePage() {
       // Find the currently visible section based on scroll position
       sectionsData.forEach((sec) => {
         const element = document.getElementById(sec.id);
-        if (element && window.scrollY >= element.offsetTop - 150) {
+        // Adjusted offset to accommodate potential fixed headers or padding
+        if (element && window.scrollY >= element.offsetTop - 180) { 
           current = sec.id;
         }
       });
@@ -155,6 +157,43 @@ export default function PremiumArticlePage() {
       </ul>
     </nav>
   );
+  
+  // --- New/Redesigned Footer CTA Component ---
+  const WorkWithMeFooter = () => (
+    <motion.section 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="mt-20 p-10 relative bg-gray-50 dark:bg-gray-900 border-t border-b border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden shadow-2xl"
+    >
+      {/* Subtle Background Accent */}
+      <div className="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none">
+        <Globe className="w-full h-full text-indigo-500/20 dark:text-fuchsia-400/20 animate-pulse-slow scale-150 transform rotate-12" />
+      </div>
+      
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <IconBadge Icon={Send} className="mx-auto mb-6 bg-gradient-to-br from-indigo-500 to-fuchsia-600 shadow-xl shadow-fuchsia-500/40" />
+
+        <h2 className="text-4xl font-extrabold mb-4 
+                       bg-gradient-to-r from-indigo-600 to-fuchsia-700 
+                       dark:from-indigo-400 dark:to-fuchsia-500 bg-clip-text text-transparent">
+          Ready to Build the Future?
+        </h2>
+        <p className="mb-8 mx-auto text-lg text-gray-700 dark:text-gray-300">
+          Need a premium **AI solution**, a highly responsive **full-stack application**, or a complete **design system** that scales? Let's collaborate and bring your vision to life.
+        </p>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-indigo-600 to-fuchsia-700 text-white font-bold text-lg rounded-xl shadow-xl shadow-fuchsia-500/40 
+                     hover:shadow-fuchsia-500/60 transition-all duration-300 transform hover:scale-[1.02]"
+        >
+          Start a Project <ArrowRight className="w-5 h-5 ml-1" />
+        </Link>
+      </div>
+    </motion.section>
+  );
+
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased">
@@ -183,12 +222,13 @@ export default function PremiumArticlePage() {
       </AnimatePresence>
 
       {/* Hero Section - Premium/Magazine Aesthetic */}
-      <header className="relative w-full h-[70vh] flex items-end overflow-hidden">
-        {/* Background Image/Gradient overlay */}
+      <header className="relative w-full h-[70vh] flex items-end overflow-hidden pt-20">
+        {/* The background and gradient are contained here */}
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}>
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/70 to-transparent"></div>
+          {/* Gradient overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/60 to-gray-950/30"></div>
         </div>
-
+        
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -220,28 +260,15 @@ export default function PremiumArticlePage() {
 
         {/* Main Article Content */}
         <main className="w-full lg:w-3/4">
+          {/* REMOVED: The section title that was causing a blurry clash at the top.
+            This fixed header is often redundant and problematic with scrollspy, especially when overlapping the TOC on mobile.
+          */}
+          
           <article className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-extrabold prose-headings:text-indigo-600 dark:prose-headings:text-indigo-400">
             
-            {/* Custom Section Title Component */}
-            {sectionsData.map(s => s.id).includes(activeSection) && (
-              <motion.div 
-                key={activeSection}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className="lg:hidden fixed top-0 left-0 right-0 z-30 bg-white dark:bg-gray-950 p-3 border-b border-gray-200 dark:border-gray-800"
-              >
-                <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
-                  {sectionsData.find(s => s.id === activeSection)?.label}
-                </p>
-                <h2 className="text-xl font-bold mt-1">
-                  {sectionsData.find(s => s.id === activeSection)?.title}
-                </h2>
-              </motion.div>
-            )}
-
             {/* --- 01. Introduction --- */}
-            <section id="intro" className="py-8 pt-16 lg:pt-8">
+            {/* The increased pt-16 is intentional for mobile padding */}
+            <section id="intro" className="py-8 pt-16 lg:pt-8"> 
               <h2 className="text-4xl font-extrabold mb-6 hidden lg:block">{sectionsData[0].title}</h2>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -317,8 +344,8 @@ export default function PremiumArticlePage() {
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-white/90 to-indigo-50/90 dark:from-gray-900/90 dark:to-gray-800/90 backdrop-blur-xl 
-                             rounded-3xl p-8 shadow-2xl border border-indigo-200/50 dark:border-indigo-900/50 
-                             hover:shadow-indigo-500/20 transition-all duration-500"
+                              rounded-3xl p-8 shadow-2xl border border-indigo-200/50 dark:border-indigo-900/50 
+                              hover:shadow-indigo-500/20 transition-all duration-500"
                 >
                   <h3 className="font-extrabold mb-6 flex items-center gap-3 text-2xl text-indigo-700 dark:text-indigo-300">
                     <IconBadge Icon={Zap} className="shadow-lg shadow-indigo-500/50" />
@@ -347,8 +374,8 @@ export default function PremiumArticlePage() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-white/90 to-purple-50/90 dark:from-gray-900/90 dark:to-gray-800/90 backdrop-blur-xl 
-                             rounded-3xl p-8 shadow-2xl border border-purple-200/50 dark:border-purple-900/50 
-                             hover:shadow-purple-500/20 transition-all duration-500"
+                              rounded-3xl p-8 shadow-2xl border border-purple-200/50 dark:border-purple-900/50 
+                              hover:shadow-purple-500/20 transition-all duration-500"
                 >
                   <h3 className="font-extrabold mb-6 flex items-center gap-3 text-2xl text-purple-700 dark:text-purple-300">
                     <IconBadge Icon={Heart} className="shadow-lg shadow-purple-500/50 bg-gradient-to-br from-purple-500 to-fuchsia-600" />
@@ -506,9 +533,10 @@ export default function PremiumArticlePage() {
                     Victor specializes in building scalable, ethical AI solutions and high-performance, responsive UIs. He believes in technology that empowers human ingenuity.
                   </p>
                   <div className="flex space-x-4">
-                    <Link href="#" aria-label="Twitter" className="text-gray-500 hover:text-twitter transition-colors"><Twitter size={20} /></Link>
-                    <Link href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-linkedin transition-colors"><Linkedin size={20} /></Link>
-                    <Link href="#" aria-label="GitHub" className="text-gray-500 hover:text-github transition-colors"><Github size={20} /></Link>
+                    {/* Added text-linkedin/text-github colors - ensure these are defined in your tailwind config or use hardcoded classes */}
+                    <Link href="#" aria-label="Twitter" className="text-gray-500 hover:text-[#1DA1F2] transition-colors"><Twitter size={20} /></Link>
+                    <Link href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-[#0A66C2] transition-colors"><Linkedin size={20} /></Link>
+                    <Link href="#" aria-label="GitHub" className="text-gray-500 hover:text-[#181717] transition-colors dark:hover:text-white"><Github size={20} /></Link>
                     <Link href="mailto:test@email.com" aria-label="Email" className="text-gray-500 hover:text-indigo-600 transition-colors"><Mail size={20} /></Link>
                   </div>
                 </div>
@@ -544,25 +572,8 @@ export default function PremiumArticlePage() {
 
           </article>
           
-          {/* Footer CTA - Work with Me */}
-          <motion.section 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mt-20 p-10 bg-gradient-to-r from-pink-600 to-fuchsia-700 text-white rounded-3xl text-center shadow-2xl shadow-pink-500/30"
-          >
-            <h2 className="text-4xl font-extrabold mb-4">Ready to Build the Future?</h2>
-            <p className="mb-8 max-w-2xl mx-auto text-lg opacity-90">
-              Need a premium AI solution, a highly responsive full-stack application, or a complete design system that scales? Let's collaborate and bring your vision to life.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-10 py-4 bg-white text-fuchsia-700 font-bold text-lg rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-[1.05]"
-            >
-              Start a Project
-            </Link>
-          </motion.section>
+          {/* Footer CTA - Work with Me (Redesigned) */}
+          <WorkWithMeFooter />
           
         </main>
       </div>

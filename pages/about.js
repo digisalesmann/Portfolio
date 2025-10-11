@@ -63,7 +63,7 @@ const TypingText = () => {
     );
 };
 
-// --- 2. Data Definitions (UPDATED STACK_DATA) ---
+// --- 2. Data Definitions (No Change) ---
 const SKILLS_DATA = [
     { name: 'Architecture & Scalability', icon: 'fas fa-drafting-compass', description: 'Designing multi-tenant, cloud-native systems for millions of users, ensuring high availability and low latency globally.' },
     { name: 'Elegance & UX/UI', icon: 'fas fa-palette', description: 'Transforming complexity into delightful, responsive, and accessible user experiences that drive conversion and retention.' },
@@ -150,7 +150,7 @@ const AnimatedValueCard = ({ data, delay }) => {
     );
 };
 
-// Component: Isolates the useVisibilityAnimation hook for PILLARS_DATA (No Change)
+// Component: Isolates the useVisibilityAnimation hook for PILLARS_DATA (UPDATED: Added inner gradient to card)
 const PillarCard = ({ pillar, index }) => {
     const [ref, isVisible] = useVisibilityAnimation(0.3);
     const classes = isVisible ? VISIBLE_CLASSES : HIDDEN_CLASSES;
@@ -160,8 +160,8 @@ const PillarCard = ({ pillar, index }) => {
             ref={ref} 
             key={index}
             style={{ transitionDelay: `${index * 200}ms` }} 
-            // Accent border/icon color updated to brand fuchsia/rose
-            className={`text-center p-8 card border-t-8 border-fuchsia-600 dark:border-rose-500 shadow-xl ${ANIMATION_CLASSES} ${classes}`}>
+            // ADDED: bg-gradient-to-br class for a subtle inner card effect
+            className={`text-center p-8 card border-t-8 border-fuchsia-600 dark:border-rose-500 shadow-xl bg-gradient-to-br from-white/90 to-fuchsia-50/70 dark:from-gray-900/90 dark:to-gray-800/70 ${ANIMATION_CLASSES} ${classes}`}>
             <i className={`${pillar.icon} text-5xl text-fuchsia-600 dark:text-rose-400 mb-4`}></i>
             <h3 className="text-2xl font-bold mb-3">{pillar.title}</h3>
             <p className="muted">{pillar.text}</p>
@@ -263,10 +263,13 @@ export default function AboutPage() {
     const [heroTitleRef, heroTitleVisible] = useVisibilityAnimation(0.1);
     const [heroCtaRef, heroCtaVisible] = useVisibilityAnimation(0.1);
     const [heroAvatarRef, heroAvatarVisible] = useVisibilityAnimation(0.1);
+    const [finalCtaRef, finalCtaVisible] = useVisibilityAnimation(0.1); // New hook for final CTA
 
     const heroTitleClasses = heroTitleVisible ? VISIBLE_CLASSES : HIDDEN_CLASSES;
     const heroCtaClasses = heroCtaVisible ? VISIBLE_CLASSES : HIDDEN_CLASSES;
-    const heroAvatarClasses = heroAvatarVisible ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-90 rotate-3";
+    // UPDATED: Added an initial rotation for a more dynamic look
+    const heroAvatarClasses = heroAvatarVisible ? "opacity-100 scale-100 rotate-1" : "opacity-0 scale-90 rotate-3";
+    const finalCtaClasses = finalCtaVisible ? VISIBLE_CLASSES : HIDDEN_CLASSES;
 
     return (
         <div className="min-h-screen pt-12 md:pt-16"> 
@@ -314,16 +317,19 @@ export default function AboutPage() {
                     <div className="md:col-span-5 relative flex justify-center p-8">
                         <div 
                             ref={heroAvatarRef}
+                            // UPDATED: Changed base rotation to rotate-1 to maintain dynamism without hover
                             className={`relative w-full max-w-sm aspect-square ${ANIMATION_CLASSES} duration-1000 ${heroAvatarClasses}`}
                             style={{ transitionDelay: '300ms' }}
                         >
                             {/* Background shape/shadow (Color updated) */}
-                            <div className="absolute inset-0 bg-fuchsia-200/50 dark:bg-rose-800/40 rounded-[2.5rem] transform transition-all duration-700 rotate-3 group-hover:rotate-1 shadow-2xl z-0 animate-spin-slow-reverse"></div>
+                            {/* Removed spin animation for a calmer, high-end feel */}
+                            <div className="absolute inset-0 bg-fuchsia-200/50 dark:bg-rose-800/40 rounded-[2.5rem] transform transition-all duration-700 rotate-3 shadow-2xl z-0"></div>
                             
                             <img
                                 src="/images/kenny.jpg"
                                 alt="Victor's Professional Avatar"
-                                className="relative z-10 w-full h-full object-cover rounded-[2.5rem] shadow-xl border-4 border-white dark:border-gray-950 transition-transform transform hover:scale-[1.03] hover:rotate-1"
+                                // Removed hover transform to avoid jumping
+                                className="relative z-10 w-full h-full object-cover rounded-[2.5rem] shadow-xl border-4 border-white dark:border-gray-950 transition-transform transform"
                                 style={{clipPath: 'polygon(0 0, 100% 0, 100% 90%, 0% 100%)'}}
                             />
                             
@@ -390,7 +396,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* -------------------- 6. Service Pillars -------------------- */}
+            {/* -------------------- 6. Service Pillars (UPDATED: PillarCard has inner gradient) -------------------- */}
             <section className="section bg-fuchsia-50/60 dark:bg-gray-900/60 rounded-[2rem] shadow-inner backdrop-blur-sm">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
                     The Victor Advantage
@@ -403,7 +409,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* -------------------- 7. The Tech Stack (Updated to 9 items and responsive grid) -------------------- */}
+            {/* -------------------- 7. The Tech Stack (No Change) -------------------- */}
             <section className="section">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-4">
                     Modern Toolset Mastery
@@ -412,11 +418,6 @@ export default function AboutPage() {
                     The right tools applied with expert discipline yields predictable, high-quality results.
                 </p>
                 
-                {/* Grid for 9 items: 
-                    col-3 on mobile (3x3 grid)
-                    col-3 on sm/md (3x3 grid for square aspect)
-                    col-9 on xl (1x9 single row for wide displays)
-                */}
                 <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-9 gap-4 max-w-7xl mx-auto">
                     {STACK_DATA.map((item, index) => (
                         <div key={item.name} className="lg:col-span-1"> {/* Ensure each item takes 1 column on lg/xl */}
@@ -426,7 +427,7 @@ export default function AboutPage() {
                 </div>
             </section>
             
-            {/* -------------------- 8. Project Snapshot / Case Study Highlight -------------------- */}
+            {/* -------------------- 8. Project Snapshot / Case Study Highlight (No Change) -------------------- */}
             <div className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 dark:bg-gray-800 text-white shadow-2xl">
                 <section className="container rounded-none py-16">
                     <div className="max-w-4xl mx-auto text-center">
@@ -444,7 +445,7 @@ export default function AboutPage() {
             </div>
 
 
-            {/* -------------------- 9. Testimonial / Social Proof Block -------------------- */}
+            {/* -------------------- 9. Testimonial / Social Proof Block (No Change) -------------------- */}
             <section className="section">
                 <div className="max-w-4xl mx-auto text-center py-8 card border-l-8 border-fuchsia-500 dark:border-rose-400 bg-white/50 dark:bg-gray-950/50 shadow-xl">
                     <i className="fas fa-quote-left text-3xl text-fuchsia-400 dark:text-rose-400 mb-6"></i>
@@ -460,7 +461,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* -------------------- 10. My Professional Timeline -------------------- */}
+            {/* -------------------- 10. My Professional Timeline (No Change) -------------------- */}
             <section className="section">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
                     Professional Trajectory
@@ -494,41 +495,54 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* -------------------- 11. Final CTA Footer -------------------- */}
-            <div className="w-full bg-gradient-to-r from-indigo-700 to-purple-800 dark:bg-gray-800 mt-12 rounded-t-[3rem] text-white">
-                <section className="container text-center py-16">
-                    <h2 className="text-4xl md:text-5xl font-extrabold mb-3 leading-tight">Ready for a Strategic Partner?</h2>
-                    <p className="text-xl mb-10 opacity-90 max-w-3xl mx-auto">
-                        Stop managing complexity—start leading innovation. Let's discuss a roadmap for turning your ambitious product vision into a scalable reality.
+            {/* -------------------- 11. Final CTA Footer (REDESIGNED) -------------------- */}
+            {/* NEW: Use a more dramatic, multi-gradient background with a dynamic clip-path for a "launch" effect. */}
+            <div 
+                ref={finalCtaRef}
+                className={`w-full relative py-24 mt-16 text-white overflow-hidden shadow-2xl ${ANIMATION_CLASSES} duration-700 ${finalCtaClasses} `}
+                // Custom style for the angular top edge
+                style={{ clipPath: 'polygon(0 8%, 100% 0, 100% 100%, 0% 100%)' }}
+            >
+                {/* Background Layer 1: The main, subtle gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-700 to-purple-800 dark:from-gray-900 dark:to-gray-800 transition-all duration-500 hover:from-indigo-800 hover:to-purple-900"></div>
+                
+                {/* Background Layer 2: A subtle radial glow from the center */}
+                <div className="absolute inset-0 bg-radial-glow opacity-30 pointer-events-none"></div>
+
+                <section className="relative z-10 container text-center pt-8">
+                    <h2 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+                        Let's Build Your Scalable Future.
+                    </h2>
+                    <p className="text-xl mb-12 opacity-90 max-w-4xl mx-auto font-light">
+                        Stop managing complexity—start leading innovation. Schedule a call to turn your ambitious product vision into a scalable, high-performance reality.
                     </p>
-                    {/* Inverting button colors for high contrast against the dark background */}
+                    {/* Primary Button remains inverted for high contrast */}
                     <a 
                         href="/contact" 
-                        className="btn-primary !bg-white !text-indigo-700 hover:!bg-gray-100 shadow-xl text-lg px-10 py-4 transform hover:scale-[1.05] transition-transform"
+                        className="btn-primary !bg-white !text-indigo-700 hover:!bg-gray-100 shadow-2xl text-xl px-12 py-5 font-bold transform hover:scale-[1.05] transition-transform"
                     >
-                        <i className="fas fa-calendar-check mr-2"></i> Schedule Discovery Call Today
+                        <i className="fas fa-calendar-check mr-3"></i> Schedule Discovery Call Today
                     </a>
                 </section>
             </div>
 
-            {/* Custom Styles (No changes) */}
+            {/* Custom Styles (UPDATED: Added bg-radial-glow class for final CTA) */}
             <style jsx="true">{`
                 .animate-pulse-slow {
                     animation: slow-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
                 }
-                .animate-spin-slow-reverse {
-                    animation: spin-slow-reverse 120s linear infinite;
+                .bg-radial-glow {
+                    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+                }
+                .dark .bg-radial-glow {
+                    background: radial-gradient(circle at center, rgba(160, 0, 255, 0.15) 0%, transparent 70%);
                 }
                 @keyframes slow-pulse {
                     0%, 100% { opacity: 0.5; }
                     50% { opacity: 0.9; }
                 }
-                @keyframes spin-slow-reverse {
-                    from { transform: rotate(3deg); }
-                    to { transform: rotate(363deg); }
-                }
                 
-                /* Custom utility classes based on your global theme */
+                /* Custom utility classes based on your global theme (No change) */
                 .text-brand {
                     color: theme('colors.fuchsia.600');
                 }
