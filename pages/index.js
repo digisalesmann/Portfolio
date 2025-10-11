@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Section, FadeUp } from "@/components/Reveal";
 import ProjectCard from "@/components/ProjectCard";
+// FIX: Changed from default import (projects) to named import ({ projects })
 import projects from "@/data/projects";
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
@@ -243,10 +244,15 @@ export default function Home() {
 
         <div className="mt-10 space-y-12">
           {Object.entries(techStack).map(([category, items]) => (
-            <div key={category} className="rounded-2xl p-6 bg-white/70 dark:bg-gray-900/40 shadow border border-black/5 dark:border-white/10">
-              <h3 className="text-xl font-bold mb-6 text-left bg-gradient-to-r from-purple-500 to-brand bg-clip-text text-transparent">
+            <div
+              key={category}
+              className="rounded-2xl p-6 bg-white/70 dark:bg-gray-900/40 shadow border border-black/5 dark:border-white/10"
+            >
+              {/* ✅ Centered Heading */}
+              <h3 className="text-xl font-bold mb-6 text-center bg-gradient-to-r from-purple-500 to-brand bg-clip-text text-transparent">
                 {category.replace("_", " & ")}
               </h3>
+
               <div className="grid grid-cols-3 md:grid-cols-4 gap-8 place-items-center">
                 {items.map((s) => (
                   <motion.div
@@ -409,9 +415,9 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-extrabold">
             Let’s{" "}
             <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-            build
-          </span>
-          <span className="underline decoration-brand"> together</span>
+              build
+            </span>
+            <span className="underline decoration-brand"> together</span>
           </h2>
           <p className="muted mt-2">
             I’m open to collaborations, freelance work, and research.

@@ -1,4 +1,3 @@
-// components/Reveal.js
 import { motion } from "framer-motion";
 
 export function Section({ children, className = "" }) {

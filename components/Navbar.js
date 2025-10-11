@@ -1,8 +1,36 @@
+"use client";
+
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import ThemeToggle from "@/components/ThemeToggle"; // 🌗 Import toggle
+import Image from "next/image"; // Import Next.js Image component for optimization
+
+// Custom component for the logo with the avatar
+const LogoWithAvatar = () => (
+  <Link
+    href="/"
+    className="flex items-center gap-2 font-bold text-lg text-gray-900 dark:text-gray-100 group transition-colors"
+  >
+    {/* Avatar */}
+    <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-transparent group-hover:border-indigo-500 transition-colors duration-300">
+      <Image
+        src="/images/kenny.jpg" // Use your actual avatar path
+        alt="Victor's Avatar"
+        width={32}
+        height={32}
+        className="object-cover"
+      />
+    </div>
+
+    {/* Brand Text */}
+    <span className="bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
+      BuildWithVictor
+    </span>
+  </Link>
+);
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,14 +66,9 @@ export default function Navbar() {
           : "bg-white/20 dark:bg-gray-900/20 border-transparent backdrop-blur-sm h-20"
       }`}
     >
-      <div className="container flex items-center justify-between h-full">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="font-bold text-lg bg-gradient-to-r from-brand to-pink-500 bg-clip-text text-transparent"
-        >
-          BuildWithVictor
-        </Link>
+      <div className="container flex items-center justify-between h-full px-4 sm:px-6 lg:px-8 mx-auto">
+        {/* Logo (Desktop & Mobile Main) - Now uses the custom component */}
+        <LogoWithAvatar />
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8 text-base font-medium">
@@ -62,7 +85,7 @@ export default function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden relative h-9 w-9 rounded-lg border border-black/10 dark:border-white/10 bg-white/60 dark:bg-gray-900/60 backdrop-blur hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+          className="md:hidden relative h-9 w-9 rounded-lg border border-black/10 dark:border-white/10 bg-white/60 dark:bg-gray-900/60 backdrop-blur hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/60"
         >
           <Burger open={open} />
           <span className="sr-only">Menu</span>
@@ -93,17 +116,12 @@ export default function Navbar() {
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 280, damping: 28 }}
               className="fixed right-0 top-0 z-50 h-dvh w-[86%] sm:w-[420px] 
-                        bg-white dark:bg-gray-900 shadow-2xl border-l border-gray-200 dark:border-gray-700 flex flex-col"
+                         bg-white dark:bg-gray-900 shadow-2xl border-l border-gray-200 dark:border-gray-700 flex flex-col"
             >
               {/* Top header strip */}
               <div className="flex items-center justify-between h-14 px-6 border-b border-gray-200 dark:border-gray-700">
-                {/* Brand / Logo */}
-                <Link
-                  href="/"
-                  className="font-bold text-lg bg-gradient-to-r from-brand to-pink-500 bg-clip-text text-transparent"
-                >
-                  BuildWithVictor
-                </Link>
+                {/* Brand / Logo - Now uses the custom component again */}
+                <LogoWithAvatar /> 
 
                 <div className="flex items-center gap-3">
                   {/* 🌗 Mobile toggle */}
@@ -112,7 +130,7 @@ export default function Navbar() {
                   <button
                     onClick={() => setOpen(false)}
                     aria-label="Close menu"
-                    className="text-3xl font-light hover:text-brand transition-colors"
+                    className="text-3xl font-light hover:text-indigo-600 transition-colors"
                   >
                     ×
                   </button>
@@ -134,19 +152,19 @@ export default function Navbar() {
                     href="https://github.com/digisalesmann"
                     target="_blank"
                     rel="noreferrer"
-                    className="btn-outline text-center"
+                    className="w-full text-center px-4 py-2 border rounded-lg text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                   >
                     GitHub
                   </a>
                   <a
                     href="mailto:youremail@example.com"
-                    className="btn-primary text-center"
+                    className="w-full text-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow hover:bg-indigo-700 transition-colors"
                   >
                     Email
                   </a>
                 </div>
 
-                <p className="muted text-xs mt-6 text-center">
+                <p className="text-gray-500 dark:text-gray-400 text-xs mt-6 text-center">
                   © {new Date().getFullYear()} BuildWithVictor
                 </p>
               </div>
@@ -161,18 +179,20 @@ export default function Navbar() {
 /* ---------- helpers ---------- */
 
 function NavLink({ href, children }) {
+  // Adjusted branding class for hover
   return (
-    <Link href={href} className="hover:text-brand transition-colors">
+    <Link href={href} className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
       {children}
     </Link>
   );
 }
 
 function MobileLink({ href, children }) {
+  // Adjusted branding class
   return (
     <Link
       href={href}
-      className="block rounded-lg px-4 py-2 hover:bg-black/5 dark:hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+      className="block rounded-lg px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-indigo-50 dark:hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/60 transition-colors"
     >
       {children}
     </Link>
