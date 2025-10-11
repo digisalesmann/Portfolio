@@ -540,7 +540,7 @@ export default function ProjectsPage() {
 
   return (
     // PRIMARY CHANGE: Consistent pink-50 background for light mode
-    <div className="min-h-screen bg-pink-50 dark:bg-gray-950">
+    <div className="min-h-screen bg-pink-50 dark:bg-gray-950 overflow-x-hidden">
       
       {/* --- HERO SECTION --- */}
       <header className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-0 sm:pb-0 text-center">
