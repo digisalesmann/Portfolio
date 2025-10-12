@@ -422,26 +422,6 @@ export default function Home() {
           <p className="muted mt-2">
             I’m open to collaborations, freelance work, and research.
           </p>
-          <div className="flex justify-center gap-6 mt-6">
-            <Link href="https://github.com/digisalesmann" target="_blank">
-              <i className="fab fa-github text-2xl hover:text-brand"></i>
-            </Link>
-            <Link href="https://x.com/0xdsm" target="_blank">
-              <i className="fa-brands fa-x-twitter text-2xl hover:text-brand"></i>
-            </Link>
-            <Link
-              href="https://linkedin.com/in/your-linkedin-username"
-              target="_blank"
-            >
-              <i className="fab fa-linkedin text-2xl hover:text-brand"></i>
-            </Link>
-            <Link href="https://discord.gg/your-discord-invite" target="_blank">
-              <i className="fab fa-discord text-2xl hover:text-brand"></i>
-            </Link>
-            <Link href="mailto:youremail@example.com">
-              <i className="fas fa-envelope text-2xl hover:text-brand"></i>
-            </Link>
-          </div>
         </FadeUp>
       </Section>
     </>

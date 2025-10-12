@@ -1,13 +1,18 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
+// --- Global Configuration for Web3Forms ---
+// ACCESS KEY HAS BEEN SECURELY INTEGRATED HERE
+const WEB3FORMS_ACCESS_KEY = "5990f7bc-58f5-4b00-8630-74158a28db18"; 
+const WEB3FORMS_API_URL = "https://api.web3forms.com/submit";
+
 // --- Global Tailwind Configuration and Styling for JIT/Sandbox Environment ---
-// In a standard React project, these styles would be in a global CSS file.
 const GlobalStyles = () => (
     <>
         <script src="https://kit.fontawesome.com/a076d05399.js" crossOrigin="anonymous"></script>
         {/* Load Font Awesome for icons used in the structure */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJz9T2AUj0oE" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-        <style jsx global>{`
+        {/* Fix for the console warning: Removed 'jsx' and 'global' attributes */}
+        <style>{`
             /* Define the custom Tailwind colors based on the user's theme */
             :root {
                 --color-brand: #A855F7; /* Purple 500 */
@@ -217,6 +222,7 @@ const ContactPage = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isError, setIsError] = useState(false); // State for API error handling
     const [formValidation, setFormValidation] = useState({});
 
     // Memoize the form validity check
@@ -235,7 +241,8 @@ const ContactPage = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    // --- RESTORED ASYNC SUBMISSION LOGIC ---
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
         if (!isFormValid) {
@@ -245,22 +252,52 @@ const ContactPage = () => {
 
         setIsSubmitting(true);
         setIsSuccess(false);
+        setIsError(false);
 
-        // --- Mock API Call Simulation for the 'engaging animation' ---
-        console.log('Form Submitted:', formData);
+        // Prepare payload for Web3Forms, including the required access_key
+        const payload = {
+            ...formData,
+            access_key: WEB3FORMS_ACCESS_KEY,
+            // You can optionally add a fixed subject line to identify the source
+            subject: `Portfolio Inquiry: ${formData.subject}`, 
+        };
 
-        // Simulate network delay
-        setTimeout(() => {
+        try {
+            const response = await fetch(WEB3FORMS_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                
+                if (result.success) {
+                    setIsSuccess(true);
+                    
+                    // Clear the form and reset validation states
+                    setFormData({ name: '', email: '', subject: '', message: '' });
+                    setFormValidation({});
+
+                    // Hide success message after a few seconds
+                    setTimeout(() => setIsSuccess(false), 5000);
+                } else {
+                    console.error('Web3Forms API reported an internal error:', result.message);
+                    setIsError(true);
+                }
+            } else {
+                console.error(`HTTP Error during form submission: Status ${response.status} (${response.statusText}).`);
+                setIsError(true);
+            }
+        } catch (error) {
+            console.error('Network or Fetch Error:', error);
+            setIsError(true);
+        } finally {
             setIsSubmitting(false);
-            setIsSuccess(true);
-            
-            // Clear the form and reset validation states
-            setFormData({ name: '', email: '', subject: '', message: '' });
-            setFormValidation({});
-
-            // Hide success message after a few seconds
-            setTimeout(() => setIsSuccess(false), 5000);
-        }, 2000);
+        }
     };
 
     // Social Media Data (for easy mapping)
@@ -298,6 +335,99 @@ const ContactPage = () => {
             href: '#' 
         },
     ];
+
+    // Determine content for the form area
+    let formContent;
+
+    if (isSuccess) {
+        formContent = (
+            <div className="success-message flex flex-col items-center justify-center p-12 bg-green-900/30 rounded-xl text-center border-2 border-green-500 shadow-xl text-green-100">
+                <i className="fa-solid fa-check-circle text-6xl text-green-400 mb-4"></i>
+                <h3 className="text-3xl font-bold text-white mb-2">Success! Message Transmitted.</h3>
+                <p className="text-lg">Your inquiry has been encrypted and routed. I will connect with you within one business day.</p>
+            </div>
+        );
+    } else if (isError) {
+        formContent = (
+            <div className="success-message flex flex-col items-center justify-center p-12 bg-red-900/30 rounded-xl text-center border-2 border-red-500 shadow-xl text-red-100">
+                <i className="fa-solid fa-triangle-exclamation text-6xl text-red-400 mb-4"></i>
+                <h3 className="text-3xl font-bold text-white mb-2">Error! Submission Failed.</h3>
+                <p className="text-lg">An issue occurred while sending. Please check your console for details or try contacting me directly via email.</p>
+                <button 
+                    onClick={() => setIsError(false)} 
+                    className="mt-4 text-sm text-red-200 hover:text-white transition duration-200 underline"
+                >
+                    Try Form Again
+                </button>
+            </div>
+        );
+    } else {
+        formContent = (
+            <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <ContactInput 
+                        label="Full Name"
+                        id="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        placeholder="Your Full Name"
+                        onValidationChange={handleValidationChange}
+                    />
+                    <ContactInput 
+                        label="Work Email Address"
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="your.email@company.com"
+                        onValidationChange={handleValidationChange}
+                    />
+                </div>
+
+                <ContactInput 
+                    label="Subject of Inquiry"
+                    id="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    placeholder="e.g., Enterprise Web Development or Partnership"
+                    onValidationChange={handleValidationChange}
+                />
+
+                <ContactInput 
+                    label="Project Details / Message"
+                    id="message"
+                    rows={6}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder="Describe your needs, budget, and timeline..."
+                    onValidationChange={handleValidationChange}
+                />
+
+                <button
+                    type="submit"
+                    // Disabled if submitting or the form is not yet fully valid
+                    className={`btn-primary w-full flex items-center justify-center space-x-3 text-xl disabled:opacity-50 disabled:cursor-not-allowed`}
+                    disabled={isSubmitting || !isFormValid}
+                >
+                    {isSubmitting && (
+                        <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    )}
+                    <span>{isSubmitting ? 'Transmitting Securely...' : 'Send Message Now'}</span>
+                </button>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
+                    All communication is treated with strict confidentiality.
+                </p>
+            </form>
+        );
+    }
+
 
     return (
         // Added card-hover-lift class for premium feel
@@ -343,77 +473,7 @@ const ContactPage = () => {
                 {/* Right Column: Contact Form */}
                 <div className="lg:col-span-2 p-8 md:p-12">
                     <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Secure Inquiry Form</h2>
-
-                    {isSuccess ? (
-                        <div className="success-message flex flex-col items-center justify-center p-12 bg-green-900/30 rounded-xl text-center border-2 border-green-500 shadow-xl text-green-100">
-                            <i className="fa-solid fa-check-circle text-6xl text-green-400 mb-4"></i>
-                            <h3 className="text-3xl font-bold text-white mb-2">Success! Message Transmitted.</h3>
-                            <p className="text-lg">Your inquiry has been encrypted and routed. We will connect with you within one business day.</p>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <ContactInput 
-                                    label="Full Name"
-                                    id="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
-                                    placeholder="Your Full Name"
-                                    onValidationChange={handleValidationChange}
-                                />
-                                <ContactInput 
-                                    label="Work Email Address"
-                                    id="email"
-                                    type="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
-                                    placeholder="your.email@company.com"
-                                    onValidationChange={handleValidationChange}
-                                />
-                            </div>
-
-                            <ContactInput 
-                                label="Subject of Inquiry"
-                                id="subject"
-                                value={formData.subject}
-                                onChange={handleChange}
-                                required
-                                placeholder="e.g., Enterprise Web Development or Partnership"
-                                onValidationChange={handleValidationChange}
-                            />
-
-                            <ContactInput 
-                                label="Project Details / Message"
-                                id="message"
-                                rows={6}
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                                placeholder="Describe your needs, budget, and timeline..."
-                                onValidationChange={handleValidationChange}
-                            />
-
-                            <button
-                                type="submit"
-                                // Disabled if submitting or the form is not yet fully valid
-                                className={`btn-primary w-full flex items-center justify-center space-x-3 text-xl disabled:opacity-50 disabled:cursor-not-allowed`}
-                                disabled={isSubmitting || !isFormValid}
-                            >
-                                {isSubmitting && (
-                                    <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                    </svg>
-                                )}
-                                <span>{isSubmitting ? 'Transmitting Securely...' : 'Send Message Now'}</span>
-                            </button>
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
-                                All communication is treated with strict confidentiality.
-                            </p>
-                        </form>
-                    )}
+                    {formContent}
                 </div>
             </div>
         </div>
