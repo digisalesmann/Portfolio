@@ -137,17 +137,17 @@ const relatedArticles = [
     {
         title: "Building a Scalable AI Platform",
         excerpt: "Discover how modern AI apps are built for scalability and reliability.",
-        image: "https://placehold.co/600x400/4f46e5/ffffff?text=AI+Platform",
+        image: "images/scale.webp",
     },
     {
         title: "The Future of Web Development",
         excerpt: "A deep dive into trends shaping how we build for the web.",
-        image: "https://placehold.co/600x400/a855f7/ffffff?text=Web+Dev+Future",
+        image: "images/brain.png",
     },
     {
         title: "Design Systems That Scale",
         excerpt: "Why design systems are critical for large teams and products.",
-        image: "https://placehold.co/600x400/ec4899/ffffff?text=Design+System",
+        image: "images/Tem.png",
     },
 ];
 
@@ -200,56 +200,44 @@ export default function App() {
 
     // --- Firebase Initialization and Auth ---
     useEffect(() => {
-        // NOTE: In a real app, ensure __app_id and __firebase_config are correctly injected
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-        
-        // --- FIX Check: Ensure your firebaseConfig has an apiKey ---
-        if (!firebaseConfig.apiKey) {
-            console.error("Firebase config not available. Cannot initialize. Please define __firebase_config.");
-            setIsAuthReady(true);
-            return;
-        }
+  const firebaseConfig = {
+  apiKey: "AIzaSyC9tufXHLryYiRRndTe9rbiXZjl4faAIzE",
+  authDomain: "portfolio-22c56.firebaseapp.com",
+  projectId: "portfolio-22c56",
+  storageBucket: "portfolio-22c56.firebasestorage.app",
+  messagingSenderId: "790009382969",
+  appId: "1:790009382969:web:b1390f3481fe750728e5e8",
+  measurementId: "G-QHX8SXF5V1"
+};
 
-        setLogLevel('error'); 
+  const app = initializeApp(firebaseConfig);
+  const firestoreDb = getFirestore(app);
+  const authInstance = getAuth(app);
 
-        try {
-            const app = initializeApp(firebaseConfig);
-            const firestoreDb = getFirestore(app);
-            const authInstance = getAuth(app);
+  setDb(firestoreDb);
+  setAuth(authInstance);
 
-            setDb(firestoreDb);
-            setAuth(authInstance);
+  const savedUserName = localStorage.getItem('commentUserName');
+  if (savedUserName) setUserName(savedUserName);
 
-            // 💡 PERSISTENCE: Retrieve the saved name from local storage
-            const savedUserName = localStorage.getItem('commentUserName');
-            if (savedUserName) {
-                setUserName(savedUserName);
-            }
+  const unsubscribe = onAuthStateChanged(authInstance, async (user) => {
+    try {
+      if (user) {
+        setUserId(user.uid);
+      } else {
+        const anonUser = await signInAnonymously(authInstance);
+        setUserId(anonUser.user.uid);
+      }
+    } catch (error) {
+      console.error("Anonymous authentication failed:", error);
+      setUserId(`guest-${crypto.randomUUID()}`);
+    }
+    setIsAuthReady(true);
+  });
 
-            const unsubscribe = onAuthStateChanged(authInstance, async (user) => {
-                if (user) {
-                    setUserId(user.uid);
-                } else {
-                    try {
-                        // Using Anonymous Sign-in for non-signed-in users
-                        const anonUser = await signInAnonymously(authInstance);
-                        setUserId(anonUser.user.uid);
-                    } catch (error) {
-                        console.error("Anonymous authentication failed:", error);
-                        // Fallback unique ID if auth completely fails
-                        setUserId(`guest-${crypto.randomUUID()}`); 
-                    }
-                }
-                setIsAuthReady(true); 
-            });
+  return () => unsubscribe();
+}, []);
 
-            return () => unsubscribe();
-        } catch (error) {
-            console.error("Firebase initialization error:", error);
-            setIsAuthReady(true);
-        }
-    }, []);
 
     // --- Real-time Comments Fetch ---
     useEffect(() => {
@@ -484,9 +472,7 @@ export default function App() {
 
             {/* Hero Section */}
             <header className="relative w-full h-[70vh] flex items-end overflow-hidden pt-20">
-                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://placehold.co/1920x800/1e293b/ffffff?text=AI+Future+Header')" }}>
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/60 to-gray-950/30"></div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
 
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -581,7 +567,7 @@ export default function App() {
                                     { year: "1950s", title: "The Birth of AI", description: "Early experiments in machine logic and computation, marked by the Dartmouth workshop." },
                                     { year: "1980s", title: "The First AI Winter", description: "Funding cuts and skepticism due to overpromising and limitations of early technology." },
                                     { year: "2000s", title: "The Data Explosion", description: "The rise of the internet and big data enables deep learning breakthroughs and a new wave of research." },
-                                    { year: "2020s", title: "Everyday AI Integration", description: "AI integrated into daily life — from large language models to AI-driven healthcare, finance, and education." },
+                                    { year: "2020s", title: "Everyday AI Integration", description: "AI integrated into daily life, from large language models to AI-driven healthcare, finance, and education." },
                                 ].map((item, i) => (
                                     <motion.div
                                         key={i}
@@ -716,7 +702,7 @@ export default function App() {
                                         poster="https://placehold.co/1280x720/1f2937/ffffff?text=AI+Trend+Video+Placeholder"
                                     />
                                     <div className="p-4 text-center text-sm text-gray-600 dark:text-gray-300">
-                                        AI adoption trends in motion — watch how industries are embracing AI in 2025. (Using a public sample video).
+                                        AI adoption trends in motion, watch how industries are embracing AI in 2025. (Using a public sample video).
                                     </div>
                                 </motion.div>
                             </div>
@@ -805,12 +791,12 @@ export default function App() {
                                 className="flex flex-col md:flex-row items-center md:items-start gap-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-indigo-100 dark:border-gray-700"
                             >
                                 <img
-                                    src="https://placehold.co/150x150/4f46e5/ffffff?text=V.E"
+                                    src="images/kenny.jpg"
                                     alt="Victor E. Author"
                                     className="w-24 h-24 rounded-full object-cover border-4 border-indigo-500 shadow-md flex-shrink-0"
                                 />
                                 <div>
-                                    <h3 className="text-2xl font-extrabold text-gray-900 dark:text-gray-100">Victor E.</h3>
+                                    <h3 className="text-2xl font-extrabold text-gray-900 dark:text-gray-100">Chinagoro Victor E.</h3>
                                     <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-4">Senior AI Architect & Full-Stack Developer</p>
                                     <p className="text-gray-700 dark:text-gray-300 mb-4">
                                         Victor specializes in designing and deploying production-ready, scalable AI solutions. With over a decade of experience, he focuses on the ethical and practical integration of machine learning into consumer-facing applications.

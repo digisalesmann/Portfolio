@@ -79,17 +79,23 @@ export default function Navbar() {
           <ThemeToggle /> {/* 🌗 Desktop toggle */}
         </nav>
 
-        {/* Mobile hamburger */}
-        <button
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden relative h-9 w-9 rounded-lg border border-black/10 dark:border-white/10 bg-white/60 dark:bg-gray-900/60 backdrop-blur hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/60"
-        >
-          <Burger open={open} />
-          <span className="sr-only">Menu</span>
-        </button>
+        {/* Mobile-specific controls: ThemeToggle and Hamburger (NEW/UPDATED) */}
+        <div className="flex items-center gap-2 md:hidden">
+          {/* 🌗 NEW: Mobile Main Nav Toggle */}
+          <ThemeToggle /> 
+
+          {/* Mobile hamburger - removed md:hidden since the parent handles it */}
+          <button
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+            className="relative h-9 w-9 rounded-lg border border-black/10 dark:border-white/10 bg-white/60 dark:bg-gray-900/60 backdrop-blur hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/60"
+          >
+            <Burger open={open} />
+            <span className="sr-only">Menu</span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile overlay + panel */}
@@ -116,7 +122,7 @@ export default function Navbar() {
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 280, damping: 28 }}
               className="fixed right-0 top-0 z-50 h-dvh w-[86%] sm:w-[420px] 
-                         bg-white dark:bg-gray-900 shadow-2xl border-l border-gray-200 dark:border-gray-700 flex flex-col"
+                          bg-white dark:bg-gray-900 shadow-2xl border-l border-gray-200 dark:border-gray-700 flex flex-col"
             >
               {/* Top header strip */}
               <div className="flex items-center justify-between h-14 px-6 border-b border-gray-200 dark:border-gray-700">
@@ -124,7 +130,7 @@ export default function Navbar() {
                 <LogoWithAvatar /> 
 
                 <div className="flex items-center gap-3">
-                  {/* 🌗 Mobile toggle */}
+                  {/* 🌗 Mobile toggle (kept here as part of the ham nav for convenience) */}
                   <ThemeToggle />
                   {/* Close button */}
                   <button

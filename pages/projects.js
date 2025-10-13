@@ -330,7 +330,7 @@ function FAQ() {
     const faqs = [
       { q: "Do you take freelance projects?", a: "Yes, I collaborate on impactful projects across Web, AI, and Web3. Send me a message to discuss scope." },
       { q: "What’s your core tech stack?", a: "I primarily use React, Next.js, Node.js, Postgres, and modern cloud infrastructure (AWS/Vercel). I'm also proficient in Solidity and Web3 frameworks." },
-      { q: "Can we partner long-term?", a: "Absolutely — I thrive on building long-term partnerships, offering ongoing support, feature development, and architectural scaling." },
+      { q: "Can we partner long-term?", a: "Absolutely, I thrive on building long-term partnerships, offering ongoing support, feature development, and architectural scaling." },
     ];
     return (
       <section className="py-12 sm:py-20">
@@ -528,9 +528,9 @@ const sampleProjects = [
       description:
         "Find and reserve medicines across pharmacies with QR verification, geolocation, and admin dashboards. Built for impact.",
       stack: ["Next.js", "Firebase", "TailwindCSS"],
-      href: "https://medilab.vercel.app",
+      href: "https://medilab-kappa.vercel.app",
       repo: "https://github.com/digisalesmann/medilab",
-      image: "/images/testt.png",
+      image: "/images/ss.png",
       category: "Web",
       featured: true,
       metrics: { users: "15.2K", latency: "120ms avg" },
@@ -541,9 +541,9 @@ const sampleProjects = [
       description:
         "Sybil analysis and allocation simulations for the Monad ecosystem with crisp charts and reports.",
       stack: ["React", "Node.js"],
-      href: "https://monadguard.vercel.app",
+      href: "https://monadguard-cv2w.vercel.app/",
       repo: "https://github.com/digisalesmann/monadguard",
-      image: "/images/monad.png",
+      image: "/images/gg.png",
       category: "Web3",
       metrics: { users: "5K+", reports: 120 },
     },
@@ -564,7 +564,7 @@ const sampleProjects = [
       subtitle: "Location-Based Services",
       description: "Geo-aware pharmacy discovery with reservation flow and QR pickup, improving logistics.",
       stack: ["Next.js", "TailwindCSS", "MongoDB"],
-      image: "/images/geo.png",
+      image: "/images/search.webp",
       href: "#",
       repo: "#",
       category: "Web",
