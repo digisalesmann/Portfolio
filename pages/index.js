@@ -356,7 +356,7 @@ export default function Home() {
           I craft production ready applications using 
           <span className="font-bold text-indigo-600 dark:text-indigo-400"> React/Next.js</span>, 
           dive into 
-          <span className="font-bold text-red-600 dark:text-red-400"> AI/ML research</span>
+          <span className="font-bold text-red-600 dark:text-red-400"> AI/ML research </span>
           and actively build in the 
           <span className="font-bold text-purple-600 dark:text-purple-400"> Web3</span> ecosystem. 
           Let's create something impactful.

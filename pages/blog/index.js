@@ -446,7 +446,7 @@ export default function App() {
 
 
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased">
+        <div className="min-h-screen dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased">
             {/* Mobile TOC Button */}
             <button
                 onClick={() => setIsTOCVisible(!isTOCVisible)}
@@ -472,7 +472,7 @@ export default function App() {
             </AnimatePresence>
 
             {/* Hero Section */}
-            <header className="relative w-full h-[70vh] flex items-end overflow-hidden pt-20 bg-gray-900">
+            <header className="relative w-full h-[70vh] flex items-end overflow-hidden pt-[4.5rem] bg-gray-900">
                 
                 {/* 💡 NEW: Video Background Element */}
                 <video 
@@ -513,12 +513,28 @@ export default function App() {
                     <p className="text-lg md:text-xl max-w-2xl mb-8 opacity-80">
                         A deep dive into how Artificial Intelligence is reshaping industries, augmenting human potential, and driving global innovation.
                     </p>
-                    <div className="flex flex-wrap items-center space-x-4 text-sm font-medium border-l-4 border-indigo-500 pl-4">
-                        <span>By <strong>Chinagoro Victor Ekele</strong></span>
-                        <span>·</span>
-                        <span>October 22nd (My Birthday) 2025</span>
-                        <span>·</span>
-                        <span className="text-yellow-400">8 min read</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center text-sm font-medium 
+                                    border-l-4 border-indigo-500 pl-4 space-y-1 sm:space-y-0 sm:space-x-4">
+                        
+                        {/* Author Name - Always a single block */}
+                        <span className="text-base">
+                            By <strong className="text-white">Chinagoro Victor Ekele</strong>
+                        </span>
+
+                        {/* Date - Now on its own line on mobile */}
+                        <span className="text-base sm:text-sm">
+                            October 22nd (My Birthday) 2025
+                        </span>
+
+                        {/* Read Time - Now on its own line on mobile and uses your fuchsia brand color */}
+                        <span className="text-base sm:text-sm text-yellow-400">
+                            8 min read
+                        </span>
+
+                        {/* Note: I removed the "·" spacers (<span>·</span>) from the HTML entirely. 
+                        They are unnecessary when the items stack vertically. 
+                        On desktop (sm:flex-row), the natural space-x-4 margin will separate them effectively.
+                        */}
                     </div>
                 </motion.div>
             </header>
@@ -775,36 +791,57 @@ export default function App() {
                         </section>
 
                         {/* --- Newsletter CTA (REAL Web3Forms Integration) --- */}
-                        <section className="my-12 text-l p-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-3xl shadow-2xl shadow-indigo-500/40 text-center">
-                            <h3 className="text-3xl font-extrabold mb-3">Unlock Exclusive AI Insights</h3>
-                            <p className="mb-8 max-w-2xl mx-auto opacity-90">
-                                Join our premium newsletter for weekly deep-dives into AI engineering, future-proofing your career, and exclusive data analysis.
-                            </p>
-                            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                                <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Enter your email to join"
-                                    className="px-6 py-3 border-2 border-white/50 rounded-xl w-full sm:w-80 text-gray-900 focus:outline-none focus:ring-2 focus:ring-white transition"
-                                    aria-label="Email for newsletter"
-                                    required
-                                />
-                                <button
-                                    type="submit"
-                                    disabled={isSubscribing}
-                                    className={`px-6 py-3 bg-white text-indigo-600 font-bold rounded-xl shadow-md transition-colors flex items-center justify-center 
-                                        ${isSubscribing ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-100'}`}
-                                >
-                                    {isSubscribing ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : 'Subscribe Now'}
-                                    <ArrowRight className="w-5 h-5 ml-2" />
-                                </button>
-                            </form>
-                            {subscribeMessage && (
-                                <p className={`mt-4 font-medium ${subscribeMessage.includes('successfully') ? 'text-green-200' : 'text-red-200'}`}>
-                                    {subscribeMessage}
+                        <section className="my-12 text-l p-8 
+                                            bg-gradient-to-r from-indigo-600 to-purple-600 
+                                            text-white rounded-3xl shadow-2xl shadow-indigo-500/40 
+                                            text-left"> {/* 💡 CHANGED: text-center to text-left */}
+                            
+                            <div className="max-w-4xl">
+                                <h3 className="text-3xl font-extrabold mb-3">
+                                    Unlock Exclusive{" "}
+                                    {/* MODIFIED: Changed the gradient to solid white (text-white) for maximum contrast and pop. */}
+                                    <span className="text-white">
+                                        AI Insights
+                                    </span>
+                                </h3>
+                                
+                                {/* MODIFIED: Removed mx-auto for left alignment */}
+                                <p className="mb-8 max-w-2xl opacity-90">
+                                    Join our premium newsletter for weekly deep-dives into AI engineering, future-proofing your career, and exclusive data analysis.
                                 </p>
-                            )}
+                                
+                                {/* MODIFIED: Form is now left-aligned (no justify-center) */}
+                                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-center gap-4">
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="Enter your email to join"
+                                        // MODIFIED: Input style for better visual contrast (White/Indigo-Purple border focus)
+                                        className="px-6 py-3 border-2 border-white/50 rounded-xl 
+                                                w-full sm:w-[26rem] text-gray-900 
+                                                focus:outline-none focus:ring-2 focus:ring-white transition"
+                                        aria-label="Email for newsletter"
+                                        required
+                                    />
+                                    <button
+                                        type="submit"
+                                        disabled={isSubscribing}
+                                        // MODIFIED: Added w-full for full-width on mobile. Kept original button colors.
+                                        className={`w-full sm:w-auto px-6 py-3 bg-white text-indigo-600 font-bold rounded-xl 
+                                                    shadow-md transition-colors flex items-center justify-center flex-shrink-0
+                                                    ${isSubscribing ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-100'}`}
+                                    >
+                                        {isSubscribing ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : 'Subscribe Now'}
+                                        <ArrowRight className="w-5 h-5 ml-2" />
+                                    </button>
+                                </form>
+                                {subscribeMessage && (
+                                    <p className={`mt-4 font-medium ${subscribeMessage.includes('successfully') ? 'text-green-200' : 'text-red-200'}`}>
+                                        {subscribeMessage}
+                                    </p>
+                                )}
+                            </div>
                         </section>
 
                         {/* --- 08. Author --- */}
@@ -839,64 +876,72 @@ export default function App() {
 
                         {/* --- 09. Community Discussion (Effective Practice Applied) --- */}
                         <section id="comments" className="py-12">
-                            <h2 className="text-3xl font-extrabold mb-6">{sectionsData[8].title}</h2>
+                            
+                            {/* Branded Header Title - FIX APPLIED HERE */}
+                            <h2 className="text-4xl font-extrabold mb-8 tracking-tight">
+                                <span className="text-gray-900 dark:text-gray-200">
+                                    {sectionsData[8].title.substring(0, 9)} 
+                                </span>
+                                {' '} 
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-400">
+                                    {sectionsData[8].title.substring(9)}
+                                </span>
+                            </h2>
 
-                            {/* User Status / Public ID */}
-                            <div className="mb-4 text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2">
-                                <User className="w-4 h-4" />
-                                {isAuthReady ? (
-                                    <>
-                                        You are commenting as: 
-                                        <code className="font-mono text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded text-xs">
-                                            {userName || "New User"}
-                                        </code>
-                                    </>
-                                ) : (
-                                    <>Connecting to secure discussion… <Loader2 className="w-4 h-4 animate-spin text-indigo-500" /></>
-                                )}
-                            </div>
-
+                            {/* Comment Form - Themed Inputs and Button */}
                             <form onSubmit={handlePostComment} className="space-y-4">
                                 
-                                {/* 💡 USER NAME INPUT: Required for effective non-sign-in identity */}
+                                {/* User Name Input - FIX APPLIED HERE */}
                                 <input
                                     type="text"
                                     disabled={!isAuthReady || isPosting}
                                     value={userName}
                                     onChange={(e) => setUserName(e.target.value)}
-                                    placeholder={isAuthReady ? "Your Name (Required)" : "Connecting…"}
-                                    className={`w-full p-3 rounded-xl border bg-white dark:bg-gray-900 shadow-sm focus:ring-2 focus:ring-indigo-500
-                                        ${(!isAuthReady || isPosting) ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    placeholder={isAuthReady ? "Your Name (Required for Commenting)" : "Connecting…"}
+                                    // MODIFIED: Replaced dark classes with light classes (bg-white, text-gray-900, border-gray-300) 
+                                    // and made the original dark classes dark:bg-gray-900 dark:text-white dark:border-gray-700
+                                    className={`w-full p-3 rounded-xl border border-gray-300 bg-white text-gray-900 shadow-sm transition 
+                                                focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500
+                                                dark:border-gray-700 dark:bg-gray-900 dark:text-white
+                                                ${(!isAuthReady || isPosting) ? "opacity-50 cursor-not-allowed" : ""}`}
                                     required
                                     maxLength={30}
                                 />
                                 
+                                {/* Textarea Input - FIX APPLIED HERE */}
                                 <textarea
                                     disabled={!isAuthReady || isPosting}
                                     value={newCommentText}
                                     onChange={(e) => setNewCommentText(e.target.value)}
                                     placeholder={isAuthReady ? "Write your thoughts..." : "Connecting… Please wait."}
-                                    className={`w-full p-4 rounded-xl border bg-white dark:bg-gray-900 shadow-md focus:ring-2 focus:ring-indigo-500
-                                        ${(!isAuthReady || isPosting) ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    // MODIFIED: Replaced dark classes with light classes (bg-white, text-gray-900, border-gray-300) 
+                                    // and made the original dark classes dark:bg-gray-900 dark:text-white dark:border-gray-700
+                                    className={`w-full p-4 rounded-xl border border-gray-300 bg-white text-gray-900 shadow-md transition 
+                                                focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500
+                                                dark:border-gray-700 dark:bg-gray-900 dark:text-white
+                                                ${(!isAuthReady || isPosting) ? "opacity-50 cursor-not-allowed" : ""}`}
                                     rows={4}
                                 />
 
-                                {postError && <div className="text-red-500 text-sm">{postError}</div>}
-                                {postSuccess && <div className="text-green-500 text-sm flex items-center gap-1"><CheckCircle className="w-4 h-4"/> Posted successfully!</div>}
+                                {/* Status Messages - Using theme-appropriate colors */}
+                                {postError && <div className="text-red-600 dark:text-red-400 text-sm">{postError}</div>}
+                                {postSuccess && <div className="text-green-600 dark:text-green-400 text-sm flex items-center gap-1"><CheckCircle className="w-4 h-4"/> Posted successfully!</div>}
 
+                                {/* Submit Button (Looks fine as it is a brand color) */}
                                 <button
                                     type="submit"
-                                    // 💡 UPDATED DISABLED LOGIC: Must require text AND a name
                                     disabled={!isAuthReady || isPosting || newCommentText.trim() === '' || userName.trim() === ''}
-                                    className={`px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold shadow-lg flex items-center gap-2 
-                                        ${(!isAuthReady || isPosting || newCommentText.trim() === '' || userName.trim() === '') ? "opacity-50 cursor-not-allowed" : "hover:bg-indigo-700"}`}
+                                    className={`px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold shadow-lg transition-all flex items-center gap-2 
+                                                ${(!isAuthReady || isPosting || newCommentText.trim() === '' || userName.trim() === '') 
+                                                    ? "opacity-50 cursor-not-allowed" 
+                                                    : "hover:bg-indigo-700 hover:shadow-indigo-500/50 active:scale-[0.99]"}`}
                                 >
                                     {isPosting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
                                     Post Comment
                                 </button>
                             </form>
 
-                            {/* Comments List */}
+                            {/* Comments List (The CommentDisplay component handles its own colors well) */}
                             <div className="mt-10 space-y-6">
                                 <AnimatePresence initial={false}>
                                     {comments.length ? comments.map((c) => (
@@ -907,7 +952,6 @@ export default function App() {
                                 </AnimatePresence>
                             </div>
                         </section>
-
 
                         {/* End of Article CTA */}
                         <WorkWithMeFooter />
