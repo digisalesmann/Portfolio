@@ -183,6 +183,7 @@ export default function App() {
     const [postError, setPostError] = useState(null);
     const [postSuccess, setPostSuccess] = useState(false);
     // 💡 NEW/UPDATED: User-provided name, persisted via local storage
+    const HERO_VIDEO_URL = '/infographics/boy.mp4';
     const [userName, setUserName] = useState(''); 
     
     // Newsletter State (REAL Web3Forms Key applied here)
@@ -471,25 +472,51 @@ export default function App() {
             </AnimatePresence>
 
             {/* Hero Section */}
-            <header className="relative w-full h-[70vh] flex items-end overflow-hidden pt-20">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+            <header className="relative w-full h-[70vh] flex items-end overflow-hidden pt-20 bg-gray-900">
+                
+                {/* 💡 NEW: Video Background Element */}
+                <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline // Recommended for mobile compatibility
+                    className="absolute inset-0 w-full h-full object-cover"
+                    poster="/images/ai-fallback-poster.jpg" // Add a static image for when the video is loading or fails
+                >
+                    <source src={HERO_VIDEO_URL} type="video/mp4" />
+                    {/* Add more source types (like webm) for maximum browser compatibility */}
+                    Your browser does not support the video tag.
+                </video>
+
+                {/* MODIFIED: This div acts as a dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" /> 
+                {/* Increased opacity slightly to account for video movement */}
 
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="relative max-w-5xl mx-auto px-4 md:px-8 pb-16 text-white"
+                    className="relative max-w-5xl mx-auto px-4 md:px-8 pb-16 text-white z-10" // 💡 Added z-10 to ensure content is above the overlay
                 >
                     <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-                        The Future of AI in Everyday Life
+                        The{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500">
+                            Future
+                        </span>{" "}
+                        of{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                            AI
+                        </span>{" "}
+                        in Everyday Life
                     </h1>
+
                     <p className="text-lg md:text-xl max-w-2xl mb-8 opacity-80">
                         A deep dive into how Artificial Intelligence is reshaping industries, augmenting human potential, and driving global innovation.
                     </p>
                     <div className="flex flex-wrap items-center space-x-4 text-sm font-medium border-l-4 border-indigo-500 pl-4">
-                        <span>By <strong>Victor E.</strong></span>
+                        <span>By <strong>Chinagoro Victor Ekele</strong></span>
                         <span>·</span>
-                        <span>Sept 2025</span>
+                        <span>October 22nd (My Birthday) 2025</span>
                         <span>·</span>
                         <span className="text-yellow-400">8 min read</span>
                     </div>
@@ -693,7 +720,7 @@ export default function App() {
                                     className="bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
                                 >
                                     <video
-                                        src="https://www.w3schools.com/tags/mov_bbb.mp4" 
+                                        src="infographics/cat.mp4" // Public sample video URL
                                         controls
                                         autoPlay
                                         muted
@@ -701,8 +728,8 @@ export default function App() {
                                         className="w-full h-auto max-h-96 object-cover"
                                         poster="https://placehold.co/1280x720/1f2937/ffffff?text=AI+Trend+Video+Placeholder"
                                     />
-                                    <div className="p-4 text-center text-sm text-gray-600 dark:text-gray-300">
-                                        AI adoption trends in motion, watch how industries are embracing AI in 2025. (Using a public sample video).
+                                    <div className="p-4 text-left text-sm text-gray-600 dark:text-gray-300">
+                                        Nothing related to AI adoption trends in motion, just found it really cool, sorry.
                                     </div>
                                 </motion.div>
                             </div>
@@ -748,7 +775,7 @@ export default function App() {
                         </section>
 
                         {/* --- Newsletter CTA (REAL Web3Forms Integration) --- */}
-                        <section className="my-12 p-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-3xl shadow-2xl shadow-indigo-500/40 text-center">
+                        <section className="my-12 text-l p-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-3xl shadow-2xl shadow-indigo-500/40 text-center">
                             <h3 className="text-3xl font-extrabold mb-3">Unlock Exclusive AI Insights</h3>
                             <p className="mb-8 max-w-2xl mx-auto opacity-90">
                                 Join our premium newsletter for weekly deep-dives into AI engineering, future-proofing your career, and exclusive data analysis.
@@ -769,7 +796,7 @@ export default function App() {
                                     className={`px-6 py-3 bg-white text-indigo-600 font-bold rounded-xl shadow-md transition-colors flex items-center justify-center 
                                         ${isSubscribing ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-100'}`}
                                 >
-                                    {isSubscribing ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : 'Subscribe'}
+                                    {isSubscribing ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : 'Subscribe Now'}
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </button>
                             </form>

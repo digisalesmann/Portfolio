@@ -85,10 +85,10 @@ const STACK_DATA = [
 ];
 
 const STATS_DATA = [
-    { number: '100+', label: 'Projects Completed', icon: 'fas fa-briefcase' },
+    { number: '10+', label: 'Projects Completed', icon: 'fas fa-briefcase' },
     { number: '99%', label: 'Uptime Commitment', icon: 'fas fa-server' },
-    { number: '4M+', label: 'Monthly Active Users Served', icon: 'fas fa-users' },
-    { number: '1,500+', label: 'Commits on GitHub', icon: 'fab fa-github' },
+    { number: '500k+', label: 'Monthly Active Users Served', icon: 'fas fa-users' },
+    { number: 'Enough', label: 'Commits on GitHub', icon: 'fab fa-github' },
 ];
 
 const PILLARS_DATA = [
@@ -345,8 +345,13 @@ export default function AboutPage() {
             <section className="section py-16">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-4xl font-extrabold text-center mb-6">
-                        My Guiding Philosophy
+                        My{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-rose-400">
+                            Guiding
+                        </span>{" "}
+                        Philosophy
                     </h2>
+
                     {/* Removed ** for emphasis */}
                     <div className="text-center max-w-4xl mx-auto space-y-4 text-lg muted">
                         <p>
@@ -371,8 +376,13 @@ export default function AboutPage() {
             {/* -------------------- 4. Core Expertise & Services -------------------- */}
             <section id="expertise-pillars" className="section">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-4">
-                    Core Focus Areas
+                    Core{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-rose-400">
+                        Focus
+                    </span>{" "}
+                    Areas
                 </h2>
+
                 <p className="muted text-center max-w-3xl mx-auto mb-12">
                     My skill set is balanced between high-level architectural thinking and meticulous code implementation, ensuring robust delivery.
                 </p>
@@ -387,8 +397,13 @@ export default function AboutPage() {
             {/* -------------------- 5. Expertise Deep Dive (Technical Skills Matrix) -------------------- */}
             <section className="section">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
-                    Technical Skills Matrix
+                    Technical{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-rose-400">
+                        Skills
+                    </span>{" "}
+                    Matrix
                 </h2>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {EXPERTISE_DATA.map((category, index) => (
                         <ExpertiseColumn key={index} category={category} index={index} />
@@ -399,9 +414,12 @@ export default function AboutPage() {
             {/* -------------------- 6. Service Pillars (UPDATED: PillarCard has inner gradient) -------------------- */}
             <section className="section bg-fuchsia-50/60 dark:bg-gray-900/60 rounded-[2rem] shadow-inner backdrop-blur-sm">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
-                    The Victor Advantage
+                    The{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-rose-400">
+                        Victor
+                    </span>{" "}
+                    Advantage
                 </h2>
-                
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {PILLARS_DATA.map((pillar, index) => (
                         <PillarCard key={index} pillar={pillar} index={index} />
@@ -411,8 +429,12 @@ export default function AboutPage() {
 
             {/* -------------------- 7. The Tech Stack (No Change) -------------------- */}
             <section className="section">
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-4">
-                    Modern Toolset Mastery
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
+                    Modern{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-rose-400">
+                        Toolset
+                    </span>{" "}
+                    Mastery
                 </h2>
                 <p className="muted text-center max-w-3xl mx-auto mb-12">
                     The right tools applied with expert discipline yields predictable, high-quality results.
@@ -464,7 +486,10 @@ export default function AboutPage() {
             {/* -------------------- 10. My Professional Timeline (No Change) -------------------- */}
             <section className="section">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-12">
-                    Professional Trajectory
+                    Professional{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-rose-400">
+                        Trajectory
+                    </span>
                 </h2>
                 <div ref={timelineRef} className="max-w-3xl mx-auto px-4 md:px-0">
                     {[{ year: '2025+', title: 'Strategic Consulting & Lead Architecture', description: 'Focused on high-level architecture reviews, team mentorship, and complex system design for venture-backed scale-ups.' },
@@ -510,9 +535,19 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-radial-glow opacity-30 pointer-events-none"></div>
 
                 <section className="relative z-10 container text-center pt-8">
-                    <h2 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
-                        Let's Build Your Scalable Future.
+                    <h2 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-center">
+                        Let's{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-rose-400">
+                            Build
+                        </span>{" "}
+                        Your{" "}
+                        Scalable{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-rose-400">
+                            Future
+                        </span>
+                        .
                     </h2>
+
                     <p className="text-xl mb-12 opacity-90 max-w-4xl mx-auto font-light">
                         Stop managing complexity, start leading innovation. Schedule a call to turn your ambitious product vision into a scalable, high-performance reality.
                     </p>

@@ -616,8 +616,8 @@ const testimonials = [
 ];
 
 const awards = [
-  { name: "Top Health Tech 2024", detail: "Regional recognition for the MediLab healthcare innovation.", icon: <Zap size={24} /> },
-  { name: "Best Monad Builder", detail: "Recognized for contributions to the Monad ecosystem and developer tools.", icon: <User size={24} /> },
+  { name: "Top Health Tech 2025", detail: "Regional recognition for the MediLab healthcare innovation.", icon: <Zap size={24} /> },
+  { name: "Best Builder", detail: "Recognized for contributions to the Monad ecosystem and developer tools.", icon: <User size={24} /> },
 ];
 
 const techStack = [

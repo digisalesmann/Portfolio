@@ -159,14 +159,14 @@ const testimonials = [
 
 const projects = [
     {
-        title: "MediLab AI",
-        excerpt: "AI-powered medical diagnosis tool leveraging React, Python, and cloud services for scalable deployment.",
+        title: "MediLab",
+        excerpt: "Intelligent medical platform using cloud technology for prescriptions and diagnostics.",
         tags: ["Nextjs", "React", "Firebase"], 
         link: "https://medilab-kappa.vercel.app/",
         image: "/images/testt.png"
     },
     {
-        title: "Actora Web3 Platform",
+        title: "Actora Labs",
         excerpt: "A decentralized social platform built on the Monad ecosystem, featuring custom smart contracts and Next.js frontend.",
         tags: ["Next.js", "PostgreSQL", "Docker"],
         link: "#",
@@ -353,10 +353,10 @@ export default function Home() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-lg text-gray-700 dark:text-gray-300 mt-6 px-4 max-w-3xl font-light"
         >
-          I craft production-ready applications using 
+          I craft production ready applications using 
           <span className="font-bold text-indigo-600 dark:text-indigo-400"> React/Next.js</span>, 
           dive into 
-          <span className="font-bold text-red-600 dark:text-red-400"> AI/ML research</span>, 
+          <span className="font-bold text-red-600 dark:text-red-400"> AI/ML research</span>
           and actively build in the 
           <span className="font-bold text-purple-600 dark:text-purple-400"> Web3</span> ecosystem. 
           Let's create something impactful.
