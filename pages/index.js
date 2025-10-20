@@ -166,11 +166,11 @@ const projects = [
         image: "/images/testt.png"
     },
     {
-        title: "Actora Labs",
-        excerpt: "A decentralized social platform built on the Monad ecosystem, featuring custom smart contracts and Next.js frontend.",
-        tags: ["Next.js", "PostgreSQL", "Docker"],
-        link: "#",
-        image: "/images/actora.png"
+        title: "Ace Xperience",
+        excerpt: "Your home kitchen's ultimate destination for mastering professional techniques and finding recipes rich in heritage and flavor.",
+        tags: ["Nextjs", "React", "Firebase"],
+        link: "https://ace-xperience.vercel.app/",
+        image: "/images/ace.png"
     },
     {
         title: "MonadGuard",
