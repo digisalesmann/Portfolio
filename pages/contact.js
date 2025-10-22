@@ -211,8 +211,6 @@ const SocialLink = ({ icon, url, label }) => (
     </a>
 );
 
-
-// Main Contact Page Component
 const ContactPage = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -222,12 +220,10 @@ const ContactPage = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
-    const [isError, setIsError] = useState(false); // State for API error handling
+    const [isError, setIsError] = useState(false); 
     const [formValidation, setFormValidation] = useState({});
 
-    // Memoize the form validity check
     const isFormValid = useMemo(() => {
-        // Ensure all required fields exist in validation state and are true
         const requiredKeys = ['name', 'email', 'subject', 'message'];
         return requiredKeys.every(key => formValidation[key] === true);
     }, [formValidation]);
@@ -241,7 +237,6 @@ const ContactPage = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    // --- RESTORED ASYNC SUBMISSION LOGIC ---
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -254,11 +249,9 @@ const ContactPage = () => {
         setIsSuccess(false);
         setIsError(false);
 
-        // Prepare payload for Web3Forms, including the required access_key
         const payload = {
             ...formData,
             access_key: WEB3FORMS_ACCESS_KEY,
-            // You can optionally add a fixed subject line to identify the source
             subject: `Portfolio Inquiry: ${formData.subject}`, 
         };
 
@@ -278,11 +271,9 @@ const ContactPage = () => {
                 if (result.success) {
                     setIsSuccess(true);
                     
-                    // Clear the form and reset validation states
                     setFormData({ name: '', email: '', subject: '', message: '' });
                     setFormValidation({});
 
-                    // Hide success message after a few seconds
                     setTimeout(() => setIsSuccess(false), 5000);
                 } else {
                     console.error('Web3Forms API reported an internal error:', result.message);
@@ -300,21 +291,19 @@ const ContactPage = () => {
         }
     };
 
-    // Social Media Data (for easy mapping)
     const socialLinks = [
         { icon: 'fa-linkedin-in', url: 'https://www.linkedin.com/in/victor-chinagoro-1a032423a/', label: 'LinkedIn' },
-        { icon: 'fa-x-twitter', url: 'https://x.com/digisalesmann', label: 'Twitter/X' },
+        { icon: 'fa-x-twitter', url: 'https://x.com/buildwthvictor', label: 'Twitter/X' },
         { icon: 'fa-github', url: 'https://github.com/digisalesmann', label: 'GitHub' },
-        { icon: 'fa-instagram', url: 'https://www.instagram.com/buildwithvictorr/', label: 'Instagram' },
+        { icon: 'fa-instagram', url: 'https://www.instagram.com/buildwthvictor/', label: 'Instagram' },
     ];
     
-    // Contact Info Data
     const contactInfo = [
         { 
             icon: 'fa-envelope', 
             label: 'General Inquiries', 
-            value: 'contact@comingsoon.com', 
-            href: 'mailto:contact@comingsoon.com' 
+            value: 'buildwithvictorhq@gmail.com', 
+            href: 'mailto:buildwithvictorhq@gmail.com' 
         },
         { 
             icon: 'fa-user-tie', 

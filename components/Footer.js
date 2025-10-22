@@ -1,4 +1,4 @@
-import Link from "next/link"; // remove if not using Next.js
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,16 +7,16 @@ export default function Footer() {
         <Link href="https://github.com/digisalesmann" target="_blank">
           <i className="fab fa-github text-xl hover:text-brand transition"></i>
         </Link>
-        <Link href="https://x.com/0xdsm" target="_blank">
+        <Link href="https://x.com/buildwthvictor" target="_blank">
           <i className="fa-brands fa-x-twitter text-xl hover:text-brand transition"></i>
         </Link>
-        <Link href="https://linkedin.com/in/your-linkedin-username" target="_blank">
+        <Link href="https://linkedin.com/in/victor-chinagoro-1a032423a" target="_blank">
           <i className="fab fa-linkedin text-xl hover:text-brand transition"></i>
         </Link>
-        <Link href="https://discord.gg/your-discord-invite" target="_blank">
+        <Link href="https://discord.gg/digisalesmann" target="_blank">
           <i className="fab fa-discord text-xl hover:text-brand transition"></i>
         </Link>
-        <Link href="mailto:youremail@example.com">
+        <Link href="mailto:buildwithvictorhq@gmail.com">
           <i className="fas fa-envelope text-xl hover:text-brand transition"></i>
         </Link>
       </div>
