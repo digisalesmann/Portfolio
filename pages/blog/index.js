@@ -866,9 +866,9 @@ export default function App() {
                                         Victor specializes in designing and deploying production-ready, scalable AI solutions. With over a decade of experience, he focuses on the ethical and practical integration of machine learning into consumer-facing applications.
                                     </p>
                                     <div className="flex space-x-4">
-                                        <a href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition"><Linkedin className="w-6 h-6" /></a>
-                                        <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition"><Twitter className="w-6 h-6" /></a>
-                                        <a href="#" aria-label="GitHub" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition"><Github className="w-6 h-6" /></a>
+                                        <a href="https://www.linkedin.com/in/victor-chinagoro-1a032423a/" aria-label="LinkedIn" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition"><Linkedin className="w-6 h-6" /></a>
+                                        <a href="https://twitter.com/buildwthvictor" aria-label="Twitter" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition"><Twitter className="w-6 h-6" /></a>
+                                        <a href="https://github.com/digisalesmann" aria-label="GitHub" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition"><Github className="w-6 h-6" /></a>
                                     </div>
                                 </div>
                             </motion.div>
