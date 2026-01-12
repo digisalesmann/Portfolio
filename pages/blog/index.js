@@ -1,964 +1,382 @@
-import React, { useEffect, useState, useCallback } from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    Linkedin,
-    Twitter,
-    Github,
-    Mail,
-    Lightbulb,
-    CheckCircle,
-    Brain,
-    Zap,
-    BarChart3,
-    Globe,
-    Heart,
-    Compass,
-    Menu,
-    X,
-    ArrowRight,
-    Send,
-    Loader2,
-    User, 
+    Zap, ChevronRight, User, Terminal, Cpu, Database, 
+    Send, ArrowRight, BarChart3, Brain, Heart, ExternalLink, ShieldCheck, Globe
 } from "lucide-react";
 
-// --- Firebase Imports ---
+// --- Data & Firebase Imports ---
+import { blogMetadata, sectionsContent } from "../../data/blogContent";
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, addDoc, onSnapshot, collection, query, serverTimestamp } from 'firebase/firestore';
-import { setLogLevel } from 'firebase/firestore';
 
-// --- Utility Components (Unchanged) ---
-const IconBadge = ({ Icon, className = "" }) => (
-    <div
-        className={`w-10 h-10 rounded-full flex items-center justify-center 
-                bg-gradient-to-br from-indigo-500 to-purple-600 
-                text-white shadow-lg shadow-indigo-500/40 ${className}`}
-    >
-        <Icon className="w-5 h-5" />
+const firebaseConfig = {
+    apiKey: "AIzaSyC9tufXHLryYiRRndTe9rbiXZjl4faAIzE",
+    authDomain: "portfolio-22c56.firebaseapp.com",
+    projectId: "portfolio-22c56",
+    storageBucket: "portfolio-22c56.firebasestorage.app",
+    messagingSenderId: "790009382969",
+    appId: "1:790009382969:web:b1390f3481fe750728e5e8",
+};
+
+const SystemBadge = ({ label, value }) => (
+    <div className="flex flex-col border-l border-indigo-500/30 pl-4 py-1">
+        <span className="text-[8px] font-mono text-indigo-500 uppercase tracking-[0.2em]">{label}</span>
+        <span className="text-xs font-bold text-gray-300 uppercase truncate">{value}</span>
     </div>
 );
 
-const ArticleCard = ({ article, index }) => (
-    <motion.a
-        href="#" 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: index * 0.15 }}
-        viewport={{ once: true, amount: 0.4 }}
-        className="relative border border-gray-200/50 dark:border-gray-700/50 
-                rounded-2xl overflow-hidden shadow-xl 
-                hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 
-                bg-white dark:bg-gray-800 cursor-pointer group block"
-    >
-        <div className="h-44 overflow-hidden">
-            <img
-                src={article.image}
-                alt={article.title}
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/3730a3/ffffff?text=Image+Missing"; }}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-        </div>
-        <div className="p-5">
-            <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 transition">
-                {article.title}
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{article.excerpt}</p>
-            <div className="text-indigo-600 dark:text-indigo-400 font-medium flex items-center gap-2 text-sm">
-                Read More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </div>
-        </div>
-    </motion.a>
-);
-
-const CommentDisplay = ({ comment, currentUserId }) => {
-    const formatTimestamp = (date) => {
-        if (!date) return 'Just now';
-        const now = new Date();
-        const diff = now.getTime() - date.getTime();
-        const seconds = Math.floor(diff / 1000);
-        
-        if (seconds < 60) return `Less than a minute ago`;
-        if (seconds < 3600) return `${Math.floor(seconds / 60)} minutes ago`;
-        if (seconds < 86400) return `${Math.floor(seconds / 3600)} hours ago`;
-        if (seconds < 604800) return `${Math.floor(seconds / 86400)} days ago`; 
-
-        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-    };
-
-    const isAuthor = comment.userId === currentUserId;
-    
-    const timestampDate = comment.timestamp instanceof Date ? comment.timestamp : 
-                          (comment.timestamp && comment.timestamp.toMillis ? new Date(comment.timestamp.toMillis()) : null);
-
-    // Use a user-friendly name, falling back to 'User'
-    const displayUserName = comment.userName || 'User'; 
-
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className={`flex space-x-4 p-4 rounded-xl border-l-4 shadow-md transition-all duration-300
-                        ${isAuthor 
-                            ? 'bg-indigo-50/50 dark:bg-indigo-900/20 border-indigo-500' 
-                            : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700'
-                        }`}
-        >
-            <img 
-                src={comment.avatarUrl || `https://placehold.co/100x100/4c51bf/ffffff?text=${displayUserName[0]}`} 
-                alt={`${displayUserName} avatar`}
-                className="w-10 h-10 rounded-full flex-shrink-0 object-cover border border-gray-200 dark:border-gray-700"
-            />
-            <div className="flex-grow min-w-0">
-                <div className="flex items-center justify-between flex-wrap gap-1 mb-1">
-                    <div className="flex items-center gap-2 min-w-0">
-                        <span className="font-bold text-gray-900 dark:text-gray-100 truncate">
-                            {displayUserName}
-                        </span>
-                        {isAuthor && <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-500 text-white flex-shrink-0">You</span>}
-                    </div>
-                    <span className="text-xs text-gray-500 dark:text-gray-400 flex-shrink-0">
-                        {formatTimestamp(timestampDate)}
-                    </span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">{comment.text}</p>
-                {/* <p className="text-xs font-mono text-gray-400 dark:text-gray-500 mt-2 break-all">
-                    ID: {comment.userId}
-                </p> */}
-            </div>
-        </motion.div>
-    );
-};
-
-
-// --- Static Data (Unchanged) ---
-const relatedArticles = [
-    {
-        title: "Building a Scalable AI Platform",
-        excerpt: "Discover how modern AI apps are built for scalability and reliability.",
-        image: "images/scale.webp",
-    },
-    {
-        title: "The Future of Web Development",
-        excerpt: "A deep dive into trends shaping how we build for the web.",
-        image: "images/brain.png",
-    },
-    {
-        title: "Design Systems That Scale",
-        excerpt: "Why design systems are critical for large teams and products.",
-        image: "images/Tem.png",
-    },
-];
-
-const sectionsData = [
-    { id: "intro", label: "01. Introduction", title: "The Next Era of Intelligence" },
-    { id: "core", label: "02. Core Ideas", title: "Foundations of Modern AI" },
-    { id: "timeline", label: "03. Evolution Timeline", title: "A Brief History of AI" },
-    { id: "compare", label: "04. AI vs Human", title: "Symbiosis of Strengths" },
-    { id: "premium-insights", label: "05. Premium Insights", title: "Key Takeaways" },
-    { id: "faq", label: "06. Quick Q&A", title: "Frequently Asked Questions" },
-    { id: "related", label: "07. Explore More", title: "Related Articles" },
-    { id: "author", label: "08. Author", title: "Meet the Author" },
-    { id: "comments", label: "09. Discussion", title: "Community Discussion" },
-];
-
-
-// --- Main Component ---
-
-export default function App() {
+export default function AIArtifactPage() {
     const [activeSection, setActiveSection] = useState("intro");
-    const [isTOCVisible, setIsTOCVisible] = useState(false);
-
-    // Firebase State
     const [db, setDb] = useState(null);
-    const [auth, setAuth] = useState(null);
     const [userId, setUserId] = useState(null);
     const [isAuthReady, setIsAuthReady] = useState(false);
-
-    // Comments State (Effective Practice applied here)
     const [comments, setComments] = useState([]);
+    const [commentsLoading, setCommentsLoading] = useState(true);
+    const [commentsError, setCommentsError] = useState(null);
+    const [userName, setUserName] = useState('');
     const [newCommentText, setNewCommentText] = useState("");
     const [isPosting, setIsPosting] = useState(false);
-    const [postError, setPostError] = useState(null);
-    const [postSuccess, setPostSuccess] = useState(false);
-    // 💡 NEW/UPDATED: User-provided name, persisted via local storage
-    const HERO_VIDEO_URL = '/infographics/boy.mp4';
-    const [userName, setUserName] = useState(''); 
-    
-    // Newsletter State (REAL Web3Forms Key applied here)
-    const WEB3FORMS_ACCESS_KEY = '5990f7bc-58f5-4b00-8630-74158a28db18';
-    const [email, setEmail] = useState('');
-    const [isSubscribing, setIsSubscribing] = useState(false);
-    const [subscribeMessage, setSubscribeMessage] = useState('');
 
+    // 1. Firebase Logic
+    useEffect(() => {
+        const app = initializeApp(firebaseConfig);
+        const firestoreDb = getFirestore(app);
+        const authInstance = getAuth(app);
+        setDb(firestoreDb);
 
-    const scrollToSection = useCallback((id) => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-        setIsTOCVisible(false); 
+        const savedName = localStorage.getItem('commentUserName');
+        if (savedName) setUserName(savedName);
+
+        const unsubscribe = onAuthStateChanged(authInstance, async (user) => {
+            if (user) setUserId(user.uid);
+            else {
+                const anon = await signInAnonymously(authInstance);
+                setUserId(anon.user.uid);
+            }
+            setIsAuthReady(true);
+        });
+        return () => unsubscribe();
     }, []);
 
-    // --- Firebase Initialization and Auth ---
-    useEffect(() => {
-  const firebaseConfig = {
-  apiKey: "AIzaSyC9tufXHLryYiRRndTe9rbiXZjl4faAIzE",
-  authDomain: "portfolio-22c56.firebaseapp.com",
-  projectId: "portfolio-22c56",
-  storageBucket: "portfolio-22c56.firebasestorage.app",
-  messagingSenderId: "790009382969",
-  appId: "1:790009382969:web:b1390f3481fe750728e5e8",
-  measurementId: "G-QHX8SXF5V1"
-};
-
-  const app = initializeApp(firebaseConfig);
-  const firestoreDb = getFirestore(app);
-  const authInstance = getAuth(app);
-
-  setDb(firestoreDb);
-  setAuth(authInstance);
-
-  const savedUserName = localStorage.getItem('commentUserName');
-  if (savedUserName) setUserName(savedUserName);
-
-  const unsubscribe = onAuthStateChanged(authInstance, async (user) => {
-    try {
-      if (user) {
-        setUserId(user.uid);
-      } else {
-        const anonUser = await signInAnonymously(authInstance);
-        setUserId(anonUser.user.uid);
-      }
-    } catch (error) {
-      console.error("Anonymous authentication failed:", error);
-      setUserId(`guest-${crypto.randomUUID()}`);
-    }
-    setIsAuthReady(true);
-  });
-
-  return () => unsubscribe();
-}, []);
-
-
-    // --- Real-time Comments Fetch ---
     useEffect(() => {
         if (!db || !isAuthReady) return;
-
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const commentsCollectionRef = collection(db, `artifacts/${appId}/public/data/premium_article_comments`);
-        const commentsQuery = query(commentsCollectionRef); 
-
-        const unsubscribe = onSnapshot(commentsQuery, (snapshot) => {
-            const fetchedComments = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data(),
-                timestamp: doc.data().timestamp, 
-            }));
-            
-            // Sort comments by timestamp descending (newest first)
-            fetchedComments.sort((a, b) => {
-                const timeA = a.timestamp && a.timestamp.toMillis ? a.timestamp.toMillis() : 0;
-                const timeB = b.timestamp && b.timestamp.toMillis ? b.timestamp.toMillis() : 0;
-                return timeB - timeA;
-            });
-            
-            setComments(fetchedComments);
-        }, (error) => {
-            console.error("Error fetching comments:", error);
-        });
-
-        return () => unsubscribe();
-    }, [db, isAuthReady]); 
-
-    // --- Post Comment Handler (Updated for User Name) ---
-    const handlePostComment = useCallback(async (e) => {
-        e.preventDefault();
-
-        // 💡 UPDATED CHECK: Must require both text and a name
-        if (!newCommentText.trim()) {
-            setPostError("Please write a comment before posting.");
-            return;
-        }
-        if (!userName.trim()) {
-            setPostError("Please provide your name before posting.");
-            return;
-        }
-
-        if (!db || !userId) {
-            setPostError("Unable to post comment. Authentication not ready.");
-            return;
-        }
-
-        setIsPosting(true);
-        setPostError(null);
-        setPostSuccess(false);
-
-        try {
-            const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-            const commentsRef = collection(db, `artifacts/${appId}/public/data/premium_article_comments`);
-
-            const finalUserName = userName.trim();
-
-            await addDoc(commentsRef, {
-                userId,
-                userName: finalUserName, // 💡 USE USER-PROVIDED NAME
-                avatarUrl: `https://placehold.co/100x100/4f46e5/ffffff?text=${finalUserName[0].toUpperCase()}`,
-                text: newCommentText.trim(),
-                timestamp: serverTimestamp()
-            });
-
-            // 💡 PERSISTENCE: Save the user's name on successful post
-            localStorage.setItem('commentUserName', finalUserName);
-
-            setNewCommentText("");
-            setPostSuccess(true);
-            setTimeout(() => setPostSuccess(false), 3000);
-
-        } catch (error) {
-            console.error("Error posting comment:", error);
-            setPostError("Failed to post comment. Please try again.");
-        } finally {
-            setIsPosting(false);
-        }
-    }, [newCommentText, userName, db, userId]); // Added userName to dependencies
-
-    // --- Newsletter Subscribe Handler (REAL Web3Forms Key) ---
-    const handleSubscribe = async (e) => {
-        e.preventDefault();
-        setSubscribeMessage('');
-
-        if (email.trim() === '') {
-            setSubscribeMessage("Please enter a valid email address.");
-            return;
-        }
-
-        setIsSubscribing(true);
-
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify({
-                    access_key: WEB3FORMS_ACCESS_KEY, // 🔑 REAL KEY APPLIED
-                    subject: "New Newsletter Subscriber for AI Article",
-                    email: email,
-                }),
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                setSubscribeMessage("Subscribed successfully! Check your inbox.");
-                setEmail('');
-            } else {
-                console.error("Web3Forms Error:", result.message);
-                setSubscribeMessage(`Subscription failed: ${result.message}`);
+        setCommentsLoading(true);
+        setCommentsError(null);
+        const appId = blogMetadata.reportId;
+        const commentsPath = `artifacts/${appId}/public/data/premium_article_comments`;
+        const qry = query(collection(db, commentsPath));
+        const unsubscribe = onSnapshot(qry, (snap) => {
+            try {
+                const fetched = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setComments(fetched.sort((a, b) => {
+                    const aTime = a.timestamp?.toMillis?.() || 0;
+                    const bTime = b.timestamp?.toMillis?.() || 0;
+                    return bTime - aTime;
+                }));
+                setCommentsLoading(false);
+            } catch (err) {
+                setCommentsError('Failed to load comments.');
+                setCommentsLoading(false);
             }
+        }, (err) => {
+            setCommentsError('Failed to load comments.');
+            setCommentsLoading(false);
+        });
+        return () => unsubscribe();
+    }, [db, isAuthReady]);
 
-        } catch (error) {
-            console.error("Network or API call failed:", error);
-            setSubscribeMessage("An unexpected error occurred. Please try again later.");
-        } finally {
-            setIsSubscribing(false);
-        }
-    };
-
-
-    // ScrollSpy Logic (Unchanged)
+    // 2. ScrollSpy
     useEffect(() => {
         const handleScroll = () => {
-            let current = "intro";
-            sectionsData.forEach((sec) => {
-                const element = document.getElementById(sec.id);
-                if (element && window.scrollY >= element.offsetTop - 180) { 
-                    current = sec.id;
+            const ids = sectionsData.map(s => s.id);
+            for (const id of ids) {
+                const el = document.getElementById(id);
+                if (el && window.scrollY >= el.offsetTop - 300) {
+                    setActiveSection(id);
                 }
-            });
-            setActiveSection(current);
+            }
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const TOC = ({ isMobile = false }) => (
-        <nav className={isMobile ? "p-4" : "sticky top-28 h-fit"}>
-            <h3 className="text-xs tracking-widest uppercase text-indigo-600 dark:text-indigo-400 font-bold mb-5">
-                Article Contents
-            </h3>
-            <ul className="space-y-4 text-base">
-                {sectionsData.map((s) => (
-                    <li key={s.id}>
-                        <button
-                            onClick={() => scrollToSection(s.id)}
-                            className={`block text-left transition-all duration-300 w-full
-                                        ${
-                                            activeSection === s.id
-                                                ? "text-indigo-600 dark:text-indigo-400 font-extrabold border-l-4 border-indigo-500 pl-3"
-                                                : "text-gray-600 dark:text-gray-400 hover:text-indigo-500 pl-4"
-                                        }`}
-                        >
-                            <span className="text-sm opacity-70 mr-2">{s.label.split('.')[0]}.</span>
-                            {s.label.split('.')[1].trim()}
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </nav>
-    );
-
-    const WorkWithMeFooter = () => (
-        <motion.section 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mt-20 p-10 relative bg-gray-50 dark:bg-gray-900 border-t border-b border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden shadow-2xl"
-        >
-            <div className="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none">
-                <Globe className="w-full h-full text-indigo-500/20 dark:text-fuchsia-400/20 animate-[spin_60s_linear_infinite] scale-150 transform rotate-12" />
-            </div>
-            
-            <div className="relative z-10 max-w-4xl mx-auto text-center">
-                <IconBadge Icon={Send} className="mx-auto mb-6 bg-gradient-to-br from-indigo-500 to-fuchsia-600 shadow-xl shadow-fuchsia-500/40" />
-
-                <h2 className="text-4xl font-extrabold mb-4 
-                                bg-gradient-to-r from-indigo-600 to-fuchsia-700 
-                                dark:from-indigo-400 dark:to-fuchsia-500 bg-clip-text text-transparent">
-                    Ready to Build the Future?
-                </h2>
-                <p className="mb-8 mx-auto text-lg text-gray-700 dark:text-gray-300">
-                    Need a premium AI solution, a highly responsive full-stack application, or a complete design system that scales? Let's collaborate and bring your vision to life.
-                </p>
-                <a 
-                    href="#"
-                    className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-indigo-600 to-fuchsia-700 text-white font-bold text-lg rounded-xl shadow-xl shadow-fuchsia-500/40 
-                            hover:shadow-fuchsia-500/60 transition-all duration-300 transform hover:scale-[1.02]"
-                >
-                    Start a Project <ArrowRight className="w-5 h-5 ml-1" />
-                </a>
-            </div>
-        </motion.section>
-    );
-
+    const handlePostComment = async (e) => {
+        e.preventDefault();
+        if (!newCommentText.trim() || !userName.trim() || !db) return;
+        setIsPosting(true);
+        try {
+            const appId = blogMetadata.reportId;
+            const commentsPath = `artifacts/${appId}/public/data/premium_article_comments`;
+            await addDoc(collection(db, commentsPath), {
+                userId,
+                userName: userName.trim(),
+                text: newCommentText.trim(),
+                timestamp: serverTimestamp()
+            });
+            localStorage.setItem('commentUserName', userName.trim());
+            setNewCommentText("");
+        } catch (err) { console.error(err); }
+        finally { setIsPosting(false); }
+    };
 
     return (
-        <div className="min-h-screen dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased">
-            {/* Mobile TOC Button */}
-            <button
-                onClick={() => setIsTOCVisible(!isTOCVisible)}
-                className="lg:hidden fixed bottom-6 right-6 z-50 p-4 rounded-full 
-                            bg-indigo-600 text-white shadow-2xl shadow-indigo-500/50 
-                            hover:bg-indigo-700 transition"
-            >
-                {isTOCVisible ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-
-            {/* Mobile TOC Overlay */}
-            <AnimatePresence>
-                {isTOCVisible && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 50 }}
-                        className="fixed inset-0 z-40 bg-white dark:bg-gray-950 p-6 pt-20 lg:hidden overflow-y-auto"
-                    >
-                        <TOC isMobile={true} />
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            {/* Hero Section */}
-            <header className="relative w-full h-[70vh] flex items-end overflow-hidden pt-[4.5rem] bg-gray-900">
-                
-                {/* 💡 NEW: Video Background Element */}
-                <video 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline // Recommended for mobile compatibility
-                    className="absolute inset-0 w-full h-full object-cover"
-                    poster="/images/ai-fallback-poster.jpg" // Add a static image for when the video is loading or fails
-                >
-                    <source src={HERO_VIDEO_URL} type="video/mp4" />
-                    {/* Add more source types (like webm) for maximum browser compatibility */}
-                    Your browser does not support the video tag.
+        <div className="min-h-screen bg-[#050505] text-slate-300 font-sans selection:bg-indigo-500/30">
+            
+            {/* HERO HUD */}
+            <header className="relative h-[85vh] flex flex-col justify-end overflow-hidden border-b border-white/5">
+                <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]" />
+                </div>
+                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-30 grayscale">
+                    <source src={blogMetadata.videoUrl} type="video/mp4" />
                 </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
 
-                {/* MODIFIED: This div acts as a dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" /> 
-                {/* Increased opacity slightly to account for video movement */}
-
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="relative max-w-5xl mx-auto px-4 md:px-8 pb-16 text-white z-10" // 💡 Added z-10 to ensure content is above the overlay
-                >
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-                        The{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500">
-                            Future
-                        </span>{" "}
-                        of{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                            AI
-                        </span>{" "}
-                        in Everyday Life
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="container mx-auto px-6 pb-20 relative z-10">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 border border-indigo-500/30 bg-indigo-500/5 mb-8">
+                        <Terminal size={12} className="text-indigo-500 animate-pulse" />
+                        <span className="text-[10px] font-mono font-black text-indigo-400 uppercase tracking-[0.4em]">{blogMetadata.reportId}</span>
+                    </div>
+                    <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-8 leading-[0.85]">
+                        The Future Of <br/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-white">Intelligence</span>
                     </h1>
-
-                    <p className="text-lg md:text-xl max-w-2xl mb-8 opacity-80">
-                        A deep dive into how Artificial Intelligence is reshaping industries, augmenting human potential, and driving global innovation.
-                    </p>
-                    <div className="flex flex-col sm:flex-row sm:items-center text-sm font-medium 
-                                    border-l-4 border-indigo-500 pl-4 space-y-1 sm:space-y-0 sm:space-x-4">
-                        
-                        {/* Author Name - Always a single block */}
-                        <span className="text-base">
-                            By <strong className="text-white">Chinagoro Victor Ekele</strong>
-                        </span>
-
-                        {/* Date - Now on its own line on mobile */}
-                        <span className="text-base sm:text-sm">
-                            October 22nd (My Birthday) 2025
-                        </span>
-
-                        {/* Read Time - Now on its own line on mobile and uses your fuchsia brand color */}
-                        <span className="text-base sm:text-sm text-yellow-400">
-                            8 min read
-                        </span>
-
-                        {/* Note: I removed the "·" spacers (<span>·</span>) from the HTML entirely. 
-                        They are unnecessary when the items stack vertically. 
-                        On desktop (sm:flex-row), the natural space-x-4 margin will separate them effectively.
-                        */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
+                        <SystemBadge label="Log_Author" value={blogMetadata.author} />
+                        <SystemBadge label="Timestamp" value={blogMetadata.timestamp} />
+                        <SystemBadge label="Duration" value={blogMetadata.readTime} />
+                        <SystemBadge label="Status" value="SECURE_LINK" />
                     </div>
                 </motion.div>
             </header>
 
-            {/* Main Content Layout */}
-            <div className="flex w-full max-w-7xl mx-auto px-4 md:px-8 py-12">
-                {/* TOC Sidebar */}
-                <aside className="hidden lg:block w-1/4 pr-12">
-                    <TOC />
+            <div className="container mx-auto px-4 md:px-6 py-24 flex flex-col lg:flex-row gap-16">
+                {/* NAV SIDEBAR (Hidden on mobile, sticky on desktop) */}
+                <aside className="hidden lg:block w-64 sticky top-32 h-fit">
+                    <h3 className="text-[10px] font-mono font-black text-indigo-500 tracking-[0.3em] mb-8">// INDEX_STRUCTURE</h3>
+                    <nav className="space-y-1 text-xs font-bold uppercase tracking-widest">
+                        {sectionsData.map(s => (
+                            <button key={s.id} onClick={() => document.getElementById(s.id)?.scrollIntoView({behavior:'smooth'})}
+                                className={`flex items-center gap-4 w-full text-left py-2 transition-all ${activeSection === s.id ? "text-white" : "text-gray-600 hover:text-gray-400"}`}>
+                                <span className={`text-[9px] font-mono ${activeSection === s.id ? "text-indigo-500" : "text-gray-800"}`}>{s.id.substring(0,3)}</span>
+                                {s.label.split('. ')[1]}
+                                {activeSection === s.id && <div className="w-1 h-1 bg-indigo-500 rotate-45 ml-auto" />}
+                            </button>
+                        ))}
+                    </nav>
                 </aside>
 
-                {/* Main Article Content */}
-                <main className="w-full lg:w-3/4">
-                    <article className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-extrabold prose-headings:text-indigo-600 dark:prose-headings:text-indigo-400">
+                {/* MAIN CONTENT */}
+                <main className="flex-1 max-w-4xl space-y-32">
+                    
+                    {/* 01_INTRODUCTION */}
+                    <section id="intro" className="scroll-mt-32">
+                        <h2 className="text-xs font-mono text-indigo-500 tracking-[0.4em] mb-8">// 01_INTRODUCTION</h2>
+                        <h3 className="text-3xl font-black text-white mb-6 uppercase tracking-tighter">{sectionsContent.intro.title}</h3>
+                        <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-400 italic">{sectionsContent.intro.content}</p>
+                    </section>
 
-                        {/* --- 01. Introduction --- (Unchanged) */}
-                        <section id="intro" className="py-8 pt-16 lg:pt-8"> 
-                            <h2 className="text-4xl font-extrabold mb-6 hidden lg:block">{sectionsData[0].title}</h2>
-                            <motion.p
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8 }}
-                                viewport={{ once: true }}
-                                className="text-xl leading-relaxed italic text-gray-700 dark:text-gray-300"
-                            >
-                                Artificial Intelligence has moved beyond labs and research centers. It now powers everyday apps, from health monitoring wearables to predictive text on your phone. In this article, we explore its growing impact and what it means for the future of work and society.
-                            </motion.p>
-                        </section>
+                    {/* 02_CORE_FOUNDATIONS */}
+                    <section id="core" className="scroll-mt-32">
+                        <h2 className="text-xs font-mono text-indigo-500 tracking-[0.4em] mb-12">// 02_CORE_FOUNDATIONS</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5 shadow-2xl">
+                            {sectionsContent.core.map((item, i) => (
+                                <div key={i} className="bg-[#0a0a0a] p-8 hover:bg-black transition-colors border border-white/5">
+                                    <item.icon className="w-6 h-6 text-indigo-500 mb-6" />
+                                    <h4 className="text-sm font-bold text-white mb-2 uppercase tracking-widest">{item.title}</h4>
+                                    <p className="text-[10px] text-gray-500 font-mono leading-relaxed uppercase">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
 
-                        {/* ... (Sections 02, 03, 04, 05, 06, 07 - Unchanged) ... */}
-
-                        {/* --- 02. Core Ideas (Lottie Replacement) --- */}
-                        <section id="core" className="py-12">
-                            <h2 className="text-3xl font-extrabold mb-6">{sectionsData[1].title}</h2>
-                            <p>
-                                At its heart, AI thrives on data. The more diverse and high-quality data it processes, the more accurate and useful it becomes. This shift from simple rule-based systems to complex pattern recognition is the defining feature of the modern AI revolution.
-                            </p>
-                            
-                            <div className="my-8 p-6 bg-indigo-50 dark:bg-gray-800 rounded-xl border-l-4 border-indigo-500 shadow-inner">
-                                <p className="text-lg italic font-medium text-indigo-800 dark:text-indigo-300">
-                                    “AI is not about replacing humans, it’s about augmenting human potential and automating the mundane to free up creativity.”
-                                </p>
-                            </div>
-
-                            {/* Lottie Replacement with Icon Cards */}
-                            <div className="grid md:grid-cols-3 gap-6 my-10 text-center">
-                                {[
-                                    { icon: BarChart3, title: "Data Driven", description: "Models train on massive, diverse datasets for robust decision-making." },
-                                    { icon: Brain, title: "Deep Learning", description: "Complex neural networks simulate human cognitive processes." },
-                                    { icon: Compass, title: "Ethical Direction", description: "Focus on fairness and transparency to prevent algorithmic bias." }
-                                ].map((item, i) => (
-                                    <motion.div 
-                                        key={i} 
-                                        initial={{ opacity: 0, y: 20 }} 
-                                        whileInView={{ opacity: 1, y: 0 }} 
-                                        transition={{ duration: 0.5, delay: i * 0.1 }} 
-                                        viewport={{ once: true }} 
-                                        className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md border border-indigo-100 dark:border-gray-700 hover:shadow-lg transition-shadow"
-                                    >
-                                        <item.icon className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mx-auto mb-3" />
-                                        <h4 className="font-bold text-lg mb-1">{item.title}</h4>
-                                        <p className="font-medium text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </section>
-
-                        {/* --- 03. Evolution Timeline --- */}
-                        <section id="timeline" className="py-12">
-                            <h2 className="text-3xl font-extrabold mb-10">{sectionsData[2].title}</h2>
-                            <div className="space-y-10 border-l-4 border-purple-500 pl-6 relative">
-                                {[
-                                    { year: "1950s", title: "The Birth of AI", description: "Early experiments in machine logic and computation, marked by the Dartmouth workshop." },
-                                    { year: "1980s", title: "The First AI Winter", description: "Funding cuts and skepticism due to overpromising and limitations of early technology." },
-                                    { year: "2000s", title: "The Data Explosion", description: "The rise of the internet and big data enables deep learning breakthroughs and a new wave of research." },
-                                    { year: "2020s", title: "Everyday AI Integration", description: "AI integrated into daily life, from large language models to AI-driven healthcare, finance, and education." },
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{ duration: 0.5, delay: i * 0.2 }}
-                                        viewport={{ once: true, amount: 0.5 }}
-                                        className="relative"
-                                    >
-                                        {/* Timeline Dot */}
-                                        <div className="absolute -left-8 top-1 w-4 h-4 rounded-full bg-purple-600 ring-4 ring-white dark:ring-gray-950"></div>
-                                        <h3 className="font-extrabold text-xl mb-1 text-gray-900 dark:text-gray-100">{item.year}: {item.title}</h3>
-                                        <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </section>
-                        
-                        {/* --- 04. AI vs Human Strengths (Comparison) --- */}
-                        <section id="compare" className="py-12">
-                            <h2 className="text-3xl font-extrabold mb-10 text-center">
-                                <span className="text-gray-900 dark:text-gray-100">AI </span>
-                                <span className="bg-gradient-to-r from-indigo-500 to-fuchsia-600 bg-clip-text text-transparent">
-                                    | vs |
-                                </span>
-                                <span className="text-gray-900 dark:text-gray-100"> Human Strengths</span>
-                            </h2>
-                            <div className="grid md:grid-cols-2 gap-8">
-                                {/* AI Card */}
-                                <motion.div 
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.6 }}
-                                    viewport={{ once: true }}
-                                    className="bg-gradient-to-br from-white/90 to-indigo-50/90 dark:from-gray-900/90 dark:to-gray-800/90 backdrop-blur-xl 
-                                                rounded-3xl p-8 shadow-2xl border border-indigo-200/50 dark:border-indigo-900/50 
-                                                hover:shadow-indigo-500/20 transition-all duration-500"
-                                >
-                                    <h3 className="font-extrabold mb-6 flex items-center gap-3 text-2xl text-indigo-700 dark:text-indigo-300">
-                                        <IconBadge Icon={Zap} className="shadow-lg shadow-indigo-500/50" />
-                                        AI Capabilities
-                                    </h3>
-                                    <ul className="space-y-5 text-base">
-                                        <li className="flex items-start gap-3">
-                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                                            <span className="font-medium"><strong>Computational Speed:</strong> Executes complex calculations instantaneously.</span>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                                            <span className="font-medium"><strong>Pattern Recognition:</strong> Identifies subtle correlations in massive datasets.</span>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                                            <span className="font-medium"><strong>Scalability:</strong> Operates 24/7 and scales to millions of users instantly.</span>
-                                        </li>
-                                    </ul>
-                                </motion.div>
-
-                                {/* Humans Card */}
-                                <motion.div 
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.6, delay: 0.2 }}
-                                    viewport={{ once: true }}
-                                    className="bg-gradient-to-br from-white/90 to-purple-50/90 dark:from-gray-900/90 dark:to-gray-800/90 backdrop-blur-xl 
-                                                rounded-3xl p-8 shadow-2xl border border-purple-200/50 dark:border-purple-900/50 
-                                                hover:shadow-purple-500/20 transition-all duration-500"
-                                >
-                                    <h3 className="font-extrabold mb-6 flex items-center gap-3 text-2xl text-purple-700 dark:text-purple-300">
-                                        <IconBadge Icon={Heart} className="shadow-lg shadow-purple-500/50 bg-gradient-to-br from-purple-500 to-fuchsia-600" />
-                                        Human Strengths
-                                    </h3>
-                                    <ul className="space-y-5 text-base">
-                                        <li className="flex items-start gap-3">
-                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                                            <span className="font-medium"><strong>Creative Insight:</strong> Generates truly novel ideas outside learned parameters.</span>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                                            <span className="font-medium"><strong>Emotional Intelligence:</strong> Navigates complex social and interpersonal dynamics.</span>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                                            <span className="font-medium"><strong>Ethical Judgment:</strong> Applies moral frameworks to make complex, non-algorithmic decisions.</span>
-                                        </li>
-                                    </ul>
-                                </motion.div>
-                            </div>
-                        </section>
-
-                        {/* --- 05. Premium Insights (Series of Engaging Content) --- */}
-                        <section id="premium-insights" className="py-12">
-                            <h2 className="text-3xl font-extrabold mb-8">{sectionsData[4].title}</h2>
-                            <div className="grid md:grid-cols-3 gap-6">
-                                {[
-                                    { icon: Brain, text: "AI adoption is rapidly accelerating, shifting from novelty to core business strategy in most sectors." },
-                                    { icon: CheckCircle, text: "Responsible AI is the new mandate, ensuring fairness, transparency, and building public trust." },
-                                    { icon: Lightbulb, text: "The future is Human-Centered AI, where technology augments skills rather than just replacing tasks." },
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.5, delay: i * 0.15 }}
-                                        viewport={{ once: true, amount: 0.8 }}
-                                        className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl border border-indigo-100 dark:border-gray-700 flex flex-col items-center text-center group transition-all hover:bg-indigo-50 dark:hover:bg-gray-700"
-                                    >
-                                        <div className="mb-3 p-3 rounded-full bg-indigo-100 dark:bg-indigo-900/50 group-hover:bg-indigo-500 transition-colors">
-                                            <item.icon className="w-6 h-6 text-indigo-600 group-hover:text-white" />
-                                        </div>
-                                        <p className="font-medium">{item.text}</p>
-                                    </motion.div>
-                                ))}
-                            </div>
-
-                            <div id="media" className="my-12">
-                                <h3 className="text-2xl font-bold mb-4">Market Trend Visuals</h3>
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ duration: 1 }}
-                                    viewport={{ once: true }}
-                                    className="bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
-                                >
-                                    <video
-                                        src="infographics/cat.mp4" // Public sample video URL
-                                        controls
-                                        autoPlay
-                                        muted
-                                        loop
-                                        className="w-full h-auto max-h-96 object-cover"
-                                        poster="https://placehold.co/1280x720/1f2937/ffffff?text=AI+Trend+Video+Placeholder"
-                                    />
-                                    <div className="p-4 text-left text-sm text-gray-600 dark:text-gray-300">
-                                        Nothing related to AI adoption trends in motion, just found it really cool, sorry.
-                                    </div>
-                                </motion.div>
-                            </div>
-                        </section>
-
-
-                        {/* --- 06. FAQ --- */}
-                        <section id="faq" className="py-12">
-                            <h2 className="text-3xl font-extrabold mb-8">{sectionsData[5].title}</h2>
-                            <div className="space-y-4">
-                                {[
-                                    { q: "Will AI replace jobs?", a: "AI will automate routine tasks, leading to the creation of new roles focused on AI development, maintenance, and human-AI collaboration. The goal is augmentation, not replacement." },
-                                    { q: "How can small businesses leverage AI?", a: "Small businesses can use off-the-shelf SaaS tools like AI-powered chatbots for customer service, cloud analytics for forecasting, and automated marketing tools to scale their operations affordably." },
-                                    { q: "What are the ethical concerns?", a: "The main concerns revolve around bias in training data, transparency (the 'black box' problem), and job displacement. **Responsible AI development** is the industry's response to these challenges." }
-                                ].map((item, i) => (
-                                    <motion.details
-                                        key={i}
-                                        initial={{ opacity: 0, x: -10 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{ duration: 0.4, delay: i * 0.1 }}
-                                        viewport={{ once: true }}
-                                        className="p-5 rounded-xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 group hover:border-indigo-400 transition"
-                                    >
-                                        <summary className="cursor-pointer font-bold text-lg text-indigo-700 dark:text-indigo-400 flex justify-between items-center">
-                                            {item.q}
-                                        </summary>
-                                        <p className="mt-4 text-base pl-4 border-l-2 border-indigo-300 dark:border-indigo-600 text-gray-700 dark:text-gray-300">
-                                            {item.a}
-                                        </p>
-                                    </motion.details>
-                                ))}
-                            </div>
-                        </section>
-
-                        {/* --- 07. Related Articles (Series/Multiple Content) --- */}
-                        <section id="related" className="py-12">
-                            <h2 className="text-3xl font-extrabold mb-8">{sectionsData[6].title}</h2>
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {relatedArticles.map((a, i) => (
-                                    <ArticleCard key={i} article={a} index={i} />
-                                ))}
-                            </div>
-                        </section>
-
-                        {/* --- Newsletter CTA (REAL Web3Forms Integration) --- */}
-                        <section className="my-12 text-l p-8 
-                                            bg-gradient-to-r from-indigo-600 to-purple-600 
-                                            text-white rounded-3xl shadow-2xl shadow-indigo-500/40 
-                                            text-left"> {/* 💡 CHANGED: text-center to text-left */}
-                            
-                            <div className="max-w-4xl">
-                                <h3 className="text-3xl font-extrabold mb-3">
-                                    Unlock Exclusive{" "}
-                                    {/* MODIFIED: Changed the gradient to solid white (text-white) for maximum contrast and pop. */}
-                                    <span className="text-white">
-                                        AI Insights
-                                    </span>
-                                </h3>
-                                
-                                {/* MODIFIED: Removed mx-auto for left alignment */}
-                                <p className="mb-8 max-w-2xl opacity-90">
-                                    Join our premium newsletter for weekly deep-dives into AI engineering, future-proofing your career, and exclusive data analysis.
-                                </p>
-                                
-                                {/* MODIFIED: Form is now left-aligned (no justify-center) */}
-                                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-center gap-4">
-                                    <input
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="Enter your email to join"
-                                        // MODIFIED: Input style for better visual contrast (White/Indigo-Purple border focus)
-                                        className="px-6 py-3 border-2 border-white/50 rounded-xl 
-                                                w-full sm:w-[26rem] text-gray-900 
-                                                focus:outline-none focus:ring-2 focus:ring-white transition"
-                                        aria-label="Email for newsletter"
-                                        required
-                                    />
-                                    <button
-                                        type="submit"
-                                        disabled={isSubscribing}
-                                        // MODIFIED: Added w-full for full-width on mobile. Kept original button colors.
-                                        className={`w-full sm:w-auto px-6 py-3 bg-white text-indigo-600 font-bold rounded-xl 
-                                                    shadow-md transition-colors flex items-center justify-center flex-shrink-0
-                                                    ${isSubscribing ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-100'}`}
-                                    >
-                                        {isSubscribing ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : 'Subscribe Now'}
-                                        <ArrowRight className="w-5 h-5 ml-2" />
-                                    </button>
-                                </form>
-                                {subscribeMessage && (
-                                    <p className={`mt-4 font-medium ${subscribeMessage.includes('successfully') ? 'text-green-200' : 'text-red-200'}`}>
-                                        {subscribeMessage}
-                                    </p>
-                                )}
-                            </div>
-                        </section>
-
-                        {/* --- 08. Author --- */}
-                        <section id="author" className="py-12 border-t border-gray-200 dark:border-gray-800 pt-16">
-                            <h2 className="text-3xl font-extrabold mb-8">{sectionsData[7].title}</h2>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6 }}
-                                viewport={{ once: true }}
-                                className="flex flex-col md:flex-row items-center md:items-start gap-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-indigo-100 dark:border-gray-700"
-                            >
-                                <img
-                                    src="images/kenny.jpg"
-                                    alt="Victor E. Author"
-                                    className="w-24 h-24 rounded-full object-cover border-4 border-indigo-500 shadow-md flex-shrink-0"
-                                />
-                                <div>
-                                    <h3 className="text-2xl font-extrabold text-gray-900 dark:text-gray-100">Chinagoro Victor E.</h3>
-                                    <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-4">Senior AI Architect & Full-Stack Developer</p>
-                                    <p className="text-gray-700 dark:text-gray-300 mb-4">
-                                        Victor specializes in designing and deploying production-ready, scalable AI solutions. With over a decade of experience, he focuses on the ethical and practical integration of machine learning into consumer-facing applications.
-                                    </p>
-                                    <div className="flex space-x-4">
-                                        <a href="https://www.linkedin.com/in/victor-chinagoro-1a032423a/" aria-label="LinkedIn" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition"><Linkedin className="w-6 h-6" /></a>
-                                        <a href="https://twitter.com/buildwthvictor" aria-label="Twitter" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition"><Twitter className="w-6 h-6" /></a>
-                                        <a href="https://github.com/digisalesmann" aria-label="GitHub" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition"><Github className="w-6 h-6" /></a>
+                    {/* 03_EVOLUTION_LOG */}
+                    <section id="timeline" className="scroll-mt-32">
+                        <h2 className="text-xs font-mono text-indigo-500 tracking-[0.4em] mb-12">// 03_EVOLUTION_LOG</h2>
+                        <div className="space-y-1">
+                            {sectionsContent.timeline.map((item, i) => (
+                                <div key={i} className="flex gap-8 p-6 border border-white/5 bg-[#0a0a0a] hover:bg-white/[0.02] transition-all group">
+                                    <span className="text-xs font-mono text-gray-700">{item.y}_</span>
+                                    <div>
+                                        <h4 className="text-xs font-bold uppercase text-indigo-400 mb-1 tracking-widest">{item.t}</h4>
+                                        <p className="text-xs text-gray-500 uppercase leading-relaxed font-mono">{item.d}</p>
                                     </div>
                                 </div>
-                            </motion.div>
-                        </section>
+                            ))}
+                        </div>
+                    </section>
 
-                        {/* --- 09. Community Discussion (Effective Practice Applied) --- */}
-                        <section id="comments" className="py-12">
-                            
-                            {/* Branded Header Title - FIX APPLIED HERE */}
-                            <h2 className="text-4xl font-extrabold mb-8 tracking-tight">
-                                <span className="text-gray-900 dark:text-gray-200">
-                                    {sectionsData[8].title.substring(0, 9)} 
-                                </span>
-                                {' '} 
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-400">
-                                    {sectionsData[8].title.substring(9)}
-                                </span>
-                            </h2>
+                    {/* 04_COMPARISON */}
+                    <section id="compare" className="scroll-mt-32">
+                        <h2 className="text-xs font-mono text-indigo-500 tracking-[0.4em] mb-12">// 04_SYMBIOSIS_ANALYSIS</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="p-8 bg-[#0a0a0a] border border-white/5 relative">
+                                <Cpu className="text-indigo-500 mb-6" size={24} />
+                                <h4 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-6">Synthetic_Intelligence</h4>
+                                <ul className="space-y-4">
+                                    {sectionsContent.comparison.ai.map((pt, i) => (
+                                        <li key={i} className="text-[10px] font-mono text-gray-500 uppercase border-b border-white/5 pb-2">_ {pt}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="p-8 bg-[#0a0a0a] border border-indigo-500/20 shadow-[0_0_30px_rgba(79,70,229,0.05)] relative">
+                                <Heart className="text-indigo-400 mb-6" size={24} />
+                                <h4 className="text-sm font-bold text-white uppercase tracking-[0.2em] mb-6">Human_Creativity</h4>
+                                <ul className="space-y-4">
+                                    {sectionsContent.comparison.human.map((pt, i) => (
+                                        <li key={i} className="text-[10px] font-mono text-indigo-300/60 uppercase border-b border-white/5 pb-2">_ {pt}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
 
-                            {/* Comment Form - Themed Inputs and Button */}
-                            <form onSubmit={handlePostComment} className="space-y-4">
-                                
-                                {/* User Name Input - FIX APPLIED HERE */}
+                    {/* 05_STRATEGIC_INSIGHTS */}
+                    <section id="pre" className="scroll-mt-32">
+                        <h2 className="text-xs font-mono text-indigo-500 tracking-[0.4em] mb-12">// 05_STRATEGIC_INSIGHTS</h2>
+                        <div className="space-y-4">
+                            {sectionsContent.insights.map((insight, i) => (
+                                <div key={i} className="flex items-start gap-6 p-6 bg-gradient-to-r from-[#0a0a0a] to-transparent border-l-2 border-indigo-500">
+                                    <insight.icon className="text-indigo-500 mt-1 shrink-0" size={24} />
+                                    <p className="text-sm font-bold text-gray-400 uppercase tracking-wide leading-relaxed font-mono">{insight.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* 06_SYSTEM_QUERY_LOG (FAQ) */}
+                    <section id="faq" className="scroll-mt-32">
+                        <h2 className="text-xs font-mono text-indigo-500 tracking-[0.4em] mb-12">// 06_SYSTEM_QUERY_LOG</h2>
+                        <div className="grid gap-4">
+                            {sectionsContent.faq.map((item, i) => (
+                                <details key={i} className="group border border-white/5 bg-[#0a0a0a] p-6 hover:border-indigo-500/30 transition-all cursor-pointer">
+                                    <summary className="list-none flex justify-between items-center text-xs font-bold text-white uppercase tracking-widest">
+                                        {item.q}
+                                        <ChevronRight size={16} className="group-open:rotate-90 transition-transform text-indigo-500" />
+                                    </summary>
+                                    <p className="mt-4 text-[10px] font-mono text-gray-500 leading-relaxed uppercase border-t border-white/5 pt-4">{item.a}</p>
+                                </details>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* 07_RELATED_ASSETS */}
+                    <section id="related" className="scroll-mt-32">
+                        <h2 className="text-xs font-mono text-indigo-500 tracking-[0.4em] mb-12">// 07_RELATED_ASSETS</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
+                            {sectionsContent.related.map((article, i) => (
+                                <a href={article.link} key={i} className="group block bg-[#0a0a0a] border border-white/5 overflow-hidden hover:bg-black transition-all p-8">
+                                    <div className="flex justify-between items-center mb-6">
+                                        <h4 className="text-sm font-black text-white uppercase tracking-tighter group-hover:text-indigo-400 transition-colors">{article.title}</h4>
+                                        <ExternalLink size={14} className="text-gray-700 group-hover:text-indigo-500" />
+                                    </div>
+                                    <p className="text-[10px] text-gray-500 uppercase font-mono leading-relaxed">{article.excerpt}</p>
+                                </a>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* 08_AUTHOR_ID */}
+                    <section id="author" className="scroll-mt-32 border-t border-white/5 pt-20 text-center">
+                        <h2 className="text-xs font-mono text-indigo-500 tracking-[0.4em] mb-12">// 08_AUTHOR_ID</h2>
+                        <div className="inline-flex flex-col items-center">
+                                                        <img
+                                                            src={blogMetadata.authorImage}
+                                                            alt={blogMetadata.author}
+                                                            className="w-24 h-24 rounded-full object-cover border-4 border-indigo-500/30 mb-6 shadow-[0_0_50px_rgba(79,70,229,0.1)]"
+                                                        />
+                            <h4 className="text-2xl font-black text-white uppercase tracking-tighter leading-none">{blogMetadata.author}</h4>
+                            <p className="text-[10px] font-mono text-gray-600 uppercase mt-4 italic tracking-[0.3em]">Lead_Systems_Engineer // AI_Architect</p>
+                        </div>
+                    </section>
+
+                    {/* 09_DISCUSSION_LEDGER */}
+                    <section id="comments" className="scroll-mt-32 border-t border-white/5 pt-20">
+                        <div className="flex items-center gap-4 mb-12">
+                            <Database size={20} className="text-indigo-500" />
+                            <h2 className="text-2xl font-black uppercase text-white tracking-tighter">Public_Ledger</h2>
+                        </div>
+                        <form onSubmit={handlePostComment} className="space-y-4 mb-16">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <input
                                     type="text"
-                                    disabled={!isAuthReady || isPosting}
+                                    placeholder="Your Name"
                                     value={userName}
-                                    onChange={(e) => setUserName(e.target.value)}
-                                    placeholder={isAuthReady ? "Your Name (Required for Commenting)" : "Connecting…"}
-                                    // MODIFIED: Replaced dark classes with light classes (bg-white, text-gray-900, border-gray-300) 
-                                    // and made the original dark classes dark:bg-gray-900 dark:text-white dark:border-gray-700
-                                    className={`w-full p-3 rounded-xl border border-gray-300 bg-white text-gray-900 shadow-sm transition 
-                                                focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500
-                                                dark:border-gray-700 dark:bg-gray-900 dark:text-white
-                                                ${(!isAuthReady || isPosting) ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    onChange={e => setUserName(e.target.value)}
+                                    className="bg-black border border-white/10 p-4 text-[10px] font-mono focus:border-indigo-500 outline-none placeholder:text-gray-800"
                                     required
-                                    maxLength={30}
                                 />
-                                
-                                {/* Textarea Input - FIX APPLIED HERE */}
-                                <textarea
-                                    disabled={!isAuthReady || isPosting}
-                                    value={newCommentText}
-                                    onChange={(e) => setNewCommentText(e.target.value)}
-                                    placeholder={isAuthReady ? "Write your thoughts..." : "Connecting… Please wait."}
-                                    // MODIFIED: Replaced dark classes with light classes (bg-white, text-gray-900, border-gray-300) 
-                                    // and made the original dark classes dark:bg-gray-900 dark:text-white dark:border-gray-700
-                                    className={`w-full p-4 rounded-xl border border-gray-300 bg-white text-gray-900 shadow-md transition 
-                                                focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500
-                                                dark:border-gray-700 dark:bg-gray-900 dark:text-white
-                                                ${(!isAuthReady || isPosting) ? "opacity-50 cursor-not-allowed" : ""}`}
-                                    rows={4}
-                                />
-
-                                {/* Status Messages - Using theme-appropriate colors */}
-                                {postError && <div className="text-red-600 dark:text-red-400 text-sm">{postError}</div>}
-                                {postSuccess && <div className="text-green-600 dark:text-green-400 text-sm flex items-center gap-1"><CheckCircle className="w-4 h-4"/> Posted successfully!</div>}
-
-                                {/* Submit Button (Looks fine as it is a brand color) */}
                                 <button
                                     type="submit"
-                                    disabled={!isAuthReady || isPosting || newCommentText.trim() === '' || userName.trim() === ''}
-                                    className={`px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold shadow-lg transition-all flex items-center gap-2 
-                                                ${(!isAuthReady || isPosting || newCommentText.trim() === '' || userName.trim() === '') 
-                                                    ? "opacity-50 cursor-not-allowed" 
-                                                    : "hover:bg-indigo-700 hover:shadow-indigo-500/50 active:scale-[0.99]"}`}
+                                    disabled={isPosting}
+                                    className="bg-indigo-600 text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-black transition-all py-4"
                                 >
-                                    {isPosting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
-                                    Post Comment
+                                    {isPosting ? "Posting..." : "Post Comment"}
                                 </button>
-                            </form>
-
-                            {/* Comments List (The CommentDisplay component handles its own colors well) */}
-                            <div className="mt-10 space-y-6">
-                                <AnimatePresence initial={false}>
-                                    {comments.length ? comments.map((c) => (
-                                        <CommentDisplay key={c.id} comment={c} currentUserId={userId} />
-                                    )) : (
-                                        <p className="text-gray-500 dark:text-gray-400">No comments yet. Be the first!</p>
-                                    )}
-                                </AnimatePresence>
                             </div>
-                        </section>
+                            <textarea
+                                rows={4}
+                                placeholder="Your Comment"
+                                value={newCommentText}
+                                onChange={e => setNewCommentText(e.target.value)}
+                                className="w-full bg-black border border-white/10 p-4 text-[10px] font-mono focus:border-indigo-500 outline-none placeholder:text-gray-800"
+                                required
+                            />
+                        </form>
 
-                        {/* End of Article CTA */}
-                        <WorkWithMeFooter />
-
-                    </article>
+                        <div className="space-y-4">
+                            {commentsLoading ? (
+                                <div className="py-8 text-center text-gray-500 font-mono text-xs">Loading comments...</div>
+                            ) : commentsError ? (
+                                <div className="py-8 text-center text-red-400 font-mono text-xs">{commentsError}</div>
+                            ) : comments.length === 0 ? (
+                                <div className="py-8 text-center text-gray-500 font-mono text-xs">No comments yet. Be the first to post!</div>
+                            ) : (
+                                <AnimatePresence initial={false}>
+                                    {comments.slice(0, 20).map((c, i) => (
+                                        <motion.div key={c.id || i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} 
+                                            className="p-6 bg-[#0a0a0a] border border-white/5 flex gap-6">
+                                            <div className="w-10 h-10 bg-indigo-500/10 shrink-0 flex items-center justify-center text-indigo-500 font-mono text-xs uppercase border border-indigo-500/20">{c.userName?.[0] || 'U'}</div>
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex justify-between mb-2">
+                                                    <span className="text-[10px] font-mono font-bold text-white uppercase truncate">{c.userName}</span>
+                                                    <span className="text-[8px] font-mono text-gray-700 uppercase italic shrink-0 ml-2">VERIFIED</span>
+                                                </div>
+                                                <p className="text-xs text-gray-500 uppercase leading-relaxed font-mono break-words">{c.text}</p>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </AnimatePresence>
+                            )}
+                        </div>
+                    </section>
                 </main>
             </div>
+
+            <footer className="py-32 bg-black border-t border-indigo-500/20 text-center px-4">
+                <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white mb-12 leading-none">Initialize_Build</h2>
+                <div className="flex justify-center">
+                    <a href="mailto:buildwithvictorhq@gmail.com" className="w-full md:w-auto inline-flex items-center justify-center gap-4 bg-white text-black px-12 py-5 font-black uppercase tracking-[0.4em] text-xs hover:bg-indigo-500 hover:text-white transition-all">
+                        Establish_Link <ArrowRight size={16} />
+                    </a>
+                </div>
+            </footer>
         </div>
     );
 }
+
+const sectionsData = [
+    { id: "intro", label: "01. Introduction" },
+    { id: "core", label: "02. Core Ideas" },
+    { id: "timeline", label: "03. Evolution" },
+    { id: "compare", label: "04. Comparison" },
+    { id: "pre", label: "05. Insights" },
+    { id: "faq", label: "06. Q&A" },
+    { id: "related", label: "07. Related" },
+    { id: "author", label: "08. Author" },
+    { id: "comments", label: "09. Discussion" },
+];

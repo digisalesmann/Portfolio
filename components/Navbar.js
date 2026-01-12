@@ -1,178 +1,118 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import ThemeToggle from "@/components/ThemeToggle"; // 🌗 Import toggle
-import Image from "next/image"; // Import Next.js Image component for optimization
+import Image from "next/image";
 
-// Custom component for the logo with the avatar
 const LogoWithAvatar = () => (
-  <Link
-    href="/"
-    className="flex items-center gap-2 font-bold text-lg text-gray-900 dark:text-gray-100 group transition-colors"
-  >
-    {/* Avatar */}
-    <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-transparent group-hover:border-indigo-500 transition-colors duration-300">
+  <Link href="/" className="flex items-center gap-3 group">
+    <div className="relative w-8 h-8 border border-white/10 bg-[#111]">
       <Image
-        src="/images/kenny.jpg" // Use your actual avatar path
-        alt="Victor's Avatar"
-        width={32}
-        height={32}
-        className="object-cover"
+        src="/images/kenny.jpg"
+        alt="Victor"
+        fill
+        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
       />
+      <div className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-indigo-500" />
     </div>
-
-    {/* Brand Text */}
-    <span className="bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
-      BuildWithVictor
-    </span>
+    <div className="flex flex-col leading-none">
+      <span className="text-xs font-black tracking-tighter text-white uppercase">Victor.Sys</span>
+      <span className="text-[7px] font-mono text-gray-500 uppercase tracking-[0.2em] mt-1">Kernel_v2.6</span>
+    </div>
   </Link>
 );
-
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const router = useRouter();
-  const panelRef = useRef(null);
+  const pathname = usePathname();
 
-  // solidify on scroll
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    onScroll();
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // close menu on route change
-  useEffect(() => {
-    const handle = () => setOpen(false);
-    router.events.on("routeChangeStart", handle);
-    return () => router.events.off("routeChangeStart", handle);
-  }, [router.events]);
+  // Close menu on route change
+  useEffect(() => setOpen(false), [pathname]);
 
-  // lock body scroll when menu open
+  // Lock body scroll when side-menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-40 border-b transition-all duration-500 ${
-        scrolled || open
-          ? "bg-white/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 backdrop-blur-xl shadow-md h-16"
-          : "bg-white/20 dark:bg-gray-900/20 border-transparent backdrop-blur-sm h-20"
-      }`}
-    >
-      <div className="container flex items-center justify-between h-full px-4 sm:px-6 lg:px-8 mx-auto">
-        {/* Logo (Desktop & Mobile Main) - Now uses the custom component */}
+    <header className={`fixed top-0 inset-x-0 z-[100] transition-all duration-500 ${
+      scrolled || open 
+        ? "h-14 bg-[#050505]/90 border-b border-white/5 backdrop-blur-md" 
+        : "h-20 bg-transparent border-b border-transparent"
+    }`}>
+      <div className="container h-full px-6 mx-auto flex items-center justify-between">
         <LogoWithAvatar />
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 text-base font-medium">
-          <NavLink href="/projects">Projects</NavLink>
-          <NavLink href="/blog">Articles</NavLink>
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
-          <ThemeToggle /> {/* 🌗 Desktop toggle */}
+        {/* --- DESKTOP NAVIGATION (Tech Savvy) --- */}
+        <nav className="hidden md:flex items-center gap-1">
+          <NavLink href="/projects" num="01" title="Projects" />
+          <NavLink href="/blog" num="02" title="Articles" />
+          <NavLink href="/about" num="03" title="About" />
+          <NavLink href="/contact" num="04" title="Contact" />
+          <div className="ml-4 pl-4 border-l border-white/10">
+             <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+          </div>
         </nav>
 
-        {/* Mobile-specific controls: ThemeToggle and Hamburger (NEW/UPDATED) */}
-        <div className="flex items-center gap-2 md:hidden">
-          {/* 🌗 NEW: Mobile Main Nav Toggle */}
-          <ThemeToggle /> 
-
-          {/* Mobile hamburger - removed md:hidden since the parent handles it */}
-          <button
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen((v) => !v)}
-            className="relative h-9 w-9 rounded-lg border border-black/10 dark:border-white/10 bg-white/60 dark:bg-gray-900/60 backdrop-blur hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/60"
-          >
-            <Burger open={open} />
-            <span className="sr-only">Menu</span>
-          </button>
-        </div>
+        {/* --- MOBILE TOGGLE --- */}
+        <button 
+          onClick={() => setOpen(!open)} 
+          className="md:hidden relative z-[110] w-8 h-8 flex flex-col justify-center items-end gap-1.5"
+        >
+          <span className={`h-px bg-white transition-all duration-300 ${open ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
+          <span className={`h-px bg-indigo-500 transition-all duration-300 ${open ? "opacity-0" : "w-4"}`} />
+          <span className={`h-px bg-white transition-all duration-300 ${open ? "w-6 -rotate-45 -translate-y-2" : "w-6"}`} />
+        </button>
       </div>
 
-      {/* Mobile overlay + panel */}
+      {/* --- MOBILE SIDE PANEL (Restored Previous Version) --- */}
       <AnimatePresence>
         {open && (
           <>
             {/* Backdrop */}
             <motion.div
-              key="backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
               onClick={() => setOpen(false)}
+              className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm md:hidden"
             />
 
-            {/* Panel */}
+            {/* Side Drawer */}
             <motion.aside
-              key="panel"
-              ref={panelRef}
-              id="mobile-menu"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 280, damping: 28 }}
-              className="fixed right-0 top-0 z-50 h-dvh w-[86%] sm:w-[420px] 
-                          bg-white dark:bg-gray-900 shadow-2xl border-l border-gray-200 dark:border-gray-700 flex flex-col"
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="fixed right-0 top-0 z-[105] h-screen w-[80%] max-w-[360px] bg-[#050505] border-l border-white/10 p-10 flex flex-col md:hidden"
             >
-              {/* Top header strip */}
-              <div className="flex items-center justify-between h-14 px-6 border-b border-gray-200 dark:border-gray-700">
-                {/* Brand / Logo - Now uses the custom component again */}
-                <LogoWithAvatar /> 
-
-                <div className="flex items-center gap-3">
-                  {/* 🌗 Mobile toggle (kept here as part of the ham nav for convenience) */}
-                  <ThemeToggle />
-                  {/* Close button */}
-                  <button
-                    onClick={() => setOpen(false)}
-                    aria-label="Close menu"
-                    className="text-3xl font-light hover:text-indigo-600 transition-colors"
-                  >
-                    ×
-                  </button>
-                </div>
+              <div className="mb-12">
+                 <LogoWithAvatar />
               </div>
 
-              {/* Navigation Links */}
-              <nav className="flex flex-col gap-4 text-lg p-6">
-                <MobileLink href="/projects">Projects</MobileLink>
-                <MobileLink href="/blog">Articles</MobileLink>
-                <MobileLink href="/about">About</MobileLink>
-                <MobileLink href="/contact">Contact</MobileLink>
+              <nav className="flex flex-col gap-6">
+                <MobileLink href="/projects" num="01">Deployments</MobileLink>
+                <MobileLink href="/blog" num="02">Articles</MobileLink>
+                <MobileLink href="/about" num="03">System_Bio</MobileLink>
+                <MobileLink href="/contact" num="04">Establish_Link</MobileLink>
               </nav>
 
-              {/* CTA Buttons */}
-              <div className="mt-auto p-6 border-t border-gray-200 dark:border-gray-700">
-                <div className="grid grid-cols-2 gap-3">
-                  <a
-                    href="https://github.com/digisalesmann"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full text-center px-4 py-2 border rounded-lg text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="mailto:youremail@example.com"
-                    className="w-full text-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow hover:bg-indigo-700 transition-colors"
-                  >
-                    Email
-                  </a>
+              <div className="mt-auto pt-10 border-t border-white/5">
+                <p className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-4">Core_Connect</p>
+                <div className="flex gap-6">
+                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">GH</a>
+                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">LN</a>
+                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">TW</a>
                 </div>
-
-                <p className="text-gray-500 dark:text-gray-400 text-xs mt-6 text-center">
-                  © {new Date().getFullYear()} BuildWithVictor
-                </p>
               </div>
             </motion.aside>
           </>
@@ -182,71 +122,24 @@ export default function Navbar() {
   );
 }
 
-/* ---------- helpers ---------- */
+/* --- Sub-components --- */
 
-function NavLink({ href, children }) {
-  // Adjusted branding class for hover
+function NavLink({ href, num, title }) {
   return (
-    <Link href={href} className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-      {children}
+    <Link href={href} className="group flex flex-col px-4 py-1">
+      <span className="font-mono text-[8px] text-gray-600 mb-1 group-hover:text-indigo-500 transition-colors">{num}</span>
+      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 group-hover:text-white transition-colors">{title}</span>
     </Link>
   );
 }
 
-function MobileLink({ href, children }) {
-  // Adjusted branding class
+function MobileLink({ href, num, children }) {
   return (
-    <Link
-      href={href}
-      className="block rounded-lg px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-indigo-50 dark:hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/60 transition-colors"
-    >
-      {children}
+    <Link href={href} className="group flex flex-col py-2 border-b border-white/5">
+      <span className="font-mono text-[10px] text-indigo-500 mb-1">{num}</span>
+      <span className="text-2xl font-black uppercase tracking-tighter group-hover:translate-x-2 transition-transform duration-300">
+        {children}
+      </span>
     </Link>
-  );
-}
-
-// animated burger -> close icon
-function Burger({ open }) {
-  return (
-    <div
-      aria-hidden="true"
-      className="absolute inset-0 grid place-items-center text-gray-900 dark:text-gray-100"
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <motion.path
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          initial={false}
-          animate={open ? "open" : "closed"}
-          variants={{
-            closed: { d: "M3 6h18" },
-            open: { d: "M6 6l12 12" },
-          }}
-        />
-        <motion.path
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          initial={false}
-          animate={open ? { opacity: 0 } : { opacity: 1 }}
-          d="M3 12h18"
-        />
-        <motion.path
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          initial={false}
-          animate={open ? "open" : "closed"}
-          variants={{
-            closed: { d: "M3 18h18" },
-            open: { d: "M6 18L18 6" },
-          }}
-        />
-      </svg>
-    </div>
   );
 }

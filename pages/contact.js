@@ -1,155 +1,37 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+"use client";
 
-// --- Global Configuration for Web3Forms ---
-// ACCESS KEY HAS BEEN SECURELY INTEGRATED HERE
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+    Zap, Terminal, Cpu, Database, Shield, 
+    ArrowRight, Activity, Layers, Code2, User,
+    Send, Mail, Phone, MapPin, Loader2, CheckCircle,
+    AlertTriangle, Linkedin, Twitter, Github, Instagram, ExternalLink
+} from "lucide-react";
+
+// --- Global Configuration ---
 const WEB3FORMS_ACCESS_KEY = "5990f7bc-58f5-4b00-8630-74158a28db18"; 
 const WEB3FORMS_API_URL = "https://api.web3forms.com/submit";
 
-// --- Global Tailwind Configuration and Styling for JIT/Sandbox Environment ---
-const GlobalStyles = () => (
-    <>
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossOrigin="anonymous"></script>
-        {/* Load Font Awesome for icons used in the structure */}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJz9T2AUj0oE" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-        {/* Fix for the console warning: Removed 'jsx' and 'global' attributes */}
-        <style>{`
-            /* Define the custom Tailwind colors based on the user's theme */
-            :root {
-                --color-brand: #A855F7; /* Purple 500 */
-                --color-brand-dark: #9333ea; /* Purple 600 */
-                --radius: 1rem;
-            }
+/* ---------------------------
+ * Reusable Industrial Components
+ * --------------------------- */
 
-            /* Applying the global background theme to the body-like container */
-            .app-container-bg {
-                background: linear-gradient(135deg, var(--tw-color-pink-50), var(--tw-color-fuchsia-50), var(--tw-color-indigo-50));
-                color: #1f2937; /* gray-900 */
-                transition: all 0.5s ease;
-                font-family: 'Inter', sans-serif;
-            }
-            
-            /* Dark mode variant */
-            .dark .app-container-bg {
-                /* Deep dark, subtle purple gradient for premium aesthetic */
-                background: linear-gradient(135deg, #0c021f, #14042a, #1a0730);
-                color: #f3f4f6; /* gray-100 */
-            }
-
-            /* Custom Components from user's theme */
-            .card {
-                border-radius: var(--radius);
-                border-width: 1px;
-                border-color: rgba(0, 0, 0, 0.1); /* border-black/10 */
-                background-color: white;
-                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-                transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                backdrop-filter: blur(5px);
-            }
-            .dark .card {
-                border-color: rgba(255, 255, 255, 0.1); /* dark:border-white/10 */
-                background-color: rgba(17, 24, 39, 0.85); /* dark:bg-gray-900/85 (Slight transparency) */
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.15); 
-            }
-
-            /* New: Subtle lift/shadow on main card hover (Desktop only) */
-            @media (min-width: 1024px) {
-                .card-hover-lift:hover {
-                    transform: translateY(-4px);
-                    /* Stronger brand shadow for premium effect */
-                    box-shadow: 0 30px 50px -10px rgba(168, 85, 247, 0.7); 
-                }
-            }
-            
-            .btn-primary {
-                display: inline-block;
-                padding: 12px 24px;
-                border-radius: var(--radius);
-                font-weight: 600;
-                transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                background-color: var(--color-brand);
-                color: white;
-                box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.3);
-            }
-            .btn-primary:hover {
-                background-color: var(--color-brand-dark);
-                transform: translateY(-2px); /* Lift on hover for premium button */
-                box-shadow: 0 15px 25px -5px rgba(168, 85, 247, 0.5); 
-            }
-
-            /* Input field focus glow effect (adapted to 'brand' color) */
-            .form-input-glow:focus {
-                outline: none;
-                box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.5); 
-                border-color: var(--color-brand);
-            }
-            
-            /* Fade In Animation */
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            .animate-fade-in {
-                animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-            }
-
-            /* Success Message Animation */
-            @keyframes bounce-in {
-                0% { transform: scale(0.5); opacity: 0; }
-                80% { transform: scale(1.1); }
-                100% { transform: scale(1); opacity: 1; }
-            }
-            .success-message {
-                animation: bounce-in 0.5s ease-out;
-            }
-        `}</style>
-    </>
+const MetadataBadge = ({ label, value }) => (
+    <div className="flex flex-col border-l border-indigo-500/30 pl-4 py-1">
+        <span className="text-[8px] font-mono text-indigo-500 uppercase tracking-[0.2em]">{label}</span>
+        <span className="text-xs font-bold text-gray-300 uppercase">{value}</span>
+    </div>
 );
 
-// Custom Input Field Component for reusability, styling, and client-side validation
-const ContactInput = ({ label, id, type = 'text', value, onChange, required = false, rows, placeholder, onValidationChange }) => {
+const FormInput = ({ label, id, type = 'text', value, onChange, required = false, rows, placeholder }) => {
     const isTextArea = rows > 0;
     const InputTag = isTextArea ? 'textarea' : 'input';
 
-    const [isTouched, setIsTouched] = useState(false);
-    const [isValid, setIsValid] = useState(false);
-
-    // Use useCallback for onValidationChange to prevent infinite loops in useEffect
-    const reportValidation = useCallback(onValidationChange, [onValidationChange]);
-
-    // Run validation whenever the value changes
-    useEffect(() => {
-        let valid = required ? value.trim() !== '' : true;
-
-        if (type === 'email' && required && value.trim() !== '') {
-            // Simple email regex for client-side feedback
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            valid = valid && emailRegex.test(value.trim());
-        }
-
-        setIsValid(valid);
-        reportValidation(id, valid); // Report validation status back to parent form
-    }, [value, required, type, id, reportValidation]);
-
-    const handleBlur = () => {
-        // Only mark as touched on blur if it hasn't been touched yet
-        if (!isTouched) {
-            setIsTouched(true);
-        }
-    };
-    
-    // Determine input class based on validation and touch status
-    const inputClasses = `
-        w-full p-3 bg-white dark:bg-gray-800 border focus:border-opacity-100 focus:ring-0 form-input-glow transition duration-300
-        ${isTextArea ? 'resize-none' : ''} 
-        ${!isValid && isTouched ? 'border-red-500 dark:border-red-400' : 'border-gray-300 dark:border-gray-700'} 
-        text-gray-800 dark:text-gray-100
-        rounded-xl
-    `;
-
     return (
-        <div className="space-y-2 relative">
-            <label htmlFor={id} className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                {label} {required && <span className="text-red-500 dark:text-red-400">*</span>}
+        <div className="space-y-2 group">
+            <label htmlFor={id} className="text-[10px] font-mono font-black text-gray-500 uppercase tracking-widest group-focus-within:text-indigo-500 transition-colors">
+                // {label} {required && "[REQUIRED]"}
             </label>
             <div className="relative">
                 <InputTag
@@ -161,76 +43,40 @@ const ContactInput = ({ label, id, type = 'text', value, onChange, required = fa
                     required={required}
                     rows={rows}
                     placeholder={placeholder}
-                    className={inputClasses}
-                    onBlur={handleBlur}
-                    onFocus={() => setIsTouched(true)} // Show error state immediately on focus if invalid
+                    className="w-full bg-black border border-white/10 p-4 text-[11px] font-mono text-white focus:border-indigo-500 outline-none uppercase placeholder:text-gray-800 transition-all rounded-none"
                 />
-                
-                {/* Success Checkmark Icon (Visually engaging feedback) */}
-                {(isValid && isTouched && value.trim() !== '') && (
-                    <i className="fa-solid fa-circle-check text-green-500 absolute right-3 top-1/2 transform -translate-y-1/2 text-xl pointer-events-none transition duration-300"></i>
-                )}
             </div>
-
-            {/* Error Message */}
-            {(!isValid && isTouched) && required && (
-                <p className="text-xs text-red-400 font-medium pt-1">
-                    Please provide a valid {label.toLowerCase()}.
-                </p>
-            )}
         </div>
     );
 };
 
-// --- Contact Information Display Component ---
-const ContactDetails = ({ icon, label, value, href }) => (
+const ContactEntry = ({ icon: Icon, label, value, href }) => (
     <a 
         href={href}
-        className="flex items-start space-x-4 p-4 rounded-xl hover:bg-white/10 transition duration-300 transform hover:scale-[1.01] cursor-pointer"
-        target={href.startsWith('http') ? '_blank' : '_self'}
-        rel="noopener noreferrer"
+        className="flex items-start gap-6 p-6 border border-white/5 bg-[#0a0a0a] hover:bg-white/[0.02] transition-all group"
     >
-        <i className={`fa-solid ${icon} text-[var(--color-brand)] text-2xl mt-1 flex-shrink-0`} aria-hidden="true"></i>
+        <div className="p-3 bg-indigo-500/10 border border-indigo-500/20 group-hover:bg-indigo-500 group-hover:text-black transition-all">
+            <Icon size={18} className="text-indigo-400 group-hover:text-inherit" />
+        </div>
         <div>
-            <p className="text-sm text-gray-400 font-medium">{label}</p>
-            <p className="text-lg text-white font-light break-words">{value}</p>
+            <span className="text-[8px] font-mono text-indigo-500 uppercase tracking-[0.3em] block mb-1">{label}</span>
+            <span className="text-sm font-bold text-white uppercase tracking-tight">{value}</span>
         </div>
     </a>
 );
 
-// --- Social Link Display Component ---
-const SocialLink = ({ icon, url, label }) => (
-    <a 
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-gray-400 hover:text-[var(--color-brand)] hover:scale-125 transition duration-300 text-3xl"
-        aria-label={label}
-    >
-        <i className={`fab ${icon}`}></i>
-    </a>
-);
+/* ---------------------------
+ * Main Contact Page
+ * --------------------------- */
 
-const ContactPage = () => {
+export default function IndustrialContactPage() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         subject: '',
         message: '',
     });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(false);
-    const [isError, setIsError] = useState(false); 
-    const [formValidation, setFormValidation] = useState({});
-
-    const isFormValid = useMemo(() => {
-        const requiredKeys = ['name', 'email', 'subject', 'message'];
-        return requiredKeys.every(key => formValidation[key] === true);
-    }, [formValidation]);
-
-    const handleValidationChange = useCallback((id, valid) => {
-        setFormValidation(prev => ({ ...prev, [id]: valid }));
-    }, []);
+    const [status, setStatus] = useState('IDLE'); // IDLE, SUBMITTING, SUCCESS, ERROR
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -239,245 +85,206 @@ const ContactPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        if (!isFormValid) {
-            console.error('Form is invalid. Cannot submit.');
-            return;
-        }
-
-        setIsSubmitting(true);
-        setIsSuccess(false);
-        setIsError(false);
+        setStatus('SUBMITTING');
 
         const payload = {
             ...formData,
             access_key: WEB3FORMS_ACCESS_KEY,
-            subject: `Portfolio Inquiry: ${formData.subject}`, 
+            subject: `LEDGER_INQUIRY: ${formData.subject}`, 
         };
 
         try {
             const response = await fetch(WEB3FORMS_API_URL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify(payload)
             });
 
             if (response.ok) {
-                const result = await response.json();
-                
-                if (result.success) {
-                    setIsSuccess(true);
-                    
-                    setFormData({ name: '', email: '', subject: '', message: '' });
-                    setFormValidation({});
-
-                    setTimeout(() => setIsSuccess(false), 5000);
-                } else {
-                    console.error('Web3Forms API reported an internal error:', result.message);
-                    setIsError(true);
-                }
+                setStatus('SUCCESS');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+                setTimeout(() => setStatus('IDLE'), 6000);
             } else {
-                console.error(`HTTP Error during form submission: Status ${response.status} (${response.statusText}).`);
-                setIsError(true);
+                setStatus('ERROR');
             }
         } catch (error) {
-            console.error('Network or Fetch Error:', error);
-            setIsError(true);
-        } finally {
-            setIsSubmitting(false);
+            setStatus('ERROR');
         }
     };
 
-    const socialLinks = [
-        { icon: 'fa-linkedin-in', url: 'https://www.linkedin.com/in/victor-chinagoro-1a032423a/', label: 'LinkedIn' },
-        { icon: 'fa-x-twitter', url: 'https://x.com/buildwthvictor', label: 'Twitter/X' },
-        { icon: 'fa-github', url: 'https://github.com/digisalesmann', label: 'GitHub' },
-        { icon: 'fa-instagram', url: 'https://www.instagram.com/buildwthvictor/', label: 'Instagram' },
-    ];
-    
-    const contactInfo = [
-        { 
-            icon: 'fa-envelope', 
-            label: 'General Inquiries', 
-            value: 'buildwithvictorhq@gmail.com', 
-            href: 'mailto:buildwithvictorhq@gmail.com' 
-        },
-        { 
-            icon: 'fa-user-tie', 
-            label: 'Personal Consultation', 
-            value: 'chinagorovictor59@gmail.com', 
-            href: 'mailto:chinagorovictor59@gmail.com' 
-        },
-        { 
-            icon: 'fa-phone', 
-            label: '24/7 Priority Line', 
-            value: '+234 903 788 4753', 
-            href: 'tel:+2349037884753' 
-        },
-        { 
-            icon: 'fa-map-location-dot', 
-            label: 'Global Headquarters', 
-            value: 'Remote - Serving Clients Worldwide',
-            href: '#' 
-        },
-    ];
-
-    // Determine content for the form area
-    let formContent;
-
-    if (isSuccess) {
-        formContent = (
-            <div className="success-message flex flex-col items-center justify-center p-12 bg-green-900/30 rounded-xl text-center border-2 border-green-500 shadow-xl text-green-100">
-                <i className="fa-solid fa-check-circle text-6xl text-green-400 mb-4"></i>
-                <h3 className="text-3xl font-bold text-white mb-2">Success! Message Transmitted.</h3>
-                <p className="text-lg">Your inquiry has been encrypted and routed. I will connect with you within one business day.</p>
-            </div>
-        );
-    } else if (isError) {
-        formContent = (
-            <div className="success-message flex flex-col items-center justify-center p-12 bg-red-900/30 rounded-xl text-center border-2 border-red-500 shadow-xl text-red-100">
-                <i className="fa-solid fa-triangle-exclamation text-6xl text-red-400 mb-4"></i>
-                <h3 className="text-3xl font-bold text-white mb-2">Error! Submission Failed.</h3>
-                <p className="text-lg">An issue occurred while sending. Please check your console for details or try contacting me directly via email.</p>
-                <button 
-                    onClick={() => setIsError(false)} 
-                    className="mt-4 text-sm text-red-200 hover:text-white transition duration-200 underline"
-                >
-                    Try Form Again
-                </button>
-            </div>
-        );
-    } else {
-        formContent = (
-            <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <ContactInput 
-                        label="Full Name"
-                        id="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        placeholder="Your Full Name"
-                        onValidationChange={handleValidationChange}
-                    />
-                    <ContactInput 
-                        label="Work Email Address"
-                        id="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="your.email@company.com"
-                        onValidationChange={handleValidationChange}
-                    />
+    return (
+        <div className="min-h-screen bg-[#050505] text-slate-300 font-sans selection:bg-indigo-500/30 overflow-x-hidden">
+            
+            {/* --- 1. HUD HEADER --- */}
+            <header className="relative pt-32 pb-20 px-6 border-b border-white/5 overflow-hidden">
+                <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[size:100%_4px,3px_100%]" />
                 </div>
 
-                <ContactInput 
-                    label="Subject of Inquiry"
-                    id="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    placeholder="e.g., Enterprise Web Development or Partnership"
-                    onValidationChange={handleValidationChange}
-                />
+                <div className="container mx-auto relative z-10">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 border border-indigo-500/30 bg-indigo-500/5 mb-8">
+                        <Terminal size={12} className="text-indigo-500 animate-pulse" />
+                        <span className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-400">Comms_Protocol_v.2026</span>
+                    </div>
 
-                <ContactInput 
-                    label="Project Details / Message"
-                    id="message"
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    placeholder="Describe your needs, budget, and timeline..."
-                    onValidationChange={handleValidationChange}
-                />
+                    <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-8 leading-[0.85]">
+                        Initialize <br/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-white">The Link</span>
+                    </h1>
 
-                <button
-                    type="submit"
-                    // Disabled if submitting or the form is not yet fully valid
-                    className={`btn-primary w-full flex items-center justify-center space-x-3 text-xl disabled:opacity-50 disabled:cursor-not-allowed`}
-                    disabled={isSubmitting || !isFormValid}
-                >
-                    {isSubmitting && (
-                        <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                    )}
-                    <span>{isSubmitting ? 'Transmitting Securely...' : 'Send Message Now'}</span>
-                </button>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
-                    All communication is treated with strict confidentiality.
-                </p>
-            </form>
-        );
-    }
-
-
-    return (
-        // Added card-hover-lift class for premium feel
-        <div id="contactContainer" className="animate-fade-in max-w-6xl mx-auto my-12 card card-hover-lift transition-all duration-500 overflow-hidden">
-            
-            {/* Header Section: Large, engaging typography */}
-            <header className="p-8 md:p-12 bg-gray-900/10 dark:bg-gray-800/70 border-b border-[var(--color-brand)]/50">
-                <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-2">
-                    Start Your <span className="text-[var(--color-brand)]">Ascension</span>
-                </h1>
-                <p className="text-xl font-light text-gray-700 dark:text-gray-300">
-                    Tell me about your next big project. I am ready to deliver world-class innovation.
-                </p>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
+                        <MetadataBadge label="ENDPOINT" value="ENCRYPTED" />
+                        <MetadataBadge label="LATENCY" value="SUB-10MS" />
+                        <MetadataBadge label="PRIORITY" value="LEVEL_01" />
+                        <MetadataBadge label="STATUS" value="LISTENING" />
+                    </div>
+                </div>
             </header>
 
-            {/* Main Content Grid: Contact Details (1/3) and Form (2/3) */}
-            <div className="grid grid-cols-1 lg:grid-cols-3">
-                
-                {/* Left Column: Contact Information & Socials */}
-                <div className="lg:col-span-1 p-8 md:p-10 bg-gray-900 dark:bg-gray-900/90 border-b lg:border-r border-[var(--color-brand)]/40 space-y-10">
+            {/* --- 2. MAIN COMMS INTERFACE --- */}
+            <main className="container mx-auto px-4 md:px-6 py-20">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                     
-                    {/* Contact Details Block */}
-                    <div>
-                        <h2 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Direct Lines</h2>
-                        <div className="space-y-4">
-                            {contactInfo.map((item, index) => (
-                                <ContactDetails key={index} {...item} />
-                            ))}
-                        </div>
+                    {/* Left: System Details */}
+                    <div className="lg:col-span-4 space-y-12">
+                        <section>
+                            <h2 className="text-[10px] font-mono font-black text-indigo-500 uppercase tracking-[0.3em] mb-8">// DIRECT_CHANNELS</h2>
+                            <div className="grid gap-4">
+                                <ContactEntry icon={Mail} label="General_Relay" value="buildwithvictorhq@gmail.com" href="mailto:buildwithvictorhq@gmail.com" />
+                                <ContactEntry icon={Shield} label="Secure_Personal" value="chinagorovictor59@gmail.com" href="mailto:chinagorovictor59@gmail.com" />
+                                <ContactEntry icon={Phone} label="Emergency_Uplink" value="+234 903 788 4753" href="tel:+2349037884753" />
+                                <ContactEntry icon={MapPin} label="Global_HQ" value="REMOTE / CLOUD_SCALE" href="#" />
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 className="text-[10px] font-mono font-black text-indigo-500 uppercase tracking-[0.3em] mb-8">// SOCIAL_MESH</h2>
+                            <div className="flex flex-wrap gap-4">
+                                {[
+                                    { icon: Linkedin, url: 'https://www.linkedin.com/in/victor-chinagoro-1a032423a/' },
+                                    { icon: Twitter, url: 'https://x.com/buildwthvictor' },
+                                    { icon: Github, url: 'https://github.com/digisalesmann' },
+                                    { icon: Instagram, url: 'https://www.instagram.com/buildwthvictor/' }
+                                ].map((social, i) => (
+                                    <a key={i} href={social.url} target="_blank" rel="noreferrer" 
+                                       className="p-4 bg-[#0a0a0a] border border-white/5 text-gray-600 hover:text-indigo-500 hover:border-indigo-500/50 transition-all">
+                                        <social.icon size={20} />
+                                    </a>
+                                ))}
+                            </div>
+                        </section>
                     </div>
 
-                    {/* Social Media Block */}
-                    <div>
-                        <h3 className="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Digital Presence</h3>
-                        <div className="flex space-x-6 justify-center lg:justify-start">
-                            {socialLinks.map((link, index) => (
-                                <SocialLink key={index} {...link} />
-                            ))}
+                    {/* Right: Submission Terminal */}
+                    <div className="lg:col-span-8 relative">
+                        <div className="absolute -top-4 -left-4 w-20 h-20 border-t border-l border-indigo-500/20 pointer-events-none" />
+                        
+                        <div className="bg-[#0a0a0a] border border-white/10 p-8 md:p-12 shadow-2xl relative">
+                            <div className="flex items-center gap-4 mb-12">
+                                <Database size={20} className="text-indigo-500" />
+                                <h2 className="text-2xl font-black uppercase tracking-tighter text-white">Transmission_Form</h2>
+                            </div>
+
+                            <AnimatePresence mode="wait">
+                                {status === 'SUCCESS' ? (
+                                    <motion.div 
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        className="py-20 text-center border border-dashed border-green-500/30 bg-green-500/5"
+                                    >
+                                        <CheckCircle size={48} className="text-green-500 mx-auto mb-6" />
+                                        <h3 className="text-2xl font-black text-white uppercase mb-2">Sync Complete</h3>
+                                        <p className="font-mono text-[10px] text-green-500 uppercase tracking-widest">Inquiry encrypted and routed. Awaiting response cycle.</p>
+                                    </motion.div>
+                                ) : status === 'ERROR' ? (
+                                    <motion.div 
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        className="py-20 text-center border border-dashed border-red-500/30 bg-red-500/5"
+                                    >
+                                        <AlertTriangle size={48} className="text-red-500 mx-auto mb-6" />
+                                        <h3 className="text-2xl font-black text-white uppercase mb-2">Uplink Failed</h3>
+                                        <button onClick={() => setStatus('IDLE')} className="text-[10px] font-mono text-red-400 underline uppercase tracking-widest">Restart_Protocol</button>
+                                    </motion.div>
+                                ) : (
+                                    <form onSubmit={handleSubmit} className="space-y-8">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            <FormInput 
+                                                label="Your Name" 
+                                                id="name" 
+                                                value={formData.name} 
+                                                onChange={handleChange} 
+                                                required 
+                                                placeholder="Enter your name" 
+                                            />
+                                            <FormInput 
+                                                label="Your Email" 
+                                                id="email" 
+                                                type="email" 
+                                                value={formData.email} 
+                                                onChange={handleChange} 
+                                                required 
+                                                placeholder="Enter your email address" 
+                                            />
+                                        </div>
+
+                                        <FormInput 
+                                            label="Subject" 
+                                            id="subject" 
+                                            value={formData.subject} 
+                                            onChange={handleChange} 
+                                            required 
+                                            placeholder="What is your message about?" 
+                                        />
+
+                                        <FormInput 
+                                            label="Message" 
+                                            id="message" 
+                                            rows={6} 
+                                            value={formData.message} 
+                                            onChange={handleChange} 
+                                            required 
+                                            placeholder="Type your message here" 
+                                        />
+
+                                        <button
+                                            type="submit"
+                                            disabled={status === 'SUBMITTING'}
+                                            className="w-full bg-white text-black py-6 font-black uppercase tracking-[0.4em] text-xs hover:bg-indigo-600 hover:text-white transition-all flex items-center justify-center gap-4 disabled:opacity-50"
+                                        >
+                                            {status === 'SUBMITTING' ? (
+                                                <Loader2 className="animate-spin" size={16} />
+                                            ) : (
+                                                <Send size={16} />
+                                            )}
+                                            {status === 'SUBMITTING' ? 'TRANSMITTING...' : 'Push_To_Mainframe'}
+                                        </button>
+                                        
+                                        <div className="flex items-center justify-center gap-3 opacity-30 group cursor-default">
+                                            <Shield size={12} />
+                                            <span className="text-[8px] font-mono uppercase tracking-[0.3em]">End-To-End_Encryption_Active</span>
+                                        </div>
+                                    </form>
+                                )}
+                            </AnimatePresence>
                         </div>
                     </div>
                 </div>
+            </main>
 
-                {/* Right Column: Contact Form */}
-                <div className="lg:col-span-2 p-8 md:p-12">
-                    <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Secure Inquiry Form</h2>
-                    {formContent}
+            {/* --- 3. INDUSTRIAL FOOTER --- */}
+            <footer className="py-32 bg-black border-t border-indigo-500/20 text-center">
+                <div className="container mx-auto px-6 max-w-xl">
+                    <h2 className="text-4xl font-black uppercase tracking-tighter text-white mb-4">Initialize_Build</h2>
+                    <p className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-12 leading-relaxed italic">
+                        Deploying premium AI solutions, scalable protocols, and industrial-grade coordination systems.
+                    </p>
+                    <div className="inline-flex items-center gap-4 text-[10px] font-mono text-indigo-500/50 uppercase tracking-[0.4em]">
+                        <Activity size={12} /> System_Operational // v.2026.01
+                    </div>
                 </div>
-            </div>
+            </footer>
         </div>
     );
-};
-
-// Main App component to include global styles
-const App = () => {
-    // We apply the 'dark' class here for the default premium dark aesthetic
-    return (
-        <div className="min-h-screen p-4 sm:p-8 dark app-container-bg font-inter">
-            <GlobalStyles />
-            <ContactPage />
-        </div>
-    );
-};
-
-export default App;
+}

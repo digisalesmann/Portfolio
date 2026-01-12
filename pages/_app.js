@@ -1,7 +1,7 @@
 // pages/_app.js
-import "@/styles/globals.css";
-import Layout from "@/components/Layout";
-import ProgressBar from "@/components/ProgressBar";
+import "../styles/globals.css";
+import Layout from "../components/Layout";
+import ProgressBar from "../components/ProgressBar";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "next-themes";

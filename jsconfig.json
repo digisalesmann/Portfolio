@@ -3,6 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["*"]
-    }
-  }
+    },
+    "jsx": "react-jsx",
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["components/**/*", "pages/**/*", "lib/**/*", "data/**/*"]
 }
