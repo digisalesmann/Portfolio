@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getAllPostsMeta, getPostBySlug } from "@/lib/md";
+import { getAllPostsMeta, getPostBySlug } from "../../lib/md";
 
 export default function Post({ post }) {
   return (
