@@ -1,3 +1,4 @@
+
 const SITE_URL = "https://buildwthvictor.com";
 
 export async function getServerSideProps({ res }) {

@@ -56,24 +56,23 @@ export default function IndustrialAboutPage() {
                         <img 
                             src="/images/kenny.jpg" 
                             alt="Victor Identity" 
-                            className="w-full h-full object-cover grayscale opacity-80 filter contrast-125 shadow-2xl"
+                            className="w-full h-full object-cover opacity-100 filter contrast-125 shadow-2xl"
                         />
                         <div className="absolute bottom-4 left-4 bg-indigo-600 px-2 py-1 text-[8px] font-mono font-black text-white uppercase tracking-widest">
-                            ACCESS_AUTHORIZED
+                            Verified
                         </div>
                     </div>
 
                     <div className="flex-1 text-center lg:text-left">
                         <div className="inline-flex items-center gap-2 px-3 py-1 border border-indigo-500/30 bg-indigo-500/5 mb-8">
                             <Terminal size={12} className="text-indigo-500" />
-                            <span className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-400">Personnel_Profile_v.1</span>
+                            <span className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-400">About Me</span>
                         </div>
                         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-6 leading-none">
                             Chinagoro <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-white">Victor E.</span>
                         </h1>
-                        <p className="max-w-xl font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-gray-500 leading-relaxed mx-auto lg:mx-0">
-                            Senior Lead Architect specializing in high-frequency trading apps, 
-                            scalable cloud ecosystems, and human-centric coordination layers.
+                        <p className="max-w-xl font-mono text-[10px] md:text-xs tracking-[0.3em] text-gray-500 leading-relaxed mx-auto lg:mx-0">
+                            Software engineer passionate about building user-friendly apps, scalable systems, and creative digital solutions.
                         </p>
                     </div>
                 </div>
@@ -82,10 +81,10 @@ export default function IndustrialAboutPage() {
             {/* --- 2. SYSTEM STATUS (STATS) --- */}
             <section className="bg-black border-b border-white/5 py-12">
                 <div className="container mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    <MetadataBadge label="DEPLOYMENTS" value="10+ FLAGSHIP" />
-                    <MetadataBadge label="UPTIME_RATIO" value="99.99% COMMIT" />
-                    <MetadataBadge label="THROUGHPUT" value="500K+ MAU" />
-                    <MetadataBadge label="AUTH_LEVEL" value="SENIOR_LEAD" />
+                    <MetadataBadge label="Projects" value="10+" />
+                    <MetadataBadge label="Uptime" value="99.99%" />
+                    <MetadataBadge label="Users" value="500K+" />
+                    <MetadataBadge label="Role" value="Lead" />
                 </div>
             </section>
 
@@ -93,34 +92,34 @@ export default function IndustrialAboutPage() {
             <main className="container mx-auto px-6 py-32 space-y-32">
                 
                 <section>
-                    <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-12 text-center">// CORE_PROTOCOLS</h2>
+                    <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-12 text-center">Core Values</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
                         <TechnicalCard 
                             icon={Layers} 
-                            title="Full Ownership" 
-                            description="Managing the entire lifecycle from conceptual architecture to live system monitoring."
+                            title="Ownership" 
+                            description="Taking responsibility from idea to launch and beyond."
                         />
                         <TechnicalCard 
                             icon={Cpu} 
-                            title="Hardware Agnostic" 
-                            description="Building maintainable, type-safe solutions that minimize technical debt and maximize scale."
+                            title="Adaptable" 
+                            description="Building solutions that work anywhere and grow with your needs."
                         />
                         <TechnicalCard 
                             icon={Activity} 
-                            title="Data Driven" 
-                            description="Leveraging real-time analytics to ensure every development decision yields measurable business value."
+                            title="Data Focused" 
+                            description="Using data to make smart decisions and improve results."
                         />
                     </div>
                 </section>
 
                 {/* --- 4. TECHNICAL MATRIX (STACK) --- */}
                 <section>
-                    <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-12 text-center">// TECHNICAL_MATRIX</h2>
+                    <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-12 text-center">Tech Stack</h2>
                     <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-4">
                         {STACK_DATA.map((tech) => (
                             <div key={tech.name} className="group flex flex-col items-center justify-center p-6 border border-white/5 bg-[#0a0a0a] hover:bg-indigo-600 transition-all duration-300">
-                                <img src={tech.svgPath} alt={tech.name} className="w-8 h-8 object-contain grayscale group-hover:grayscale-0 group-hover:brightness-200 transition-all" />
-                                <span className="text-[8px] font-mono text-gray-600 group-hover:text-white mt-3 uppercase font-bold">{tech.name}</span>
+                                <img src={tech.svgPath} alt={tech.name} className="w-8 h-8 object-contain transition-all" />
+                                <span className="text-[8px] font-mono text-gray-600 mt-3 uppercase font-bold">{tech.name}</span>
                             </div>
                         ))}
                     </div>
@@ -128,14 +127,14 @@ export default function IndustrialAboutPage() {
 
                 {/* --- 5. TRAJECTORY (TIMELINE) --- */}
                 <section className="max-w-4xl mx-auto">
-                    <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-16">// TRAJECTORY_LOG</h2>
+                    <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-16">Timeline</h2>
                     <div className="space-y-1">
                         {TIMELINE_DATA.map((log, i) => (
                             <div key={i} className="flex flex-col md:flex-row gap-8 p-8 border border-white/5 bg-[#0a0a0a] hover:bg-white/[0.02] transition-all">
-                                <span className="text-xs font-mono text-gray-700">{log.year}_</span>
+                                <span className="text-xs font-mono text-gray-700">{log.year}</span>
                                 <div>
                                     <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-400 mb-2">{log.title}</h4>
-                                    <p className="text-[10px] text-gray-500 font-mono uppercase leading-relaxed">{log.description}</p>
+                                    <p className="text-[10px] text-gray-500 font-mono leading-relaxed">{log.description}</p>
                                 </div>
                             </div>
                         ))}
@@ -146,12 +145,12 @@ export default function IndustrialAboutPage() {
             {/* --- 6. CTA / LINK ESTABLISHMENT --- */}
             <footer className="py-32 bg-black border-t border-indigo-500/20 text-center">
                 <div className="container mx-auto px-6 max-w-xl">
-                    <h2 className="text-4xl font-black uppercase tracking-tighter text-white mb-4">Initialize_Project</h2>
-                    <p className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-12 leading-relaxed italic">
-                        Handshake protocol ready. Awaiting mission parameters for high-performance builds.
+                    <h2 className="text-4xl font-black uppercase tracking-tighter text-white mb-4">Let's Work Together</h2>
+                    <p className="text-[10px] font-mono text-gray-600 tracking-widest mb-12 leading-relaxed italic">
+                        Ready to start your next project? Reach out and let's build something great.
                     </p>
                     <a href="/contact" className="inline-flex items-center gap-4 bg-white text-black px-12 py-5 font-black uppercase tracking-[0.4em] text-xs hover:bg-indigo-500 hover:text-white transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)]">
-                        Establish_Link <ArrowRight size={16} />
+                        Contact <ArrowRight size={16} />
                     </a>
                 </div>
             </footer>

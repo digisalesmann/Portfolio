@@ -29,29 +29,29 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 bg-indigo-500 animate-pulse" />
               <span className="text-sm font-black uppercase tracking-tighter text-white">
-                Victor.Sys <span className="text-gray-600 font-mono font-normal"></span>
+                Victor.E <span className="text-gray-600 font-mono font-normal"></span>
               </span>
             </div>
-            <p className="text-[10px] font-mono text-gray-500 uppercase leading-relaxed tracking-widest">
-              Architecting resilient digital protocols and neural infrastructures for the 2026 tech landscape.
+            <p className="text-[10px] font-mono text-gray-500 leading-relaxed tracking-widest">
+              Building modern web apps and digital solutions for the future.
             </p>
           </div>
 
           {/* --- System Directory --- */}
           <div className="md:col-span-4 grid grid-cols-2 gap-8">
             <div className="space-y-4">
-              <h4 className="text-[9px] font-mono text-indigo-500 uppercase tracking-[0.3em]">Directory</h4>
+              <h4 className="text-[9px] font-mono text-indigo-500 uppercase tracking-[0.3em]">Menu</h4>
               <ul className="space-y-2 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                <li><Link href="/projects" className="hover:text-white transition-colors">Deployments</Link></li>
-                <li><Link href="/blog" className="hover:text-white transition-colors">Archives</Link></li>
-                <li><Link href="/about" className="hover:text-white transition-colors">Kernel_Bio</Link></li>
+                <li><Link href="/projects" className="hover:text-white transition-colors">Projects</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
               </ul>
             </div>
             <div className="space-y-4">
-              <h4 className="text-[9px] font-mono text-indigo-500 uppercase tracking-[0.3em]">Social_Links</h4>
+              <h4 className="text-[9px] font-mono text-indigo-500 uppercase tracking-[0.3em]">Social</h4>
               <ul className="space-y-2 text-[10px] font-bold uppercase tracking-widest text-gray-400">
                 <li><Link href="https://github.com/digisalesmann" target="_blank" className="hover:text-white transition-colors">Github</Link></li>
-                <li><Link href="https://x.com/buildwthvictor" target="_blank" className="hover:text-white transition-colors">X_Terminal</Link></li>
+                <li><Link href="https://x.com/buildwthvictor" target="_blank" className="hover:text-white transition-colors">Twitter</Link></li>
                 <li><Link href="https://linkedin.com/in/victor-chinagoro-1a032423a" target="_blank" className="hover:text-white transition-colors">LinkedIn</Link></li>
               </ul>
             </div>
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* --- Contact Output --- */}
           <div className="md:col-span-4 space-y-4 text-right md:text-left">
-            <h4 className="text-[9px] font-mono text-indigo-500 uppercase tracking-[0.3em]">Direct_Comms</h4>
+            <h4 className="text-[9px] font-mono text-indigo-500 uppercase tracking-[0.3em]">Contact</h4>
             <Link 
               href="mailto:buildwithvictorhq@gmail.com"
               className="group inline-flex items-center gap-3 border border-white/10 px-4 py-2 bg-white/5 hover:bg-indigo-500 transition-all"
@@ -75,14 +75,14 @@ export default function Footer() {
         {/* --- Metadata Bottom Bar --- */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-6 text-[9px] font-mono text-gray-600 uppercase tracking-tighter">
-            <span>LOC: NIGERIA_BASE</span>
-            <span>OS: NEXT_RE_V15</span>
+            <span>Nigeria</span>
+            <span>Next.js</span>
             {/* Hydration-safe time rendering */}
             <TimeDisplay />
           </div>
           
           <p className="text-[9px] font-mono text-gray-600 uppercase tracking-widest">
-            © {currentYear} Victor.Sys // Built for high-performance scale
+            © {currentYear} Victor. Built for everyone
           </p>
         </div>
       </div>

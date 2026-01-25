@@ -31,7 +31,7 @@ const FormInput = ({ label, id, type = 'text', value, onChange, required = false
     return (
         <div className="space-y-2 group">
             <label htmlFor={id} className="text-[10px] font-mono font-black text-gray-500 uppercase tracking-widest group-focus-within:text-indigo-500 transition-colors">
-                // {label} {required && "[REQUIRED]"}
+                {label} {required && "(required)"}
             </label>
             <div className="relative">
                 <InputTag
@@ -125,19 +125,19 @@ export default function IndustrialContactPage() {
                 <div className="container mx-auto relative z-10">
                     <div className="inline-flex items-center gap-2 px-3 py-1 border border-indigo-500/30 bg-indigo-500/5 mb-8">
                         <Terminal size={12} className="text-indigo-500 animate-pulse" />
-                        <span className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-400">Comms_Protocol_v.2026</span>
+                        <span className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-400">Contact</span>
                     </div>
 
                     <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-8 leading-[0.85]">
-                        Initialize <br/>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-white">The Link</span>
+                        Get in Touch <br/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-white">Let's Connect</span>
                     </h1>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
-                        <MetadataBadge label="ENDPOINT" value="ENCRYPTED" />
-                        <MetadataBadge label="LATENCY" value="SUB-10MS" />
-                        <MetadataBadge label="PRIORITY" value="LEVEL_01" />
-                        <MetadataBadge label="STATUS" value="LISTENING" />
+                        <MetadataBadge label="Email" value="Available" />
+                        <MetadataBadge label="Response" value="Fast" />
+                        <MetadataBadge label="Priority" value="High" />
+                        <MetadataBadge label="Status" value="Online" />
                     </div>
                 </div>
             </header>
@@ -149,17 +149,17 @@ export default function IndustrialContactPage() {
                     {/* Left: System Details */}
                     <div className="lg:col-span-4 space-y-12">
                         <section>
-                            <h2 className="text-[10px] font-mono font-black text-indigo-500 uppercase tracking-[0.3em] mb-8">// DIRECT_CHANNELS</h2>
+                            <h2 className="text-[10px] font-mono font-black text-indigo-500 uppercase tracking-[0.3em] mb-8">Contact Info</h2>
                             <div className="grid gap-4">
-                                <ContactEntry icon={Mail} label="General_Relay" value="buildwithvictorhq@gmail.com" href="mailto:buildwithvictorhq@gmail.com" />
-                                <ContactEntry icon={Shield} label="Secure_Personal" value="chinagorovictor59@gmail.com" href="mailto:chinagorovictor59@gmail.com" />
-                                <ContactEntry icon={Phone} label="Emergency_Uplink" value="+234 903 788 4753" href="tel:+2349037884753" />
-                                <ContactEntry icon={MapPin} label="Global_HQ" value="REMOTE / CLOUD_SCALE" href="#" />
+                                <ContactEntry icon={Mail} label="Email" value="buildwithvictorhq@gmail.com" href="mailto:buildwithvictorhq@gmail.com" />
+                                <ContactEntry icon={Shield} label="Personal" value="chinagorovictor59@gmail.com" href="mailto:chinagorovictor59@gmail.com" />
+                                <ContactEntry icon={Phone} label="Phone" value="+234 903 788 4753" href="tel:+2349037884753" />
+                                <ContactEntry icon={MapPin} label="Location" value="Remote" href="#" />
                             </div>
                         </section>
 
                         <section>
-                            <h2 className="text-[10px] font-mono font-black text-indigo-500 uppercase tracking-[0.3em] mb-8">// SOCIAL_MESH</h2>
+                            <h2 className="text-[10px] font-mono font-black text-indigo-500 uppercase tracking-[0.3em] mb-8">Social</h2>
                             <div className="flex flex-wrap gap-4">
                                 {[
                                     { icon: Linkedin, url: 'https://www.linkedin.com/in/victor-chinagoro-1a032423a/' },
@@ -183,7 +183,7 @@ export default function IndustrialContactPage() {
                         <div className="bg-[#0a0a0a] border border-white/10 p-8 md:p-12 shadow-2xl relative">
                             <div className="flex items-center gap-4 mb-12">
                                 <Database size={20} className="text-indigo-500" />
-                                <h2 className="text-2xl font-black uppercase tracking-tighter text-white">Transmission_Form</h2>
+                                <h2 className="text-2xl font-black uppercase tracking-tighter text-white">Contact Form</h2>
                             </div>
 
                             <AnimatePresence mode="wait">
@@ -194,8 +194,8 @@ export default function IndustrialContactPage() {
                                         className="py-20 text-center border border-dashed border-green-500/30 bg-green-500/5"
                                     >
                                         <CheckCircle size={48} className="text-green-500 mx-auto mb-6" />
-                                        <h3 className="text-2xl font-black text-white uppercase mb-2">Sync Complete</h3>
-                                        <p className="font-mono text-[10px] text-green-500 uppercase tracking-widest">Inquiry encrypted and routed. Awaiting response cycle.</p>
+                                        <h3 className="text-2xl font-black text-white uppercase mb-2">Message Sent</h3>
+                                        <p className="font-mono text-[10px] text-green-500 tracking-widest">Thank you for reaching out! I'll get back to you soon.</p>
                                     </motion.div>
                                 ) : status === 'ERROR' ? (
                                     <motion.div 
@@ -204,8 +204,8 @@ export default function IndustrialContactPage() {
                                         className="py-20 text-center border border-dashed border-red-500/30 bg-red-500/5"
                                     >
                                         <AlertTriangle size={48} className="text-red-500 mx-auto mb-6" />
-                                        <h3 className="text-2xl font-black text-white uppercase mb-2">Uplink Failed</h3>
-                                        <button onClick={() => setStatus('IDLE')} className="text-[10px] font-mono text-red-400 underline uppercase tracking-widest">Restart_Protocol</button>
+                                        <h3 className="text-2xl font-black text-white uppercase mb-2">Message Failed</h3>
+                                        <button onClick={() => setStatus('IDLE')} className="text-[10px] font-mono text-red-400 underline tracking-widest">Try Again</button>
                                     </motion.div>
                                 ) : (
                                     <form onSubmit={handleSubmit} className="space-y-8">
@@ -258,12 +258,12 @@ export default function IndustrialContactPage() {
                                             ) : (
                                                 <Send size={16} />
                                             )}
-                                            {status === 'SUBMITTING' ? 'TRANSMITTING...' : 'Push_To_Mainframe'}
+                                            {status === 'SUBMITTING' ? 'Sending...' : 'Send Message'}
                                         </button>
                                         
                                         <div className="flex items-center justify-center gap-3 opacity-30 group cursor-default">
                                             <Shield size={12} />
-                                            <span className="text-[8px] font-mono uppercase tracking-[0.3em]">End-To-End_Encryption_Active</span>
+                                            <span className="text-[8px] font-mono tracking-[0.3em]">Your message is private</span>
                                         </div>
                                     </form>
                                 )}
@@ -276,12 +276,12 @@ export default function IndustrialContactPage() {
             {/* --- 3. INDUSTRIAL FOOTER --- */}
             <footer className="py-32 bg-black border-t border-indigo-500/20 text-center">
                 <div className="container mx-auto px-6 max-w-xl">
-                    <h2 className="text-4xl font-black uppercase tracking-tighter text-white mb-4">Initialize_Build</h2>
-                    <p className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-12 leading-relaxed italic">
-                        Deploying premium AI solutions, scalable protocols, and industrial-grade coordination systems.
+                    <h2 className="text-4xl font-black uppercase tracking-tighter text-white mb-4">Thank You!</h2>
+                    <p className="text-[10px] font-mono text-gray-600 tracking-widest mb-12 leading-relaxed italic">
+                        I build modern web apps and digital solutions. Let's connect!
                     </p>
-                    <div className="inline-flex items-center gap-4 text-[10px] font-mono text-indigo-500/50 uppercase tracking-[0.4em]">
-                        <Activity size={12} /> System_Operational // v.2026.01
+                    <div className="inline-flex items-center gap-4 text-[10px] font-mono text-indigo-500/50 tracking-[0.4em]">
+                        <Activity size={12} /> Always Online
                     </div>
                 </div>
             </footer>

@@ -13,13 +13,13 @@ const LogoWithAvatar = () => (
         src="/images/kenny.jpg"
         alt="Victor"
         fill
-        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+        className="object-cover transition-all duration-700"
       />
       <div className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-indigo-500" />
     </div>
     <div className="flex flex-col leading-none">
-      <span className="text-xs font-black tracking-tighter text-white uppercase">Victor.Sys</span>
-      <span className="text-[7px] font-mono text-gray-500 uppercase tracking-[0.2em] mt-1">Kernel_v2.6</span>
+      <span className="text-xs font-black tracking-tighter text-white uppercase">Victor.E</span>
+      <span className="text-[7px] font-mono text-gray-500 uppercase tracking-[0.2em] mt-1">Welcome</span>
     </div>
   </Link>
 );
@@ -52,7 +52,6 @@ export default function Navbar() {
       <div className="container h-full px-6 mx-auto flex items-center justify-between">
         <LogoWithAvatar />
 
-        {/* --- DESKTOP NAVIGATION (Tech Savvy) --- */}
         <nav className="hidden md:flex items-center gap-1">
           <NavLink href="/projects" num="01" title="Projects" />
           <NavLink href="/blog" num="02" title="Articles" />
@@ -100,18 +99,18 @@ export default function Navbar() {
               </div>
 
               <nav className="flex flex-col gap-6">
-                <MobileLink href="/projects" num="01">Deployments</MobileLink>
+                <MobileLink href="/projects" num="01">Projects</MobileLink>
                 <MobileLink href="/blog" num="02">Articles</MobileLink>
-                <MobileLink href="/about" num="03">System_Bio</MobileLink>
-                <MobileLink href="/contact" num="04">Establish_Link</MobileLink>
+                <MobileLink href="/about" num="03">About</MobileLink>
+                <MobileLink href="/contact" num="04">Contact</MobileLink>
               </nav>
 
               <div className="mt-auto pt-10 border-t border-white/5">
-                <p className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-4">Core_Connect</p>
+                <p className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-4">Connect</p>
                 <div className="flex gap-6">
-                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">GH</a>
-                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">LN</a>
-                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">TW</a>
+                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">GitHub</a>
+                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">LinkedIn</a>
+                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">Twitter</a>
                 </div>
               </div>
             </motion.aside>

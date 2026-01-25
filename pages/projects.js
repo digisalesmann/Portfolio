@@ -116,14 +116,14 @@ export default function UpdatedProjectsPage() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-indigo-500/30 bg-indigo-500/5 mb-8">
             <Zap size={12} className="text-indigo-500 fill-indigo-500" />
-            <span className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-400">Project_Ledger_2026</span>
+            <span className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-400">Projects 2026</span>
           </div>
           <h1 className="text-5xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-white mb-6 leading-[0.85]">
-            Engineering<br/> 
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/10 text-4xl md:text-7xl lg:text-8xl block mt-4">Simplicity</span>
+            My Work<br/> 
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/10 text-4xl md:text-7xl lg:text-8xl block mt-4">Simple Solutions</span>
           </h1>
           <p className="max-w-xl mx-auto font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-gray-500 leading-relaxed">
-            I build <span className="text-indigo-400">high-performance</span> systems for finance, community coordination, and everyday utility.
+            I build <span className="text-indigo-400">useful</span> tools for finance, communities, and daily life.
           </p>
         </motion.div>
       </header>
@@ -158,14 +158,14 @@ export default function UpdatedProjectsPage() {
                 className="group relative bg-[#0a0a0a] flex flex-col h-full"
               >
                 <div className="relative aspect-video overflow-hidden border-b border-white/5 bg-zinc-900">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-20 grayscale group-hover:opacity-60 transition-all duration-700" />
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-100 transition-all duration-700" />
                   <div className="absolute top-4 left-4">
                     <TechTag>{project.tag}</TechTag>
                   </div>
                 </div>
 
                 <div className="p-8 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-black uppercase tracking-tighter text-white group-hover:text-indigo-400 transition-colors mb-4">
+                  <h3 className="text-2xl font-black uppercase tracking-tighter text-white transition-colors mb-4">
                     {project.title}
                   </h3>
                   <p className="text-xs text-gray-500 font-medium leading-relaxed uppercase tracking-wide mb-8">
@@ -174,10 +174,10 @@ export default function UpdatedProjectsPage() {
 
                   <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
                     <Link href={project.href} target="_blank" className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase text-indigo-400 hover:text-white transition-colors">
-                      <ExternalLink size={12} /> Launch_System
+                      <ExternalLink size={12} /> Visit Site
                     </Link>
                     <button onClick={triggerAccessDenied} className="text-[10px] font-mono font-bold uppercase text-gray-600 hover:text-white">
-                      Repo_Auth
+                      Request Access
                     </button>
                   </div>
                 </div>
@@ -190,13 +190,13 @@ export default function UpdatedProjectsPage() {
       {/* --- HOW I WORK --- */}
       <section className="py-24 border-t border-white/5 bg-[#080808]">
         <div className="container mx-auto px-6 max-w-4xl text-center">
-           <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-12">// PROJECT_PIPELINE</h2>
+           <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-12">How I Work</h2>
            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {processSteps.map((step, i) => (
                 <div key={i} className="space-y-4">
-                  <div className="text-2xl font-black text-white/10 italic">0{i+1}</div>
+                  <div className="text-2xl font-black text-white/10 italic">{i+1}</div>
                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-indigo-400">{step.title}</h4>
-                  <p className="text-[10px] text-gray-600 font-mono uppercase leading-relaxed">{step.text}</p>
+                  <p className="text-[10px] text-gray-600 font-mono leading-relaxed">{step.text}</p>
                 </div>
               ))}
            </div>
@@ -207,7 +207,7 @@ export default function UpdatedProjectsPage() {
       <footer className="py-32 bg-[#050505] border-t border-indigo-500/20">
         <div className="container mx-auto px-6 max-w-2xl text-center">
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white mb-4">Contact Me</h2>
-          <p className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-12 italic">Let's connect! Fill out the form below and I'll get back to you soon.</p>
+          <p className="text-[10px] font-mono text-gray-600 tracking-widest mb-12 italic">Let's connect! Fill out the form below and I'll get back to you soon.</p>
           <div className="space-y-3">
             {footerStatus === 'SUCCESS' ? (
               <div className="py-8 border border-green-500/30 bg-green-500/5 text-green-400 font-mono text-xs rounded">
@@ -267,7 +267,7 @@ export default function UpdatedProjectsPage() {
           <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }}
             className="fixed bottom-8 right-8 z-[100] p-4 bg-black border-l-4 border-red-500 text-red-500 font-mono text-[10px] flex items-center gap-4 shadow-2xl">
             <Terminal size={16} />
-            <span>[DENIED]: Secure repository. Direct request required.</span>
+            <span>Access denied. Please request access directly.</span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -310,21 +310,29 @@ const sampleProjects = [
       category: "Apps",
     },
     {
-        title: "MonadGuard",
-        description: "Security layers designed to protect online ecosystems from automated bot activity.",
-        tag: "Security",
-        href: "https://monadguard-cv2w.vercel.app/",
-        image: "/images/gg.png",
-        category: "Community",
-      },
-      {
-        title: "Ace Experience",
-        description: "A culinary tech platform blending tradition with innovation for a seamless dining experience.",
-        tag: "Culinary Tech",
-        href: "https://ace-xperience.vercel.app/",
-        image: "/images/ace.png",
-        category: "Apps",
-      },
+      title: "MonadGuard",
+      description: "Security layers designed to protect online ecosystems from automated bot activity.",
+      tag: "Security",
+      href: "https://monadguard-cv2w.vercel.app/",
+      image: "/images/gg.png",
+      category: "Community",
+    },
+    {
+      title: "Ace Experience",
+      description: "A culinary tech platform blending tradition with innovation for a seamless dining experience.",
+      tag: "Culinary Tech",
+      href: "https://ace-xperience.vercel.app/",
+      image: "/images/ace.png",
+      category: "Apps",
+    },
+    {
+      title: "Indstr",
+      description: "A DeFi and NFT platform for the next generation of digital assets.",
+      tag: "DeFi & NFT",
+      href: "https://industrial-platform-zeta.vercel.app/",
+      image: "/images/indstr.png",
+      category: "Finance",
+    },
 ];
 
 const categories = [
