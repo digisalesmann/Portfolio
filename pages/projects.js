@@ -277,6 +277,7 @@ export default function UpdatedProjectsPage() {
 
 /* --- Content Data (Updated) --- */
 const sampleProjects = [
+    /*
     {
       title: "BitVest App",
       description: "A mobile-first investment platform built for speed and security, putting powerful financial tools in your pocket.",
@@ -293,12 +294,13 @@ const sampleProjects = [
       image: "/images/bitvestt.png",
       category: "Finance",
     },
+    */
     {
       title: "Actora Labs",
       description: "A coordination hub for Web3 communities, turning anonymous users into a verified network of builders.",
       tag: "Infrastructure",
       href: "https://actoralabs.xyz",
-      image: "/images/actora.png",
+      image: "/images/actoraa.png",
       category: "Community",
     },
     {
