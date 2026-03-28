@@ -42,34 +42,55 @@ export default function IndustrialAboutPage() {
             
             {/* --- 1. HERO / SYSTEM IDENTITY --- */}
             <header className="relative pt-32 pb-20 px-6 border-b border-white/5">
-                {/* HUD Background elements */}
+                {/* Grid background */}
                 <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]" />
                 </div>
 
                 <div className="container mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
-                    {/* Authorized Image */}
-                    <div className="relative w-64 h-64 md:w-80 md:h-80 shrink-0">
-                        <div className="absolute -inset-4 border border-indigo-500/20 animate-pulse" />
-                        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-indigo-500" />
-                        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-indigo-500" />
-                        <img 
-                            src="/images/kenny.jpg" 
-                            alt="Victor Identity" 
-                            className="w-full h-full object-cover opacity-100 filter contrast-125 shadow-2xl"
-                        />
-                        <div className="absolute bottom-4 left-4 bg-indigo-600 px-2 py-1 text-[8px] font-mono font-black text-white uppercase tracking-widest">
-                            Verified
+                    
+                    {/* ── Profile Image — clean, no filters ── */}
+                    <div className="relative shrink-0">
+                        {/* Outer glow ring */}
+                        <div className="absolute -inset-[1px] rounded-sm bg-gradient-to-br from-indigo-500/40 via-transparent to-indigo-500/10" />
+                        
+                        {/* Corner brackets */}
+                        <div className="absolute -top-3 -left-3 w-5 h-5 border-t-2 border-l-2 border-indigo-500 z-20" />
+                        <div className="absolute -top-3 -right-3 w-5 h-5 border-t-2 border-r-2 border-indigo-500 z-20" />
+                        <div className="absolute -bottom-3 -left-3 w-5 h-5 border-b-2 border-l-2 border-indigo-500 z-20" />
+                        <div className="absolute -bottom-3 -right-3 w-5 h-5 border-b-2 border-r-2 border-indigo-500 z-20" />
+
+                        {/* Image — no filters, no overlays, crisp rendering */}
+                        <div className="w-64 h-72 md:w-80 md:h-96 overflow-hidden relative">
+                            <img 
+                                src="/images/kenny.jpg" 
+                                alt="Victor Chinagoro E."
+                                className="w-full h-full object-cover object-top"
+                                style={{ imageRendering: 'auto' }}
+                            />
+                        </div>
+
+                        {/* Verified badge — sits below image, not over it */}
+                        <div className="absolute bottom-0 left-0 right-0 flex justify-between items-center px-2 py-1.5 bg-black/80 backdrop-blur-sm border-t border-indigo-500/20">
+                            <div className="flex items-center gap-1.5">
+                                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                                <span className="text-[8px] font-mono font-bold text-green-400 uppercase tracking-widest">Verified</span>
+                            </div>
+                            <span className="text-[7px] font-mono text-gray-600 uppercase tracking-widest">ID:VCE-001</span>
                         </div>
                     </div>
 
+                    {/* Text content */}
                     <div className="flex-1 text-center lg:text-left">
                         <div className="inline-flex items-center gap-2 px-3 py-1 border border-indigo-500/30 bg-indigo-500/5 mb-8">
                             <Terminal size={12} className="text-indigo-500" />
                             <span className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-400">About Me</span>
                         </div>
                         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-6 leading-none">
-                            Chinagoro <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-white">Victor E.</span>
+                            Chinagoro <br/>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-white">
+                                Victor E.
+                            </span>
                         </h1>
                         <p className="max-w-xl font-mono text-[10px] md:text-xs tracking-[0.3em] text-gray-500 leading-relaxed mx-auto lg:mx-0">
                             Software engineer passionate about building user-friendly apps, scalable systems, and creative digital solutions.
@@ -131,7 +152,7 @@ export default function IndustrialAboutPage() {
                     <div className="space-y-1">
                         {TIMELINE_DATA.map((log, i) => (
                             <div key={i} className="flex flex-col md:flex-row gap-8 p-8 border border-white/5 bg-[#0a0a0a] hover:bg-white/[0.02] transition-all">
-                                <span className="text-xs font-mono text-gray-700">{log.year}</span>
+                                <span className="text-xs font-mono text-gray-700 shrink-0">{log.year}</span>
                                 <div>
                                     <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-400 mb-2">{log.title}</h4>
                                     <p className="text-[10px] text-gray-500 font-mono leading-relaxed">{log.description}</p>
@@ -163,20 +184,20 @@ export default function IndustrialAboutPage() {
  * --------------------------- */
 
 const STACK_DATA = [
-    { name: 'Next.js', svgPath: '/logos/nextjs-original.svg' },
-    { name: 'Node.js', svgPath: '/logos/nodejs-original.svg' },
-    { name: 'TypeScript', svgPath: '/logos/typescript-original.svg' },
-    { name: 'React Native', svgPath: '/logos/reactnative-original.svg' },
-    { name: 'Tailwind', svgPath: '/logos/tailwindcss-original.svg' },
-    { name: 'PostgreSQL', svgPath: '/logos/postgresql-original.svg' },
-    { name: 'Docker', svgPath: '/logos/docker-original.svg' },
-    { name: 'Python', svgPath: '/logos/python-original.svg' },
-    { name: "TensorFlow", svgPath: "/logos/tensorflow-original.svg" },
+    { name: 'Next.js',       svgPath: '/logos/nextjs-original.svg' },
+    { name: 'Node.js',       svgPath: '/logos/nodejs-original.svg' },
+    { name: 'TypeScript',    svgPath: '/logos/typescript-original.svg' },
+    { name: 'React Native',  svgPath: '/logos/reactnative-original.svg' },
+    { name: 'Tailwind',      svgPath: '/logos/tailwindcss-original.svg' },
+    { name: 'PostgreSQL',    svgPath: '/logos/postgresql-original.svg' },
+    { name: 'Docker',        svgPath: '/logos/docker-original.svg' },
+    { name: 'Python',        svgPath: '/logos/python-original.svg' },
+    { name: 'TensorFlow',    svgPath: '/logos/tensorflow-original.svg' },
 ];
 
 const TIMELINE_DATA = [
-    { year: '2026', title: 'Software Engineer', description: 'Worked on web applications and contributed to open-source projects. Focused on building scalable, maintainable code.' },
-    { year: '2025', title: 'Frontend Developer', description: 'Specialized in React and Next.js, building user interfaces and collaborating with backend teams.' },
+    { year: '2026', title: 'Software Engineer',        description: 'Worked on web applications and contributed to open-source projects. Focused on building scalable, maintainable code.' },
+    { year: '2025', title: 'Frontend Developer',       description: 'Specialized in React and Next.js, building user interfaces and collaborating with backend teams.' },
     { year: '2024', title: 'Intern / Junior Developer', description: 'Gained hands-on experience with JavaScript, Git, and agile workflows in a team environment.' },
-    { year: '2023', title: 'Learning & Exploration', description: 'Started learning programming fundamentals, web development, and building personal projects.' },
+    { year: '2023', title: 'Learning & Exploration',   description: 'Started learning programming fundamentals, web development, and building personal projects.' },
 ];
