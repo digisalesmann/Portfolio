@@ -49,7 +49,7 @@ export const ARTICLES = [
         id: "conclusion",
         heading: "Conclusion & Next Steps",
         content: [
-          `Federated Learning extends ML to privacy-first contexts — pairing it with edge compute and careful orchestration is key.`,
+          `Federated Learning extends ML to privacy-first contexts, pairing it with edge compute and careful orchestration is key.`,
         ],
       },
     ],

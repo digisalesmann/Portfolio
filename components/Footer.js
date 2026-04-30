@@ -1,89 +1,83 @@
-"use client";
-
-
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
-function TimeDisplay() {
-  const [time, setTime] = useState("");
-  useEffect(() => {
-    const updateTime = () => setTime(new Date().toLocaleTimeString());
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
-  return <span className="text-indigo-500/50">TIME: {time || "--:--:--"}</span>;
-}
+const socials = [
+  { label: "GitHub",    href: "https://github.com/digisalesmann" },
+  { label: "Twitter",   href: "https://x.com/buildwthvictor" },
+  { label: "LinkedIn",  href: "https://linkedin.com/in/victor-chinagoro-1a032423a" },
+  { label: "Instagram", href: "https://instagram.com/buildwthvictor" },
+];
+
+const navLinks = [
+  { label: "Work",    href: "/projects" },
+  { label: "About",  href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="w-full bg-[#050505] border-t border-white/5 pt-16 pb-10">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-          
-          {/* --- Brand Block --- */}
-          <div className="md:col-span-4 space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-indigo-500 animate-pulse" />
-              <span className="text-sm font-black uppercase tracking-tighter text-white">
-                Victor.E <span className="text-gray-600 font-mono font-normal"></span>
-              </span>
-            </div>
-            <p className="text-[10px] font-mono text-gray-500 leading-relaxed tracking-widest">
-              Building modern web apps and digital solutions for the future.
+    <footer className="bg-black border-t border-white/[0.07] pt-16 pb-10">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
+          {/* Brand — wordmark only */}
+          <div className="space-y-4">
+            <Link href="/" className="flex items-baseline">
+              <span className="font-bold text-white text-base tracking-tight">Victor</span>
+              <span className="text-violet-400 font-bold text-xl leading-none">.</span>
+            </Link>
+            <p className="text-sm text-white/40 leading-relaxed max-w-xs">
+              Web &amp; mobile developer building fast, elegant cross-platform products for clients worldwide.
             </p>
-          </div>
-
-          {/* --- System Directory --- */}
-          <div className="md:col-span-4 grid grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <h4 className="text-[9px] font-mono text-indigo-500 uppercase tracking-[0.3em]">Menu</h4>
-              <ul className="space-y-2 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                <li><Link href="/projects" className="hover:text-white transition-colors">Projects</Link></li>
-                <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-[9px] font-mono text-indigo-500 uppercase tracking-[0.3em]">Social</h4>
-              <ul className="space-y-2 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                <li><Link href="https://github.com/digisalesmann" target="_blank" className="hover:text-white transition-colors">Github</Link></li>
-                <li><Link href="https://x.com/buildwthvictor" target="_blank" className="hover:text-white transition-colors">Twitter</Link></li>
-                <li><Link href="https://linkedin.com/in/victor-chinagoro-1a032423a" target="_blank" className="hover:text-white transition-colors">LinkedIn</Link></li>
-              </ul>
+            <div className="flex items-center gap-1.5 text-xs text-emerald-400">
+              Available for new projects
             </div>
           </div>
 
-          {/* --- Contact Output --- */}
-          <div className="md:col-span-4 space-y-4 text-right md:text-left">
-            <h4 className="text-[9px] font-mono text-indigo-500 uppercase tracking-[0.3em]">Contact</h4>
-            <Link 
-              href="mailto:buildwithvictorhq@gmail.com"
-              className="group inline-flex items-center gap-3 border border-white/10 px-4 py-2 bg-white/5 hover:bg-indigo-500 transition-all"
-            >
-              <span className="text-[10px] font-bold uppercase tracking-widest text-white group-hover:text-black transition-colors">
-                buildwithvictorhq@gmail.com
-              </span>
-              <span className="text-indigo-500 group-hover:text-black">→</span>
+          {/* Links */}
+          <div className="flex gap-16">
+            <div className="space-y-3">
+              <p className="text-xs text-white/30 uppercase tracking-widest font-medium">Pages</p>
+              <ul className="space-y-2.5">
+                {navLinks.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="text-sm text-white/50 hover:text-white transition-colors">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-3">
+              <p className="text-xs text-white/30 uppercase tracking-widest font-medium">Social</p>
+              <ul className="space-y-2.5">
+                {socials.map((s) => (
+                  <li key={s.href}>
+                    <a href={s.href} target="_blank" rel="noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">
+                      {s.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="space-y-4">
+            <p className="text-xs text-white/30 uppercase tracking-widest font-medium">Get in Touch</p>
+            <a href="mailto:buildwithvictorhq@gmail.com" className="block text-sm text-white/70 hover:text-violet-400 transition-colors break-all">
+              buildwithvictorhq@gmail.com
+            </a>
+            <a href="tel:+2349037884753" className="block text-sm text-white/40 hover:text-white transition-colors">
+              +234 903 788 4753
+            </a>
+            <Link href="/contact" className="btn-primary text-xs px-5 py-2.5 mt-2 w-fit">
+              Start a Project →
             </Link>
           </div>
         </div>
 
-        {/* --- Metadata Bottom Bar --- */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-6 text-[9px] font-mono text-gray-600 uppercase tracking-tighter">
-            <span>Nigeria</span>
-            <span>Next.js</span>
-            {/* Hydration-safe time rendering */}
-            <TimeDisplay />
-          </div>
-          
-          <p className="text-[9px] font-mono text-gray-600 uppercase tracking-widest">
-            © {currentYear} Victor. Built for everyone
-          </p>
+        <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-white/25">© {new Date().getFullYear()} Victor Chinagoro. All rights reserved.</p>
+          <p className="text-xs text-white/25">Built with Next.js · Tailwind · Framer Motion</p>
         </div>
       </div>
     </footer>

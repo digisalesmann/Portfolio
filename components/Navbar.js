@@ -1,116 +1,125 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 
-const LogoWithAvatar = () => (
-  <Link href="/" className="flex items-center gap-3 group">
-    <div className="relative w-8 h-8 border border-white/10 bg-[#111]">
-      <Image
-        src="/images/kenny.jpg"
-        alt="Victor"
-        fill
-        className="object-cover transition-all duration-700"
-      />
-      <div className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-indigo-500" />
-    </div>
-    <div className="flex flex-col leading-none">
-      <span className="text-xs font-black tracking-tighter text-white uppercase">Victor.E</span>
-      <span className="text-[7px] font-mono text-gray-500 uppercase tracking-[0.2em] mt-1">Welcome</span>
-    </div>
-  </Link>
-);
+const links = [
+  { href: "/projects",  label: "Work" },
+  { href: "/services",  label: "Services" },
+  { href: "/about",     label: "About" },
+  { href: "/contact",   label: "Contact" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on route change
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => { setOpen(false); }, [router.asPath]);
 
-  // Lock body scroll when side-menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-[100] transition-all duration-500 ${
-      scrolled || open 
-        ? "h-14 bg-[#050505]/90 border-b border-white/5 backdrop-blur-md" 
-        : "h-20 bg-transparent border-b border-transparent"
-    }`}>
-      <div className="container h-full px-6 mx-auto flex items-center justify-between">
-        <LogoWithAvatar />
+    <header
+      className={`fixed top-0 inset-x-0 z-[100] transition-all duration-500 ${
+        scrolled || open
+          ? "bg-black/80 backdrop-blur-xl border-b border-white/[0.06]"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container h-16 flex items-center justify-between">
+        {/* Wordmark only — no icon */}
+        <Link href="/" className="flex items-baseline group">
+          <span className="font-bold text-white text-base tracking-tight">Victor</span>
+          <span className="text-violet-400 font-bold text-xl leading-none">.</span>
+        </Link>
 
+        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
-          <NavLink href="/projects" num="01" title="Projects" />
-          <NavLink href="/blog" num="02" title="Articles" />
-          <NavLink href="/about" num="03" title="About" />
-          <NavLink href="/contact" num="04" title="Contact" />
-          <div className="ml-4 pl-4 border-l border-white/10">
-             <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-          </div>
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                router.pathname === l.href
+                  ? "text-white bg-white/10"
+                  : "text-white/60 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              {l.label}
+            </Link>
+          ))}
         </nav>
 
-        {/* --- MOBILE TOGGLE --- */}
-        <button 
-          onClick={() => setOpen(!open)} 
-          className="md:hidden relative z-[110] w-8 h-8 flex flex-col justify-center items-end gap-1.5"
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center gap-3">
+          <span className="flex items-center gap-1.5 text-xs text-white/40">
+            Available
+          </span>
+          <Link href="/contact" className="btn-primary text-xs px-5 py-2.5">
+            Hire Me
+          </Link>
+        </div>
+
+        {/* Mobile toggle */}
+        <button
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+          className="md:hidden z-[110] w-9 h-9 flex flex-col justify-center items-center gap-[5px]"
         >
-          <span className={`h-px bg-white transition-all duration-300 ${open ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
-          <span className={`h-px bg-indigo-500 transition-all duration-300 ${open ? "opacity-0" : "w-4"}`} />
-          <span className={`h-px bg-white transition-all duration-300 ${open ? "w-6 -rotate-45 -translate-y-2" : "w-6"}`} />
+          <span className={`w-5 h-[1.5px] bg-white origin-center transition-all duration-300 ${open ? "rotate-45 translate-y-[6.5px]" : ""}`} />
+          <span className={`w-5 h-[1.5px] bg-white transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`} />
+          <span className={`w-5 h-[1.5px] bg-white origin-center transition-all duration-300 ${open ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
         </button>
       </div>
 
-      {/* --- MOBILE SIDE PANEL (Restored Previous Version) --- */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm md:hidden"
             />
-
-            {/* Side Drawer */}
             <motion.aside
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed right-0 top-0 z-[105] h-screen w-[80%] max-w-[360px] bg-[#050505] border-l border-white/10 p-10 flex flex-col md:hidden"
+              initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 320, damping: 32 }}
+              className="fixed right-0 top-0 z-[105] h-screen w-[75vw] max-w-[320px] bg-[#0a0a0a] border-l border-white/[0.08] flex flex-col p-8 md:hidden"
             >
-              <div className="mb-12">
-                 <LogoWithAvatar />
+              <div className="mb-10">
+                <Link href="/" className="flex items-baseline">
+                  <span className="font-bold text-white text-base">Victor</span>
+                  <span className="text-violet-400 font-bold text-xl leading-none">.</span>
+                </Link>
               </div>
-
-              <nav className="flex flex-col gap-6">
-                <MobileLink href="/projects" num="01">Projects</MobileLink>
-                <MobileLink href="/blog" num="02">Articles</MobileLink>
-                <MobileLink href="/about" num="03">About</MobileLink>
-                <MobileLink href="/contact" num="04">Contact</MobileLink>
+              <nav className="flex flex-col gap-1">
+                {links.map((l, i) => (
+                  <motion.div key={l.href} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.07 }}>
+                    <Link href={l.href} className="block py-3 px-4 rounded-xl text-xl font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">
+                      {l.label}
+                    </Link>
+                  </motion.div>
+                ))}
               </nav>
-
-              <div className="mt-auto pt-10 border-t border-white/5">
-                <p className="text-[10px] font-mono text-gray-600 uppercase tracking-widest mb-4">Connect</p>
-                <div className="flex gap-6">
-                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">GitHub</a>
-                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">LinkedIn</a>
-                   <a href="#" className="text-xs hover:text-indigo-500 transition-colors">Twitter</a>
+              <div className="mt-auto pt-8 border-t border-white/[0.06] space-y-4">
+                <div className="flex items-center gap-2 text-xs text-white/40">
+                  Available for new projects
+                </div>
+                <Link href="/contact" className="btn-primary w-full text-sm justify-center">Let&apos;s Talk</Link>
+                <div className="flex gap-5 pt-2">
+                  <a href="https://github.com/digisalesmann" target="_blank" rel="noreferrer" className="text-xs text-white/30 hover:text-white transition-colors">GitHub</a>
+                  <a href="https://x.com/buildwthvictor" target="_blank" rel="noreferrer" className="text-xs text-white/30 hover:text-white transition-colors">Twitter</a>
+                  <a href="https://linkedin.com/in/victor-chinagoro-1a032423a" target="_blank" rel="noreferrer" className="text-xs text-white/30 hover:text-white transition-colors">LinkedIn</a>
                 </div>
               </div>
             </motion.aside>
@@ -118,27 +127,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
-  );
-}
-
-/* --- Sub-components --- */
-
-function NavLink({ href, num, title }) {
-  return (
-    <Link href={href} className="group flex flex-col px-4 py-1">
-      <span className="font-mono text-[8px] text-gray-600 mb-1 group-hover:text-indigo-500 transition-colors">{num}</span>
-      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 group-hover:text-white transition-colors">{title}</span>
-    </Link>
-  );
-}
-
-function MobileLink({ href, num, children }) {
-  return (
-    <Link href={href} className="group flex flex-col py-2 border-b border-white/5">
-      <span className="font-mono text-[10px] text-indigo-500 mb-1">{num}</span>
-      <span className="text-2xl font-black uppercase tracking-tighter group-hover:translate-x-2 transition-transform duration-300">
-        {children}
-      </span>
-    </Link>
   );
 }

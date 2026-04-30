@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:xpage.ai)",
+      "Bash(curl -s https://xpage.ai/)",
+      "Bash(curl -s -A \"Mozilla/5.0\" https://xpage.ai/)",
+      "Bash(wget -q -O - https://xpage.ai/)",
+      "Bash(curl -s https://xpage.ai/assets/home-D_w9NW09.css)",
+      "Read(//tmp/**)",
+      "WebSearch",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/projects)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/about)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/contact)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(fuser -k 3000/tcp 3001/tcp)",
+      "Bash(rm -f /home/buildwithvictor/Projects/portfolio/.next/dev/lock)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg\" -o flutter-original.svg)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg\" -o dart-original.svg)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg\" -o supabase-original.svg)",
+      "Bash(fuser -k 3000/tcp)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
+    ]
+  }
+}

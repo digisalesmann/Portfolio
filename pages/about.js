@@ -1,203 +1,234 @@
-"use client";
+import Head from "next/head";
+import { useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { 
-    Zap, Terminal, Cpu, Database, Shield, 
-    ArrowRight, Activity, Layers, Code2, User 
-} from "lucide-react";
+const timeline = [
+  {
+    year: "2026",
+    title: "Senior Freelance Developer",
+    company: "Remote. Worldwide",
+    desc: "Working with global clients on high-impact web and mobile products. Specializing in fintech, Web3, and AI-powered apps.",
+  },
+  {
+    year: "2025",
+    title: "Full-Stack Developer",
+    company: "Contract Projects",
+    desc: "Delivered 6+ production apps including Bitvest, Koraq, and PPAY. React Native for cross-platform mobile, Next.js for web.",
+  },
+  {
+    year: "2024",
+    title: "Frontend Developer",
+    company: "Freelance",
+    desc: "Built responsive web applications for startups. Deepened expertise in React ecosystems, animation, and UX-driven development.",
+  },
+  {
+    year: "2023",
+    title: "Started Professional Development",
+    company: "Self-taught + Bootcamp",
+    desc: "Transitioned into professional software development. Built first production projects and established a workflow with modern tooling.",
+  },
+];
 
-/* ---------------------------
- * Reusable Industrial UI Blocks
- * --------------------------- */
+const values = [
+  {
+    num: "01",
+    title: "Clarity Over Complexity",
+    desc: "I build things that are easy to understand, maintain, and extend. Simple systems outlast clever ones.",
+  },
+  {
+    num: "02",
+    title: "Ship, Then Improve",
+    desc: "I believe in getting to production fast, learning from real users, and iterating with purpose.",
+  },
+  {
+    num: "03",
+    title: "Client Partnership",
+    desc: "I treat every project as a collaboration. Clear communication, honest feedback, and shared ownership.",
+  },
+];
 
-const MetadataBadge = ({ label, value }) => (
-    <div className="flex flex-col border-l border-indigo-500/30 pl-4 py-1">
-        <span className="text-[8px] font-mono text-indigo-500 uppercase tracking-[0.2em]">{label}</span>
-        <span className="text-xs font-bold text-gray-300 uppercase">{value}</span>
-    </div>
-);
+const techStack = [
+  { name: "JavaScript",   src: "/logos/javascript-original.svg" },
+  { name: "TypeScript",   src: "/logos/typescript-original.svg" },
+  { name: "React",        src: "/logos/reactnative-original.svg" },
+  { name: "Next.js",      src: "/logos/nextjs-original.svg" },
+  { name: "React Native", src: "/logos/reactnative-original.svg" },
+  { name: "Flutter",      src: "/logos/flutter-original.svg" },
+  { name: "Dart",         src: "/logos/dart-original.svg" },
+  { name: "Tailwind",     src: "/logos/tailwindcss-original.svg" },
+  { name: "Node.js",      src: "/logos/nodejs-original.svg" },
+  { name: "Express",      src: "/logos/express-original.svg" },
+  { name: "Python",       src: "/logos/python-original.svg" },
+  { name: "Firebase",     src: "/logos/firebase-original.svg" },
+  { name: "Supabase",     src: "/logos/supabase-original.svg" },
+  { name: "MongoDB",      src: "/logos/mongodb-original.svg" },
+  { name: "PostgreSQL",   src: "/logos/postgresql-original.svg" },
+  { name: "GitHub",       src: "/logos/github-original.svg" },
+  { name: "Vercel",       src: "/logos/vercel-original.svg" },
+];
 
-const TechnicalCard = ({ icon: Icon, title, description, delay = 0 }) => (
-    <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay }}
-        className="group relative bg-[#0a0a0a] border border-white/5 p-8 hover:bg-black transition-all"
-    >
-        <div className="absolute top-0 left-0 w-1 h-1 bg-indigo-500" />
-        <Icon className="text-indigo-500 mb-6 shrink-0" size={24} />
-        <h3 className="text-sm font-black text-white uppercase tracking-widest mb-3">{title}</h3>
-        <p className="text-[10px] text-gray-500 font-mono leading-relaxed uppercase">{description}</p>
+function Reveal({ children, delay = 0, className = "" }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-70px" });
+  return (
+    <motion.div ref={ref} initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }} className={className}>
+      {children}
     </motion.div>
-);
-
-/* ---------------------------
- * Main About Component
- * --------------------------- */
-
-export default function IndustrialAboutPage() {
-    return (
-        <div className="min-h-screen bg-[#050505] text-slate-300 font-sans selection:bg-indigo-500/30">
-            
-            {/* --- 1. HERO / SYSTEM IDENTITY --- */}
-            <header className="relative pt-32 pb-20 px-6 border-b border-white/5">
-                {/* Grid background */}
-                <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]" />
-                </div>
-
-                <div className="container mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
-                    
-                    {/* ── Profile Image — clean, no filters ── */}
-                    <div className="relative shrink-0">
-                        {/* Outer glow ring */}
-                        <div className="absolute -inset-[1px] rounded-sm bg-gradient-to-br from-indigo-500/40 via-transparent to-indigo-500/10" />
-                        
-                        {/* Corner brackets */}
-                        <div className="absolute -top-3 -left-3 w-5 h-5 border-t-2 border-l-2 border-indigo-500 z-20" />
-                        <div className="absolute -top-3 -right-3 w-5 h-5 border-t-2 border-r-2 border-indigo-500 z-20" />
-                        <div className="absolute -bottom-3 -left-3 w-5 h-5 border-b-2 border-l-2 border-indigo-500 z-20" />
-                        <div className="absolute -bottom-3 -right-3 w-5 h-5 border-b-2 border-r-2 border-indigo-500 z-20" />
-
-                        {/* Image — no filters, no overlays, crisp rendering */}
-                        <div className="w-64 h-72 md:w-80 md:h-96 overflow-hidden relative">
-                            <img 
-                                src="/images/kenny.jpg" 
-                                alt="Victor Chinagoro E."
-                                className="w-full h-full object-cover object-top"
-                                style={{ imageRendering: 'auto' }}
-                            />
-                        </div>
-
-                        {/* Verified badge — sits below image, not over it */}
-                        <div className="absolute bottom-0 left-0 right-0 flex justify-between items-center px-2 py-1.5 bg-black/80 backdrop-blur-sm border-t border-indigo-500/20">
-                            <div className="flex items-center gap-1.5">
-                                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                                <span className="text-[8px] font-mono font-bold text-green-400 uppercase tracking-widest">Verified</span>
-                            </div>
-                            <span className="text-[7px] font-mono text-gray-600 uppercase tracking-widest">ID:VCE-001</span>
-                        </div>
-                    </div>
-
-                    {/* Text content */}
-                    <div className="flex-1 text-center lg:text-left">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 border border-indigo-500/30 bg-indigo-500/5 mb-8">
-                            <Terminal size={12} className="text-indigo-500" />
-                            <span className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-400">About Me</span>
-                        </div>
-                        <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-6 leading-none">
-                            Chinagoro <br/>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-white">
-                                Victor E.
-                            </span>
-                        </h1>
-                        <p className="max-w-xl font-mono text-[10px] md:text-xs tracking-[0.3em] text-gray-500 leading-relaxed mx-auto lg:mx-0">
-                            Software engineer passionate about building user-friendly apps, scalable systems, and creative digital solutions.
-                        </p>
-                    </div>
-                </div>
-            </header>
-
-            {/* --- 2. SYSTEM STATUS (STATS) --- */}
-            <section className="bg-black border-b border-white/5 py-12">
-                <div className="container mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    <MetadataBadge label="Projects" value="10+" />
-                    <MetadataBadge label="Uptime" value="99.99%" />
-                    <MetadataBadge label="Users" value="500K+" />
-                    <MetadataBadge label="Role" value="Lead" />
-                </div>
-            </section>
-
-            {/* --- 3. CORE PROTOCOLS (PILLARS) --- */}
-            <main className="container mx-auto px-6 py-32 space-y-32">
-                
-                <section>
-                    <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-12 text-center">Core Values</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
-                        <TechnicalCard 
-                            icon={Layers} 
-                            title="Ownership" 
-                            description="Taking responsibility from idea to launch and beyond."
-                        />
-                        <TechnicalCard 
-                            icon={Cpu} 
-                            title="Adaptable" 
-                            description="Building solutions that work anywhere and grow with your needs."
-                        />
-                        <TechnicalCard 
-                            icon={Activity} 
-                            title="Data Focused" 
-                            description="Using data to make smart decisions and improve results."
-                        />
-                    </div>
-                </section>
-
-                {/* --- 4. TECHNICAL MATRIX (STACK) --- */}
-                <section>
-                    <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-12 text-center">Tech Stack</h2>
-                    <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-4">
-                        {STACK_DATA.map((tech) => (
-                            <div key={tech.name} className="group flex flex-col items-center justify-center p-6 border border-white/5 bg-[#0a0a0a] hover:bg-indigo-600 transition-all duration-300">
-                                <img src={tech.svgPath} alt={tech.name} className="w-8 h-8 object-contain transition-all" />
-                                <span className="text-[8px] font-mono text-gray-600 mt-3 uppercase font-bold">{tech.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-
-                {/* --- 5. TRAJECTORY (TIMELINE) --- */}
-                <section className="max-w-4xl mx-auto">
-                    <h2 className="text-xs font-mono text-indigo-500 uppercase tracking-[0.4em] mb-16">Timeline</h2>
-                    <div className="space-y-1">
-                        {TIMELINE_DATA.map((log, i) => (
-                            <div key={i} className="flex flex-col md:flex-row gap-8 p-8 border border-white/5 bg-[#0a0a0a] hover:bg-white/[0.02] transition-all">
-                                <span className="text-xs font-mono text-gray-700 shrink-0">{log.year}</span>
-                                <div>
-                                    <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-400 mb-2">{log.title}</h4>
-                                    <p className="text-[10px] text-gray-500 font-mono leading-relaxed">{log.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            </main>
-
-            {/* --- 6. CTA / LINK ESTABLISHMENT --- */}
-            <footer className="py-32 bg-black border-t border-indigo-500/20 text-center">
-                <div className="container mx-auto px-6 max-w-xl">
-                    <h2 className="text-4xl font-black uppercase tracking-tighter text-white mb-4">Let's Work Together</h2>
-                    <p className="text-[10px] font-mono text-gray-600 tracking-widest mb-12 leading-relaxed italic">
-                        Ready to start your next project? Reach out and let's build something great.
-                    </p>
-                    <a href="/contact" className="inline-flex items-center gap-4 bg-white text-black px-12 py-5 font-black uppercase tracking-[0.4em] text-xs hover:bg-indigo-500 hover:text-white transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)]">
-                        Contact <ArrowRight size={16} />
-                    </a>
-                </div>
-            </footer>
-        </div>
-    );
+  );
 }
 
-/* ---------------------------
- * Content Data
- * --------------------------- */
+export default function About() {
+  return (
+    <>
+      <Head>
+        <title>About: Victor Chinagoro</title>
+        <meta name="description" content="Victor Chinagoro is a cross-platform web and mobile developer based in Nigeria, working remotely with clients worldwide." />
+      </Head>
+      <div className="bg-black text-white min-h-screen">
 
-const STACK_DATA = [
-    { name: 'Next.js',       svgPath: '/logos/nextjs-original.svg' },
-    { name: 'Node.js',       svgPath: '/logos/nodejs-original.svg' },
-    { name: 'TypeScript',    svgPath: '/logos/typescript-original.svg' },
-    { name: 'React Native',  svgPath: '/logos/reactnative-original.svg' },
-    { name: 'Tailwind',      svgPath: '/logos/tailwindcss-original.svg' },
-    { name: 'PostgreSQL',    svgPath: '/logos/postgresql-original.svg' },
-    { name: 'Docker',        svgPath: '/logos/docker-original.svg' },
-    { name: 'Python',        svgPath: '/logos/python-original.svg' },
-    { name: 'TensorFlow',    svgPath: '/logos/tensorflow-original.svg' },
-];
+        {/* ── Hero ─────────────────────────────────── */}
+        <section className="relative pt-28 pb-20 overflow-hidden">
+          <div className="orb w-[600px] h-[600px] bg-violet-600" style={{ top: "-200px", left: "-200px", opacity: 0.15 }} />
+          <div className="container relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
+              <Reveal>
+                <p className="section-label mb-5">About Me</p>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-3 leading-[1.05]">
+                  Victor Chinagoro
+                </h1>
+                <p className="text-violet-400 text-base font-medium mb-7">
+                  Web &amp; Mobile Developer · Cross-Platform
+                </p>
+                <p className="text-white/55 text-base leading-relaxed mb-5">
+                  Cross-platform developer based in Nigeria, working remotely with clients across
+                  Africa, Europe, and North America. I build web and mobile products from concept
+                  to deployment. Fast, clean, and built to last.
+                </p>
+                <p className="text-white/40 text-base leading-relaxed mb-8">
+                  My background spans fintech, Web3, AI-powered apps, and consumer software. I care
+                  about user experience, performance, and code that other developers enjoy working with.
+                </p>
+                <p className="text-sm text-white/25 mb-8">Fintech · Web3 · AI Apps · Cross-Platform · Remote</p>
+                <div className="flex flex-wrap gap-3">
+                  <Link href="/contact" className="btn-primary text-sm">Hire Me →</Link>
+                  <a href="https://github.com/digisalesmann" target="_blank" rel="noreferrer" className="btn-outline text-sm">GitHub</a>
+                </div>
+              </Reveal>
 
-const TIMELINE_DATA = [
-    { year: '2026', title: 'Software Engineer',        description: 'Worked on web applications and contributed to open-source projects. Focused on building scalable, maintainable code.' },
-    { year: '2025', title: 'Frontend Developer',       description: 'Specialized in React and Next.js, building user interfaces and collaborating with backend teams.' },
-    { year: '2024', title: 'Intern / Junior Developer', description: 'Gained hands-on experience with JavaScript, Git, and agile workflows in a team environment.' },
-    { year: '2023', title: 'Learning & Exploration',   description: 'Started learning programming fundamentals, web development, and building personal projects.' },
-];
+              {/* Photo — no badge, no decoration */}
+              <Reveal delay={0.15}>
+                <div className="relative mx-auto md:mx-0 w-64 md:w-full max-w-sm">
+                  <div className="relative rounded-3xl overflow-hidden border border-white/[0.08] aspect-[4/5] bg-[#111]">
+                    <Image src="/images/kenny.jpg" alt="Victor Chinagoro" fill className="object-cover" priority />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+                  {/* Available badge — clean, no V */}
+                  <div className="absolute -bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl px-4 py-3 flex items-center justify-between">
+                    <span className="text-xs text-white/60 font-medium">Available for projects</span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Values ──────────────────────────────── */}
+        <section className="py-24 bg-[#050505] border-y border-white/[0.05]">
+          <div className="container">
+            <Reveal className="mb-14">
+              <p className="section-label mb-4">How I Think</p>
+              <h2 className="section-heading">My Working Values</h2>
+            </Reveal>
+
+            {/* Separator list — no cards */}
+            <div className="divide-y divide-white/[0.07] border-t border-white/[0.07]">
+              {values.map((v, i) => (
+                <Reveal key={i} delay={i * 0.08}>
+                  <div className="py-9 md:py-11 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 items-start">
+                    <span className="text-xs font-mono text-violet-400 md:col-span-1">{v.num}</span>
+                    <h3 className="text-lg md:text-xl font-semibold text-white md:col-span-4">{v.title}</h3>
+                    <p className="text-white/45 text-base leading-relaxed md:col-span-7">{v.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Tech Stack ──────────────────────────── */}
+        <section className="py-24 md:py-32">
+          <div className="container">
+            <Reveal className="mb-16">
+              <p className="section-label mb-4">Toolkit</p>
+              <h2 className="section-heading">Technologies I Work With</h2>
+            </Reveal>
+
+            {/* No background boxes */}
+            <div className="flex flex-wrap gap-x-8 gap-y-10">
+              {techStack.map((t, i) => (
+                <Reveal key={t.name} delay={i * 0.03}>
+                  <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.18 }}
+                    className="flex flex-col items-center gap-2.5 group cursor-default w-16">
+                    <img src={t.src} alt={t.name} className="w-9 h-9 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <span className="text-[10px] text-white/30 font-medium text-center leading-tight group-hover:text-white/60 transition-colors">{t.name}</span>
+                  </motion.div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Timeline ────────────────────────────── */}
+        <section className="py-24 md:py-32 bg-[#050505] border-t border-white/[0.05]">
+          <div className="container">
+            <Reveal className="mb-14">
+              <p className="section-label mb-4">Experience</p>
+              <h2 className="section-heading">My Journey</h2>
+            </Reveal>
+
+            {/* Clean separator list */}
+            <div className="divide-y divide-white/[0.07] border-t border-white/[0.07]">
+              {timeline.map((item, i) => (
+                <Reveal key={i} delay={i * 0.08}>
+                  <div className="py-9 md:py-11 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 items-start">
+                    <span className="text-xs font-mono text-violet-400 md:col-span-2">{item.year}</span>
+                    <div className="md:col-span-4">
+                      <h3 className="text-base font-semibold text-white mb-1">{item.title}</h3>
+                      <p className="text-xs text-white/30">{item.company}</p>
+                    </div>
+                    <p className="text-white/45 text-sm leading-relaxed md:col-span-6">{item.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA ─────────────────────────────────── */}
+        <section className="relative py-32 overflow-hidden text-center">
+          <div className="planet-arc" style={{ opacity: 0.5 }} />
+          <div className="container relative z-10">
+            <Reveal>
+              <p className="section-label justify-center mb-5">Work Together</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                Let&apos;s Build Something<span className="text-violet-400"> Great</span>
+              </h2>
+              <p className="text-white/40 mb-8 max-w-sm mx-auto leading-relaxed">
+                Available for remote contracts, freelance work, and full-time opportunities worldwide.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link href="/contact" className="btn-primary text-sm px-8 py-4">Get in Touch →</Link>
+                <Link href="/projects" className="btn-outline text-sm px-8 py-4">View My Work</Link>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+      </div>
+    </>
+  );
+}

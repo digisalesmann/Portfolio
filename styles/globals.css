@@ -1,70 +1,111 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import "@fortawesome/fontawesome-free/css/all.min.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Global tweaks */
+/* ── Base ─────────────────────────────────────────── */
 :root {
-  --radius: 1rem;
+  --purple: #8b5cf6;
+  --purple-glow: rgba(139, 92, 246, 0.35);
 }
 
-html, body {
-  scroll-behavior: smooth;
-  font-family: system-ui, sans-serif;
-}
-
-/* Global background and text theme */
+html,
 body {
-  /* Light mode → consistent pink-purple gradient
-     Dark mode → deep purple gradient */
-  @apply bg-gradient-to-br from-pink-50 via-fuchsia-50 to-indigo-50
-         dark:from-[#0c021f] dark:via-[#14042a] dark:to-[#1a0730]
-         text-gray-900 dark:text-gray-100;
+  scroll-behavior: smooth;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Reusable utilities */
+::selection {
+  background: #8b5cf6;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 99px;
+}
+
+/* ── Utility classes ──────────────────────────────── */
 @layer components {
   .container {
-    @apply mx-auto max-w-6xl px-4;
-  }
-
-  .section {
-    @apply container py-12;
-  }
-
-  .card {
-    @apply rounded-2xl border border-black/10 dark:border-white/10 
-           bg-white dark:bg-gray-900 shadow-sm;
-  }
-
-  .muted {
-    @apply text-gray-600 dark:text-gray-400;
-  }
-
-  .btn {
-    @apply inline-block px-4 py-2 rounded-xl font-medium transition-colors;
+    @apply mx-auto max-w-7xl px-5 md:px-10;
   }
 
   .btn-primary {
-    @apply btn bg-brand text-white hover:bg-brand-dark;
+    @apply inline-flex items-center justify-center gap-2 bg-violet-500 hover:bg-violet-600
+           text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-200
+           text-sm cursor-pointer select-none;
   }
 
   .btn-outline {
-    @apply btn border border-gray-300 hover:bg-gray-100 
-           dark:border-gray-700 dark:hover:bg-gray-800;
+    @apply inline-flex items-center justify-center gap-2 border border-white/20
+           hover:border-white/50 hover:bg-white/5 text-white font-semibold
+           px-7 py-3.5 rounded-full transition-all duration-200 text-sm
+           cursor-pointer select-none;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 text-violet-400 text-xs font-semibold
+           tracking-[0.2em] uppercase;
+  }
+
+  .card-dark {
+    @apply bg-[#111] border border-white/[0.06] rounded-2xl;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-5xl font-bold tracking-tight text-white;
   }
 }
 
 @layer base {
-  * { -webkit-tap-highlight-color: transparent; }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
-/* Hide scrollbar but allow scrolling */
+/* ── Orb / glow effects ───────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+/* Planet arc at bottom of CTA */
+.planet-arc {
+  position: absolute;
+  bottom: -320px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(139, 92, 246, 0.45) 0%,
+    rgba(109, 40, 217, 0.2) 45%,
+    transparent 70%
+  );
+  filter: blur(50px);
+}
+
+/* ── Scrollbar hide ───────────────────────────────── */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none;
 }

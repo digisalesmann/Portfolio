@@ -4,7 +4,7 @@ import { getAllPostsMeta, getPostBySlug } from "../../lib/md";
 export default function Post({ post }) {
   return (
     <>
-      <Head><title>{post.title} — BuildWithVictor</title></Head>
+      <Head><title>{post.title}: BuildWithVictor</title></Head>
       <article className="section prose prose-neutral dark:prose-invert max-w-none">
         <p className="muted">{new Date(post.date).toLocaleDateString()} — {post.tags.join(", ")}</p>
         <h1>{post.title}</h1>
