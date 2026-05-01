@@ -15,7 +15,7 @@ const timeline = [
     year: "2025",
     title: "Full-Stack Developer",
     company: "Contract Projects",
-    desc: "Delivered 6+ production apps including Bitvest, Koraq, and PPAY. React Native for cross-platform mobile, Next.js for web.",
+    desc: "Delivered 6+ production apps including Bitvest, Koraq, and PPAY. Flutter/Dart for mobile, Next.js for web.",
   },
   {
     year: "2024",
@@ -59,14 +59,14 @@ const techStack = [
   { name: "Dart",         src: "/logos/dart-original.svg" },
   { name: "Tailwind",     src: "/logos/tailwindcss-original.svg" },
   { name: "Node.js",      src: "/logos/nodejs-original.svg" },
-  { name: "Express",      src: "/logos/express-original.svg" },
+  { name: "Express",      src: "/logos/express-original.svg",    invert: true },
   { name: "Python",       src: "/logos/python-original.svg" },
   { name: "Firebase",     src: "/logos/firebase-original.svg" },
   { name: "Supabase",     src: "/logos/supabase-original.svg" },
   { name: "MongoDB",      src: "/logos/mongodb-original.svg" },
   { name: "PostgreSQL",   src: "/logos/postgresql-original.svg" },
-  { name: "GitHub",       src: "/logos/github-original.svg" },
-  { name: "Vercel",       src: "/logos/vercel-original.svg" },
+  { name: "GitHub",       src: "/logos/github-original.svg",    invert: true },
+  { name: "Vercel",       src: "/logos/vercel-original.svg",    invert: true },
 ];
 
 function Reveal({ children, delay = 0, className = "" }) {
@@ -168,12 +168,12 @@ export default function About() {
             </Reveal>
 
             {/* No background boxes */}
-            <div className="flex flex-wrap gap-x-8 gap-y-10">
+            <div className="flex flex-wrap gap-x-8 gap-y-10 justify-center md:justify-start">
               {techStack.map((t, i) => (
                 <Reveal key={t.name} delay={i * 0.03}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.18 }}
                     className="flex flex-col items-center gap-2.5 group cursor-default w-16">
-                    <img src={t.src} alt={t.name} className="w-9 h-9 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <img src={t.src} alt={t.name} className={`w-9 h-9 object-contain opacity-60 group-hover:opacity-100 transition-opacity${t.invert ? " invert" : ""}`} />
                     <span className="text-[10px] text-white/30 font-medium text-center leading-tight group-hover:text-white/60 transition-colors">{t.name}</span>
                   </motion.div>
                 </Reveal>

@@ -39,7 +39,7 @@ const services = [
     title: "API & Integrations",
     desc: "Clean REST and GraphQL APIs, payment flows, third-party services, and backend automation.",
     logos: [
-      { name: "Express",    src: "/logos/express-original.svg" },
+      { name: "Express",    src: "/logos/express-original.svg", invert: true },
       { name: "GraphQL",    src: "/logos/graphql-plain.svg" },
       { name: "Supabase",   src: "/logos/supabase-original.svg" },
       { name: "PostgreSQL", src: "/logos/postgresql-original.svg" },
@@ -81,14 +81,14 @@ const techIcons = [
   { name: "Dart",         src: "/logos/dart-original.svg" },
   { name: "Tailwind",     src: "/logos/tailwindcss-original.svg" },
   { name: "Node.js",      src: "/logos/nodejs-original.svg" },
-  { name: "Express",      src: "/logos/express-original.svg" },
+  { name: "Express",      src: "/logos/express-original.svg",  invert: true },
   { name: "Python",       src: "/logos/python-original.svg" },
   { name: "Firebase",     src: "/logos/firebase-original.svg" },
   { name: "Supabase",     src: "/logos/supabase-original.svg" },
   { name: "MongoDB",      src: "/logos/mongodb-original.svg" },
   { name: "PostgreSQL",   src: "/logos/postgresql-original.svg" },
-  { name: "GitHub",       src: "/logos/github-original.svg" },
-  { name: "Vercel",       src: "/logos/vercel-original.svg" },
+  { name: "GitHub",       src: "/logos/github-original.svg",   invert: true },
+  { name: "Vercel",       src: "/logos/vercel-original.svg",   invert: true },
 ];
 
 const marqueeItems = [
@@ -260,7 +260,7 @@ export default function Home() {
                     <div className="md:col-span-3 flex items-center gap-4 flex-wrap">
                       {s.logos.map((l) => (
                         <img key={l.name} src={l.src} alt={l.name} title={l.name}
-                          className="w-6 h-6 object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                          className={`w-6 h-6 object-contain opacity-50 hover:opacity-100 transition-opacity${l.invert ? " invert" : ""}`} />
                       ))}
                     </div>
                   </div>
@@ -341,7 +341,7 @@ export default function Home() {
                 <Reveal key={t.name} delay={i * 0.025}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.18 }}
                     className="flex flex-col items-center gap-2.5 group cursor-default w-16">
-                    <img src={t.src} alt={t.name} className="w-9 h-9 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <img src={t.src} alt={t.name} className={`w-9 h-9 object-contain opacity-60 group-hover:opacity-100 transition-opacity${t.invert ? " invert" : ""}`} />
                     <span className="text-[10px] text-white/30 font-medium text-center leading-tight group-hover:text-white/60 transition-colors">{t.name}</span>
                   </motion.div>
                 </Reveal>
