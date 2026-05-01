@@ -24,6 +24,10 @@ dist/
 .DS_Store
 Thumbs.db
 
+# Large original video files (use compressed .mp4 versions instead)
+*.MOV
+*.mov
+
 # Logs
 logs
 *.log

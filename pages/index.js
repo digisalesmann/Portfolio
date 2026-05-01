@@ -167,7 +167,7 @@ export default function Home() {
         {/* ── HERO ─────────────────────────────────── */}
         <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-[0.28]">
-            <source src="/videos/hero.MOV" type="video/mp4" />
+            <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black pointer-events-none" />
           <div className="absolute inset-0 pointer-events-none" style={{
