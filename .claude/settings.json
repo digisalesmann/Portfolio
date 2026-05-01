@@ -19,7 +19,22 @@
       "Bash(curl -sL \"https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg\" -o flutter-original.svg)",
       "Bash(curl -sL \"https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg\" -o dart-original.svg)",
       "Bash(curl -sL \"https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg\" -o supabase-original.svg)",
-      "Bash(fuser -k 3000/tcp)"
+      "Bash(fuser -k 3000/tcp)",
+      "Bash(git lfs *)",
+      "Bash(ffmpeg -version)",
+      "Bash(ffmpeg -i /home/buildwithvictor/Projects/portfolio/public/videos/hero.MOV -vcodec libx264 -crf 28 -preset slow -vf scale=1920:-2 -an -movflags +faststart /home/buildwithvictor/Projects/portfolio/public/videos/hero.mp4 -y)",
+      "Bash(ffmpeg -codecs)",
+      "Bash(ffmpeg -encoders)",
+      "Bash(ffmpeg -i /home/buildwithvictor/Projects/portfolio/public/videos/hero.MOV -vcodec h264_nvenc -cq 30 -vf scale=1920:-2 -an -movflags +faststart /home/buildwithvictor/Projects/portfolio/public/videos/hero.mp4 -y)",
+      "Bash(ffmpeg -i /home/buildwithvictor/Projects/portfolio/public/videos/hero.MOV -vcodec h264_vaapi -qp 28 -vf format=nv12,hwupload,scale_vaapi=1920:-2 -an -movflags +faststart /home/buildwithvictor/Projects/portfolio/public/videos/hero.mp4 -y)",
+      "Bash(ffmpeg -i /home/buildwithvictor/Projects/portfolio/public/videos/hero.MOV -vcodec libopenh264 -b:v 2000k -vf scale=1920:-2 -an -movflags +faststart /home/buildwithvictor/Projects/portfolio/public/videos/hero.mp4 -y)",
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git filter-branch *)",
+      "Bash(git stash *)",
+      "Bash(gh auth *)"
     ],
     "additionalDirectories": [
       "/tmp"

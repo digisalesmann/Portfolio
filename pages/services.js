@@ -151,7 +151,6 @@ export default function Services() {
 
             <Reveal delay={0.15} className="mt-10">
               <div className="flex items-center gap-2 text-xs text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Currently available for new projects
               </div>
             </Reveal>

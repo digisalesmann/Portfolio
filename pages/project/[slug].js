@@ -81,9 +81,9 @@ export default function CaseStudy({ project, prev, next }) {
 
         {/* ── Project image ─────────────────────────── */}
         <Reveal className="container mb-20 md:mb-28">
-          <div className="relative rounded-2xl overflow-hidden bg-[#111] aspect-[16/8]">
+          <div className="relative rounded-2xl overflow-hidden bg-[#111] aspect-[16/8] flex items-center justify-center">
             <img src={project.image} alt={project.title}
-              className="w-full h-full object-cover object-top opacity-90"
+              className="w-full h-full object-contain opacity-90"
               onError={(e) => {
                 e.target.parentElement.style.background = "linear-gradient(135deg,#1e1040,#0d0d1a)";
                 e.target.remove();
