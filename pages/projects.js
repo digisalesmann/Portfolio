@@ -61,7 +61,7 @@ const allProjects = [
     tags: "DeFi · NFT · React",
     excerpt: "Decentralized finance and NFT marketplace with a sleek trading interface.",
     image: "/images/indstr.png",
-    link: "#",
+    link: "https://industrial-platform-zeta.vercel.app/",
     year: "2025",
   },
   {
