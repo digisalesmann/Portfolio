@@ -35,7 +35,10 @@
       "Bash(git filter-branch *)",
       "Bash(git stash *)",
       "Bash(gh auth *)",
-      "Read(//home/buildwithvictor/Projects/online-banking/**)"
+      "Read(//home/buildwithvictor/Projects/online-banking/**)",
+      "Bash(find /home/buildwithvictor/Projects/realestate/src -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.jsx\" -o -name \"*.js\" | grep -v node_modules | head -30 && echo \"---\" && cat /home/buildwithvictor/Projects/realestate/package.json 2>/dev/null | grep -E '\"name\"|\"dependencies\"' -A 20 | head -30)",
+      "Read(//home/buildwithvictor/Projects/realestate/src/**)",
+      "Read(//home/buildwithvictor/Projects/realestate/**)"
     ],
     "additionalDirectories": [
       "/tmp"
