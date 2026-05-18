@@ -38,7 +38,10 @@
       "Read(//home/buildwithvictor/Projects/online-banking/**)",
       "Bash(find /home/buildwithvictor/Projects/realestate/src -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.jsx\" -o -name \"*.js\" | grep -v node_modules | head -30 && echo \"---\" && cat /home/buildwithvictor/Projects/realestate/package.json 2>/dev/null | grep -E '\"name\"|\"dependencies\"' -A 20 | head -30)",
       "Read(//home/buildwithvictor/Projects/realestate/src/**)",
-      "Read(//home/buildwithvictor/Projects/realestate/**)"
+      "Read(//home/buildwithvictor/Projects/realestate/**)",
+      "Bash(find /home/buildwithvictor/Projects/ppay-website/src -name \"*.tsx\" -o -name \"*.jsx\" -o -name \"*.ts\" -o -name \"*.js\" | grep -v node_modules | head -30 && echo \"---\" && cat /home/buildwithvictor/Projects/ppay-website/package.json 2>/dev/null | grep -E '\"name\"|\"dependencies\"' -A 15 | head -20)",
+      "Read(//home/buildwithvictor/Projects/ppay-website/src/**)",
+      "Read(//home/buildwithvictor/Projects/ppay-website/**)"
     ],
     "additionalDirectories": [
       "/tmp"

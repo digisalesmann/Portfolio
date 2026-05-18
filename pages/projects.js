@@ -65,6 +65,16 @@ const allProjects = [
     year: "2025",
   },
   {
+    slug: "ppay-web",
+    title: "PPAY",
+    category: "Web",
+    tags: "Fintech · Next.js · Payments",
+    excerpt: "Marketing website for the PPAY fintech app, gift cards, airtime, live rates, virtual numbers, and offline payments across 10+ countries.",
+    image: "/images/ppay-hero.png",
+    link: "https://ppay-hva9.vercel.app/",
+    year: "2026",
+  },
+  {
     slug: "koraq",
     title: "Koraq",
     category: "App",
