@@ -65,6 +65,16 @@ const allProjects = [
     year: "2025",
   },
   {
+    slug: "christech",
+    title: "ChrisTech",
+    category: "Web",
+    tags: "E-Commerce · Next.js · Nigeria",
+    excerpt: "Nigeria's flagship electronics e-commerce platform, 500+ products, 7 categories, and nationwide delivery across all 36 states.",
+    image: "/images/chris.png",
+    link: "https://christech-nine.vercel.app/",
+    year: "2026",
+  },
+  {
     slug: "ppay-web",
     title: "PPAY",
     category: "Web",
