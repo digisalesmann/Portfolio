@@ -166,7 +166,7 @@ export default function Projects() {
 
         {/* ── Header ───────────────────────────────── */}
         <section className="relative pt-28 pb-20 overflow-hidden">
-          <div className="orb w-[500px] h-[500px] bg-violet-600" style={{ top: "-150px", right: "-100px", opacity: 0.2 }} />
+          <div className="orb w-[500px] h-[500px] bg-white" style={{ top: "-150px", right: "-100px", opacity: 0.2 }} />
           <div className="container relative z-10">
             <Reveal>
               <p className="section-label mb-5">My Work</p>
@@ -190,7 +190,7 @@ export default function Projects() {
                 onClick={() => setActive(tab)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                   active === tab
-                    ? "bg-violet-500 text-white"
+                    ? "bg-white text-black"
                     : "border border-white/10 text-white/50 hover:text-white hover:border-white/30"
                 }`}
               >
@@ -220,7 +220,7 @@ export default function Projects() {
                       <img
                         src={p.image}
                         alt={p.title}
-                        className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
+                        className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
                         onError={(e) => {
                           e.target.parentElement.style.background =
                             "linear-gradient(135deg, #1e1040, #0d0d1a)";
@@ -238,10 +238,10 @@ export default function Projects() {
 
                     {/* Meta + links */}
                     <div className="md:col-span-2 flex md:flex-col items-center md:items-end justify-between md:justify-start gap-3">
-                      <span className="text-xs font-mono text-violet-400">{p.year}</span>
+                      <span className="text-xs font-mono text-white/40">{p.year}</span>
                       <Link
                         href={`/project/${p.slug}`}
-                        className="inline-flex items-center gap-1 text-sm text-white/50 hover:text-violet-400 transition-colors font-medium"
+                        className="inline-flex items-center gap-1 text-sm text-white/50 hover:text-white transition-colors font-medium"
                       >
                         Case Study →
                       </Link>
@@ -280,7 +280,7 @@ export default function Projects() {
               ].map((step, i) => (
                 <Reveal key={i} delay={i * 0.08}>
                   <div className="py-9 md:py-11 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 items-start">
-                    <span className="text-xs font-mono text-violet-400 md:col-span-1">{step.num}</span>
+                    <span className="text-xs font-mono text-white/40 md:col-span-1">{step.num}</span>
                     <h3 className="text-lg font-semibold text-white md:col-span-3">{step.title}</h3>
                     <p className="text-white/45 text-base leading-relaxed md:col-span-8">{step.desc}</p>
                   </div>

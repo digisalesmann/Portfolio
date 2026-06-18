@@ -7,6 +7,7 @@ const links = [
   { href: "/projects",  label: "Work" },
   { href: "/services",  label: "Services" },
   { href: "/about",     label: "About" },
+  { href: "/quote",     label: "Get a Quote" },
   { href: "/contact",   label: "Contact" },
 ];
 
@@ -40,7 +41,7 @@ export default function Navbar() {
         {/* Wordmark only — no icon */}
         <Link href="/" className="flex items-baseline group">
           <span className="font-bold text-white text-base tracking-tight">Victor</span>
-          <span className="text-violet-400 font-bold text-xl leading-none">.</span>
+          <span className="text-white font-bold text-xl leading-none">.</span>
         </Link>
 
         {/* Desktop nav */}
@@ -99,7 +100,7 @@ export default function Navbar() {
               <div className="mb-10">
                 <Link href="/" className="flex items-baseline">
                   <span className="font-bold text-white text-base">Victor</span>
-                  <span className="text-violet-400 font-bold text-xl leading-none">.</span>
+                  <span className="text-white font-bold text-xl leading-none">.</span>
                 </Link>
               </div>
               <nav className="flex flex-col gap-1">

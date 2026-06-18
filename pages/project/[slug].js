@@ -32,7 +32,7 @@ export default function CaseStudy({ project, prev, next }) {
 
         {/* ── Hero ─────────────────────────────────── */}
         <section className="relative pt-28 pb-14 overflow-hidden">
-          <div className="orb w-[500px] h-[500px] bg-violet-600" style={{ top: "-200px", left: "-100px", opacity: 0.12 }} />
+          <div className="orb w-[500px] h-[500px] bg-white" style={{ top: "-200px", left: "-100px", opacity: 0.12 }} />
           <div className="container relative z-10">
             <Reveal>
               <Link href="/projects" className="inline-flex items-center gap-2 text-xs text-white/30 hover:text-white transition-colors mb-10 group">
@@ -45,7 +45,7 @@ export default function CaseStudy({ project, prev, next }) {
 
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
               <Reveal>
-                <p className="text-xs text-violet-400 font-medium uppercase tracking-wider mb-4">{project.tags}</p>
+                <p className="text-xs text-white/60 font-medium uppercase tracking-wider mb-4">{project.tags}</p>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]">
                   {project.title}
                 </h1>
@@ -53,7 +53,7 @@ export default function CaseStudy({ project, prev, next }) {
               {project.link !== "#" && (
                 <Reveal delay={0.1}>
                   <a href={project.link} target="_blank" rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-violet-400 hover:text-white transition-colors font-medium shrink-0">
+                    className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors font-medium shrink-0">
                     Live Site <IconArrow />
                   </a>
                 </Reveal>
@@ -81,9 +81,9 @@ export default function CaseStudy({ project, prev, next }) {
 
         {/* ── Project image ─────────────────────────── */}
         <Reveal className="container mb-20 md:mb-28">
-          <div className="relative rounded-2xl overflow-hidden bg-[#111] aspect-[16/8] flex items-center justify-center">
+          <div className="group relative rounded-2xl overflow-hidden bg-[#111] aspect-[16/8] flex items-center justify-center">
             <img src={project.image} alt={project.title}
-              className="w-full h-full object-contain opacity-90"
+              className="w-full h-full object-contain grayscale group-hover:grayscale-0 opacity-90 transition-[filter] duration-500"
               onError={(e) => {
                 e.target.parentElement.style.background = "linear-gradient(135deg,#1e1040,#0d0d1a)";
                 e.target.remove();
@@ -142,7 +142,7 @@ export default function CaseStudy({ project, prev, next }) {
               {project.features.map((f, i) => (
                 <Reveal key={i} delay={i * 0.07}>
                   <div className="py-9 md:py-11 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 items-start">
-                    <span className="text-xs font-mono text-violet-400 md:col-span-1">{f.num}</span>
+                    <span className="text-xs font-mono text-white/40 md:col-span-1">{f.num}</span>
                     <h3 className="text-lg font-semibold text-white md:col-span-3">{f.title}</h3>
                     <p className="text-white/45 text-base leading-relaxed md:col-span-8">{f.desc}</p>
                   </div>
@@ -163,7 +163,7 @@ export default function CaseStudy({ project, prev, next }) {
               {project.results.map((r, i) => (
                 <Reveal key={i} delay={i * 0.08}>
                   <div className="bg-[#050505] px-8 py-10">
-                    <span className="text-2xl font-bold text-violet-400 mb-1 block">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-2xl font-bold text-white/60 mb-1 block">{String(i + 1).padStart(2, "0")}</span>
                     <p className="text-white/70 text-base leading-relaxed">{r}</p>
                   </div>
                 </Reveal>
@@ -184,7 +184,7 @@ export default function CaseStudy({ project, prev, next }) {
                 <Reveal key={t.name} delay={i * 0.04}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.18 }}
                     className="flex flex-col items-center gap-2.5 group cursor-default w-16">
-                    <img src={t.src} alt={t.name} className="w-9 h-9 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <img src={t.src} alt={t.name} className="w-9 h-9 object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all" />
                     <span className="text-[10px] text-white/30 font-medium text-center leading-tight group-hover:text-white/60 transition-colors">{t.name}</span>
                   </motion.div>
                 </Reveal>
@@ -200,14 +200,14 @@ export default function CaseStudy({ project, prev, next }) {
               <Link href={`/project/${prev.slug}`}
                 className="group flex flex-col gap-3 px-8 py-10 hover:bg-white/[0.02] transition-colors">
                 <p className="text-[10px] text-white/25 uppercase tracking-wider font-medium">← Previous</p>
-                <p className="text-lg font-semibold text-white group-hover:text-violet-400 transition-colors">{prev.title}</p>
+                <p className="text-lg font-semibold text-white group-hover:text-white/60 transition-colors">{prev.title}</p>
               </Link>
             ) : <div />}
             {next ? (
               <Link href={`/project/${next.slug}`}
                 className="group flex flex-col gap-3 px-8 py-10 hover:bg-white/[0.02] transition-colors md:items-end text-right">
                 <p className="text-[10px] text-white/25 uppercase tracking-wider font-medium">Next →</p>
-                <p className="text-lg font-semibold text-white group-hover:text-violet-400 transition-colors">{next.title}</p>
+                <p className="text-lg font-semibold text-white group-hover:text-white/60 transition-colors">{next.title}</p>
               </Link>
             ) : <div />}
           </div>

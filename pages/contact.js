@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
@@ -71,7 +72,7 @@ function Reveal({ children, delay = 0, className = "" }) {
   );
 }
 
-const inputCls = "w-full bg-transparent border-b border-white/[0.12] py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-violet-500 transition-colors";
+const inputCls = "w-full bg-transparent border-b border-white/[0.12] py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-white/40 transition-colors";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -104,7 +105,7 @@ export default function Contact() {
 
         {/* ── Header ───────────────────────────────── */}
         <section className="relative pt-28 pb-20 overflow-hidden">
-          <div className="orb w-[500px] h-[500px] bg-violet-600" style={{ top: "-150px", right: "-100px", opacity: 0.18 }} />
+          <div className="orb w-[500px] h-[500px] bg-white" style={{ top: "-150px", right: "-100px", opacity: 0.18 }} />
           <div className="container relative z-10">
             <Reveal>
               <p className="section-label mb-5">Let&apos;s Talk</p>
@@ -126,9 +127,12 @@ export default function Contact() {
             {/* Left — contact info, no cards */}
             <div className="lg:col-span-2">
               <Reveal>
-                <div className="flex items-center gap-2 mb-10 text-xs text-emerald-400">
+                <div className="flex items-center gap-2 mb-6 text-xs text-white/70">
                   Available for new projects worldwide
                 </div>
+                <p className="text-sm text-white/30 leading-relaxed mb-10">
+                  Already know your budget and timeline? <Link href="/quote" className="text-white/70 hover:text-white transition-colors">Get a structured quote →</Link>
+                </p>
               </Reveal>
 
               {/* Contact items — separator list */}
@@ -136,11 +140,11 @@ export default function Contact() {
                 {contactItems.map((item, i) => (
                   <Reveal key={i} delay={i * 0.07}>
                     <div className="py-5 flex items-center gap-4">
-                      <span className="text-violet-400 shrink-0"><item.Icon /></span>
+                      <span className="text-white/70 shrink-0"><item.Icon /></span>
                       <div className="min-w-0">
                         <p className="text-[10px] text-white/30 uppercase tracking-wider font-medium mb-1">{item.label}</p>
                         {item.href ? (
-                          <a href={item.href} className="text-sm text-white hover:text-violet-400 transition-colors truncate block">{item.value}</a>
+                          <a href={item.href} className="text-sm text-white hover:text-white/60 transition-colors truncate block">{item.value}</a>
                         ) : (
                           <p className="text-sm text-white">{item.value}</p>
                         )}
@@ -158,7 +162,7 @@ export default function Contact() {
                     <a key={s.label} href={s.href} target="_blank" rel="noreferrer"
                       className="flex items-center justify-between py-4 group">
                       <span className="text-sm text-white/50 group-hover:text-white transition-colors">{s.label}</span>
-                      <span className="text-xs text-white/25 group-hover:text-violet-400 transition-colors">{s.username}</span>
+                      <span className="text-xs text-white/25 group-hover:text-white transition-colors">{s.username}</span>
                     </a>
                   ))}
                 </div>
@@ -169,14 +173,14 @@ export default function Contact() {
             <Reveal delay={0.1} className="lg:col-span-3 border-t border-white/[0.07] lg:border-t-0 pt-10 lg:pt-0">
               {status === "success" ? (
                 <div className="flex flex-col items-center justify-center gap-5 py-24 text-center border-t border-white/[0.07]">
-                  <div className="w-14 h-14 rounded-full border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                  <div className="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center text-white">
                     <IconCheck />
                   </div>
                   <h3 className="text-xl font-semibold text-white">Message Sent!</h3>
                   <p className="text-white/40 text-sm max-w-xs leading-relaxed">
                     Thanks for reaching out. I&apos;ll get back to you within 24 hours.
                   </p>
-                  <button onClick={() => setStatus("idle")} className="text-sm text-violet-400 hover:text-white transition-colors">
+                  <button onClick={() => setStatus("idle")} className="text-sm text-white/70 hover:text-white transition-colors">
                     Send another message →
                   </button>
                 </div>

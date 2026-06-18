@@ -136,7 +136,7 @@ export default function Services() {
 
         {/* ── Hero ─────────────────────────────────── */}
         <section className="relative pt-28 pb-20 overflow-hidden">
-          <div className="orb w-[500px] h-[500px] bg-violet-600" style={{ top: "-150px", right: "-100px", opacity: 0.18 }} />
+          <div className="orb w-[500px] h-[500px] bg-white" style={{ top: "-150px", right: "-100px", opacity: 0.18 }} />
           <div className="container relative z-10">
             <Reveal>
               <p className="section-label mb-5">What I Build</p>
@@ -150,7 +150,7 @@ export default function Services() {
             </Reveal>
 
             <Reveal delay={0.15} className="mt-10">
-              <div className="flex items-center gap-2 text-xs text-emerald-400">
+              <div className="flex items-center gap-2 text-xs text-white/70">
                 Currently available for new projects
               </div>
             </Reveal>
@@ -164,14 +164,14 @@ export default function Services() {
               {services.map((s, i) => (
                 <Reveal key={i} delay={i * 0.07}>
                   <div className="py-10 md:py-14 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-start">
-                    <span className="text-xs font-mono text-violet-400 md:col-span-1">{s.num}</span>
+                    <span className="text-xs font-mono text-white/40 md:col-span-1">{s.num}</span>
 
                     <div className="md:col-span-3">
                       <h3 className="text-xl font-semibold text-white mb-4">{s.title}</h3>
                       <div className="flex items-center gap-3 flex-wrap">
                         {s.logos.map((l) => (
                           <img key={l.name} src={l.src} alt={l.name} title={l.name}
-                            className="w-5 h-5 object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                            className="w-5 h-5 object-contain grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all" />
                         ))}
                       </div>
                     </div>
@@ -185,7 +185,7 @@ export default function Services() {
                       <ul className="space-y-1.5">
                         {s.includes.map((item) => (
                           <li key={item} className="text-sm text-white/40 flex items-center gap-2">
-                            <span className="w-1 h-1 rounded-full bg-violet-500/60 shrink-0" />
+                            <span className="w-1 h-1 rounded-full bg-white/60 shrink-0" />
                             {item}
                           </li>
                         ))}
@@ -210,7 +210,7 @@ export default function Services() {
               {engagements.map((e, i) => (
                 <Reveal key={i} delay={i * 0.08}>
                   <div className="py-10 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 items-start">
-                    <span className="text-xs font-mono text-violet-400 md:col-span-1">{e.num}</span>
+                    <span className="text-xs font-mono text-white/40 md:col-span-1">{e.num}</span>
                     <h3 className="text-lg font-semibold text-white md:col-span-3">{e.title}</h3>
                     <p className="text-white/45 text-base leading-relaxed md:col-span-8">{e.desc}</p>
                   </div>
@@ -232,7 +232,7 @@ export default function Services() {
               {differentiators.map((d, i) => (
                 <Reveal key={i} delay={i * 0.07}>
                   <div className="py-9 md:py-11 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 items-start">
-                    <span className="text-xs font-mono text-violet-400 md:col-span-1">{d.num}</span>
+                    <span className="text-xs font-mono text-white/40 md:col-span-1">{d.num}</span>
                     <h3 className="text-lg font-semibold text-white md:col-span-4">{d.title}</h3>
                     <p className="text-white/45 text-base leading-relaxed md:col-span-7">{d.desc}</p>
                   </div>
@@ -272,14 +272,14 @@ export default function Services() {
             <Reveal>
               <p className="section-label justify-center mb-5">Ready to Start?</p>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
-                Let&apos;s Build Something<span className="text-violet-400"> Great.</span>
+                Let&apos;s Build Something<span className="text-white/60"> Great.</span>
               </h2>
               <p className="text-white/40 mb-8 max-w-sm mx-auto leading-relaxed">
                 Tell me about your project, I&apos;ll get back to you within 24 hours.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/contact" className="btn-primary text-sm px-8 py-4">Get in Touch →</Link>
-                <Link href="/projects" className="btn-outline text-sm px-8 py-4">See My Work</Link>
+                <Link href="/quote" className="btn-primary text-sm px-8 py-4">Get a Quote →</Link>
+                <Link href="/contact" className="btn-outline text-sm px-8 py-4">Get in Touch</Link>
               </div>
             </Reveal>
           </div>

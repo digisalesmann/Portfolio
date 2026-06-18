@@ -22,12 +22,12 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-baseline">
               <span className="font-bold text-white text-base tracking-tight">Victor</span>
-              <span className="text-violet-400 font-bold text-xl leading-none">.</span>
+              <span className="text-white font-bold text-xl leading-none">.</span>
             </Link>
             <p className="text-sm text-white/40 leading-relaxed max-w-xs">
               Web &amp; mobile developer building fast, elegant cross-platform products for clients worldwide.
             </p>
-            <div className="flex items-center gap-1.5 text-xs text-emerald-400">
+            <div className="flex items-center gap-1.5 text-xs text-white/70">
               Available for new projects
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function Footer() {
           {/* CTA */}
           <div className="space-y-4">
             <p className="text-xs text-white/30 uppercase tracking-widest font-medium">Get in Touch</p>
-            <a href="mailto:buildwithvictorhq@gmail.com" className="block text-sm text-white/70 hover:text-violet-400 transition-colors break-all">
+            <a href="mailto:buildwithvictorhq@gmail.com" className="block text-sm text-white/70 hover:text-white transition-colors break-all">
               buildwithvictorhq@gmail.com
             </a>
             <a href="tel:+2349037884753" className="block text-sm text-white/40 hover:text-white transition-colors">

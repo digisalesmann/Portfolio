@@ -68,7 +68,7 @@ export const sectionsContent = {
     faq: [
         { 
             q: "Will AI replace high-level professional roles?", 
-            a: "AI acts as a co-pilot. While it automates tasks, it increases the demand for 'System Orchestrators'—humans who can direct AI toward complex goals." 
+            a: "AI acts as a co-pilot. While it automates tasks, it increases the demand for 'System Orchestrators', humans who can direct AI toward complex goals." 
         },
         { 
             q: "How secure is the data used to train these models?", 

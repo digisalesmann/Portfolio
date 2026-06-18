@@ -91,7 +91,7 @@ export default function About() {
 
         {/* ── Hero ─────────────────────────────────── */}
         <section className="relative pt-28 pb-20 overflow-hidden">
-          <div className="orb w-[600px] h-[600px] bg-violet-600" style={{ top: "-200px", left: "-200px", opacity: 0.15 }} />
+          <div className="orb w-[600px] h-[600px] bg-white" style={{ top: "-200px", left: "-200px", opacity: 0.15 }} />
           <div className="container relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
               <Reveal>
@@ -99,7 +99,7 @@ export default function About() {
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-3 leading-[1.05]">
                   Victor Chinagoro
                 </h1>
-                <p className="text-violet-400 text-base font-medium mb-7">
+                <p className="text-white/70 text-base font-medium mb-7">
                   Web &amp; Mobile Developer · Cross-Platform
                 </p>
                 <p className="text-white/55 text-base leading-relaxed mb-5">
@@ -122,13 +122,13 @@ export default function About() {
               <Reveal delay={0.15}>
                 <div className="relative mx-auto md:mx-0 w-64 md:w-full max-w-sm">
                   <div className="relative rounded-3xl overflow-hidden border border-white/[0.08] aspect-[4/5] bg-[#111]">
-                    <Image src="/images/kenny.jpg" alt="Victor Chinagoro" fill className="object-cover" priority />
+                    <Image src="/images/portrait-hero.png" alt="Victor Chinagoro" fill className="object-cover grayscale" priority />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                   {/* Available badge — clean, no V */}
                   <div className="absolute -bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl px-4 py-3 flex items-center justify-between">
                     <span className="text-xs text-white/60 font-medium">Available for projects</span>
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                   </div>
                 </div>
               </Reveal>
@@ -149,7 +149,7 @@ export default function About() {
               {values.map((v, i) => (
                 <Reveal key={i} delay={i * 0.08}>
                   <div className="py-9 md:py-11 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 items-start">
-                    <span className="text-xs font-mono text-violet-400 md:col-span-1">{v.num}</span>
+                    <span className="text-xs font-mono text-white/40 md:col-span-1">{v.num}</span>
                     <h3 className="text-lg md:text-xl font-semibold text-white md:col-span-4">{v.title}</h3>
                     <p className="text-white/45 text-base leading-relaxed md:col-span-7">{v.desc}</p>
                   </div>
@@ -173,7 +173,7 @@ export default function About() {
                 <Reveal key={t.name} delay={i * 0.03}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.18 }}
                     className="flex flex-col items-center gap-2.5 group cursor-default w-16">
-                    <img src={t.src} alt={t.name} className={`w-9 h-9 object-contain opacity-60 group-hover:opacity-100 transition-opacity${t.invert ? " invert" : ""}`} />
+                    <img src={t.src} alt={t.name} className={`w-9 h-9 object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all${t.invert ? " invert" : ""}`} />
                     <span className="text-[10px] text-white/30 font-medium text-center leading-tight group-hover:text-white/60 transition-colors">{t.name}</span>
                   </motion.div>
                 </Reveal>
@@ -195,7 +195,7 @@ export default function About() {
               {timeline.map((item, i) => (
                 <Reveal key={i} delay={i * 0.08}>
                   <div className="py-9 md:py-11 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 items-start">
-                    <span className="text-xs font-mono text-violet-400 md:col-span-2">{item.year}</span>
+                    <span className="text-xs font-mono text-white/40 md:col-span-2">{item.year}</span>
                     <div className="md:col-span-4">
                       <h3 className="text-base font-semibold text-white mb-1">{item.title}</h3>
                       <p className="text-xs text-white/30">{item.company}</p>
@@ -215,7 +215,7 @@ export default function About() {
             <Reveal>
               <p className="section-label justify-center mb-5">Work Together</p>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
-                Let&apos;s Build Something<span className="text-violet-400"> Great</span>
+                Let&apos;s Build Something<span className="text-white/60"> Great</span>
               </h2>
               <p className="text-white/40 mb-8 max-w-sm mx-auto leading-relaxed">
                 Available for remote contracts, freelance work, and full-time opportunities worldwide.
