@@ -15,7 +15,7 @@ const timeline = [
     year: "2025",
     title: "Full-Stack Developer",
     company: "Contract Projects",
-    desc: "Delivered 6+ production apps including Bitvest, Koraq, and PPAY. Flutter/Dart for mobile, Next.js for web.",
+    desc: "Delivered 6+ production apps including QuantChain, Koraq, and PPAY. Flutter/Dart for mobile, Next.js for web.",
   },
   {
     year: "2024",

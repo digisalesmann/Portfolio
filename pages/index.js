@@ -50,11 +50,11 @@ const services = [
 
 const projects = [
   {
-    title: "BitVest",
-    category: "Fintech · Web",
-    excerpt: "Financial investment platform with real-time portfolio tracking and analytics.",
-    image: "/images/bitvest.jpeg",
-    link: "https://bitvestapp.com/",
+    title: "QuantChain",
+    category: "Fintech · Web3",
+    excerpt: "Enterprise crypto exchange with real-time order matching, multi-chain wallets, and KYC/AML compliance.",
+    image: "/images/QuantChain.png",
+    link: "https://quantchain.vercel.app/",
   },
   {
     title: "Koraq",
@@ -64,11 +64,11 @@ const projects = [
     link: "https://play.google.com/store/apps/details?id=com.koraq.app.koraq",
   },
   {
-    title: "Ace Experience",
-    category: "F&B · Web",
-    excerpt: "Professional culinary platform connecting chefs to a premium clientele.",
-    image: "/images/ace.png",
-    link: "https://ace-xperience.vercel.app/",
+    title: "Zapph",
+    category: "Social · App",
+    excerpt: "Next-gen social communication app with HD video calls, voice notes, and real-time messaging.",
+    image: "/images/zapph.jpg",
+    link: "https://play.google.com/store/apps/details?id=com.zapph.zapph",
   },
 ];
 
@@ -99,10 +99,8 @@ const marqueeItems = [
 ];
 
 const reelVideos = [
-  { src: "/videos/bitvest.mp4",  label: "BitVest" },
   { src: "/videos/koraq.mp4",    label: "Koraq" },
   { src: "/videos/actora.mp4",   label: "Actora Labs" },
-  { src: "/videos/medilab.mp4",  label: "MediLab" },
   { src: "/videos/ppay.mp4",     label: "PPAY" },
   { src: "/videos/velau.mp4",    label: "Velau" },
 ];

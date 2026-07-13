@@ -5,14 +5,14 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const allProjects = [
   {
-    slug: "bitvest-web",
-    title: "Bitvest Web",
+    slug: "quantchain",
+    title: "QuantChain",
     category: "Web",
-    tags: "Fintech · React · Next.js",
-    excerpt: "Financial investment platform with real-time portfolio tracking, analytics dashboards, and secure payment flows.",
-    image: "/images/bitvest.jpeg",
-    link: "https://bitvestapp.com/",
-    year: "2025",
+    tags: "Fintech · Web3 · Crypto Exchange",
+    excerpt: "Enterprise-grade cryptocurrency exchange with real-time order matching, multi-chain custody wallets, KYC/AML compliance, and a full fintech product suite.",
+    image: "/images/QuantChain.png",
+    link: "https://quantchain.vercel.app/",
+    year: "2026",
   },
   {
     slug: "actora-labs",
@@ -95,16 +95,6 @@ const allProjects = [
     year: "2026",
   },
   {
-    slug: "bitvest-app",
-    title: "Bitvest App",
-    category: "App",
-    tags: "Fintech · Flutter · Mobile",
-    excerpt: "Mobile investment app with biometric auth, portfolio management, and real-time market data.",
-    image: "/images/bitvest.jpeg",
-    link: "https://firebasestorage.googleapis.com/v0/b/bitvest-bc688.firebasestorage.app/o/downloads%2FBitvest.apk?alt=media&token=38074188-f4f6-4403-9622-524e9355f59d",
-    year: "2025",
-  },
-  {
     slug: "ppay",
     title: "PPAY",
     category: "App",
@@ -122,6 +112,16 @@ const allProjects = [
     excerpt: "Automated gold trading engine with algorithmic strategies and live portfolio dashboards.",
     image: "/images/velau.png",
     link: "#",
+    year: "2026",
+  },
+  {
+    slug: "zapph",
+    title: "Zapph",
+    category: "App",
+    tags: "Social · Flutter · Cross-Platform",
+    excerpt: "Next-generation social communication app with HD video calls, voice messaging, real-time chat, location sharing, and AI-powered face detection.",
+    image: "/images/zapph.jpg",
+    link: "https://play.google.com/store/apps/details?id=com.zapph.zapph",
     year: "2026",
   },
 ];
